@@ -1,0 +1,36 @@
+---
+import type { PizzametricsGallery } from '../types';
+
+interface Props {
+    t: PizzametricsGallery;
+    images: string[];
+}
+
+const { t, images } = Astro.props;
+---
+
+<section class="pm-gallery">
+    <div class="pm-gallery-inner">
+        <h2 class="pm-gallery-title">
+            {t.title} <span class="pm-gallery-title-highlight">{t.titleHighlight}</span> para Pizzaiolos
+        </h2>
+
+        <div class="pm-gallery-grid">
+            {
+                images.map((img, index) => (
+                    <div class={`pm-gallery-item${index === 1 ? ' pm-gallery-item-offset' : ''}`}>
+                        <img
+                            src={img}
+                            alt={`${t.imageAlt} ${index + 1}`}
+                            class="pm-gallery-img"
+                            loading="lazy"
+                        />
+                        <div class="pm-gallery-overlay">
+                            <p class="pm-gallery-alt">{t.imageAlt}</p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

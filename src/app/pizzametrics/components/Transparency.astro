@@ -1,0 +1,19 @@
+---
+import type { PizzametricsTransparency } from '../types';
+
+interface Props {
+    t: PizzametricsTransparency;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="pm-transparency">
+    <div class="pm-transparency-inner">
+        <h2 class="pm-transparency-quote">
+            "{t.quoteMain}<br /><span class="pm-transparency-quote-highlight">{t.quoteHighlight}</span>"
+        </h2>
+        <hr class="pm-transparency-divider" />
+        <p class="pm-transparency-desc">{t.description}</p>
+    </div>
+</section>

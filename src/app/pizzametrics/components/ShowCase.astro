@@ -1,0 +1,53 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { PizzametricsShowCase } from '../types';
+
+interface Props {
+    t: PizzametricsShowCase;
+    youtubeId: string;
+}
+
+const { t, youtubeId } = Astro.props;
+---
+
+<section class="pm-showcase">
+    <div class="pm-showcase-inner">
+        <div class="pm-showcase-phone">
+            <div class="pm-showcase-glow"></div>
+            <div class="pm-showcase-frame">
+                <iframe
+                    src={`https://www.youtube.com/embed/${youtubeId}?rel=0&modestbranding=1&autohide=1&muted=1&controls=0&autoplay=1&loop=1&playlist=${youtubeId}`}
+                    title="Pizzametrics en Acción"
+                    class="pm-showcase-iframe"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="pm-showcase-features">
+            <div class="pm-feature-card">
+                <div class="pm-feature-icon pm-feature-icon-red">
+                    <Icon name="mdi:weather-partly-cloudy" style="color: var(--pm-red)" />
+                </div>
+                <h3 class="pm-feature-title">{t.feature1.title}</h3>
+                <p class="pm-feature-desc">{t.feature1.description}</p>
+            </div>
+
+            <div class="pm-feature-card">
+                <div class="pm-feature-icon pm-feature-icon-green">
+                    <Icon name="mdi:flask-outline" style="color: var(--pm-green)" />
+                </div>
+                <h3 class="pm-feature-title">{t.feature2.title}</h3>
+                <p class="pm-feature-desc">{t.feature2.description}</p>
+            </div>
+
+            <div class="pm-feature-card">
+                <div class="pm-feature-icon pm-feature-icon-dark">
+                    <Icon name="mdi:book-open-variant" style="color: var(--pm-text)" />
+                </div>
+                <h3 class="pm-feature-title">{t.feature3.title}</h3>
+                <p class="pm-feature-desc">{t.feature3.description}</p>
+            </div>
+        </div>
+    </div>
+</section>

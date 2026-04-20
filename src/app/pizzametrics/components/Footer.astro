@@ -1,0 +1,47 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { PizzametricsFooter } from '../types';
+
+interface Props {
+    t: PizzametricsFooter;
+    stores: { appStore?: string; googlePlay?: string };
+}
+
+const { t, stores } = Astro.props;
+---
+
+<footer class="pm-footer">
+    <div class="pm-footer-inner">
+        <div class="pm-footer-body">
+            <h2 class="pm-footer-title">
+                {t.titleMain}<br /><span class="pm-footer-title-highlight">{t.titleHighlight}</span>
+            </h2>
+
+            <div class="pm-footer-buttons">
+                {
+                    stores.appStore && (
+                        <a href={stores.appStore} class="pm-store-btn-outline" target="_blank" rel="noopener noreferrer">
+                            <Icon name="mdi:apple" />
+                            <span>Apple App Store</span>
+                        </a>
+                    )
+                }
+                {
+                    stores.googlePlay && (
+                        <a href={stores.googlePlay} class="pm-store-btn-outline" target="_blank" rel="noopener noreferrer">
+                            <Icon name="mdi:google-play" />
+                            <span>Google Play</span>
+                        </a>
+                    )
+                }
+            </div>
+
+            <div class="pm-footer-legal">
+                <a href="https://www.jjlmoya.es/gamebob/privacidad/" target="_blank">{t.privacyLabel}</a>
+                <a href="https://www.jjlmoya.es/gamebob/terminos-y-condiciones/" target="_blank">{t.termsLabel}</a>
+                <span>© {new Date().getFullYear()} Pizzametrics</span>
+            </div>
+        </div>
+
+    </div>
+</footer>

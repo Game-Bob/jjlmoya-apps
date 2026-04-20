@@ -1,0 +1,36 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { PizzametricsEmpathy } from '../types';
+
+interface Props {
+    t: PizzametricsEmpathy;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="pm-empathy">
+    <div class="pm-empathy-inner">
+        <h2 class="pm-empathy-title">{t.title}</h2>
+        <div class="pm-empathy-grid">
+            <div class="pm-empathy-item">
+                <div class="pm-empathy-icon">
+                    <Icon name="mdi:thermometer-alert" />
+                </div>
+                <p class="pm-empathy-quote">"{t.quote1}"</p>
+            </div>
+            <div class="pm-empathy-item">
+                <div class="pm-empathy-icon">
+                    <Icon name="mdi:scale-balance" />
+                </div>
+                <p class="pm-empathy-quote">"{t.quote2}"</p>
+            </div>
+            <div class="pm-empathy-item">
+                <div class="pm-empathy-icon">
+                    <Icon name="mdi:alert-decagram-outline" />
+                </div>
+                <p class="pm-empathy-quote">"{t.quote3}"</p>
+            </div>
+        </div>
+    </div>
+</section>

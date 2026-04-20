@@ -1,0 +1,65 @@
+---
+import type { KnownLocale } from '../../types';
+import { pizzametricsEntry } from './entry';
+import { localizedAppStoreUrl } from '../../app-store';
+import './pizzametrics.css';
+import Hero from './components/Hero.astro';
+import ShowCase from './components/ShowCase.astro';
+import Empathy from './components/Empathy.astro';
+import Pantry from './components/Pantry.astro';
+import Gallery from './components/Gallery.astro';
+import Shorts from './components/Shorts.astro';
+import Transparency from './components/Transparency.astro';
+import Footer from './components/Footer.astro';
+
+interface Props {
+    locale: KnownLocale;
+}
+
+const { locale } = Astro.props;
+
+const loaders = {
+    es: () => import('./i18n/es').then((m) => m.landingContent),
+    de: () => import('./i18n/de').then((m) => m.landingContent),
+    en: () => import('./i18n/en').then((m) => m.landingContent),
+    fr: () => import('./i18n/fr').then((m) => m.landingContent),
+    id: () => import('./i18n/id').then((m) => m.landingContent),
+    it: () => import('./i18n/it').then((m) => m.landingContent),
+    ja: () => import('./i18n/ja').then((m) => m.landingContent),
+    ko: () => import('./i18n/ko').then((m) => m.landingContent),
+    nl: () => import('./i18n/nl').then((m) => m.landingContent),
+    pl: () => import('./i18n/pl').then((m) => m.landingContent),
+    pt: () => import('./i18n/pt').then((m) => m.landingContent),
+    ru: () => import('./i18n/ru').then((m) => m.landingContent),
+    sv: () => import('./i18n/sv').then((m) => m.landingContent),
+    tr: () => import('./i18n/tr').then((m) => m.landingContent),
+    zh: () => import('./i18n/zh').then((m) => m.landingContent),
+};
+
+const t = await (loaders[locale as keyof typeof loaders] ?? loaders.es)();
+const { stores: baseStores, id: appId, shorts = [] } = pizzametricsEntry;
+
+const stores = {
+    ...baseStores,
+    appStore: baseStores.appStore ? localizedAppStoreUrl(baseStores.appStore, locale) : undefined,
+};
+
+---
+
+<div class="pm-landing">
+    <Hero t={t.hero} {stores} {appId} />
+    <ShowCase t={t.showCase} youtubeId="CgnZaRWkm5Y" />
+    <Empathy t={t.empathy} />
+    <Pantry t={t.pantry} {appId} />
+    <Gallery
+        t={t.gallery}
+        images={[
+            `/assets/apps/${appId}/dashboard.webp`,
+            `/assets/apps/${appId}/calculator.webp`,
+            `/assets/apps/${appId}/screenshot-6-list-history.webp`,
+        ]}
+    />
+    <Shorts t={t.shorts} shortIds={shorts} />
+    <Transparency t={t.transparency} />
+    <Footer t={t.footer} {stores} />
+</div>

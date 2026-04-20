@@ -1,0 +1,59 @@
+---
+import type { PizzametricsPantry } from '../types';
+
+interface Props {
+    t: PizzametricsPantry;
+    appId: string;
+}
+
+const { t, appId } = Astro.props;
+
+const flags = [
+    { flag: '🇪🇸', name: 'Español' },
+    { flag: '🇺🇸', name: 'English' },
+    { flag: '🇮🇹', name: 'Italiano' },
+    { flag: '🇫🇷', name: 'Français' },
+    { flag: '🇩🇪', name: 'Deutsch' },
+    { flag: '🇧🇷', name: 'Português' },
+    { flag: '🇯🇵', name: '日本語' },
+    { flag: '🇰🇷', name: '한국어' },
+    { flag: '🇨🇳', name: '中文' },
+    { flag: '🇷🇺', name: 'Русский' },
+    { flag: '🇹🇷', name: 'Türkçe' },
+    { flag: '🇳🇱', name: 'Nederlands' },
+    { flag: '🇵🇱', name: 'Polski' },
+    { flag: '🇸🇪', name: 'Svenska' },
+    { flag: '🇮🇩', name: 'Bahasa Indonesia' },
+];
+---
+
+<section class="pm-pantry">
+    <div class="pm-pantry-inner">
+        <div class="pm-pantry-grid">
+            <div class="pm-pantry-img-wrapper">
+                <div class="pm-pantry-glow"></div>
+                <img
+                    src={`/assets/apps/${appId}/pantry.webp`}
+                    alt="Pantry"
+                    class="pm-pantry-img"
+                />
+            </div>
+            <div class="pm-pantry-text">
+                <h2 class="pm-pantry-title">
+                    {t.title} <span class="pm-pantry-title-highlight">{t.titleHighlight}</span>
+                </h2>
+                <p class="pm-pantry-desc">
+                    {t.description.split(t.descriptionHighlight)[0]}<span class="pm-pantry-desc-highlight">{t.descriptionHighlight}</span>{t.description.split(t.descriptionHighlight)[1]}
+                </p>
+            </div>
+        </div>
+
+        <div class="pm-mission">
+            <h3 class="pm-mission-title">{t.missionTitle}</h3>
+            <div class="pm-mission-flags">
+                {flags.map((item) => <span title={item.name}>{item.flag}</span>)}
+            </div>
+            <p class="pm-mission-subtitle">{t.missionSubtitle}</p>
+        </div>
+    </div>
+</section>

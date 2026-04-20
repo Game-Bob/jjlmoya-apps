@@ -1,0 +1,60 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { PizzametricsHero } from '../types';
+
+interface Props {
+    t: PizzametricsHero;
+    stores: { appStore?: string; googlePlay?: string };
+    appId: string;
+}
+
+const { t, stores, appId } = Astro.props;
+---
+
+<header class="pm-hero">
+    <div class="pm-hero-inner">
+        <div class="pm-hero-body">
+            <img
+                src={`/assets/apps/${appId}/icon.webp`}
+                alt="Pizzametrics"
+                class="pm-hero-icon"
+            />
+
+            <h1 class="pm-hero-title">
+                {t.titleMain}<br />
+                <span class="pm-hero-title-highlight">{t.titleHighlight}</span><br />
+                {t.titleEnd}
+            </h1>
+
+            <p class="pm-hero-subtitle">{t.subtitle}</p>
+
+            <div class="pm-hero-buttons">
+                {
+                    stores.appStore && (
+                        <a href={stores.appStore} class="pm-store-btn" target="_blank" rel="noopener noreferrer">
+                            <Icon name="mdi:apple" class="pm-store-btn-icon" />
+                            <span class="pm-store-btn-text">
+                                <span class="pm-store-btn-label">{t.downloadLabelStore}</span>
+                                <span class="pm-store-btn-name">{t.downloadOnStore}</span>
+                            </span>
+                        </a>
+                    )
+                }
+                {
+                    stores.googlePlay && (
+                        <a href={stores.googlePlay} class="pm-store-btn" target="_blank" rel="noopener noreferrer">
+                            <Icon name="mdi:google-play" class="pm-store-btn-icon" />
+                            <span class="pm-store-btn-text">
+                                <span class="pm-store-btn-label">{t.downloadLabelPlay}</span>
+                                <span class="pm-store-btn-name">{t.downloadOnPlay}</span>
+                            </span>
+                        </a>
+                    )
+                }
+            </div>
+
+            <p class="pm-hero-tagline">{t.tagline}</p>
+        </div>
+
+    </div>
+</header>

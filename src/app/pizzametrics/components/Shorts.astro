@@ -1,0 +1,38 @@
+---
+import type { PizzametricsShorts } from '../types';
+
+interface Props {
+    t: PizzametricsShorts;
+    shortIds: string[];
+}
+
+const { t, shortIds } = Astro.props;
+---
+
+<section class="pm-shorts">
+    <div class="pm-shorts-inner">
+        <div class="pm-shorts-header">
+            <h2 class="pm-shorts-title">
+                {t.titleMain} <span class="pm-shorts-title-highlight">{t.titleHighlight}</span>
+            </h2>
+            <hr class="pm-shorts-divider" />
+            <p class="pm-shorts-subtitle">{t.subtitle}</p>
+        </div>
+
+        <div class="pm-shorts-grid">
+            {
+                shortIds.map((id) => (
+                    <div class="pm-short-item">
+                        <iframe
+                            src={`https://www.youtube.com/embed/${id}?rel=0&modestbranding=1&autohide=1&muted=1&controls=0`}
+                            title="Pizzametrics Short"
+                            class="pm-short-iframe"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        />
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
