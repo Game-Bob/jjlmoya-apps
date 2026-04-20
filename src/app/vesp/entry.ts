@@ -5,6 +5,7 @@ export const vespEntry: AppEntry = {
     isGame: false,
     stores: {
         appStore: 'https://apps.apple.com/es/app/vesp-equilibrador-de-c%C3%B3cteles/id6761222386',
+        googlePlay: 'https://play.google.com/store/apps/details?id=com.gamebob.cocktailequilibrator',
     },
     i18n: {
         es: () => import('./i18n/es').then((m) => m.cardContent),

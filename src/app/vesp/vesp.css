@@ -587,8 +587,33 @@
     letter-spacing: 1em;
     color: var(--vesp-text-faint);
     font-weight: 700;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     display: block;
+}
+
+.vesp-footer-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 5rem;
+}
+
+.vesp-footer-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    border: 1px solid var(--vesp-border-gold);
+    color: var(--vesp-text);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 700;
+    transition: border-color 0.3s ease;
+}
+
+.vesp-footer-btn:hover {
+    border-color: var(--vesp-gold);
 }
 
 .vesp-footer-divider {

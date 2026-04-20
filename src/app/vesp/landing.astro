@@ -1,6 +1,7 @@
 ---
 import type { KnownLocale } from '../../types';
 import { vespEntry } from './entry';
+import { localizedAppStoreUrl } from '../../app-store';
 import './vesp.css';
 import Hero from './components/Hero.astro';
 import TechSpecs from './components/TechSpecs.astro';
@@ -32,8 +33,13 @@ const loaders = {
     zh: () => import('./i18n/zh').then((m) => m.landingContent),
 };
 
-const t = await (loaders[locale as keyof typeof loaders] ?? loaders.en)();
-const { id: appId } = vespEntry;
+const t = await (loaders[locale as keyof typeof loaders] ?? loaders.es)();
+const { stores: baseStores, id: appId } = vespEntry;
+
+const stores = {
+    ...baseStores,
+    appStore: baseStores.appStore ? localizedAppStoreUrl(baseStores.appStore, locale) : undefined,
+};
 ---
 
 <div class="vesp-landing">
@@ -41,5 +47,5 @@ const { id: appId } = vespEntry;
     <TechSpecs t={t.techSpecs} />
     <Benefits t={t.benefits} />
     <Ecosystem t={t.ecosystem} {appId} />
-    <Footer t={t.footer} />
+    <Footer t={t.footer} {stores} />
 </div>

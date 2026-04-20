@@ -1,11 +1,13 @@
 ---
+import { Icon } from 'astro-icon/components';
 import type { VespFooter } from '../types';
 
 interface Props {
     t: VespFooter;
+    stores: { appStore?: string; googlePlay?: string };
 }
 
-const { t } = Astro.props;
+const { t, stores } = Astro.props;
 ---
 
 <footer class="vesp-footer">
@@ -20,6 +22,20 @@ const { t } = Astro.props;
             <span class="vesp-footer-title-highlight">{t.titleHighlight}</span>
         </h2>
         <span class="vesp-footer-cta">{t.cta}</span>
+        <div class="vesp-footer-buttons">
+            {stores.appStore && (
+                <a href={stores.appStore} target="_blank" rel="noopener noreferrer" class="vesp-footer-btn">
+                    <Icon name="mdi:apple" />
+                    <span>App Store</span>
+                </a>
+            )}
+            {stores.googlePlay && (
+                <a href={stores.googlePlay} target="_blank" rel="noopener noreferrer" class="vesp-footer-btn">
+                    <Icon name="mdi:google-play" />
+                    <span>Google Play</span>
+                </a>
+            )}
+        </div>
         <div class="vesp-footer-divider"></div>
     </div>
 </footer>

@@ -81,6 +81,6 @@ export const landingContent: VespLandingContent = {
     footer: {
         titleMain: 'Servicio',
         titleHighlight: 'PERFECTO.',
-        cta: 'Muy pronto en Stores',
+        cta: 'Disponible ahora',
     },
 };

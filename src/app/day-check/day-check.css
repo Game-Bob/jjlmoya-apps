@@ -2,35 +2,39 @@
    DAY CHECK — Design Tokens
    ============================================= */
 
-:root,
-.theme-light {
-    --dc-purple: #b185ff;
-    --dc-teal: #4ecdc4;
-    --dc-purple-glow: rgba(177, 133, 255, 0.4);
-    --dc-purple-dim: rgba(177, 133, 255, 0.1);
-    --dc-purple-border: rgba(177, 133, 255, 0.2);
-    --dc-teal-dim: rgba(78, 205, 196, 0.05);
-    --dc-bg: #020202;
-    --dc-bg-card: rgba(255, 255, 255, 0.03);
-    --dc-bg-card-dark: #111;
-    --dc-bg-footer: #121215;
-    --dc-text: #fff;
-    --dc-text-muted: rgba(255, 255, 255, 0.5);
-    --dc-text-faint: rgba(255, 255, 255, 0.3);
-    --dc-text-ultralight: rgba(255, 255, 255, 0.4);
-    --dc-border: rgba(255, 255, 255, 0.1);
-    --dc-border-faint: rgba(255, 255, 255, 0.05);
-    --dc-border-hover: rgba(255, 255, 255, 0.4);
-    --dc-shadow-card: 0 30px 60px -15px rgba(0, 0, 0, 0.8);
-    --dc-shadow-footer: 0 50px 100px -20px rgba(0, 0, 0, 1);
-    --dc-shadow-purple: 0 20px 50px -10px rgba(177, 133, 255, 0.4);
-    --dc-shadow-purple-btn: 0 15px 30px -5px rgba(177, 133, 255, 0.4);
-    --dc-card-accent-1: #4ecdc4;
-    --dc-card-accent-2: #ff85e1;
-    --dc-card-accent-3: #85b1ff;
-    --dc-card-bg-1: linear-gradient(135deg, #1a3a35, #0a1412);
-    --dc-card-bg-2: linear-gradient(135deg, #4a1a3a, #1a0a1a);
-    --dc-card-bg-3: linear-gradient(135deg, #1a2a4a, #0a0f1a);
+:root {
+    --dc-purple: #7c3aed;
+    --dc-teal: #0d9488;
+    --dc-purple-glow: rgba(124, 58, 237, 0.25);
+    --dc-purple-dim: rgba(124, 58, 237, 0.08);
+    --dc-purple-border: rgba(124, 58, 237, 0.2);
+    --dc-teal-dim: rgba(13, 148, 136, 0.08);
+    --dc-bg: #f8fafc;
+    --dc-bg-card: rgba(15, 23, 42, 0.03);
+    --dc-bg-card-dark: #f1f5f9;
+    --dc-bg-footer: #fff;
+    --dc-text: #0f172a;
+    --dc-text-muted: rgba(15, 23, 42, 0.55);
+    --dc-text-faint: rgba(15, 23, 42, 0.4);
+    --dc-text-ultralight: rgba(15, 23, 42, 0.5);
+    --dc-border: rgba(15, 23, 42, 0.1);
+    --dc-border-faint: rgba(15, 23, 42, 0.06);
+    --dc-border-hover: rgba(15, 23, 42, 0.25);
+    --dc-shadow-card: 0 30px 60px -15px rgba(15, 23, 42, 0.1);
+    --dc-shadow-footer: 0 50px 100px -20px rgba(15, 23, 42, 0.12);
+    --dc-shadow-purple: 0 20px 50px -10px rgba(124, 58, 237, 0.25);
+    --dc-shadow-purple-btn: 0 15px 30px -5px rgba(124, 58, 237, 0.25);
+    --dc-card-accent-1: #0d9488;
+    --dc-card-accent-2: #db2777;
+    --dc-card-accent-3: #3b82f6;
+    --dc-card-bg-1: linear-gradient(135deg, #e0f2f1, #b2dfdb);
+    --dc-card-bg-2: linear-gradient(135deg, #fce4ec, #f8bbd0);
+    --dc-card-bg-3: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    --dc-badge-bg: rgba(15, 23, 42, 0.05);
+    --dc-title-italic: rgba(15, 23, 42, 0.3);
+    --dc-cta-placeholder: rgba(15, 23, 42, 0.15);
+    --dc-cta-footer-shadow: rgba(15, 23, 42, 0.08);
+    --dc-emoji-glow: drop-shadow(0 0 6px rgba(15, 23, 42, 0.15));
 }
 
 .theme-dark {
@@ -61,6 +65,11 @@
     --dc-card-bg-1: linear-gradient(135deg, #1a3a35, #0a1412);
     --dc-card-bg-2: linear-gradient(135deg, #4a1a3a, #1a0a1a);
     --dc-card-bg-3: linear-gradient(135deg, #1a2a4a, #0a0f1a);
+    --dc-badge-bg: rgba(255, 255, 255, 0.05);
+    --dc-title-italic: rgba(255, 255, 255, 0.3);
+    --dc-cta-placeholder: rgba(255, 255, 255, 0.2);
+    --dc-cta-footer-shadow: rgba(255, 255, 255, 0.1);
+    --dc-emoji-glow: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
 }
 
 /* =============================================
@@ -138,7 +147,7 @@
     gap: 0.75rem;
     padding: 0.5rem 1rem;
     border-radius: 9999px;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--dc-badge-bg);
     border: 1px solid var(--dc-border);
     margin-bottom: 3rem;
     backdrop-filter: blur(12px);
@@ -167,7 +176,7 @@
 }
 
 .dc-hero-title-muted {
-    color: rgba(255, 255, 255, 0.3);
+    color: var(--dc-title-italic);
     font-style: italic;
 }
 
@@ -322,7 +331,7 @@
 .dc-card-date {
     font-size: 0.6875rem;
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--dc-text-ultralight);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     background-color: rgba(0, 0, 0, 0.2);
@@ -336,7 +345,7 @@
     transform: translateY(-5px);
     transition: all 0.5s ease;
     display: block;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+    filter: var(--dc-emoji-glow);
 }
 
 .dc-card:hover .dc-card-emoji {
@@ -395,7 +404,7 @@
 .dc-card-time-label {
     font-size: 0.5rem;
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--dc-text-ultralight);
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
@@ -439,14 +448,14 @@
     right: -2.5rem;
     width: 10rem;
     height: 10rem;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--dc-badge-bg);
     border-radius: 9999px;
     filter: blur(3rem);
     transition: background-color 0.3s ease;
 }
 
 .dc-card:hover .dc-card-glow {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--dc-badge-bg);
 }
 
 /* CTA Card */
@@ -508,7 +517,7 @@
 .dc-cta-value {
     font-size: 3.75rem;
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.2);
+    color: var(--dc-cta-placeholder);
 }
 
 .dc-cta-value-accent {
@@ -538,7 +547,7 @@
     letter-spacing: 0.2em;
     font-size: 0.75rem;
     text-decoration: none;
-    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 30px var(--dc-cta-footer-shadow);
     transition: all 0.3s ease;
 }
 

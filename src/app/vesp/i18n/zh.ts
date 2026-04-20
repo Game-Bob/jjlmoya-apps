@@ -81,6 +81,6 @@ export const landingContent: VespLandingContent = {
     footer: {
         titleMain: '服务',
         titleHighlight: '完美。',
-        cta: '即将登陆应用商店',
+        cta: '现已推出',
     },
 };
