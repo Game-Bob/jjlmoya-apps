@@ -1,0 +1,235 @@
+---
+import type { FortuneCookieChallenge } from '../types';
+
+interface Props {
+    t: FortuneCookieChallenge;
+    appId: string;
+}
+
+const { t, appId } = Astro.props;
+---
+
+<section class="challenge">
+    <div class="challenge-inner">
+        <h2 class="title">{t.title}</h2>
+
+        <div class="cookies-grid">
+            <div class="cookie-slot locked">
+                <div class="cookie-overlay"></div>
+                <img src={`/assets/apps/${appId}/cookie-crystal.webp`} alt={t.crystalLabel} class="cookie-img grayscale" />
+                <div class="cookie-label">{t.crystalLabel}</div>
+            </div>
+
+            <div class="cookie-slot featured">
+                <div class="cookie-featured-glow"></div>
+                <img src={`/assets/apps/${appId}/cookie-closed.webp`} alt={t.standardLabel} class="cookie-img float" />
+                <div class="cookie-label-featured">{t.standardLabel}</div>
+            </div>
+
+            <div class="cookie-slot locked">
+                <div class="cookie-overlay"></div>
+                <img src={`/assets/apps/${appId}/cookie-moon.webp`} alt={t.lunarLabel} class="cookie-img sepia" />
+                <div class="cookie-label">{t.lunarLabel}</div>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <div class="quote-bar"></div>
+            <p class="quote-text">"{t.quote}"</p>
+            <p class="quote-note">
+                {t.quoteNote} <span class="quote-highlight">{t.quoteHighlight}</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .challenge {
+        position: relative;
+        padding: 5rem 1.5rem;
+        overflow: hidden;
+        background: #0a0a0a;
+    }
+
+    .challenge-inner {
+        max-width: 56rem;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        z-index: 10;
+    }
+
+    .title {
+        font-family: Georgia, serif;
+        font-size: clamp(1.75rem, 4vw, 3rem);
+        font-weight: 700;
+        color: #f2e5bd;
+        margin: 0 0 3rem;
+        opacity: 0.5;
+    }
+
+    .cookies-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        justify-items: center;
+        margin-bottom: 3rem;
+    }
+
+    .cookie-slot {
+        position: relative;
+        width: 100%;
+        max-width: 200px;
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: border-color 0.5s;
+        overflow: hidden;
+    }
+
+    .cookie-slot.locked:hover {
+        border-color: rgba(191, 159, 90, 0.3);
+    }
+
+    .cookie-slot.featured {
+        max-width: 240px;
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(191, 159, 90, 0.3);
+        box-shadow: 0 0 50px -10px rgba(191, 159, 90, 0.2);
+    }
+
+    .cookie-overlay {
+        position: absolute;
+        inset: 0;
+        background: #000;
+        opacity: 0.6;
+        z-index: 10;
+        transition: opacity 0.3s;
+    }
+
+    .cookie-slot.locked:hover .cookie-overlay {
+        opacity: 0.4;
+    }
+
+    .cookie-featured-glow {
+        position: absolute;
+        inset: 0;
+        background: #bf9f5a;
+        opacity: 0.05;
+        filter: blur(1.25rem);
+        border-radius: 50%;
+    }
+
+    .cookie-img {
+        width: 8rem;
+        height: 8rem;
+        object-fit: contain;
+    }
+
+    .cookie-img.grayscale {
+        filter: grayscale(1) brightness(0.5) contrast(1.5);
+        transition: transform 0.7s;
+    }
+
+    .cookie-slot.locked:hover .cookie-img.grayscale {
+        transform: scale(1.1);
+    }
+
+    .cookie-img.sepia {
+        filter: sepia(1) brightness(1.1) saturate(2) contrast(1.25);
+        transition: transform 0.7s;
+    }
+
+    .cookie-slot.locked:hover .cookie-img.sepia {
+        transform: scale(1.1);
+    }
+
+    .cookie-img.float {
+        width: 10rem;
+        height: 10rem;
+        filter: drop-shadow(0 0 15px rgba(191, 159, 90, 0.5));
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .cookie-label {
+        position: absolute;
+        bottom: 1rem;
+        left: 0;
+        right: 0;
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        z-index: 20;
+    }
+
+    .cookie-label-featured {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 0;
+        right: 0;
+        font-size: 0.875rem;
+        font-weight: 700;
+        color: #f2e5bd;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        animation: pulse-text 2s infinite;
+    }
+
+    .quote-card {
+        background: #1a1a1a;
+        border: 1px solid rgba(191, 159, 90, 0.2);
+        padding: 2rem;
+        border-radius: 1rem;
+        max-width: 40rem;
+        margin: 0 auto;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .quote-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: #bf9f5a;
+    }
+
+    .quote-text {
+        font-size: 1.25rem;
+        font-weight: 300;
+        font-style: italic;
+        color: rgba(242, 229, 189, 0.9);
+        margin: 0 0 1rem;
+    }
+
+    .quote-note {
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.4);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    .quote-highlight {
+        color: #fff;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    @keyframes pulse-text {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.6; }
+    }
+</style>

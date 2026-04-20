@@ -1,0 +1,337 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { FortuneCookieStreak } from '../types';
+
+interface Props {
+    t: FortuneCookieStreak;
+    appId: string;
+}
+
+const { t, appId } = Astro.props;
+---
+
+<section class="streak">
+    <div class="bg-grid"></div>
+
+    <div class="streak-inner">
+        <div class="streak-text">
+            <h2 class="title">
+                {t.title.split(' ').slice(0, -1).join(' ')} <span class="title-accent">{t.title.split(' ').at(-1)}</span>
+            </h2>
+            <p class="description">
+                {t.description} <span class="description-highlight">{t.descriptionHighlight}</span>
+            </p>
+
+            <div class="countdown-row">
+                <div class="countdown-box">
+                    <Icon name="mdi:clock-alert-outline" class="countdown-icon" />
+                    <span id="cookie-countdown" class="countdown-text">{t.countdownPrefix}</span>
+                </div>
+                <p class="tomorrow-note">{t.tomorrowNote}</p>
+            </div>
+        </div>
+
+        <div class="calendar-card">
+            <div class="calendar-glow"></div>
+
+            <div class="calendar-grid">
+                {
+                    Array.from({ length: 12 }).map((_, i) => {
+                        const imgs = { 2: `cookie-moon.webp`, 5: `cookie-crystal.webp`, 8: `cookie-moon.webp` } as Record<number, string>;
+                        const img = imgs[i] ?? 'cookie-closed.webp';
+                        const filled = i < 10;
+                        return (
+                            <div class:list={['calendar-cell', { filled, today: i === 10 }]}>
+                                {filled && i !== 10 && (
+                                    <img src={`/assets/apps/${appId}/${img}`} alt="cookie" class="cell-img" />
+                                )}
+                                {i === 10 && (
+                                    <div class="today-indicator">
+                                        <span class="today-label">{t.todayLabel}</span>
+                                    </div>
+                                )}
+                            </div>
+                        );
+                    })
+                }
+            </div>
+
+            <div class="calendar-footer">
+                <div class="calendar-stat">
+                    <div class="stat-label">{t.altarLabel}</div>
+                    <div class="stat-value">{t.dayPrefix} 10</div>
+                </div>
+                <div class="calendar-stat right">
+                    <div class="stat-label">{t.nextMilestoneLabel}</div>
+                    <div class="stat-value muted">{t.dayPrefix} 14</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function updateCountdown(prefix: string) {
+        const now = new Date();
+        const tomorrow = new Date(now);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        tomorrow.setHours(0, 0, 0, 0);
+
+        const diff = tomorrow.getTime() - now.getTime();
+        const h = Math.floor(diff / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+
+        const el = document.getElementById('cookie-countdown');
+        if (el) el.textContent = `${prefix} ${h}h ${m}m ${s}s`;
+    }
+
+    const el = document.getElementById('cookie-countdown');
+    const prefix = el?.textContent ?? '';
+    setInterval(() => updateCountdown(prefix), 1000);
+    updateCountdown(prefix);
+</script>
+
+<style>
+    .streak {
+        position: relative;
+        padding: 6rem 1.5rem;
+        overflow: hidden;
+        background: #000;
+    }
+
+    .bg-grid {
+        position: absolute;
+        inset: 0;
+        opacity: 0.2;
+        background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+    }
+
+    .streak-inner {
+        max-width: 72rem;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+        position: relative;
+        z-index: 10;
+    }
+
+    @media (min-width: 768px) {
+        .streak-inner {
+            flex-direction: row;
+        }
+    }
+
+    .streak-text {
+        width: 100%;
+        text-align: left;
+    }
+
+    @media (min-width: 768px) {
+        .streak-text { width: 50%; }
+    }
+
+    .title {
+        font-family: Georgia, serif;
+        font-size: clamp(2rem, 5vw, 3.75rem);
+        font-weight: 700;
+        color: #f2e5bd;
+        margin: 0 0 2rem;
+        line-height: 1.1;
+    }
+
+    .title-accent {
+        color: #bf9f5a;
+    }
+
+    .description {
+        font-size: 1.25rem;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.6);
+        margin: 0 0 2rem;
+        line-height: 1.6;
+    }
+
+    .description-highlight {
+        color: #fff;
+        font-weight: 500;
+        border-bottom: 1px solid #bf9f5a;
+    }
+
+    .countdown-row {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .countdown-box {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background: #111;
+        padding: 1rem;
+        border-radius: 0.75rem;
+        border: 1px solid rgba(191, 159, 90, 0.3);
+        font-family: monospace;
+        width: fit-content;
+    }
+
+    .countdown-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        color: #bf9f5a;
+        flex-shrink: 0;
+    }
+
+    .countdown-text {
+        font-size: 0.875rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #f2e5bd;
+    }
+
+    .tomorrow-note {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin: 0;
+    }
+
+    .calendar-card {
+        width: 100%;
+        position: relative;
+        background: #1a1a1a;
+        padding: 2rem;
+        border-radius: 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        transition: border-color 0.5s;
+    }
+
+    @media (min-width: 768px) {
+        .calendar-card { width: 50%; }
+    }
+
+    .calendar-card:hover {
+        border-color: rgba(191, 159, 90, 0.2);
+    }
+
+    .calendar-glow {
+        position: absolute;
+        top: -2.5rem;
+        right: -2.5rem;
+        width: 10rem;
+        height: 10rem;
+        background: #bf9f5a;
+        opacity: 0.1;
+        filter: blur(5rem);
+        border-radius: 50%;
+    }
+
+    .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        aspect-ratio: 1;
+    }
+
+    .calendar-cell {
+        position: relative;
+        border-radius: 0.75rem;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 1;
+    }
+
+    .calendar-cell.filled {
+        border-color: rgba(191, 159, 90, 0.2);
+        background: rgba(191, 159, 90, 0.05);
+        transition: transform 0.3s;
+    }
+
+    .calendar-card:hover .calendar-cell.filled {
+        transform: scale(1.02);
+    }
+
+    .calendar-cell.today {
+        animation: pulse-cell 2s infinite;
+        border-color: rgba(191, 159, 90, 0.3);
+    }
+
+    .cell-img {
+        width: 75%;
+        height: 75%;
+        object-fit: contain;
+    }
+
+    .today-indicator {
+        position: absolute;
+        inset: 0;
+        background: rgba(191, 159, 90, 0.1);
+        border-radius: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .today-label {
+        font-size: 0.625rem;
+        font-weight: 700;
+        color: #bf9f5a;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .calendar-card:hover .today-label {
+        opacity: 1;
+    }
+
+    .calendar-footer {
+        margin-top: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    .calendar-stat {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .calendar-stat.right {
+        text-align: right;
+    }
+
+    .stat-label {
+        font-size: 0.625rem;
+        color: rgba(255, 255, 255, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        margin-bottom: 0.25rem;
+    }
+
+    .stat-value {
+        font-family: Georgia, serif;
+        font-size: 1.875rem;
+        color: #f2e5bd;
+    }
+
+    .stat-value.muted {
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    @keyframes pulse-cell {
+        0%, 100% { background: rgba(191, 159, 90, 0.1); }
+        50% { background: rgba(191, 159, 90, 0.2); }
+    }
+</style>

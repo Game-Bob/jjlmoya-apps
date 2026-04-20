@@ -1,0 +1,138 @@
+---
+import type { FortuneCookieShowcase } from '../types';
+
+interface Props {
+    t: FortuneCookieShowcase;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="showcase">
+    <div class="showcase-inner">
+        <div class="showcase-text">
+            <h2 class="title">
+                {t.titleStart} <span class="title-accent">{t.titleHighlight}</span> {t.titleEnd}
+            </h2>
+            <p class="description">{t.description}</p>
+        </div>
+
+        <div class="video-wrapper">
+            <div class="video-glow"></div>
+            <div class="video-frame">
+                <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/Toe9oMcfArg?autoplay=1&mute=1&loop=1&playlist=Toe9oMcfArg&controls=0&showinfo=0&rel=0&modestbranding=1"
+                    title="Showcase Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    class="video-embed"
+                ></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .showcase {
+        position: relative;
+        padding: 8rem 1.5rem;
+        background: #000;
+        overflow: hidden;
+    }
+
+    .showcase-inner {
+        max-width: 80rem;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    @media (min-width: 768px) {
+        .showcase-inner {
+            flex-direction: row;
+        }
+    }
+
+    .showcase-text {
+        width: 100%;
+        position: relative;
+        z-index: 10;
+    }
+
+    @media (min-width: 768px) {
+        .showcase-text { width: 50%; }
+    }
+
+    .title {
+        font-family: Georgia, serif;
+        font-size: clamp(2rem, 5vw, 3.75rem);
+        font-weight: 700;
+        color: #fff;
+        margin: 0 0 2rem;
+        line-height: 1.1;
+    }
+
+    .title-accent {
+        color: #bf9f5a;
+    }
+
+    .description {
+        font-size: 1.25rem;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .video-wrapper {
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        transition: opacity 0.5s;
+    }
+
+    @media (min-width: 768px) {
+        .video-wrapper { width: 50%; }
+    }
+
+    .video-glow {
+        position: absolute;
+        inset: -1rem;
+        background: #bf9f5a;
+        opacity: 0.2;
+        filter: blur(3rem);
+        transition: opacity 0.3s;
+    }
+
+    .video-wrapper:hover .video-glow {
+        opacity: 0.3;
+    }
+
+    .video-frame {
+        position: relative;
+        width: 100%;
+        max-width: 320px;
+        aspect-ratio: 9/16;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .video-embed {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        pointer-events: none;
+        opacity: 0.8;
+        transition: opacity 0.3s;
+    }
+
+    .video-wrapper:hover .video-embed {
+        opacity: 1;
+    }
+</style>

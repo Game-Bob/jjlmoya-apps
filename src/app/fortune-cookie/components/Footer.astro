@@ -1,0 +1,165 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { FortuneCookieFooter } from '../types';
+
+interface Props {
+    t: FortuneCookieFooter;
+    stores: { googlePlay?: string; appStore?: string };
+}
+
+const { t, stores } = Astro.props;
+---
+
+<footer class="app-footer">
+    <div class="footer-glow"></div>
+
+    <div class="footer-inner">
+        <div class="footer-cta">
+            <h3 class="footer-title">{t.title}</h3>
+            <p class="footer-subtitle">{t.subtitle}</p>
+        </div>
+
+        <div class="store-buttons">
+            {
+                stores.appStore && (
+                    <a href={stores.appStore} target="_blank" class="store-btn">
+                        <Icon name="mdi:apple" class="store-icon" />
+                        <div class="store-text">
+                            <span class="store-prefix">{t.downloadPrefix}</span>
+                            <span class="store-name">App Store</span>
+                        </div>
+                    </a>
+                )
+            }
+            {
+                stores.googlePlay && (
+                    <a href={stores.googlePlay} target="_blank" class="store-btn">
+                        <Icon name="mdi:google-play" class="store-icon" />
+                        <div class="store-text">
+                            <span class="store-prefix">{t.downloadPrefix}</span>
+                            <span class="store-name">Google Play</span>
+                        </div>
+                    </a>
+                )
+            }
+        </div>
+    </div>
+</footer>
+
+<style>
+    .app-footer {
+        position: relative;
+        padding: 6rem 1.5rem;
+        background: #000;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .footer-glow {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at center, rgba(191, 159, 90, 0.05) 0%, transparent 70%);
+        filter: blur(100px);
+        pointer-events: none;
+    }
+
+    .footer-inner {
+        max-width: 56rem;
+        margin: 0 auto;
+        position: relative;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-cta {
+        margin-bottom: 3rem;
+    }
+
+    .footer-title {
+        font-family: Georgia, serif;
+        font-size: clamp(2rem, 5vw, 3.75rem);
+        font-weight: 900;
+        color: #f2e5bd;
+        margin: 0 0 1rem;
+    }
+
+    .footer-subtitle {
+        font-size: 1.25rem;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.5);
+        max-width: 32rem;
+        margin: 0 auto;
+    }
+
+    .store-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .store-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem 3rem;
+        background: transparent;
+        color: #f2e5bd;
+        border: 1px solid #bf9f5a;
+        border-radius: 100px;
+        text-decoration: none;
+        transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .store-btn:hover {
+        background: #bf9f5a;
+        color: #000;
+        transform: translateY(-5px);
+        box-shadow: 0 20px 50px -15px rgba(191, 159, 90, 0.4);
+    }
+
+    .store-icon {
+        width: 2rem;
+        height: 2rem;
+        color: #f2e5bd;
+        transition: color 0.3s;
+    }
+
+    .store-btn:hover .store-icon {
+        color: #000;
+    }
+
+    .store-text {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .store-prefix {
+        font-size: 0.625rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        opacity: 0.5;
+        color: #f2e5bd;
+        transition: color 0.3s, opacity 0.3s;
+    }
+
+    .store-btn:hover .store-prefix {
+        color: #000;
+        opacity: 1;
+    }
+
+    .store-name {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #f2e5bd;
+        transition: color 0.3s;
+    }
+
+    .store-btn:hover .store-name {
+        color: #000;
+    }
+</style>

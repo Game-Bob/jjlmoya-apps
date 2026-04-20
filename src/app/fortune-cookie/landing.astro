@@ -1,0 +1,81 @@
+---
+import type { KnownLocale } from '../../types';
+import { fortuneCookieEntry } from './entry';
+import Hero from './components/Hero.astro';
+import Challenge from './components/Challenge.astro';
+import Streak from './components/Streak.astro';
+import Showcase from './components/Showcase.astro';
+import Events from './components/Events.astro';
+import Shorts from './components/Shorts.astro';
+import Footer from './components/Footer.astro';
+
+interface Props {
+    locale: KnownLocale;
+}
+
+const { locale } = Astro.props;
+
+const loaders = {
+    es: () => import('./i18n/es').then((m) => m.landingContent),
+    en: () => import('./i18n/en').then((m) => m.landingContent),
+    fr: () => import('./i18n/fr').then((m) => m.landingContent),
+    de: () => import('./i18n/de').then((m) => m.landingContent),
+    it: () => import('./i18n/it').then((m) => m.landingContent),
+    pt: () => import('./i18n/pt').then((m) => m.landingContent),
+    nl: () => import('./i18n/nl').then((m) => m.landingContent),
+    sv: () => import('./i18n/sv').then((m) => m.landingContent),
+    pl: () => import('./i18n/pl').then((m) => m.landingContent),
+    id: () => import('./i18n/id').then((m) => m.landingContent),
+    tr: () => import('./i18n/tr').then((m) => m.landingContent),
+    ru: () => import('./i18n/ru').then((m) => m.landingContent),
+    ja: () => import('./i18n/ja').then((m) => m.landingContent),
+    ko: () => import('./i18n/ko').then((m) => m.landingContent),
+    zh: () => import('./i18n/zh').then((m) => m.landingContent),
+};
+
+const t = await (loaders[locale] ?? loaders.en)();
+const { stores, id: appId, shorts = [] } = fortuneCookieEntry;
+
+const cardLoader = fortuneCookieEntry.i18n[locale] ?? fortuneCookieEntry.i18n.en;
+const card = await cardLoader!();
+---
+
+<div class="landing">
+    <Hero t={t.hero} {stores} {appId} appTitle={card.title} />
+    <Challenge t={t.challenge} {appId} />
+    <Streak t={t.streak} {appId} />
+    <Showcase t={t.showcase} />
+    <Events t={t.events} {appId} />
+    <Shorts t={t.shorts} {shorts} />
+    <Footer t={t.footer} {stores} />
+</div>
+
+<style>
+    .landing {
+        min-height: 100vh;
+        background: #050505;
+        color: #fff;
+        overflow-x: hidden;
+        font-family: system-ui, sans-serif;
+        selection: auto;
+    }
+
+    .landing ::selection {
+        background: #bf9f5a;
+        color: #000;
+    }
+
+    :global(::-webkit-scrollbar) {
+        width: 8px;
+        background: #050505;
+    }
+
+    :global(::-webkit-scrollbar-thumb) {
+        background: #333;
+        border-radius: 4px;
+    }
+
+    :global(::-webkit-scrollbar-thumb:hover) {
+        background: #bf9f5a;
+    }
+</style>

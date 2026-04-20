@@ -1,0 +1,248 @@
+---
+import type { FortuneCookieEvents } from '../types';
+
+interface EventColors {
+    primary: string;
+    accent: string;
+    bgFrom: string;
+    bgTo: string;
+}
+
+const EVENT_COLORS: EventColors[] = [
+    { primary: '#fb7185', accent: '#fecdd3', bgFrom: '#881337', bgTo: '#4c0519' },
+    { primary: '#fbbf24', accent: '#fef3c7', bgFrom: '#7f1d1d', bgTo: '#450a0a' },
+];
+
+interface Props {
+    t: FortuneCookieEvents;
+    appId: string;
+}
+
+const { t, appId } = Astro.props;
+
+const eventImages = ['cookie-valentine.webp', 'cookie-lunar-cracked.webp'];
+---
+
+<section class="events">
+    <div class="events-inner">
+        <div class="events-header">
+            <h2 class="title">{t.title}</h2>
+            <div class="divider"></div>
+            <p class="subtitle">{t.subtitle}</p>
+        </div>
+
+        <div class="events-grid">
+            {
+                t.items.map((event, i) => {
+                    const colors = EVENT_COLORS[i % EVENT_COLORS.length]!;
+                    const img = eventImages[i % eventImages.length]!;
+                    return (
+                        <div class="event-card">
+                            <div
+                                class="event-bg"
+                                style={`background-image: linear-gradient(135deg, ${colors.bgFrom} 0%, ${colors.bgTo} 100%);`}
+                            />
+                            <div class="event-shine" />
+                            <div class="event-content">
+                                <div class="event-date-wrapper">
+                                    <span class="event-date" style={`color: ${colors.primary}`}>
+                                        {event.date}
+                                    </span>
+                                </div>
+                                <h3 class="event-name" style={`color: ${colors.accent}`}>
+                                    {event.name}
+                                </h3>
+                                <p class="event-description">{event.description}</p>
+                                <div class="event-img-wrapper">
+                                    <div
+                                        class="event-img-glow"
+                                        style={`background-color: ${colors.primary}`}
+                                    />
+                                    <img
+                                        src={`/assets/apps/${appId}/${img}`}
+                                        alt={event.name}
+                                        class="event-img"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    );
+                })
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    .events {
+        position: relative;
+        padding: 6rem 1.5rem;
+        background: #050505;
+        overflow: hidden;
+    }
+
+    .events-inner {
+        max-width: 72rem;
+        margin: 0 auto;
+    }
+
+    .events-header {
+        text-align: center;
+        margin-bottom: 4rem;
+        position: relative;
+        z-index: 10;
+    }
+
+    .title {
+        font-family: Georgia, serif;
+        font-size: clamp(1.75rem, 4vw, 3rem);
+        font-weight: 700;
+        color: #fff;
+        margin: 0 0 1rem;
+    }
+
+    .divider {
+        width: 5rem;
+        height: 1px;
+        background: rgba(191, 159, 90, 0.3);
+        margin: 0 auto 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.25rem;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.5);
+        max-width: 40rem;
+        margin: 0 auto;
+    }
+
+    .events-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem 3rem;
+    }
+
+    @media (min-width: 768px) {
+        .events-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .event-card {
+        position: relative;
+        border-radius: 2.5rem;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: border-color 0.5s;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .event-card:hover {
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .event-bg {
+        position: absolute;
+        inset: 0;
+        opacity: 0.6;
+        transition: opacity 0.3s;
+    }
+
+    .event-shine {
+        position: absolute;
+        inset: -100%;
+        background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+        transform: rotate(45deg) translateY(100%);
+        transition: transform 1s ease-in-out;
+        pointer-events: none;
+    }
+
+    .event-card:hover .event-shine {
+        transform: rotate(45deg) translateY(-200%);
+    }
+
+    .event-content {
+        position: relative;
+        z-index: 10;
+        padding: 2rem 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .event-date-wrapper {
+        margin-bottom: 0.5rem;
+    }
+
+    .event-date {
+        display: inline-block;
+        padding: 0.25rem 1rem;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(4px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .event-name {
+        font-family: Georgia, serif;
+        font-size: clamp(1.5rem, 3vw, 2.25rem);
+        font-weight: 700;
+        margin: 0 0 1rem;
+    }
+
+    .event-description {
+        font-size: 1.125rem;
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 300;
+        margin: 0 0 2rem;
+        max-width: 22rem;
+        line-height: 1.6;
+    }
+
+    .event-img-wrapper {
+        position: relative;
+        transition: transform 0.7s;
+    }
+
+    .event-card:hover .event-img-wrapper {
+        transform: scale(1.1);
+    }
+
+    .event-img-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 12rem;
+        height: 12rem;
+        border-radius: 50%;
+        filter: blur(3.75rem);
+        opacity: 0.4;
+        animation: pulse-glow 6s ease-in-out infinite;
+    }
+
+    .event-img {
+        width: 12rem;
+        height: 12rem;
+        object-fit: contain;
+        position: relative;
+        z-index: 10;
+        filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5));
+        animation: float-slow 8s ease-in-out infinite;
+    }
+
+    @keyframes float-slow {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-15px) rotate(2deg); }
+    }
+
+    @keyframes pulse-glow {
+        0%, 100% { opacity: 0.4; }
+        50% { opacity: 0.6; }
+    }
+</style>

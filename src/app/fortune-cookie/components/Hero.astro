@@ -1,0 +1,302 @@
+---
+import { Icon } from 'astro-icon/components';
+import QRCode from 'qrcode';
+import type { FortuneCookieHero } from '../types';
+
+interface Props {
+    t: FortuneCookieHero;
+    stores: { googlePlay?: string; appStore?: string };
+    appId: string;
+    appTitle: string;
+}
+
+const { t, stores, appId, appTitle } = Astro.props;
+
+const qrCodeUrl = await QRCode.toDataURL(
+    stores.appStore ?? stores.googlePlay ?? 'https://gamebob.app',
+    { color: { dark: '#BF9F5A', light: '#00000000' }, margin: 1, width: 200 }
+);
+---
+
+<section class="hero">
+    <div class="hero-bg">
+        <div class="glow glow-top"></div>
+        <div class="glow glow-bottom"></div>
+    </div>
+
+    <div class="hero-content">
+        <div class="icon-wrapper">
+            <div class="icon-glow"></div>
+            <img
+                src={`/assets/apps/${appId}/icon.webp`}
+                alt={appTitle}
+                class="app-icon"
+            />
+        </div>
+
+        <h1 class="tagline">{t.tagline}</h1>
+        <p class="description">{t.description}</p>
+
+        <div class="store-buttons">
+            {
+                stores.appStore && (
+                    <a href={stores.appStore} target="_blank" class="store-btn">
+                        <Icon name="mdi:apple" class="store-icon" />
+                        <span>App Store</span>
+                    </a>
+                )
+            }
+            {
+                stores.googlePlay && (
+                    <a href={stores.googlePlay} target="_blank" class="store-btn">
+                        <Icon name="mdi:google-play" class="store-icon" />
+                        <span>Google Play</span>
+                    </a>
+                )
+            }
+        </div>
+
+        <div class="qr-wrapper">
+            <div class="qr-glow"></div>
+            <div class="qr-card">
+                <img src={qrCodeUrl} alt={t.scanLabel} class="qr-img" />
+                <span class="qr-label">{t.scanLabel}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-indicator">
+        <Icon name="mdi:chevron-down" class="scroll-icon" />
+    </div>
+</section>
+
+<style>
+    .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 5rem 1.5rem 2.5rem;
+        overflow: hidden;
+    }
+
+    .hero-bg {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+    }
+
+    .glow {
+        position: absolute;
+        border-radius: 50%;
+        background: #bf9f5a;
+        filter: blur(100px);
+        animation: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    .glow-top {
+        top: 25%;
+        left: 25%;
+        width: 500px;
+        height: 500px;
+        opacity: 0.05;
+    }
+
+    .glow-bottom {
+        bottom: 25%;
+        right: 25%;
+        width: 400px;
+        height: 400px;
+        opacity: 0.03;
+        animation-delay: 1s;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 10;
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .icon-wrapper {
+        position: relative;
+        margin-bottom: 3rem;
+        cursor: default;
+    }
+
+    .icon-glow {
+        position: absolute;
+        inset: 0;
+        background: #bf9f5a;
+        filter: blur(2rem);
+        opacity: 0.2;
+        transition: opacity 0.7s;
+    }
+
+    .icon-wrapper:hover .icon-glow {
+        opacity: 0.3;
+    }
+
+    .app-icon {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 2.5rem;
+        position: relative;
+        z-index: 10;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.5s;
+    }
+
+    .icon-wrapper:hover .app-icon {
+        transform: scale(1.05);
+    }
+
+    .tagline {
+        font-size: clamp(2.5rem, 8vw, 5rem);
+        font-family: Georgia, serif;
+        font-weight: 900;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        margin: 0 0 2rem;
+        background: linear-gradient(180deg, #f2e5bd 0%, #bf9f5a 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .description {
+        font-size: 1.25rem;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.6);
+        max-width: 40rem;
+        margin: 0 0 3rem;
+        line-height: 1.6;
+    }
+
+    .store-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem 1.5rem;
+    }
+
+    .store-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem 2rem;
+        background: #bf9f5a;
+        color: #000;
+        border-radius: 100px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        box-shadow: 0 10px 30px -10px rgba(191, 159, 90, 0.5);
+    }
+
+    .store-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px -10px rgba(191, 159, 90, 0.7);
+        filter: brightness(1.1);
+    }
+
+    .store-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        transition: transform 0.3s;
+    }
+
+    .store-btn:hover .store-icon {
+        transform: scale(1.1);
+    }
+
+    .qr-wrapper {
+        position: relative;
+        margin-top: 3rem;
+        display: none;
+    }
+
+    @media (min-width: 768px) {
+        .qr-wrapper {
+            display: block;
+        }
+    }
+
+    .qr-glow {
+        position: absolute;
+        inset: 0;
+        background: #bf9f5a;
+        filter: blur(1.25rem);
+        opacity: 0.2;
+        border-radius: 0.75rem;
+        transition: opacity 0.3s;
+    }
+
+    .qr-wrapper:hover .qr-glow {
+        opacity: 0.4;
+    }
+
+    .qr-card {
+        position: relative;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(4px);
+        padding: 1rem;
+        border-radius: 0.75rem;
+        border: 1px solid rgba(191, 159, 90, 0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        transition: transform 0.3s;
+    }
+
+    .qr-wrapper:hover .qr-card {
+        transform: scale(1.05);
+    }
+
+    .qr-img {
+        width: 8rem;
+        height: 8rem;
+        opacity: 0.9;
+    }
+
+    .qr-label {
+        font-size: 0.625rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: rgba(242, 229, 189, 0.7);
+    }
+
+    .scroll-indicator {
+        position: absolute;
+        bottom: 2.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: bounce 2s infinite;
+        opacity: 0.3;
+    }
+
+    .scroll-icon {
+        width: 2rem;
+        height: 2rem;
+        color: #bf9f5a;
+    }
+
+    @keyframes pulse-slow {
+        0%, 100% { opacity: 0.05; transform: scale(1); }
+        50% { opacity: 0.1; transform: scale(1.1); }
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateX(-50%) translateY(0); }
+        50% { transform: translateX(-50%) translateY(-10px); }
+    }
+</style>

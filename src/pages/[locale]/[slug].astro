@@ -1,0 +1,63 @@
+---
+import PreviewLayout from '../../layouts/PreviewLayout.astro';
+import PreviewNavSidebar from '../../components/PreviewNavSidebar.astro';
+import { ALL_APP_DEFINITIONS } from '../../entries';
+import type { KnownLocale, AppCardContent, AppDefinition } from '../../types';
+
+export async function getStaticPaths() {
+    const paths = [];
+
+    for (const def of ALL_APP_DEFINITIONS) {
+        const localeEntries = Object.entries(def.entry.i18n) as [KnownLocale, () => Promise<AppCardContent>][];
+
+        const localeCards = await Promise.all(
+            localeEntries.map(async ([locale, loader]) => ({ locale, card: await loader() }))
+        );
+
+        const localeUrls: Partial<Record<KnownLocale, string>> = {};
+        for (const { locale, card } of localeCards) {
+            localeUrls[locale] = `/${locale}/${card.slug}`;
+        }
+
+        const allAppsNav = await Promise.all(
+            ALL_APP_DEFINITIONS.map(async ({ entry }) => ({
+                id: entry.id,
+                i18n: entry.i18n,
+            }))
+        );
+
+        for (const { locale, card } of localeCards) {
+            const nav = await Promise.all(
+                allAppsNav.map(async ({ id, i18n }) => {
+                    const navLoader = i18n[locale] ?? i18n.en;
+                    const navCard = await navLoader!();
+                    return { id, title: navCard.title, href: `/${locale}/${navCard.slug}`, isActive: id === def.entry.id };
+                })
+            );
+
+            paths.push({
+                params: { locale, slug: card.slug },
+                props: { def, locale, card, localeUrls, nav },
+            });
+        }
+    }
+
+    return paths;
+}
+
+interface Props {
+    def: AppDefinition;
+    locale: KnownLocale;
+    card: AppCardContent;
+    localeUrls: Partial<Record<KnownLocale, string>>;
+    nav: { id: string; title: string; href: string; isActive: boolean }[];
+}
+
+const { def, locale, card, localeUrls, nav } = Astro.props;
+const { default: LandingComponent } = await def.LandingComponent();
+---
+
+<PreviewLayout title={card.title} currentLocale={locale} localeUrls={localeUrls} hasSidebar={true}>
+    <PreviewNavSidebar slot="sidebar" categoryTitle="Apps" apps={nav} />
+    <LandingComponent locale={locale} />
+</PreviewLayout>
