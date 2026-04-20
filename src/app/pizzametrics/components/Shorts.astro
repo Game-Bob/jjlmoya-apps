@@ -24,10 +24,10 @@ const { t, shortIds } = Astro.props;
                 shortIds.map((id) => (
                     <div class="pm-short-item">
                         <iframe
-                            src={`https://www.youtube.com/embed/${id}?rel=0&modestbranding=1&autohide=1&muted=1&controls=0`}
+                            src={`https://www.youtube.com/embed/${id}?rel=0&modestbranding=1&autohide=1&controls=1`}
                             title="Pizzametrics Short"
                             class="pm-short-iframe"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen
                         />
                     </div>
