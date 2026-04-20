@@ -1,0 +1,55 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { FastTaskIntegrations } from '../types';
+
+interface Props {
+    t: FastTaskIntegrations;
+    appId: string;
+}
+
+const { t, appId } = Astro.props;
+
+const integrations = [
+    { file: 'github.svg', name: 'GitHub', active: true },
+    { file: 'linear.svg', name: 'Linear', active: true },
+    { file: 'make.svg', name: 'Make', active: true },
+    { file: 'discord.svg', name: 'Discord', active: false },
+];
+---
+
+<section class="ft-integrations">
+    <div class="ft-integrations-inner">
+        <div class="ft-integrations-grid">
+            {integrations.map((item) => (
+                <div class:list={['ft-integration-card', !item.active && 'ft-integration-coming']}>
+                    <img
+                        src={`/assets/apps/${appId}/integrations/${item.file}`}
+                        alt={item.name}
+                        class="ft-integration-logo"
+                    />
+                    <span class="ft-integration-name">
+                        {item.active ? item.name : t.comingSoon}
+                    </span>
+                </div>
+            ))}
+        </div>
+
+        <div class="ft-integrations-text">
+            <span class="ft-integrations-label">{t.label}</span>
+            <h2 class="ft-integrations-title">
+                {t.titleMain} <span class="ft-integrations-title-highlight">{t.titleHighlight}</span>
+            </h2>
+            <p class="ft-integrations-desc">{t.description}</p>
+            <div class="ft-integrations-cta">
+                <p class="ft-integrations-cta-title">{t.ctaTitle}</p>
+                <a
+                    href="mailto:juanjo1989@gmail.com"
+                    class="ft-integrations-cta-link"
+                >
+                    {t.ctaLinkText}
+                    <Icon name="mdi:arrow-right" class="ft-integrations-cta-link-icon" />
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

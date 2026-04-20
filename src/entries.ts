@@ -4,6 +4,7 @@ import { lexiCrashEntry } from './app/lexi-crash/entry';
 import { pizzametricsEntry } from './app/pizzametrics/entry';
 import { vespEntry } from './app/vesp/entry';
 import { dayCheckEntry } from './app/day-check/entry';
+import { fastTaskEntry } from './app/fast-task/entry';
 
 export const ALL_APP_DEFINITIONS: AppDefinition[] = [
     {
@@ -25,5 +26,9 @@ export const ALL_APP_DEFINITIONS: AppDefinition[] = [
     {
         entry: dayCheckEntry,
         LandingComponent: () => import('./app/day-check/landing.astro'),
+    },
+    {
+        entry: fastTaskEntry,
+        LandingComponent: () => import('./app/fast-task/landing.astro'),
     },
 ];

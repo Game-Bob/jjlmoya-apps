@@ -1,0 +1,58 @@
+---
+import type { KnownLocale } from '../../types';
+import { fastTaskEntry } from './entry';
+import { localizedAppStoreUrl } from '../../app-store';
+import './fast-task.css';
+import Hero from './components/Hero.astro';
+import Concept from './components/Concept.astro';
+import Simulation from './components/Simulation.astro';
+import Integrations from './components/Integrations.astro';
+import EarlyAdopter from './components/EarlyAdopter.astro';
+import Enterprise from './components/Enterprise.astro';
+import Gallery from './components/Gallery.astro';
+import Footer from './components/Footer.astro';
+
+interface Props {
+    locale: KnownLocale;
+}
+
+const { locale } = Astro.props;
+
+const loaders = {
+    es: () => import('./i18n/es').then((m) => m.landingContent),
+    de: () => import('./i18n/de').then((m) => m.landingContent),
+    en: () => import('./i18n/en').then((m) => m.landingContent),
+    fr: () => import('./i18n/fr').then((m) => m.landingContent),
+    id: () => import('./i18n/id').then((m) => m.landingContent),
+    it: () => import('./i18n/it').then((m) => m.landingContent),
+    ja: () => import('./i18n/ja').then((m) => m.landingContent),
+    ko: () => import('./i18n/ko').then((m) => m.landingContent),
+    nl: () => import('./i18n/nl').then((m) => m.landingContent),
+    pl: () => import('./i18n/pl').then((m) => m.landingContent),
+    pt: () => import('./i18n/pt').then((m) => m.landingContent),
+    ru: () => import('./i18n/ru').then((m) => m.landingContent),
+    sv: () => import('./i18n/sv').then((m) => m.landingContent),
+    tr: () => import('./i18n/tr').then((m) => m.landingContent),
+    zh: () => import('./i18n/zh').then((m) => m.landingContent),
+};
+
+const t = await (loaders[locale as keyof typeof loaders] ?? loaders.en)();
+const { stores: baseStores, id: appId } = fastTaskEntry;
+
+const stores = {
+    ...baseStores,
+    appStore: baseStores.appStore ? localizedAppStoreUrl(baseStores.appStore, locale) : undefined,
+};
+---
+
+<div class="ft-landing">
+    <div class="ft-noise"></div>
+    <Hero t={t.hero} {stores} {appId} {locale} />
+    <Concept t={t.concept} tBenefits={t.benefits} />
+    <Simulation t={t.simulation} />
+    <Integrations t={t.integrations} {appId} />
+    <EarlyAdopter t={t.earlyAdopter} />
+    <Enterprise t={t.enterprise} />
+    <Gallery t={t.gallery} {appId} />
+    <Footer t={t.footer} {stores} />
+</div>

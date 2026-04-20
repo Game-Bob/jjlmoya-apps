@@ -1,0 +1,32 @@
+---
+import type { FastTaskEarlyAdopter } from '../types';
+
+interface Props {
+    t: FastTaskEarlyAdopter;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="ft-early">
+    <div class="ft-early-inner">
+        <span class="ft-early-badge">{t.badge}</span>
+        <h2 class="ft-early-title">
+            {t.titleMain} <span class="ft-early-title-highlight">{t.titleHighlight}</span>
+        </h2>
+        <p class="ft-early-desc">{t.description}</p>
+        <div class="ft-early-card">
+            <div class="ft-early-count-row">
+                <span class="ft-early-count">33/100</span>
+                <span class="ft-early-count-label">{t.countLabel}</span>
+            </div>
+            <p class="ft-early-count-note">{t.countNote}</p>
+            <a
+                href="mailto:juanjo1989@gmail.com?subject=Fast%20Task%20Early%20Adopter"
+                class="ft-early-cta"
+            >
+                {t.cta}
+            </a>
+        </div>
+    </div>
+</section>

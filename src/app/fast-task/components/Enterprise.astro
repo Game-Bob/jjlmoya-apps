@@ -1,0 +1,76 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { FastTaskEnterprise } from '../types';
+
+interface Props {
+    t: FastTaskEnterprise;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="ft-enterprise">
+    <div class="ft-enterprise-inner">
+        <div>
+            <span class="ft-enterprise-label">{t.label}</span>
+            <h2 class="ft-enterprise-title">
+                {t.titleMain}<br />
+                <span class="ft-enterprise-title-highlight">{t.titleHighlight}</span>
+            </h2>
+            <p class="ft-enterprise-desc">{t.description}</p>
+
+            <div class="ft-enterprise-feature">
+                <div class="ft-enterprise-feature-icon-wrap">
+                    <Icon name="mdi:api" class="ft-enterprise-feature-icon" />
+                </div>
+                <div>
+                    <h4 class="ft-enterprise-feature-title">{t.featureTitle}</h4>
+                    <p class="ft-enterprise-feature-text">{t.featureText}</p>
+                </div>
+            </div>
+
+            <a
+                href="mailto:juanjo1989@gmail.com?subject=Enterprise%20Fast%20Task"
+                class="ft-enterprise-cta"
+            >
+                {t.cta}
+                <Icon name="mdi:message-text" class="ft-enterprise-cta-icon" />
+            </a>
+        </div>
+
+        <div class="ft-enterprise-code-wrap">
+            <div class="ft-enterprise-code-glow"></div>
+            <div class="ft-enterprise-code-box">
+                <div class="ft-enterprise-dots">
+                    <div class="ft-enterprise-dot ft-enterprise-dot-red"></div>
+                    <div class="ft-enterprise-dot ft-enterprise-dot-yellow"></div>
+                    <div class="ft-enterprise-dot ft-enterprise-dot-green"></div>
+                </div>
+                <div class="ft-enterprise-code">
+                    <p class="ft-code-comment">// Custom_Enterprise_Solution.ts</p>
+                    <p>
+                        <span class="ft-code-keyword">export const </span>
+                        <span class="ft-code-var">OrganizationSync</span>
+                        <span class="ft-code-keyword"> = &#123;</span>
+                    </p>
+                    <p class="ft-code-muted">
+                        engine: <span class="ft-code-value">"Zero-Friction_Architecture"</span>,
+                    </p>
+                    <p class="ft-code-muted">
+                        ecosystem: <span class="ft-code-value">["Proprietary_Stack", "Legacy_Sync"]</span>,
+                    </p>
+                    <p class="ft-code-muted">
+                        privacy: <span class="ft-code-value">"Hardened_Data_Silos"</span>,
+                    </p>
+                    <p class="ft-code-muted">
+                        performance: <span class="ft-code-value">"Atomic_Task_Processing"</span>
+                    </p>
+                    <p class="ft-code-keyword">&#125;;</p>
+                    <div class="ft-code-divider">
+                        <p class="ft-code-footer">// Engineered for deep organizational focus.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

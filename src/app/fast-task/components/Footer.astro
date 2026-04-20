@@ -1,0 +1,36 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { FastTaskFooter } from '../types';
+
+interface Props {
+    t: FastTaskFooter;
+    stores: { appStore?: string; googlePlay?: string };
+}
+
+const { t, stores } = Astro.props;
+---
+
+<footer class="ft-footer">
+    <div class="ft-footer-inner">
+        <h2 class="ft-footer-title">
+            {t.line1}<br />
+            {t.line2}<br />
+            <span class="ft-footer-title-highlight">{t.line3}</span>
+        </h2>
+        <p class="ft-footer-subtitle">{t.subtitle}</p>
+        <div class="ft-footer-buttons">
+            {stores.appStore && (
+                <a href={stores.appStore} target="_blank" rel="noopener noreferrer" class="ft-btn-store">
+                    <Icon name="mdi:apple" class="ft-btn-store-icon" />
+                    <span class="ft-btn-store-label">App Store</span>
+                </a>
+            )}
+            {stores.googlePlay && (
+                <a href={stores.googlePlay} target="_blank" rel="noopener noreferrer" class="ft-btn-store">
+                    <Icon name="mdi:google-play" class="ft-btn-store-icon" />
+                    <span class="ft-btn-store-label">Google Play</span>
+                </a>
+            )}
+        </div>
+    </div>
+</footer>

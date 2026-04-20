@@ -1,0 +1,47 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { FastTaskHero } from '../types';
+
+interface Props {
+    t: FastTaskHero;
+    stores: { appStore?: string; googlePlay?: string };
+    appId: string;
+    locale: string;
+}
+
+const { t, stores, appId, locale } = Astro.props;
+const price = new Intl.NumberFormat(locale, { style: 'currency', currency: 'EUR' }).format(4.95);
+---
+
+<section class="ft-hero">
+    <div class="ft-hero-inner">
+        <div class="ft-hero-icon-wrap">
+            <div class="ft-hero-icon-glow"></div>
+            <img src={`/assets/apps/${appId}/icon.webp`} alt={t.title} class="ft-hero-icon" />
+        </div>
+
+        <h1 class="ft-hero-title">
+            <span class="ft-hero-title-gradient">{t.title}</span>
+        </h1>
+
+        <p class="ft-hero-subtitle">{t.subtitle}</p>
+
+        <div class="ft-hero-price">{price}</div>
+        <div class="ft-hero-price-label">{t.priceLabel}</div>
+
+        <div class="ft-hero-buttons">
+            {stores.appStore && (
+                <a href={stores.appStore} target="_blank" rel="noopener noreferrer" class="ft-btn-store">
+                    <Icon name="mdi:apple" class="ft-btn-store-icon" />
+                    <span class="ft-btn-store-label">App Store</span>
+                </a>
+            )}
+            {stores.googlePlay && (
+                <a href={stores.googlePlay} target="_blank" rel="noopener noreferrer" class="ft-btn-store">
+                    <Icon name="mdi:google-play" class="ft-btn-store-icon" />
+                    <span class="ft-btn-store-label">Google Play</span>
+                </a>
+            )}
+        </div>
+    </div>
+</section>

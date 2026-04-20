@@ -1,0 +1,42 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { FastTaskConcept, FastTaskBenefits } from '../types';
+
+interface Props {
+    t: FastTaskConcept;
+    tBenefits: FastTaskBenefits;
+}
+
+const { t, tBenefits } = Astro.props;
+---
+
+<section class="ft-concept">
+    <div class="ft-concept-inner">
+        <div>
+            <span class="ft-concept-label">{t.label}</span>
+            <h2 class="ft-concept-title">
+                {t.main}<br />
+                <span class="ft-concept-title-highlight">{t.highlighted}</span>
+            </h2>
+            <p class="ft-concept-text">{t.philosophy}</p>
+            <div class="ft-concept-highlights">
+                {t.highlights.map((h) => (
+                    <div>
+                        <span class="ft-highlight-label">{h.label}</span>
+                        <span class="ft-highlight-value">{h.value}</span>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <div class="ft-benefits-grid">
+            {tBenefits.items.map((item) => (
+                <div class="ft-benefit-card">
+                    <Icon name={item.icon} class="ft-benefit-icon" />
+                    <h3 class="ft-benefit-title">{item.title}</h3>
+                    <p class="ft-benefit-text">{item.text}</p>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

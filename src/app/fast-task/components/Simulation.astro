@@ -1,0 +1,142 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { FastTaskSimulation } from '../types';
+
+interface Props {
+    t: FastTaskSimulation;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="ft-sim" id="ft-simulation">
+    <div class="ft-sim-bg"></div>
+    <div class="ft-sim-inner">
+        <h2 class="ft-sim-title">{t.titleBefore}</h2>
+        <div class="ft-sim-timer" id="ft-sim-timer">0.00s</div>
+
+        <div class="ft-sim-timeline">
+            <div class="ft-sim-progress-track-h">
+                <div class="ft-sim-progress-bar-h" id="ft-sim-progress-h"></div>
+            </div>
+            <div class="ft-sim-progress-track-v">
+                <div class="ft-sim-progress-bar-v" id="ft-sim-progress-v"></div>
+            </div>
+
+            <div class="ft-sim-steps">
+                {t.steps.map((step, i) => (
+                    <div class="ft-sim-step" data-step={i + 1}>
+                        <div class="ft-sim-step-icon">
+                            <Icon name={step.icon} class="ft-sim-step-icon-svg" />
+                        </div>
+                        <div class="ft-sim-step-body">
+                            <div class="ft-sim-step-label">{step.label}</div>
+                            <div class="ft-sim-step-desc">{step.desc}</div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    class FtSimulation {
+        private timer: HTMLElement | null;
+        private steps: NodeListOf<HTMLElement>;
+        private isRunning = false;
+        private startTime = 0;
+        private readonly duration = 3000;
+        private readonly pause = 2000;
+        private observer: IntersectionObserver;
+        private frameId: number | null = null;
+
+        constructor() {
+            this.timer = document.getElementById('ft-sim-timer');
+            this.steps = document.querySelectorAll('.ft-sim-step');
+            this.observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            this.start();
+                        } else {
+                            this.stop();
+                        }
+                    });
+                },
+                { threshold: 0.3 },
+            );
+            const section = document.getElementById('ft-simulation');
+            if (section) this.observer.observe(section);
+        }
+
+        private start() {
+            if (this.isRunning) return;
+            this.isRunning = true;
+            this.startTime = performance.now();
+            this.tick(performance.now());
+        }
+
+        private stop() {
+            this.isRunning = false;
+            if (this.frameId !== null) {
+                cancelAnimationFrame(this.frameId);
+                this.frameId = null;
+            }
+        }
+
+        private updateProgress(pct: number) {
+            const ph = document.getElementById('ft-sim-progress-h');
+            if (ph) ph.style.width = `${pct}%`;
+            const pv = document.getElementById('ft-sim-progress-v');
+            if (pv) pv.style.height = `${pct}%`;
+        }
+
+        private updateStep(sim: number) {
+            if (sim < 1000) this.setActive(0);
+            else if (sim < 2000) this.setActive(1);
+            else if (sim < 3000) this.setActive(2);
+            else this.setAllDone();
+        }
+
+        private tick(now: number) {
+            if (!this.isRunning) return;
+            let elapsed = now - this.startTime;
+            if (elapsed > this.duration + this.pause) {
+                this.startTime = now;
+                elapsed = 0;
+            }
+            const sim = Math.min(elapsed, this.duration);
+            if (this.timer) this.timer.textContent = (sim / 1000).toFixed(2) + 's';
+            this.updateProgress((sim / this.duration) * 100);
+            this.updateStep(sim);
+            this.frameId = requestAnimationFrame(this.tick.bind(this));
+        }
+
+        private setActive(idx: number) {
+            this.steps.forEach((s, i) => {
+                s.classList.toggle('active', i === idx);
+                s.classList.toggle('completed', i < idx);
+            });
+        }
+
+        private setAllDone() {
+            this.steps.forEach((s) => {
+                s.classList.remove('active');
+                s.classList.add('completed');
+            });
+        }
+    }
+
+    const init = () => new FtSimulation();
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+
+    document.addEventListener('astro:page-load', () => {
+        if (document.getElementById('ft-simulation')) init();
+    });
+</script>

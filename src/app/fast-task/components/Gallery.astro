@@ -1,0 +1,44 @@
+---
+import type { FastTaskGallery } from '../types';
+
+interface Props {
+    t: FastTaskGallery;
+    appId: string;
+}
+
+const { t, appId } = Astro.props;
+
+const screenshots = ['2.webp', '3.webp', '4.webp'];
+---
+
+<section class="ft-gallery">
+    <div class="ft-gallery-inner">
+        <h2 class="ft-gallery-title">{t.title}</h2>
+        <div class="ft-gallery-grid">
+            {screenshots.map((img, i) => (
+                <div class="ft-gallery-item">
+                    <img
+                        src={`/assets/apps/${appId}/${img}`}
+                        alt={`Screenshot ${i + 1}`}
+                        class="ft-gallery-img"
+                    />
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<section class="ft-feature-graphic">
+    <div class="ft-feature-graphic-inner">
+        <div class="ft-feature-graphic-wrap">
+            <div class="ft-feature-graphic-glow"></div>
+            <div class="ft-feature-graphic-box">
+                <img
+                    src={`/assets/apps/${appId}/feature-graphic.webp`}
+                    alt="Fast Task Feature"
+                    class="ft-feature-graphic-img"
+                />
+            </div>
+        </div>
+    </div>
+</section>
