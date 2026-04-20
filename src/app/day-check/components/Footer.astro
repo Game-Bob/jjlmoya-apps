@@ -1,0 +1,45 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { DayCheckFooter } from '../types';
+
+interface Props {
+    t: DayCheckFooter;
+    stores: { appStore?: string; googlePlay?: string };
+}
+
+const { t, stores } = Astro.props;
+---
+
+<section class="dc-footer">
+    <div class="dc-footer-inner">
+        <div class="dc-footer-glow"></div>
+        <div class="dc-footer-card">
+            <div style="position: relative; z-index: 1;">
+                <span class="dc-footer-badge">{t.badge}</span>
+
+                <h2 class="dc-footer-title">
+                    {t.titleMain}<br />
+                    <span class="dc-footer-title-highlight">{t.titleHighlight}</span>
+                </h2>
+
+                <p class="dc-footer-subtitle">{t.subtitle}</p>
+
+                <div class="dc-footer-buttons">
+                    {stores.googlePlay && (
+                        <a href={stores.googlePlay} target="_blank" rel="noopener noreferrer" class="dc-footer-btn">
+                            <Icon name="mdi:google-play" class="dc-footer-btn-icon" />
+                            <span>{t.downloadOnPlay}</span>
+                        </a>
+                    )}
+                    {stores.appStore && (
+                        <a href={stores.appStore} target="_blank" rel="noopener noreferrer" class="dc-footer-btn dc-footer-btn-white">
+                            <Icon name="mdi:apple" class="dc-footer-btn-icon" />
+                            <span>{t.downloadOnStore}</span>
+                        </a>
+                    )}
+                </div>
+            </div>
+            <div class="dc-footer-stripe"></div>
+        </div>
+    </div>
+</section>

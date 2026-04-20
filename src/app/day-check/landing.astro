@@ -1,0 +1,41 @@
+---
+import type { KnownLocale } from '../../types';
+import { dayCheckEntry } from './entry';
+import { localizedAppStoreUrl } from '../../app-store';
+import './day-check.css';
+import Hero from './components/Hero.astro';
+import Cards from './components/Cards.astro';
+import Benefits from './components/Benefits.astro';
+import Videos from './components/Videos.astro';
+import Footer from './components/Footer.astro';
+
+interface Props {
+    locale: KnownLocale;
+}
+
+const { locale } = Astro.props;
+
+const loaders = {
+    es: () => import('./i18n/es').then((m) => m.landingContent),
+};
+
+const t = await (loaders[locale as keyof typeof loaders] ?? loaders.es)();
+const { stores: baseStores, id: appId, shorts = [] } = dayCheckEntry;
+
+const stores = {
+    ...baseStores,
+    appStore: baseStores.appStore ? localizedAppStoreUrl(baseStores.appStore, locale) : undefined,
+};
+---
+
+<div class="dc-landing">
+    <div class="dc-orbs">
+        <div class="dc-orb-purple"></div>
+        <div class="dc-orb-teal"></div>
+    </div>
+    <Hero t={t.hero} {stores} {appId} />
+    <Cards t={t.cards} googlePlay={stores.googlePlay} />
+    <Benefits t={t.benefits} />
+    <Videos t={t.videos} shortIds={shorts} />
+    <Footer t={t.footer} {stores} />
+</div>

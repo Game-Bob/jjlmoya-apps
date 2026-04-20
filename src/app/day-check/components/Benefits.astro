@@ -1,0 +1,32 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { DayCheckBenefits } from '../types';
+
+interface Props {
+    t: DayCheckBenefits;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="dc-benefits">
+    <div class="dc-benefits-inner">
+        <div class="dc-benefits-header">
+            <div class="dc-benefits-divider"></div>
+            <h2 class="dc-benefits-title">
+                {t.titleMain}<span class="dc-benefits-title-highlight">{t.titleHighlight}</span>
+            </h2>
+            <p class="dc-benefits-desc">{t.description}</p>
+        </div>
+
+        <div class="dc-benefits-grid">
+            {t.items.map((b) => (
+                <div class="dc-benefit-card">
+                    <Icon name={b.icon} class="dc-benefit-icon" />
+                    <h4 class="dc-benefit-title">{b.title}</h4>
+                    <p class="dc-benefit-text">{b.text}</p>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

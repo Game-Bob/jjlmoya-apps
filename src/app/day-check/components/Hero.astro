@@ -1,0 +1,42 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { DayCheckHero } from '../types';
+
+interface Props {
+    t: DayCheckHero;
+    stores: { appStore?: string; googlePlay?: string };
+    appId: string;
+}
+
+const { t, stores, appId } = Astro.props;
+---
+
+<section class="dc-hero">
+    <div class="dc-hero-inner">
+        <div class="dc-hero-badge">
+            <img src={`/assets/apps/${appId}/icon.webp`} alt="Day Check" class="dc-hero-badge-icon" />
+            <span class="dc-hero-badge-text">{t.badge}</span>
+        </div>
+
+        <h1 class="dc-hero-title">
+            {t.titleStart}<span class="dc-hero-title-muted">{t.titleItalic}</span><br />{t.titleEnd}
+        </h1>
+
+        <p class="dc-hero-subtitle">{t.subtitle}</p>
+
+        <div class="dc-hero-buttons">
+            {stores.googlePlay && (
+                <a href={stores.googlePlay} target="_blank" rel="noopener noreferrer" class="dc-btn-primary">
+                    <Icon name="mdi:google-play" class="dc-btn-icon" />
+                    <span>{t.downloadOnPlay}</span>
+                </a>
+            )}
+            {stores.appStore && (
+                <a href={stores.appStore} target="_blank" rel="noopener noreferrer" class="dc-btn-purple">
+                    <Icon name="mdi:apple" class="dc-btn-icon" />
+                    <span>{t.downloadOnStore}</span>
+                </a>
+            )}
+        </div>
+    </div>
+</section>

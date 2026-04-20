@@ -1,0 +1,159 @@
+---
+import type { DayCheckCards } from '../types';
+
+interface Props {
+    t: DayCheckCards;
+    googlePlay?: string;
+}
+
+const { t, googlePlay } = Astro.props;
+
+const cardClasses = ['dc-card-1', 'dc-card-2', 'dc-card-3'];
+
+const cardOffsets: { months?: string; weeks?: string }[] = [
+    { months: '-4' },
+    { months: '3' },
+    { weeks: '-2' },
+];
+---
+
+<section class="dc-cards">
+    <div class="dc-cards-inner">
+        {t.cards.map((card, i) => {
+            const off = cardOffsets[i];
+            return (
+                <div class={`dc-card ${cardClasses[i]}`}>
+                    <div class="dc-card-stripe"></div>
+
+                    <div class="dc-card-header">
+                        <div>
+                            <span class="dc-card-meta-label">
+                                {card.type === 'since' ? t.sinceLabel : t.targetLabel}
+                            </span>
+                            <span
+                                class="dc-card-date"
+                                data-offset-months={off.months}
+                                data-offset-weeks={off.weeks}
+                                data-date-display="true"
+                            >…</span>
+                        </div>
+                        <span class="dc-card-emoji">{card.emoji}</span>
+                    </div>
+
+                    <div class="dc-card-body">
+                        <div class="dc-card-counter">
+                            <span
+                                class="dc-card-days dc-live-days"
+                                data-offset-months={off.months}
+                                data-offset-weeks={off.weeks}
+                                data-type={card.type}
+                            >0</span>
+                            <div class="dc-card-time">
+                                <div class="dc-card-time-unit">
+                                    <span
+                                        class="dc-card-time-value dc-live-hours"
+                                        data-offset-months={off.months}
+                                        data-offset-weeks={off.weeks}
+                                        data-type={card.type}
+                                    >0</span>
+                                    <span class="dc-card-time-label">{t.hoursLabel}</span>
+                                </div>
+                                <div class="dc-card-time-unit">
+                                    <span
+                                        class="dc-card-time-value dc-live-mins"
+                                        data-offset-months={off.months}
+                                        data-offset-weeks={off.weeks}
+                                        data-type={card.type}
+                                    >0</span>
+                                    <span class="dc-card-time-label">{t.minsLabel}</span>
+                                </div>
+                                <div class="dc-card-time-unit">
+                                    <span
+                                        class="dc-card-time-value-accent dc-live-secs"
+                                        data-offset-months={off.months}
+                                        data-offset-weeks={off.weeks}
+                                        data-type={card.type}
+                                    >0</span>
+                                    <span class="dc-card-time-label-accent">{t.segsLabel}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="dc-card-label">{card.label}</h3>
+                    </div>
+                    <div class="dc-card-glow"></div>
+                </div>
+            );
+        })}
+
+        <div class="dc-card-cta">
+            <span class="dc-cta-status">{t.statusLabel}</span>
+            <h3 class="dc-cta-title">
+                {t.ctaTitle}<br />
+                <span class="dc-cta-title-highlight">{t.ctaHighlight}</span>
+            </h3>
+            <div class="dc-cta-numbers">
+                <div class="dc-cta-unit">
+                    <span class="dc-cta-value">0</span>
+                    <span class="dc-cta-label">{t.daysLabel}</span>
+                </div>
+                <div class="dc-cta-unit">
+                    <span class="dc-cta-value">0</span>
+                    <span class="dc-cta-label">{t.hoursLabel}</span>
+                </div>
+                <div class="dc-cta-unit">
+                    <span class="dc-cta-value-accent">0</span>
+                    <span class="dc-cta-label">{t.segsLabel}</span>
+                </div>
+            </div>
+            {googlePlay && (
+                <a href={googlePlay} target="_blank" rel="noopener noreferrer" class="dc-cta-btn">
+                    {t.ctaButton}
+                </a>
+            )}
+        </div>
+    </div>
+</section>
+
+<script>
+    function computeDate(el: Element): Date {
+        const now = new Date();
+        const offsetMonths = el.getAttribute('data-offset-months');
+        const offsetWeeks = el.getAttribute('data-offset-weeks');
+        const d = new Date(now);
+        if (offsetMonths) d.setMonth(d.getMonth() + parseInt(offsetMonths));
+        if (offsetWeeks) d.setDate(d.getDate() + parseInt(offsetWeeks) * 7);
+        return d;
+    }
+
+    function updateCounters() {
+        const now = Date.now();
+        document.querySelectorAll('.dc-live-days').forEach((el) => {
+            const target = computeDate(el).getTime();
+            const type = el.getAttribute('data-type');
+            let diff = type === 'since' ? now - target : target - now;
+            if (diff < 0) diff = 0;
+            const card = el.closest('.dc-card');
+            if (!card) return;
+            const d = Math.floor(diff / 86400000);
+            const h = Math.floor((diff % 86400000) / 3600000);
+            const m = Math.floor((diff % 3600000) / 60000);
+            const s = Math.floor((diff % 60000) / 1000);
+            (card.querySelector('.dc-live-days') as HTMLElement).innerText = d.toString();
+            (card.querySelector('.dc-live-hours') as HTMLElement).innerText = h.toString();
+            (card.querySelector('.dc-live-mins') as HTMLElement).innerText = m.toString();
+            (card.querySelector('.dc-live-secs') as HTMLElement).innerText = s.toString();
+        });
+
+        document.querySelectorAll('[data-date-display]').forEach((el) => {
+            const date = computeDate(el);
+            (el as HTMLElement).innerText = date.toLocaleDateString('es-ES', {
+                month: 'short',
+                day: '2-digit',
+                year: 'numeric',
+            });
+        });
+    }
+
+    setInterval(updateCounters, 1000);
+    updateCounters();
+</script>

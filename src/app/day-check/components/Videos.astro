@@ -1,0 +1,31 @@
+---
+import type { DayCheckVideos } from '../types';
+
+interface Props {
+    t: DayCheckVideos;
+    shortIds: string[];
+}
+
+const { t, shortIds } = Astro.props;
+---
+
+{shortIds.length > 0 && (
+    <section class="dc-videos">
+        <div class="dc-videos-inner">
+            <h2 class="dc-videos-title">{t.title}</h2>
+            <div class="dc-videos-grid">
+                {shortIds.map((id) => (
+                    <div class="dc-video-item">
+                        <iframe
+                            src={`https://www.youtube.com/embed/${id}?rel=0&modestbranding=1&controls=1`}
+                            title="Day Check Video"
+                            class="dc-video-iframe"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        />
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+)}
