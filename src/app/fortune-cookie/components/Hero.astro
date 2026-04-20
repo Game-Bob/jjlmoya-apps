@@ -1,6 +1,5 @@
 ---
 import { Icon } from 'astro-icon/components';
-import QRCode from 'qrcode';
 import type { FortuneCookieHero } from '../types';
 
 interface Props {
@@ -11,11 +10,6 @@ interface Props {
 }
 
 const { t, stores, appId, appTitle } = Astro.props;
-
-const qrCodeUrl = await QRCode.toDataURL(
-    stores.appStore ?? stores.googlePlay ?? 'https://gamebob.app',
-    { color: { dark: '#BF9F5A', light: '#00000000' }, margin: 1, width: 200 }
-);
 ---
 
 <section class="hero">
@@ -54,14 +48,6 @@ const qrCodeUrl = await QRCode.toDataURL(
                     </a>
                 )
             }
-        </div>
-
-        <div class="qr-wrapper">
-            <div class="qr-glow"></div>
-            <div class="qr-card">
-                <img src={qrCodeUrl} alt={t.scanLabel} class="qr-img" />
-                <span class="qr-label">{t.scanLabel}</span>
-            </div>
         </div>
     </div>
 

@@ -1,0 +1,87 @@
+---
+import type { LexiCrashSocialProof } from '../types';
+
+interface Props {
+    t: LexiCrashSocialProof;
+    appId: string;
+}
+
+const { t, appId } = Astro.props;
+---
+
+<section class="lc-proof">
+    <div class="lc-proof-glow lc-proof-glow-left"></div>
+    <div class="lc-proof-glow lc-proof-glow-right"></div>
+
+    <div class="lc-proof-inner">
+        <div class="lc-proof-text">
+            <h2 class="lc-proof-title">
+                {t.titleMain}<br />
+                <span class="lc-proof-title-hl">{t.titleHighlight}</span>
+            </h2>
+            <p class="lc-proof-subtitle">{t.subtitle}</p>
+
+            <div class="lc-proof-stats">
+                <div class="lc-proof-stat">
+                    <div class="lc-proof-stat-value">+50k</div>
+                    <div class="lc-proof-stat-label">{t.challengesLabel}</div>
+                </div>
+                <div class="lc-proof-stat">
+                    <div class="lc-proof-stat-value">+1M</div>
+                    <div class="lc-proof-stat-label">{t.wordsLabel}</div>
+                </div>
+                <div class="lc-proof-stat">
+                    <div class="lc-proof-stat-value">+5.0</div>
+                    <div class="lc-proof-stat-label">{t.ratingLabel}</div>
+                </div>
+            </div>
+
+            <div class="lc-proof-feed">
+                <div class="lc-proof-feed-item lc-proof-feed-item-1">
+                    <div class="lc-proof-feed-avatar lc-proof-feed-avatar-blue"></div>
+                    <span class="lc-proof-feed-text">
+                        <strong class="lc-proof-feed-user">{t.feedUser1}</strong> {t.feedAction1}
+                    </span>
+                </div>
+                <div class="lc-proof-feed-item lc-proof-feed-item-2">
+                    <div class="lc-proof-feed-avatar lc-proof-feed-avatar-green"></div>
+                    <span class="lc-proof-feed-text">
+                        <strong class="lc-proof-feed-user">{t.feedUser2}</strong> {t.feedAction2}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="lc-proof-mockups">
+            <div class="lc-proof-mockup lc-proof-mockup-left">
+                <div class="lc-proof-mockup-glow lc-proof-mockup-glow-cyan"></div>
+                <div class="lc-proof-mockup-frame">
+                    <div class="lc-proof-mockup-notch"></div>
+                    <div class="lc-proof-mockup-screen">
+                        <img
+                            src={`/assets/apps/${appId}/screenshot_2.webp`}
+                            alt={t.screenshotAlt}
+                            class="lc-proof-mockup-img"
+                            loading="lazy"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <div class="lc-proof-mockup lc-proof-mockup-right">
+                <div class="lc-proof-mockup-glow lc-proof-mockup-glow-orange"></div>
+                <div class="lc-proof-mockup-frame">
+                    <div class="lc-proof-mockup-notch"></div>
+                    <div class="lc-proof-mockup-screen">
+                        <img
+                            src={`/assets/apps/${appId}/screenshot_3.webp`}
+                            alt={t.screenshotAlt}
+                            class="lc-proof-mockup-img"
+                            loading="lazy"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

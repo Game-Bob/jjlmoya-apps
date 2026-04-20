@@ -1,15 +1,14 @@
 ---
 import type { KnownLocale } from '../../types';
+import { lexiCrashEntry } from './entry';
 import { localizedAppStoreUrl } from '../../app-store';
-import { fortuneCookieEntry } from './entry';
-import './fortune-cookie.css';
+import './lexi-crash.css';
+import Background from './components/Background.astro';
 import Hero from './components/Hero.astro';
-import Challenge from './components/Challenge.astro';
-import Streak from './components/Streak.astro';
-import Showcase from './components/Showcase.astro';
-import Events from './components/Events.astro';
-import Shorts from './components/Shorts.astro';
-import Footer from './components/Footer.astro';
+import GameModes from './components/GameModes.astro';
+import SocialProof from './components/SocialProof.astro';
+import Roadmap from './components/Roadmap.astro';
+import FinalCTA from './components/FinalCTA.astro';
 
 interface Props {
     locale: KnownLocale;
@@ -36,23 +35,19 @@ const loaders = {
 };
 
 const t = await (loaders[locale] ?? loaders.en)();
-const { stores: baseStores, id: appId, shorts = [] } = fortuneCookieEntry;
+const { stores: baseStores, id: appId } = lexiCrashEntry;
 
 const stores = {
     ...baseStores,
     appStore: baseStores.appStore ? localizedAppStoreUrl(baseStores.appStore, locale) : undefined,
 };
-
-const cardLoader = fortuneCookieEntry.i18n[locale] ?? fortuneCookieEntry.i18n.en;
-const card = await cardLoader!();
 ---
 
-<div class="landing">
-    <Hero t={t.hero} {stores} {appId} appTitle={card.title} />
-    <Challenge t={t.challenge} {appId} />
-    <Streak t={t.streak} {appId} />
-    <Showcase t={t.showcase} />
-    <Events t={t.events} {appId} />
-    <Shorts t={t.shorts} {shorts} />
-    <Footer t={t.footer} {stores} />
+<div class="lc-landing">
+    <Background />
+    <Hero t={t.hero} {stores} />
+    <GameModes t={t.gameModes} {appId} />
+    <SocialProof t={t.socialProof} {appId} />
+    <Roadmap t={t.roadmap} />
+    <FinalCTA t={t.finalCta} {stores} />
 </div>

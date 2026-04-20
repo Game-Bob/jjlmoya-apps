@@ -9,8 +9,18 @@ interface EventColors {
 }
 
 const EVENT_COLORS: EventColors[] = [
-    { primary: '#fb7185', accent: '#fecdd3', bgFrom: '#881337', bgTo: '#4c0519' },
-    { primary: '#fbbf24', accent: '#fef3c7', bgFrom: '#7f1d1d', bgTo: '#450a0a' },
+    {
+        primary: 'var(--fc-event-0-primary)',
+        accent: 'var(--fc-event-0-accent)',
+        bgFrom: 'var(--fc-event-0-bg-from)',
+        bgTo: 'var(--fc-event-0-bg-to)',
+    },
+    {
+        primary: 'var(--fc-event-1-primary)',
+        accent: 'var(--fc-event-1-accent)',
+        bgFrom: 'var(--fc-event-1-bg-from)',
+        bgTo: 'var(--fc-event-1-bg-to)',
+    },
 ];
 
 interface Props {

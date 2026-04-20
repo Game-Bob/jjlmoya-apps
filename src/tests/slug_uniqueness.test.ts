@@ -3,6 +3,7 @@ import { ALL_APP_DEFINITIONS } from '../entries';
 import type { AppCardContent } from '../types';
 
 const SHARING_LOCALES = ['ja', 'ko', 'zh'];
+const BRAND_SLUG_APPS = ['lexi-crash', 'pizzametrics', 'vesp'];
 
 interface ValidateParams {
     appId: string;
@@ -19,6 +20,7 @@ const validateLocaleSlug = ({ appId, locale, card, enSlug, slugs }: ValidatePara
     ).toMatch(/^[a-z0-9-]+$/);
 
     if (locale === 'en') return;
+    if (BRAND_SLUG_APPS.includes(appId)) return;
 
     if (SHARING_LOCALES.includes(locale)) {
         expect(

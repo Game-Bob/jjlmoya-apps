@@ -1,0 +1,51 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { LexiCrashGameModes } from '../types';
+
+interface Props {
+    t: LexiCrashGameModes;
+    appId: string;
+}
+
+const { t, appId } = Astro.props;
+
+const modes = [
+    { data: t.crash, screenshot: 'screenshot_2.webp', variant: 'cyan', icon: 'mdi:lightning-bolt' },
+    { data: t.relax, screenshot: 'screenshot_3.webp', variant: 'amber', icon: 'mdi:weather-sunny' },
+    { data: t.daily, screenshot: 'screenshot_1.webp', variant: 'orange', icon: 'mdi:calendar-star' },
+];
+---
+
+<section class="lc-modes">
+    <div class="lc-modes-inner">
+        <div class="lc-modes-header">
+            <h2 class="lc-modes-title">
+                {t.titleMain} <span class="lc-modes-title-hl">{t.titleHighlight}</span>
+            </h2>
+            <p class="lc-modes-subtitle">{t.subtitle}</p>
+        </div>
+
+        <div class="lc-modes-grid">
+            {modes.map(({ data, screenshot, variant, icon }) => (
+                <div class={`lc-mode-card lc-mode-card--${variant}`}>
+                    <div class="lc-mode-img-wrapper">
+                        <img
+                            src={`/assets/apps/${appId}/${screenshot}`}
+                            alt={data.alt}
+                            class="lc-mode-img"
+                            loading="lazy"
+                        />
+                        <div class="lc-mode-img-overlay"></div>
+                        <div class="lc-mode-icon">
+                            <Icon name={icon} class="lc-mode-icon-svg" />
+                        </div>
+                    </div>
+                    <div class="lc-mode-content">
+                        <h3 class="lc-mode-name">{data.title}</h3>
+                        <p class="lc-mode-desc">{data.description}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,26 @@
+---
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const items = Array.from({ length: 100 }, (_, i) => ({
+    letter: alphabet[Math.floor(Math.random() * alphabet.length)],
+    x: Math.floor(Math.random() * 100),
+    delay: (Math.random() * 20).toFixed(1),
+    duration: (8 + Math.random() * 10).toFixed(1),
+    size: (0.8 + Math.random() * 2.5).toFixed(1),
+    opacity: (0.03 + Math.random() * 0.07).toFixed(2),
+    hideMobile: i % 3 !== 0,
+}));
+---
+
+<div class="lc-bg">
+    <div class="lc-bg-glow lc-bg-glow-top"></div>
+    <div class="lc-bg-glow lc-bg-glow-bottom"></div>
+    <div class="lc-bg-letters">
+        {items.map(({ letter, x, delay, duration, size, opacity, hideMobile }) => (
+            <span
+                class={hideMobile ? 'lc-bg-letter lc-bg-letter-mobile-hide' : 'lc-bg-letter'}
+                style={`--lc-letter-delay: ${delay}s; --lc-letter-x: ${x}%; --lc-letter-duration: ${duration}s; --lc-letter-size: ${size}rem; --lc-letter-color: rgba(var(--lc-letter-base-rgb), ${opacity});`}
+            >{letter}</span>
+        ))}
+    </div>
+    <div class="lc-bg-grid"></div>
+</div>

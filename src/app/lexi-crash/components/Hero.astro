@@ -1,0 +1,53 @@
+---
+import type { LexiCrashHero } from '../types';
+
+interface Props {
+    t: LexiCrashHero;
+    stores: { googlePlay?: string; appStore?: string };
+}
+
+const { t, stores } = Astro.props;
+---
+
+<section class="lc-hero">
+    <div class="lc-hero-inner">
+        <div class="lc-hero-badge">
+            <span class="lc-hero-badge-dot">
+                <span class="lc-hero-badge-dot-ping"></span>
+                <span class="lc-hero-badge-dot-inner"></span>
+            </span>
+            <span class="lc-hero-badge-text">{t.badgeText}</span>
+        </div>
+
+        <h1 class="lc-hero-title">
+            LEXI<span class="lc-hero-title-accent">CRASH</span>
+        </h1>
+
+        <p class="lc-hero-subtitle">{t.subtitle}</p>
+
+        <div class="lc-hero-buttons">
+            {stores.googlePlay && (
+                <a
+                    href={stores.googlePlay}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="lc-hero-btn lc-hero-btn-play"
+                >
+                    <span class="lc-hero-btn-label">{t.downloadLabel}</span>
+                    <span class="lc-hero-btn-name">{t.downloadOnPlay}</span>
+                </a>
+            )}
+            {stores.appStore && (
+                <a
+                    href={stores.appStore}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="lc-hero-btn lc-hero-btn-store"
+                >
+                    <span class="lc-hero-btn-label">{t.downloadLabel}</span>
+                    <span class="lc-hero-btn-name">{t.downloadOnStore}</span>
+                </a>
+            )}
+        </div>
+    </div>
+</section>

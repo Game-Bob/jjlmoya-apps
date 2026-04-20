@@ -1,0 +1,70 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { LexiCrashFinalCTA } from '../types';
+
+interface Props {
+    t: LexiCrashFinalCTA;
+    stores: { googlePlay?: string; appStore?: string };
+}
+
+const { t, stores } = Astro.props;
+---
+
+<section class="lc-cta">
+    <div class="lc-cta-glow"></div>
+
+    <div class="lc-cta-inner">
+        <h2 class="lc-cta-title">
+            {t.titleMain}<br />
+            <span class="lc-cta-title-hl">{t.titleHighlight}</span>
+        </h2>
+
+        <p class="lc-cta-subtitle">{t.subtitle}</p>
+
+        <div class="lc-cta-buttons">
+            {stores.googlePlay && (
+                <a
+                    href={stores.googlePlay}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="lc-cta-btn lc-cta-btn-play"
+                >
+                    <div class="lc-cta-btn-bg"></div>
+                    <div class="lc-cta-btn-inner">
+                        <Icon name="mdi:google-play" class="lc-cta-btn-icon" />
+                        <div class="lc-cta-btn-text">
+                            <span class="lc-cta-btn-label">{t.downloadLabel} {t.downloadOnPlay}</span>
+                            <span class="lc-cta-btn-action">Download</span>
+                        </div>
+                    </div>
+                </a>
+            )}
+            {stores.appStore && (
+                <a
+                    href={stores.appStore}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="lc-cta-btn lc-cta-btn-store"
+                >
+                    <div class="lc-cta-btn-bg"></div>
+                    <div class="lc-cta-btn-inner">
+                        <Icon name="mdi:apple" class="lc-cta-btn-icon" />
+                        <div class="lc-cta-btn-text">
+                            <span class="lc-cta-btn-label">{t.downloadLabel} {t.downloadOnStore}</span>
+                            <span class="lc-cta-btn-action">Download</span>
+                        </div>
+                    </div>
+                </a>
+            )}
+        </div>
+
+        <div class="lc-cta-rating">
+            <div class="lc-cta-stars">
+                {[1, 2, 3, 4, 5].map(() => (
+                    <Icon name="mdi:star" class="lc-cta-star" />
+                ))}
+            </div>
+            <span class="lc-cta-rating-text">{t.ratingText}</span>
+        </div>
+    </div>
+</section>

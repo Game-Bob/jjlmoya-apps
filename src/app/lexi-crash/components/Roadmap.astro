@@ -1,0 +1,131 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { LexiCrashRoadmap } from '../types';
+
+interface Props {
+    t: LexiCrashRoadmap;
+}
+
+const { t } = Astro.props;
+
+const cardConfig = [
+    { id: 'game-modes', displayId: '01', icon: 'mdi:controller' },
+    { id: 'story-mode', displayId: '02', icon: 'mdi:book-open-variant' },
+    { id: 'rankings', displayId: '03', icon: 'mdi:trophy' },
+];
+---
+
+<section
+    class="lc-roadmap"
+    data-vote-label={t.voteLabel}
+    data-voted-label={t.votedLabel}
+>
+    <div class="lc-roadmap-inner">
+        <div class="lc-roadmap-header">
+            <h2 class="lc-roadmap-title">
+                {t.titleMain} <span class="lc-roadmap-title-hl">{t.titleHighlight}</span>
+            </h2>
+            <p class="lc-roadmap-subtitle">{t.subtitle}</p>
+        </div>
+
+        <div class="lc-roadmap-grid">
+            {t.items.map((item, i) => (
+                <button
+                    class="lc-vote-card"
+                    data-id={cardConfig[i]!.id}
+                    aria-pressed="false"
+                >
+                    <div class="lc-vote-id">{cardConfig[i]!.displayId}</div>
+                    <div class="lc-vote-glow"></div>
+
+                    <div class="lc-vote-body">
+                        <div class="lc-vote-top">
+                            <div class="lc-vote-icon">
+                                <Icon name={cardConfig[i]!.icon} class="lc-vote-icon-svg" />
+                            </div>
+                            <div class="lc-vote-badge">
+                                <span class="lc-vote-badge-dot"></span>
+                                {item.tag}
+                            </div>
+                        </div>
+
+                        <div class="lc-vote-content">
+                            <h3 class="lc-vote-title">{item.title}</h3>
+                            <p class="lc-vote-desc">{item.description}</p>
+                        </div>
+
+                        <div class="lc-vote-footer">
+                            <span class="lc-vote-label">{t.voteLabel}</span>
+                            <div class="lc-vote-line"></div>
+                        </div>
+                    </div>
+
+                    <div class="lc-vote-seal">
+                        <div class="lc-vote-seal-inner">
+                            <Icon name="mdi:check-decagram" class="lc-vote-seal-svg" />
+                        </div>
+                    </div>
+
+                    <div class="lc-corner lc-corner-tl"></div>
+                    <div class="lc-corner lc-corner-tr"></div>
+                    <div class="lc-corner lc-corner-bl"></div>
+                    <div class="lc-corner lc-corner-br"></div>
+                </button>
+            ))}
+        </div>
+
+        <div class="lc-feedback">
+            <div class="lc-feedback-icon">
+                <Icon name="mdi:message-fast" class="lc-feedback-icon-svg" />
+            </div>
+            <div class="lc-feedback-text">
+                <p class="lc-feedback-title">{t.feedbackTitle}</p>
+                <p class="lc-feedback-sub">{t.feedbackSub}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const STORAGE_KEY = 'lexicrash_roadmap_vote';
+
+    const getLabels = () => {
+        const section = document.querySelector('.lc-roadmap') as HTMLElement | null;
+        return {
+            vote: section?.dataset.voteLabel ?? 'Click to vote',
+            voted: section?.dataset.votedLabel ?? 'Marked as priority',
+        };
+    };
+
+    const updateUI = (votedId: string) => {
+        const { vote, voted } = getLabels();
+        document.querySelectorAll('.lc-vote-card').forEach((card) => {
+            const id = card.getAttribute('data-id');
+            const labelEl = card.querySelector('.lc-vote-label');
+            const isVoted = id === votedId;
+            card.setAttribute('data-voted', String(isVoted));
+            if (labelEl) labelEl.textContent = isVoted ? voted : vote;
+        });
+    };
+
+    const onCardClick = (card: Element) => {
+        const id = card.getAttribute('data-id');
+        if (!id) return;
+        localStorage.setItem(STORAGE_KEY, id);
+        updateUI(id);
+        const el = card as HTMLElement;
+        el.style.transform = 'scale(0.95)';
+        setTimeout(() => { el.style.transform = ''; }, 100);
+    };
+
+    const initVoting = () => {
+        const storedVote = localStorage.getItem(STORAGE_KEY);
+        if (storedVote) updateUI(storedVote);
+        document.querySelectorAll('.lc-vote-card').forEach((card) => {
+            card.addEventListener('click', () => onCardClick(card));
+        });
+    };
+
+    initVoting();
+    document.addEventListener('astro:after-swap', initVoting);
+</script>
