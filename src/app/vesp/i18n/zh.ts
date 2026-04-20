@@ -6,7 +6,7 @@ export const cardContent: AppCardContent = {
     title: 'VESP: 鸡尾酒平衡器',
     subtitle: '调酒学：平衡与配方',
     description:
-        '专业鸡尾酒平衡、ABV、Brix 计算器及经典配方。',
+        '专业鸡尾酒平衡计算器，支持 ABV、Brix 及经典调酒配方。',
 };
 
 export const landingContent: VespLandingContent = {
@@ -23,7 +23,7 @@ export const landingContent: VespLandingContent = {
         conceptMain: '技术成就，',
         conceptHighlight: '品质。',
         description:
-            '专业鸡尾酒平衡、ABV、Brix 计算器及经典配方。',
+            '专业鸡尾酒平衡计算器，支持 ABV、Brix 及经典调酒配方。',
         specsLabel: '技术规格',
         features: [
             {
