@@ -258,6 +258,12 @@
     box-shadow: 0 25px 50px -10px rgba(0, 217, 255, 0.8);
 }
 
+.lc-hero-btn-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
 .lc-hero-btn-label {
     display: block;
     font-size: 0.625rem;
@@ -973,36 +979,47 @@
 }
 
 .lc-feedback {
-    margin-top: 8rem;
-    text-align: center;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 1.5rem;
-    padding: 1.25rem 2.5rem;
-    border-radius: 1rem;
+    padding: 2rem 3rem;
+    border-radius: 1.5rem;
     background-color: var(--lc-bg-card);
     border: 1px solid var(--lc-bg-card-border);
-    transition: all 0.5s ease;
-    width: 100%;
-    justify-content: center;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    max-width: 36rem;
+    margin: 8rem auto 0;
+    box-shadow: var(--lc-shadow-md);
 }
 
 .lc-feedback:hover {
-    border-color: rgba(0, 217, 255, 0.2);
+    border-color: rgba(0, 217, 255, 0.3);
+    box-shadow: 0 0 40px rgba(0, 217, 255, 0.08);
+    transform: translateY(-3px);
 }
 
 .lc-feedback-icon {
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.15), rgba(0, 217, 255, 0.05));
+    border: 1px solid rgba(0, 217, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--lc-cyan);
     transition: transform 0.3s ease;
 }
 
 .lc-feedback:hover .lc-feedback-icon {
-    transform: rotate(12deg);
+    transform: rotate(12deg) scale(1.1);
 }
 
 .lc-feedback-icon-svg {
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 .lc-feedback-text {
@@ -1010,22 +1027,22 @@
 }
 
 .lc-feedback-title {
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
     font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     color: var(--lc-text-primary);
+    margin-bottom: 0.25rem;
 }
 
 .lc-feedback-sub {
-    font-size: 0.75rem;
-    color: var(--lc-text-dim);
-    transition: opacity 0.3s ease;
+    font-size: 0.8125rem;
+    color: var(--lc-text-muted);
+    transition: color 0.3s ease;
 }
 
 .lc-feedback:hover .lc-feedback-sub {
     color: var(--lc-cyan);
-    opacity: 0.6;
 }
 
 .lc-cta {

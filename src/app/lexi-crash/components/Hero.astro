@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components';
 import type { LexiCrashHero } from '../types';
 
 interface Props {
@@ -33,6 +34,7 @@ const { t, stores } = Astro.props;
                     rel="noopener noreferrer"
                     class="lc-hero-btn lc-hero-btn-play"
                 >
+                    <Icon name="mdi:google-play" class="lc-hero-btn-icon" />
                     <span class="lc-hero-btn-label">{t.downloadLabel}</span>
                     <span class="lc-hero-btn-name">{t.downloadOnPlay}</span>
                 </a>
@@ -44,6 +46,7 @@ const { t, stores } = Astro.props;
                     rel="noopener noreferrer"
                     class="lc-hero-btn lc-hero-btn-store"
                 >
+                    <Icon name="mdi:apple" class="lc-hero-btn-icon" />
                     <span class="lc-hero-btn-label">{t.downloadLabel}</span>
                     <span class="lc-hero-btn-name">{t.downloadOnStore}</span>
                 </a>
