@@ -1,0 +1,43 @@
+---
+import type { VespHero } from '../types';
+
+interface Props {
+    t: VespHero;
+}
+
+const { t } = Astro.props;
+---
+
+<header class="vesp-hero">
+    <div class="vesp-hero-body">
+        <img
+            src="/assets/apps/vesp/icon.webp"
+            alt="VESP"
+            class="vesp-hero-icon"
+        />
+
+        <h1 class="vesp-hero-title">{t.title}</h1>
+
+        <p class="vesp-hero-subtitle">{t.subtitle}</p>
+
+        <p class="vesp-hero-philosophy">{t.philosophy}</p>
+
+        <div class="vesp-hero-price">
+            <span>{t.price}</span>
+            <span class="vesp-hero-price-label">{t.priceLabel}</span>
+        </div>
+    </div>
+
+    <div class="vesp-hero-visual">
+        <div class="vesp-hero-phone">
+            <div class="vesp-hero-phone-glow"></div>
+            <div class="vesp-hero-phone-frame">
+                <img
+                    src="/assets/apps/vesp/home-mockup.webp"
+                    alt="VESP Interface"
+                    class="vesp-hero-phone-img"
+                />
+            </div>
+        </div>
+    </div>
+</header>

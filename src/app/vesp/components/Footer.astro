@@ -1,0 +1,25 @@
+---
+import type { VespFooter } from '../types';
+
+interface Props {
+    t: VespFooter;
+}
+
+const { t } = Astro.props;
+---
+
+<footer class="vesp-footer">
+    <div class="vesp-footer-inner">
+        <img
+            src="/assets/apps/vesp/quality-seal.webp"
+            class="vesp-footer-seal"
+            alt="Seal"
+        />
+        <h2 class="vesp-footer-title">
+            {t.titleMain}<br />
+            <span class="vesp-footer-title-highlight">{t.titleHighlight}</span>
+        </h2>
+        <span class="vesp-footer-cta">{t.cta}</span>
+        <div class="vesp-footer-divider"></div>
+    </div>
+</footer>

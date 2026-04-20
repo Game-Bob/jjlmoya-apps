@@ -1,0 +1,29 @@
+---
+import type { VespEcosystem } from '../types';
+
+interface Props {
+    t: VespEcosystem;
+    appId: string;
+}
+
+const { t, appId } = Astro.props;
+---
+
+<section class="vesp-ecosystem">
+    <div class="vesp-ecosystem-header">
+        <h2 class="vesp-ecosystem-title">{t.title}</h2>
+        <p class="vesp-ecosystem-subtitle">{t.subtitle}</p>
+    </div>
+
+    <div class="vesp-ecosystem-grid">
+        {t.screenshots.map((s) => (
+            <div class="vesp-ecosystem-item">
+                <img
+                    src={`/assets/apps/${appId}/${s}`}
+                    class="vesp-ecosystem-img"
+                    alt="VESP Context"
+                />
+            </div>
+        ))}
+    </div>
+</section>

@@ -1,0 +1,32 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { VespBenefits } from '../types';
+
+interface Props {
+    t: VespBenefits;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="vesp-benefits">
+    <div class="vesp-benefits-inner">
+        <div class="vesp-benefits-header">
+            <h2 class="vesp-benefits-title">
+                {t.titleMain}<br />
+                <span class="vesp-benefits-title-highlight">{t.titleHighlight}</span>
+            </h2>
+            <p class="vesp-benefits-desc">{t.description}</p>
+        </div>
+
+        <div class="vesp-benefits-grid">
+            {t.items.map((b) => (
+                <div class="vesp-benefit-card">
+                    <Icon name={b.icon} class="vesp-benefit-icon" />
+                    <h3 class="vesp-benefit-title">{b.title}</h3>
+                    <p class="vesp-benefit-text">{b.text}</p>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

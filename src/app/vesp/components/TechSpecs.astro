@@ -1,0 +1,55 @@
+---
+import type { VespTechSpecs } from '../types';
+
+interface Props {
+    t: VespTechSpecs;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="vesp-techspecs">
+    <div class="vesp-techspecs-inner">
+        <div>
+            <span class="vesp-techspecs-label">{t.label}</span>
+            <h2 class="vesp-techspecs-concept">
+                {t.conceptMain}<br />
+                <span class="vesp-techspecs-concept-highlight">{t.conceptHighlight}</span>
+            </h2>
+            <p class="vesp-techspecs-desc">{t.description}</p>
+
+            <p class="vesp-techspecs-specs-label">{t.specsLabel}</p>
+
+            <div class="vesp-techspecs-features">
+                {t.features.map((f, i) => (
+                    <div class="vesp-techspecs-feature">
+                        <span class="vesp-techspecs-feature-num">0{i + 1}</span>
+                        <div>
+                            <h4 class="vesp-techspecs-feature-title">{f.title}</h4>
+                            <p class="vesp-techspecs-feature-text">{f.text}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            <div class="vesp-techspecs-table-wrapper">
+                <table class="vesp-techspecs-table">
+                    {t.tableRows.map((row) => (
+                        <tr>
+                            <td>{row.label}</td>
+                            <td class="vesp-techspecs-table-value">{row.value}</td>
+                        </tr>
+                    ))}
+                </table>
+            </div>
+        </div>
+
+        <div class="vesp-techspecs-img-wrapper">
+            <img
+                src="/assets/apps/vesp/mixer-mockup.webp"
+                class="vesp-techspecs-img"
+                alt="Mixer Tech Details"
+            />
+        </div>
+    </div>
+</section>
