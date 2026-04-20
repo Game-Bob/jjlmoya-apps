@@ -3,7 +3,7 @@ import { ALL_APP_DEFINITIONS } from '../entries';
 import type { AppCardContent } from '../types';
 
 const SHARING_LOCALES = ['ja', 'ko', 'zh'];
-const BRAND_SLUG_APPS = ['lexi-crash', 'pizzametrics', 'vesp'];
+const BRAND_SLUG_APPS = ['lexi-crash', 'pizzametrics', 'vesp', 'day-check', 'fast-task'];
 
 interface ValidateParams {
     appId: string;
