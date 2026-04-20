@@ -5,13 +5,13 @@ export const cardContent: AppCardContent = {
     slug: 'fortune-cookie',
     title: 'Fortune Cookie',
     subtitle: 'Your destiny in a single tap.',
-    description: 'One tap a day. Make it count. You are not collecting phrases, you are collecting consistency.',
+    description: "One tap a day. Make it count. You don't collect quotes, you collect consistency.",
 };
 
 export const landingContent: FortuneCookieLandingContent = {
     hero: {
-        tagline: "Most people don't know how to wait. You do.",
-        description: "One tap a day. Make it count. You're not collecting phrases, you're collecting consistency.",
+        tagline: 'Most don\'t know how to wait. You do.',
+        description: 'One tap a day. Make it count. You don\'t collect quotes, you collect consistency.',
         scanLabel: 'Scan to download',
     },
     challenge: {
@@ -19,17 +19,17 @@ export const landingContent: FortuneCookieLandingContent = {
         crystalLabel: 'Crystal',
         standardLabel: 'Standard',
         lunarLabel: 'Lunar',
-        quote: 'Today the digital world has released a new opportunity.',
+        quote: 'Today the digital world has unlocked a new opportunity.',
         quoteNote: 'Only available in the app for the next',
         quoteHighlight: '24 hours',
     },
     streak: {
         title: 'The Sacred Streak.',
-        description: "You're not collecting phrases, you're collecting consistency.",
+        description: 'You don\'t collect quotes, you collect consistency.',
         descriptionHighlight: 'Your story is written day by day.',
-        countdownPrefix: "Today's cookie expires in:",
-        tomorrowNote: "Don't worry, there will be another one tomorrow",
-        altarLabel: 'Your Shrine',
+        countdownPrefix: 'Today\'s cookie ends in:',
+        tomorrowNote: 'But don\'t worry, there will be another tomorrow',
+        altarLabel: 'Your Altar',
         nextMilestoneLabel: 'Next Milestone',
         todayLabel: 'TODAY',
         dayPrefix: 'Day',
@@ -38,14 +38,14 @@ export const landingContent: FortuneCookieLandingContent = {
         titleStart: 'The',
         titleHighlight: 'Glow',
         titleEnd: 'of Destiny.',
-        description: 'Gold, Jade and Black papers. Not just messages — trophies of your consistency and intuition.',
+        description: 'Gold, Jade, and Black papers. They aren\'t just messages; they are the trophies of your consistency and intuition.',
     },
     events: {
-        title: 'Limited Time Events.',
+        title: 'Seasonal Events.',
         subtitle: 'Destiny changes with the seasons. New cookies, new messages, new luck.',
         items: [
             {
-                name: "Valentine's Day",
+                name: 'Valentine\'s Day',
                 description: 'Love is in the air... and in your luck. Find the romantic cookies.',
                 date: 'Feb 14',
             },
@@ -62,7 +62,7 @@ export const landingContent: FortuneCookieLandingContent = {
         comingSoonEvents: 'Coming Soon — New Events',
     },
     footer: {
-        title: 'Are you in?',
+        title: 'Will you join?',
         subtitle: 'Your streak starts with a single click.',
         downloadPrefix: 'Download on',
     },

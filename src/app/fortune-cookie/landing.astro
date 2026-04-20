@@ -1,6 +1,7 @@
 ---
 import type { KnownLocale } from '../../types';
 import { fortuneCookieEntry } from './entry';
+import './fortune-cookie.css';
 import Hero from './components/Hero.astro';
 import Challenge from './components/Challenge.astro';
 import Streak from './components/Streak.astro';
@@ -49,33 +50,3 @@ const card = await cardLoader!();
     <Shorts t={t.shorts} {shorts} />
     <Footer t={t.footer} {stores} />
 </div>
-
-<style>
-    .landing {
-        min-height: 100vh;
-        background: #050505;
-        color: #fff;
-        overflow-x: hidden;
-        font-family: system-ui, sans-serif;
-        selection: auto;
-    }
-
-    .landing ::selection {
-        background: #bf9f5a;
-        color: #000;
-    }
-
-    :global(::-webkit-scrollbar) {
-        width: 8px;
-        background: #050505;
-    }
-
-    :global(::-webkit-scrollbar-thumb) {
-        background: #333;
-        border-radius: 4px;
-    }
-
-    :global(::-webkit-scrollbar-thumb:hover) {
-        background: #bf9f5a;
-    }
-</style>
