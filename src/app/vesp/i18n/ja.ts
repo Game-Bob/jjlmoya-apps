@@ -81,6 +81,6 @@ export const landingContent: VespLandingContent = {
     footer: {
         titleMain: '完璧な',
         titleHighlight: 'サービス。',
-        cta: '近日ストアに登場予定',
+        cta: '配信中',
     },
 };

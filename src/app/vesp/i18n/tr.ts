@@ -63,7 +63,7 @@ export const landingContent: VespLandingContent = {
             },
             {
                 title: 'Klasik Kütüphane',
-                text: 'Verilerle 70 ÜZERİ klasik tarif.',
+                text: 'Verilerle 70 üzeri klasik tarif.',
                 icon: 'mdi:book-open-variant',
             },
             {
@@ -81,6 +81,6 @@ export const landingContent: VespLandingContent = {
     footer: {
         titleMain: 'Servis',
         titleHighlight: 'MÜKEMMEL.',
-        cta: 'Çok yakında Mağazalarda',
+        cta: 'Şimdi indirilebilir',
     },
 };

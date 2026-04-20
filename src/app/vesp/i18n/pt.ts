@@ -42,7 +42,7 @@ export const landingContent: VespLandingContent = {
         tableRows: [
             { label: 'DENSIDADE', value: 'ANALÍTICA' },
             { label: 'GRAU (ABV)', value: 'CALIBRADO' },
-            { label: 'AÇÚCAR (BRIX)', value: 'REAL-TIME' },
+            { label: 'AÇÚCAR (BRIX)', value: 'TEMPO REAL' },
         ],
     },
     benefits: {
@@ -63,7 +63,7 @@ export const landingContent: VespLandingContent = {
             },
             {
                 title: 'Biblioteca Clássica',
-                text: 'MAIS DE 70 clássicos com dados físico-químicos.',
+                text: 'Mais de 70 clássicos com dados físico-químicos.',
                 icon: 'mdi:book-open-variant',
             },
             {
@@ -81,6 +81,6 @@ export const landingContent: VespLandingContent = {
     footer: {
         titleMain: 'Serviço',
         titleHighlight: 'PERFEITO.',
-        cta: 'Brevemente nas Stores',
+        cta: 'Disponível agora',
     },
 };

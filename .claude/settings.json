@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//d/code/**)",
+      "Bash(awk '{print $9, \"\\(\" $5 \"\\)\"}')",
+      "Bash(node --input-type=module)",
+      "Bash(2>&1)",
+      "Bash(sed -i 's/background-color: rgba\\(255, 255, 255, 0\\\\.05\\);/background-color: var\\(--dc-badge-bg\\);/g' /d/code/jjlmoya-apps/src/app/day-check/day-check.css)",
+      "Bash(sed -i 's/    color: rgba\\(255, 255, 255, 0\\\\.3\\);/    color: var\\(--dc-title-italic\\);/' /d/code/jjlmoya-apps/src/app/day-check/day-check.css)",
+      "Bash(sed -i 's/filter: drop-shadow\\(0 0 10px rgba\\(255, 255, 255, 0\\\\.3\\)\\);/filter: var\\(--dc-emoji-glow\\);/' /d/code/jjlmoya-apps/src/app/day-check/day-check.css)",
+      "Bash(sed -i 's/    color: rgba\\(255, 255, 255, 0\\\\.2\\);/    color: var\\(--dc-cta-placeholder\\);/' /d/code/jjlmoya-apps/src/app/day-check/day-check.css)",
+      "Bash(sed -i 's/box-shadow: 0 15px 30px rgba\\(255, 255, 255, 0\\\\.1\\);/box-shadow: 0 15px 30px var\\(--dc-cta-footer-shadow\\);/' /d/code/jjlmoya-apps/src/app/day-check/day-check.css)"
+    ]
+  }
+}

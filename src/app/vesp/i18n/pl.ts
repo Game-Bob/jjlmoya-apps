@@ -63,7 +63,7 @@ export const landingContent: VespLandingContent = {
             },
             {
                 title: 'Klasyczna Biblioteka',
-                text: 'PONAD 70 klasyków z danymi fizykochemicznymi.',
+                text: 'Ponad 70 klasyków z danymi fizykochemicznymi.',
                 icon: 'mdi:book-open-variant',
             },
             {
@@ -81,6 +81,6 @@ export const landingContent: VespLandingContent = {
     footer: {
         titleMain: 'Obsługa',
         titleHighlight: 'IDEALNA.',
-        cta: 'Wkrótce w sklepach',
+        cta: 'Dostępne teraz',
     },
 };

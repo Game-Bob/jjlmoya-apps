@@ -81,6 +81,6 @@ export const landingContent: VespLandingContent = {
     footer: {
         titleMain: '서비스',
         titleHighlight: '완벽함.',
-        cta: '곧 스토어 출시 예정',
+        cta: '지금 이용 가능',
     },
 };

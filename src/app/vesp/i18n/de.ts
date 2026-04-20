@@ -31,7 +31,7 @@ export const landingContent: VespLandingContent = {
                 text: 'Dichte und Alkoholgehalt kontrollieren.',
             },
             {
-                title: 'Keine Registrierung',
+                title: 'Ohne Registrierung',
                 text: 'Vollständige lokale Offline-Privatsphäre.',
             },
             {
@@ -63,7 +63,7 @@ export const landingContent: VespLandingContent = {
             },
             {
                 title: 'Klassische Bibliothek',
-                text: 'ÜBER 70 Klassiker mit physikalisch-chemischen Daten.',
+                text: 'Über 70 Klassiker mit physikalisch-chemischen Daten.',
                 icon: 'mdi:book-open-variant',
             },
             {
@@ -81,6 +81,6 @@ export const landingContent: VespLandingContent = {
     footer: {
         titleMain: 'Service',
         titleHighlight: 'PERFEKT.',
-        cta: 'Demnächst in den Stores',
+        cta: 'Jetzt verfügbar',
     },
 };

@@ -3,8 +3,8 @@ import type { VespLandingContent } from '../types';
 
 export const cardContent: AppCardContent = {
     slug: 'vesp',
-    title: 'VESP: Équilibreur de Cocktails',
-    subtitle: 'Mixologie: Équilibre & Recettes',
+    title: 'VESP : Équilibreur de Cocktails',
+    subtitle: 'Mixologie : Équilibre & Recettes',
     description:
         'Calculateur d\'équilibre, ABV, Brix et recettes classiques de mixologie professionnelle.',
 };
@@ -12,7 +12,7 @@ export const cardContent: AppCardContent = {
 export const landingContent: VespLandingContent = {
     hero: {
         title: 'VESP',
-        subtitle: 'Mixologie: Équilibre & Recettes',
+        subtitle: 'Mixologie : Équilibre & Recettes',
         philosophy:
             'Élevez la consistance de votre bar avec VESP : l\'outil technique ultime pour les bartenders et amateurs de mixologie en quête de perfection scientifique dans chaque verre.',
         price: 'Gratuit',
@@ -63,7 +63,7 @@ export const landingContent: VespLandingContent = {
             },
             {
                 title: 'Bibliothèque Classique',
-                text: 'PLUS DE 70 classiques avec données physicochimiques.',
+                text: 'Plus de 70 classiques avec données physicochimiques.',
                 icon: 'mdi:book-open-variant',
             },
             {
@@ -81,6 +81,6 @@ export const landingContent: VespLandingContent = {
     footer: {
         titleMain: 'Service',
         titleHighlight: 'PARFAIT.',
-        cta: 'Bientôt dans les Stores',
+        cta: 'Disponible dès maintenant',
     },
 };

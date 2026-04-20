@@ -3,7 +3,7 @@ import type { VespLandingContent } from '../types';
 
 export const cardContent: AppCardContent = {
     slug: 'vesp',
-    title: 'VESP: Cocktail-Balancer',
+    title: 'VESP: Cocktail-balancer',
     subtitle: 'Mixology: Balans & Recepten',
     description:
         'Professionele calculator voor balans, ABV, Brix en klassieke cocktailrecepten.',
@@ -63,7 +63,7 @@ export const landingContent: VespLandingContent = {
             },
             {
                 title: 'Klassieke Bibliotheek',
-                text: 'MEER DAN 70 klassiekers met fysisch-chemische gegevens.',
+                text: 'Meer dan 70 klassiekers met fysisch-chemische gegevens.',
                 icon: 'mdi:book-open-variant',
             },
             {
@@ -81,6 +81,6 @@ export const landingContent: VespLandingContent = {
     footer: {
         titleMain: 'Service',
         titleHighlight: 'PERFECT.',
-        cta: 'Binnenkort in de Stores',
+        cta: 'Nu beschikbaar',
     },
 };

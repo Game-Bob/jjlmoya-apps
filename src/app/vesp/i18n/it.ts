@@ -63,7 +63,7 @@ export const landingContent: VespLandingContent = {
             },
             {
                 title: 'Biblioteca Classica',
-                text: 'OLTRE 70 classici con dati fisico-chimici.',
+                text: 'Oltre 70 classici con dati fisico-chimici.',
                 icon: 'mdi:book-open-variant',
             },
             {
@@ -81,6 +81,6 @@ export const landingContent: VespLandingContent = {
     footer: {
         titleMain: 'Servizio',
         titleHighlight: 'PERFETTO.',
-        cta: 'Presto negli Store',
+        cta: 'Disponibile ora',
     },
 };

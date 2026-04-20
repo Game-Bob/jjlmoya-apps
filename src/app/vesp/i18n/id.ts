@@ -62,8 +62,8 @@ export const landingContent: VespLandingContent = {
                 icon: 'mdi:water-percent',
             },
             {
-                title: 'Perpustakaan Kasik',
-                text: 'LEBIH DARI 70 klasik dengan data fisikokimia.',
+                title: 'Perpustakaan Klasik',
+                text: 'Lebih dari 70 klasik dengan data fisikokimia.',
                 icon: 'mdi:book-open-variant',
             },
             {
@@ -81,6 +81,6 @@ export const landingContent: VespLandingContent = {
     footer: {
         titleMain: 'Layanan',
         titleHighlight: 'SEMPURNA.',
-        cta: 'Segera hadir di Stores',
+        cta: 'Tersedia sekarang',
     },
 };

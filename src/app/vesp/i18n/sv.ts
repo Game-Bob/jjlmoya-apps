@@ -20,7 +20,7 @@ export const landingContent: VespLandingContent = {
     },
     techSpecs: {
         label: 'Precisions-mixologi',
-        conceptMain: 'TEKNIK AV,' ,
+        conceptMain: 'TEKNIK AV,',
         conceptHighlight: 'KVALITET.',
         description:
             'Professionell kalkylator för balans, ABV, Brix och klassiska cocktailrecept.',
@@ -63,7 +63,7 @@ export const landingContent: VespLandingContent = {
             },
             {
                 title: 'Klassiskt Bibliotek',
-                text: 'ÖVER 70 klassiker med fysikalisk-kemiska data.',
+                text: 'Över 70 klassiker med fysikalisk-kemiska data.',
                 icon: 'mdi:book-open-variant',
             },
             {
@@ -81,6 +81,6 @@ export const landingContent: VespLandingContent = {
     footer: {
         titleMain: 'Service',
         titleHighlight: 'PERFEKT.',
-        cta: 'Kommer snart till Stores',
+        cta: 'Tillgänglig nu',
     },
 };

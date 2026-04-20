@@ -63,7 +63,7 @@ export const landingContent: VespLandingContent = {
             },
             {
                 title: 'Классическая библиотека',
-                text: 'БОЛЕЕ 70 классических рецептов с данными.',
+                text: 'Более 70 классических рецептов с данными.',
                 icon: 'mdi:book-open-variant',
             },
             {
@@ -81,6 +81,6 @@ export const landingContent: VespLandingContent = {
     footer: {
         titleMain: 'Сервис',
         titleHighlight: 'ИДЕАЛЬНЫЙ.',
-        cta: 'Скоро в магазинах приложений',
+        cta: 'Доступно сейчас',
     },
 };
