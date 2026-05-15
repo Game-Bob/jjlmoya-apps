@@ -1,0 +1,39 @@
+---
+import type { SauceLabChemistry } from '../types';
+
+interface Props {
+    t: SauceLabChemistry;
+    appId: string;
+}
+
+const { t, appId } = Astro.props;
+---
+
+<section class="sl-chemistry">
+    <div class="sl-container">
+        <div class="sl-chemistry-inner">
+            <div class="sl-chemistry-content">
+                <span class="sl-label">{t.label}</span>
+                <h2 class="sl-section-title">
+                    {t.titleMain} <span class="sl-text-accent">{t.titleHighlight}</span>
+                </h2>
+                <div class="sl-chemistry-items">
+                    {t.items.map((item) => (
+                        <div class="sl-chemistry-item">
+                            <h3 class="sl-chemistry-item-title">{item.title}</h3>
+                            <p class="sl-chemistry-item-text">{item.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <div class="sl-chemistry-visual">
+                <div class="sl-phone-mockup">
+                    <img src={`/assets/apps/${appId}/screenshots/modes.webp`} alt="App Modes" class="sl-screenshot" />
+                </div>
+                <div class="sl-sauce-blob-container">
+                    <div class="sl-sauce-blob sl-blob-main"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

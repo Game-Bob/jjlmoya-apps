@@ -1,0 +1,41 @@
+---
+import type { SauceLabGallery } from '../types';
+
+interface Props {
+    t: SauceLabGallery;
+    appId: string;
+}
+
+const { t, appId } = Astro.props;
+
+const screenshots = [
+    'hero',
+    'atlas',
+    'world',
+    'recipe',
+    'modes',
+    'fix',
+    'features'
+];
+---
+
+<section class="sl-gallery">
+    <div class="sl-container">
+        <header class="sl-section-header">
+            <h2 class="sl-section-title">{t.title}</h2>
+        </header>
+        <div class="sl-gallery-scroll">
+            <div class="sl-gallery-track">
+                {screenshots.map((s) => (
+                    <div class="sl-screenshot-wrap">
+                        <img 
+                            src={`/assets/apps/${appId}/screenshots/${s}.webp`} 
+                            alt={`Screenshot ${s}`}
+                            class="sl-screenshot"
+                        />
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,61 @@
+---
+import type { KnownLocale } from '../../types';
+import { sauceLabEntry } from './entry';
+import { localizedAppStoreUrl } from '../../app-store';
+import './sauce-lab.css';
+import Hero from './components/Hero.astro';
+import Philosophy from './components/Philosophy.astro';
+import Benefits from './components/Benefits.astro';
+import Hierarchy from './components/Hierarchy.astro';
+import Chemistry from './components/Chemistry.astro';
+import Atlas from './components/Atlas.astro';
+import Fix from './components/Fix.astro';
+
+interface Props {
+    locale: KnownLocale;
+}
+
+const { locale } = Astro.props;
+
+const loaders = {
+    es: () => import('./i18n/es').then((m) => m.landingContent),
+    en: () => import('./i18n/en').then((m) => m.landingContent),
+};
+
+const t = await (loaders[locale as keyof typeof loaders] ?? loaders.en)();
+const { stores: baseStores, id: appId } = sauceLabEntry;
+
+const stores = {
+    ...baseStores,
+    appStore: baseStores.appStore ? localizedAppStoreUrl(baseStores.appStore, locale) : undefined,
+};
+---
+
+<div class="sl-landing">
+    <div class="sl-noise"></div>
+    <Hero t={t.hero} {stores} {appId} />
+    
+    <div class="sl-main-content">
+        <Philosophy t={t.philosophy} {appId} />
+        <Benefits t={t.benefits} />
+        <Hierarchy t={t.hierarchy} {appId} />
+        <Chemistry t={t.chemistry} {appId} />
+        <Atlas t={t.atlas} {appId} />
+        <Fix t={t.fix} {appId} />
+        
+        <section class="sl-final-cta">
+            <div class="sl-container">
+                <div class="sl-cta-card">
+                    <h2 class="sl-cta-title">Ready to master the <span class="sl-text-accent">Saucier</span>?</h2>
+                    <p class="sl-cta-text">Join thousands of chefs using SauceLab to craft the perfect heritage.</p>
+                    <div class="sl-hero-actions">
+                        <div class="sl-btn-wrapper disabled">
+                            <span class="sl-btn sl-btn-primary">Download App</span>
+                            <span class="sl-btn-status">{t.hero.comingSoon}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

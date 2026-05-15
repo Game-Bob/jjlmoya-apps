@@ -1,0 +1,46 @@
+---
+import type { SauceLabAtlas } from '../types';
+
+interface Props {
+    t: SauceLabAtlas;
+    appId: string;
+}
+
+const { t, appId } = Astro.props;
+---
+
+<section class="sl-atlas">
+    <div class="sl-container">
+        <div class="sl-atlas-grid">
+            <div class="sl-atlas-visual">
+                <div class="sl-atlas-stack">
+                    <div class="sl-atlas-map-container">
+                        <svg class="sl-world-map" viewBox="0 0 1000 500" fill="currentColor">
+                            <path d="M120,120 L220,110 L280,130 L290,190 L240,240 L180,220 L130,240 L100,180 Z" />
+                            <path d="M260,280 L320,270 L350,330 L320,440 L250,450 L220,380 Z" />
+                            <path d="M450,100 L600,80 L800,90 L900,150 L850,250 L700,240 L550,260 L450,180 Z" />
+                            <path d="M480,240 L580,230 L650,300 L620,420 L530,440 L460,350 Z" />
+                            <path d="M780,320 L880,310 L920,360 L890,450 L790,440 L750,380 Z" />
+                        </svg>
+                        <div class="sl-atlas-glow"></div>
+                        <div class="sl-atlas-markers">
+                            <div class="sl-marker" style="top: 25%; left: 48%;"></div>
+                            <div class="sl-marker" style="top: 38%; left: 75%;"></div>
+                            <div class="sl-marker" style="top: 28%; left: 22%;"></div>
+                        </div>
+                    </div>
+                    <div class="sl-atlas-screenshot-wrap">
+                        <img src={`/assets/apps/${appId}/screenshots/world.webp`} alt="Atlas Interface" class="sl-screenshot" />
+                    </div>
+                </div>
+            </div>
+            <div class="sl-atlas-content">
+                <span class="sl-label">{t.label}</span>
+                <h2 class="sl-section-title">
+                    {t.titleMain} <span class="sl-text-accent">{t.titleHighlight}</span>
+                </h2>
+                <p class="sl-text">{t.description}</p>
+            </div>
+        </div>
+    </div>
+</section>

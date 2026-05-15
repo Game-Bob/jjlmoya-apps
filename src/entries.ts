@@ -6,7 +6,13 @@ import { vespEntry } from './app/vesp/entry';
 import { dayCheckEntry } from './app/day-check/entry';
 import { fastTaskEntry } from './app/fast-task/entry';
 
+import { sauceLabEntry } from './app/sauce-lab/entry';
+
 export const ALL_APP_DEFINITIONS: AppDefinition[] = [
+    {
+        entry: sauceLabEntry,
+        LandingComponent: () => import('./app/sauce-lab/landing.astro'),
+    },
     {
         entry: fortuneCookieEntry,
         LandingComponent: () => import('./app/fortune-cookie/landing.astro'),

@@ -1,0 +1,39 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { SauceLabBenefits } from '../types';
+
+interface Props {
+    t: SauceLabBenefits;
+}
+
+const { t } = Astro.props;
+
+const getIconName = (key: string) => {
+    const map: Record<string, string> = {
+        'chef-hat': 'mdi:chef-hat',
+        'beaker': 'mdi:beaker',
+        'wifi-off': 'mdi:wifi-off',
+        'shield-check': 'mdi:shield-check'
+    };
+    return map[key] || 'mdi:star';
+};
+---
+
+<section class="sl-benefits">
+    <div class="sl-container">
+        <h2 class="sl-section-title">
+            {t.titleMain} <span class="sl-text-accent">{t.titleHighlight}</span>
+        </h2>
+        <div class="sl-benefits-grid">
+            {t.items.map((item) => (
+                <div class="sl-benefit-card">
+                    <div class="sl-benefit-icon-wrap">
+                        <Icon name={getIconName(item.icon)} class="sl-benefit-icon" />
+                    </div>
+                    <h3 class="sl-benefit-title">{item.title}</h3>
+                    <p class="sl-benefit-text">{item.text}</p>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
