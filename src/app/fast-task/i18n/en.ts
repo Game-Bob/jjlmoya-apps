@@ -13,6 +13,7 @@ export const landingContent: FastTaskLandingContent = {
     hero: {
         title: 'Fast Task',
         subtitle: 'Write. Send. Forget. Peace.',
+        price: '4.95€',
         priceLabel: 'One-time professional purchase',
     },
     concept: {

@@ -3,6 +3,7 @@ import type { AppEntry } from '../../types';
 export const sauceLabEntry: AppEntry = {
     id: 'sauce-lab',
     isGame: false,
+    packageId: 'com.gamebob.saucelab',
     stores: {
         googlePlay: '',
         appStore: '',

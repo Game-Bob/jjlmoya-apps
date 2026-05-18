@@ -7,6 +7,7 @@ export interface PizzametricsHero {
     downloadOnPlay: string;
     downloadLabelStore: string;
     downloadLabelPlay: string;
+    scanLabel: string;
     tagline: string;
 }
 
@@ -60,6 +61,7 @@ export interface PizzametricsFooter {
     titleHighlight: string;
     privacyLabel: string;
     termsLabel: string;
+    scanLabel: string;
 }
 
 export interface PizzametricsLandingContent {

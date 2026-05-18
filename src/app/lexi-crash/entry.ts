@@ -3,6 +3,7 @@ import type { AppEntry } from '../../types';
 export const lexiCrashEntry: AppEntry = {
     id: 'lexi-crash',
     isGame: true,
+    packageId: 'com.gamebob.lexicrash',
     shorts: [],
     stores: {
         googlePlay: 'https://play.google.com/store/apps/details?id=com.gamebob.lexicrash',

@@ -3,6 +3,7 @@ import type { AppEntry } from '../../types';
 export const dayCheckEntry: AppEntry = {
     id: 'day-check',
     isGame: false,
+    packageId: 'com.gamebob.daycheck.utility',
     shorts: ['7yrHoCccCiw', 'BH3hQ2VlPDc'],
     stores: {
         googlePlay: 'https://play.google.com/store/apps/details?id=com.gamebob.daycheck.utility',

@@ -27,7 +27,7 @@ const { stores: baseStores, id: appId } = sauceLabEntry;
 
 const stores = {
     ...baseStores,
-    appStore: baseStores.appStore ? localizedAppStoreUrl(baseStores.appStore, locale) : undefined,
+    ...(baseStores.appStore ? { appStore: localizedAppStoreUrl(baseStores.appStore, locale) } : {}),
 };
 ---
 

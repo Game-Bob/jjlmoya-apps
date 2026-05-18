@@ -3,6 +3,7 @@ import type { AppEntry } from '../../types';
 export const fastTaskEntry: AppEntry = {
     id: 'fast-task',
     isGame: false,
+    packageId: 'com.gamebob.fasttask',
     stores: {
         googlePlay: 'https://play.google.com/store/apps/details?id=com.gamebob.fasttask',
         appStore: 'https://apps.apple.com/es/app/fasttask-escribe-olvida-paz/id6759599830',

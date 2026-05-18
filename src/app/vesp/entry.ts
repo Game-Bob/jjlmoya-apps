@@ -3,6 +3,7 @@ import type { AppEntry } from '../../types';
 export const vespEntry: AppEntry = {
     id: 'vesp',
     isGame: false,
+    packageId: 'com.gamebob.cocktailequilibrator',
     stores: {
         appStore: 'https://apps.apple.com/es/app/vesp-equilibrador-de-c%C3%B3cteles/id6761222386',
         googlePlay: 'https://play.google.com/store/apps/details?id=com.gamebob.cocktailequilibrator',

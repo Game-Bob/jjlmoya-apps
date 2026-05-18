@@ -3,7 +3,7 @@ import type { DayCheckCards } from '../types';
 
 interface Props {
     t: DayCheckCards;
-    googlePlay?: string;
+    googlePlay?: string | undefined;
 }
 
 const { t, googlePlay } = Astro.props;
@@ -20,7 +20,7 @@ const cardOffsets: { months?: string; weeks?: string }[] = [
 <section class="dc-cards">
     <div class="dc-cards-inner">
         {t.cards.map((card, i) => {
-            const off = cardOffsets[i];
+            const off = cardOffsets[i] ?? {};
             return (
                 <div class={`dc-card ${cardClasses[i]}`}>
                     <div class="dc-card-stripe"></div>

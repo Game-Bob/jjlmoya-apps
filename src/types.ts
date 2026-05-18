@@ -16,6 +16,7 @@ export interface AppCardContent {
 export interface AppEntry {
     id: string;
     isGame: boolean;
+    packageId?: string;
     shorts?: string[];
     stores: {
         googlePlay?: string;
@@ -26,6 +27,6 @@ export interface AppEntry {
 
 export interface AppDefinition {
     entry: AppEntry;
-    LandingComponent: () => Promise<{ default: unknown }>;
-    ChangelogComponent?: () => Promise<{ default: unknown }>;
+    LandingComponent: () => Promise<{ default: any }>;
+    ChangelogComponent?: () => Promise<{ default: any }>;
 }

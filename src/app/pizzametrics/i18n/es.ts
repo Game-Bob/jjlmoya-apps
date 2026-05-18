@@ -20,6 +20,7 @@ export const landingContent: PizzametricsLandingContent = {
         downloadOnPlay: 'Google Play',
         downloadLabelStore: 'Descargar en',
         downloadLabelPlay: 'Disponible en',
+        scanLabel: 'Escanea para instalar ahora',
         tagline: 'Diseñada para entusiastas de la técnica',
     },
     showCase: {
@@ -75,5 +76,6 @@ export const landingContent: PizzametricsLandingContent = {
         titleHighlight: 'Revolución Científica',
         privacyLabel: 'Política de Privacidad',
         termsLabel: 'Términos y Condiciones',
+        scanLabel: 'Escanea para descargar',
     },
 };

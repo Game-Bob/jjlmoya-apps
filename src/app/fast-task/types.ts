@@ -1,6 +1,7 @@
 export interface FastTaskHero {
     title: string;
     subtitle: string;
+    price: string;
     priceLabel: string;
 }
 

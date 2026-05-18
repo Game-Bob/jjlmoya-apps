@@ -3,6 +3,7 @@ import type { AppEntry } from '../../types';
 export const pizzametricsEntry: AppEntry = {
     id: 'pizzametrics',
     isGame: false,
+    packageId: 'com.gamebob.pizzametrics',
     shorts: ['CgnZaRWkm5Y', 'UF1RNpLSHTo', 'DB8vOFI56GU', 'wDNPmCBqwm8', 'nCYASztgWLw'],
     stores: {
         googlePlay: 'https://play.google.com/store/apps/details?id=com.gamebob.pizzametrics',

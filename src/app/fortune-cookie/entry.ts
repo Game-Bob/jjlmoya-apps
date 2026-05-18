@@ -3,6 +3,7 @@ import type { AppEntry } from '../../types';
 export const fortuneCookieEntry: AppEntry = {
     id: 'fortune-cookie',
     isGame: true,
+    packageId: 'com.gamebob.cookie.fortune',
     shorts: ['xLaoqTuhaHw', 'yMzMi6loU14'],
     stores: {
         googlePlay: 'https://play.google.com/store/apps/details?id=com.gamebob.cookie.fortune',

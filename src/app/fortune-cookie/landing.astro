@@ -40,7 +40,7 @@ const { stores: baseStores, id: appId, shorts = [] } = fortuneCookieEntry;
 
 const stores = {
     ...baseStores,
-    appStore: baseStores.appStore ? localizedAppStoreUrl(baseStores.appStore, locale) : undefined,
+    ...(baseStores.appStore ? { appStore: localizedAppStoreUrl(baseStores.appStore, locale) } : {}),
 };
 
 const cardLoader = fortuneCookieEntry.i18n[locale] ?? fortuneCookieEntry.i18n.en;

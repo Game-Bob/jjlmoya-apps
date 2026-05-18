@@ -41,7 +41,7 @@ const { stores: baseStores, id: appId } = fastTaskEntry;
 
 const stores = {
     ...baseStores,
-    appStore: baseStores.appStore ? localizedAppStoreUrl(baseStores.appStore, locale) : undefined,
+    ...(baseStores.appStore ? { appStore: localizedAppStoreUrl(baseStores.appStore, locale) } : {}),
 };
 ---
 
