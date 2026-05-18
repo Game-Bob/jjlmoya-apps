@@ -6,7 +6,7 @@ export const sauceLabEntry: AppEntry = {
     packageId: 'com.gamebob.saucelab',
     stores: {
         googlePlay: 'https://play.google.com/store/apps/details?id=com.gamebob.saucelab',
-        appStore: '',
+        appStore: 'https://apps.apple.com/ma/app/saucelab-master-the-sauce/id6769901209',
     },
     i18n: {
         en: () => import('./i18n/en').then((m) => m.cardContent),
