@@ -5,7 +5,7 @@ export const sauceLabEntry: AppEntry = {
     isGame: false,
     packageId: 'com.gamebob.saucelab',
     stores: {
-        googlePlay: '',
+        googlePlay: 'https://play.google.com/store/apps/details?id=com.gamebob.saucelab',
         appStore: '',
     },
     i18n: {
