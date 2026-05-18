@@ -27,6 +27,6 @@ export interface AppEntry {
 
 export interface AppDefinition {
     entry: AppEntry;
-    LandingComponent: () => Promise<{ default: any }>;
-    ChangelogComponent?: () => Promise<{ default: any }>;
+    LandingComponent: () => Promise<{ default: unknown }>;
+    ChangelogComponent?: () => Promise<{ default: unknown }>;
 }

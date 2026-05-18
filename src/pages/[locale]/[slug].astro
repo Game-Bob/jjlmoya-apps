@@ -3,6 +3,7 @@ import PreviewLayout from '../../layouts/PreviewLayout.astro';
 import PreviewNavSidebar from '../../components/PreviewNavSidebar.astro';
 import { ALL_APP_DEFINITIONS } from '../../entries';
 import type { KnownLocale, AppCardContent, AppDefinition } from '../../types';
+import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 
 export async function getStaticPaths() {
     const paths = [];
@@ -45,7 +46,7 @@ export async function getStaticPaths() {
     return paths;
 }
 
-interface Props {
+export interface Props {
     def: AppDefinition;
     locale: KnownLocale;
     card: AppCardContent;
@@ -54,7 +55,7 @@ interface Props {
 }
 
 const { def, locale, card, localeUrls, nav } = Astro.props;
-const { default: LandingComponent } = await def.LandingComponent();
+const { default: LandingComponent } = (await def.LandingComponent()) as { default: AstroComponentFactory };
 ---
 
 <PreviewLayout title={card.title} currentLocale={locale} localeUrls={localeUrls} hasSidebar={true}>
