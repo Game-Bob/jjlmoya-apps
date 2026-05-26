@@ -4,7 +4,7 @@ export const cardContent: AppCardContent = {
     title: 'SauceLab',
     subtitle: '100+ Receitas de Molhos Icônicos',
     description: 'Domine a arte do salsiere com mais de 100 receitas icónicas e um atlas culinário profissional.',
-    slug: 'laboratorio-molhos',
+    slug: 'sauce-lab',
 };
 
 export const landingContent: SauceLabLandingContent = {

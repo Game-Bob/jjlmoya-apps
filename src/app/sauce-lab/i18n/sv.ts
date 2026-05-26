@@ -4,7 +4,7 @@ export const cardContent: AppCardContent = {
     title: 'SauceLab',
     subtitle: 'Över 100 ikoniska såsrecept',
     description: 'Mästra konsten som saucier med över 100 ikoniska recept och en professionell kulinarisk atlas.',
-    slug: 'saslaboratorium',
+    slug: 'sauce-lab',
 };
 
 export const landingContent: SauceLabLandingContent = {

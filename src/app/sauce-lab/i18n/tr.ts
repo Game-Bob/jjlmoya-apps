@@ -4,7 +4,7 @@ export const cardContent: AppCardContent = {
     title: 'SauceLab',
     subtitle: '100+ İkonik Sos Tarifi',
     description: '100\'den fazla ikonik tarif ve profesyonel mutfak atlası ile sos uzmanlığında ustalaşın.',
-    slug: 'sos-laboratuvari',
+    slug: 'sauce-lab',
 };
 
 export const landingContent: SauceLabLandingContent = {

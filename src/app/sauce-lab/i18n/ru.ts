@@ -4,7 +4,7 @@ export const cardContent: AppCardContent = {
     title: 'SauceLab',
     subtitle: 'Более 100 легендарных рецептов соусов',
     description: 'Освойте искусство соусье с более чем 100 легендарными рецептами и профессиональным кулинарным атласом.',
-    slug: 'laboratoriya-sousov',
+    slug: 'sauce-lab',
 };
 
 export const landingContent: SauceLabLandingContent = {
