@@ -1,5 +1,6 @@
 ---
 import type { KnownLocale } from '../../types';
+import { Icon } from 'astro-icon/components';
 import { sauceLabEntry } from './entry';
 import { localizedAppStoreUrl } from '../../app-store';
 import './sauce-lab.css';
@@ -42,6 +43,9 @@ const stores = {
     ...baseStores,
     ...(baseStores.appStore ? { appStore: localizedAppStoreUrl(baseStores.appStore, locale) } : {}),
 };
+
+const hasGooglePlay = !!stores.googlePlay;
+const hasAppStore = !!stores.appStore;
 ---
 
 <div class="sl-landing">
@@ -62,9 +66,20 @@ const stores = {
                     <h2 class="sl-cta-title">Ready to master the <span class="sl-text-accent">Saucier</span>?</h2>
                     <p class="sl-cta-text">Join thousands of chefs using SauceLab to craft the perfect heritage.</p>
                     <div class="sl-hero-actions">
-                        <div class="sl-btn-wrapper disabled">
-                            <span class="sl-btn sl-btn-primary">Download App</span>
-                            <span class="sl-btn-status">{t.hero.comingSoon}</span>
+                        <div class:list={["sl-btn-wrapper", { 'disabled': !hasAppStore }]}>
+                            <a href={hasAppStore ? stores.appStore : 'javascript:void(0)'} class="sl-btn sl-btn-primary">
+                                <Icon name="mdi:apple" class="sl-btn-icon" />
+                                <span>App Store</span>
+                            </a>
+                            {!hasAppStore && <span class="sl-btn-status">{t.hero.comingSoon}</span>}
+                        </div>
+
+                        <div class:list={["sl-btn-wrapper", { 'disabled': !hasGooglePlay }]}>
+                            <a href={hasGooglePlay ? stores.googlePlay : 'javascript:void(0)'} class="sl-btn sl-btn-secondary">
+                                <Icon name="mdi:google-play" class="sl-btn-icon" />
+                                <span>Google Play</span>
+                            </a>
+                            {!hasGooglePlay && <span class="sl-btn-status">{t.hero.comingSoon}</span>}
                         </div>
                     </div>
                 </div>
