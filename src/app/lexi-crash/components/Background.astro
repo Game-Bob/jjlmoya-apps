@@ -1,26 +1,83 @@
 ---
-const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-const items = Array.from({ length: 100 }, (_, i) => ({
-    letter: alphabet[Math.floor(Math.random() * alphabet.length)],
-    x: Math.floor(Math.random() * 100),
-    delay: (Math.random() * 20).toFixed(1),
-    duration: (8 + Math.random() * 10).toFixed(1),
-    size: (0.8 + Math.random() * 2.5).toFixed(1),
-    opacity: (0.03 + Math.random() * 0.07).toFixed(2),
-    hideMobile: i % 3 !== 0,
-}));
+const items = [
+    { letter: 'A', x: 8, y: 16, delay: 0, duration: 20, size: 2.2, rotate: -12 },
+    { letter: 'L', x: 18, y: 68, delay: 4, duration: 24, size: 1.4, rotate: 16 },
+    { letter: 'E', x: 34, y: 10, delay: 7, duration: 19, size: 1.1, rotate: 10 },
+    { letter: 'X', x: 45, y: 78, delay: 1, duration: 22, size: 2.5, rotate: -8 },
+    { letter: 'I', x: 62, y: 20, delay: 9, duration: 25, size: 1.3, rotate: 14 },
+    { letter: 'C', x: 74, y: 72, delay: 3, duration: 18, size: 1.7, rotate: -16 },
+    { letter: 'R', x: 90, y: 28, delay: 6, duration: 23, size: 1.2, rotate: 8 },
+    { letter: 'A', x: 84, y: 88, delay: 11, duration: 21, size: 2, rotate: -10 },
+];
+
+const stars = [
+    { glyph: 'filled', x: 6, y: 12, delay: 0, duration: 3.8, size: 2.2, variant: 'gold' },
+    { glyph: 'hollow', x: 16, y: 30, delay: 1.1, duration: 4.8, size: 1.15, variant: 'lilac' },
+    { glyph: 'filled', x: 27, y: 8, delay: 2.1, duration: 4.2, size: 1.5, variant: 'peach' },
+    { glyph: 'hollow', x: 38, y: 24, delay: 0.8, duration: 5.4, size: 1, variant: 'blue' },
+    { glyph: 'filled', x: 51, y: 11, delay: 1.7, duration: 4.6, size: 1.7, variant: 'gold' },
+    { glyph: 'hollow', x: 63, y: 33, delay: 3, duration: 5.2, size: 1.2, variant: 'lilac' },
+    { glyph: 'filled', x: 78, y: 14, delay: 0.4, duration: 4, size: 2, variant: 'peach' },
+    { glyph: 'hollow', x: 92, y: 8, delay: 2.5, duration: 5.6, size: 1.1, variant: 'blue' },
+    { glyph: 'filled', x: 9, y: 53, delay: 1.5, duration: 4.5, size: 1.35, variant: 'lilac' },
+    { glyph: 'hollow', x: 23, y: 71, delay: 2.8, duration: 5.1, size: 1, variant: 'gold' },
+    { glyph: 'filled', x: 48, y: 58, delay: 0.7, duration: 4.1, size: 1.8, variant: 'peach' },
+    { glyph: 'hollow', x: 69, y: 76, delay: 1.9, duration: 5.5, size: 1.25, variant: 'blue' },
+    { glyph: 'filled', x: 86, y: 52, delay: 3.3, duration: 4.3, size: 1.5, variant: 'gold' },
+    { glyph: 'hollow', x: 96, y: 86, delay: 1, duration: 5.7, size: 1.1, variant: 'lilac' },
+    { glyph: 'filled', x: 34, y: 91, delay: 2.4, duration: 4.7, size: 1.65, variant: 'peach' },
+    { glyph: 'hollow', x: 57, y: 94, delay: 0.2, duration: 5.3, size: 1, variant: 'gold' },
+    { glyph: 'filled', x: 14, y: 42, delay: 1.8, duration: 4.9, size: 0.9, variant: 'blue' },
+    { glyph: 'hollow', x: 31, y: 43, delay: 3.7, duration: 5.8, size: 0.82, variant: 'peach' },
+    { glyph: 'filled', x: 42, y: 35, delay: 0.5, duration: 4.4, size: 1.05, variant: 'gold' },
+    { glyph: 'hollow', x: 55, y: 47, delay: 2.9, duration: 5.5, size: 0.86, variant: 'lilac' },
+    { glyph: 'filled', x: 73, y: 43, delay: 1.2, duration: 4.6, size: 1.08, variant: 'blue' },
+    { glyph: 'hollow', x: 88, y: 37, delay: 4, duration: 5.2, size: 0.9, variant: 'gold' },
+    { glyph: 'filled', x: 4, y: 82, delay: 2.2, duration: 4.8, size: 1.05, variant: 'peach' },
+    { glyph: 'hollow', x: 18, y: 92, delay: 0.9, duration: 5.6, size: 0.86, variant: 'lilac' },
+    { glyph: 'filled', x: 43, y: 69, delay: 3.1, duration: 4.3, size: 0.94, variant: 'blue' },
+    { glyph: 'hollow', x: 61, y: 87, delay: 1.4, duration: 5.1, size: 0.82, variant: 'peach' },
+    { glyph: 'filled', x: 79, y: 93, delay: 2.5, duration: 4.7, size: 1, variant: 'lilac' },
+];
+
+const bubbles = [
+    { x: 23, y: 18, size: 3.8, delay: 0, duration: 14, variant: 'peach' },
+    { x: 68, y: 9, size: 2.6, delay: 3, duration: 17, variant: 'blue' },
+    { x: 94, y: 28, size: 4.8, delay: 1.2, duration: 19, variant: 'lilac' },
+    { x: 5, y: 62, size: 3.2, delay: 4.4, duration: 16, variant: 'blue' },
+    { x: 32, y: 56, size: 2.3, delay: 2.1, duration: 13, variant: 'gold' },
+    { x: 72, y: 63, size: 3.6, delay: 5, duration: 18, variant: 'peach' },
+    { x: 91, y: 83, size: 2.8, delay: 1.8, duration: 15, variant: 'blue' },
+    { x: 27, y: 88, size: 4.4, delay: 3.5, duration: 20, variant: 'lilac' },
+];
 ---
 
 <div class="lc-bg">
     <div class="lc-bg-glow lc-bg-glow-top"></div>
+    <div class="lc-bg-glow lc-bg-glow-middle"></div>
     <div class="lc-bg-glow lc-bg-glow-bottom"></div>
-    <div class="lc-bg-letters">
-        {items.map(({ letter, x, delay, duration, size, opacity, hideMobile }) => (
+    <div class="lc-bg-bubbles" aria-hidden="true">
+        {bubbles.map(({ x, y, size, delay, duration, variant }) => (
             <span
-                class={hideMobile ? 'lc-bg-letter lc-bg-letter-mobile-hide' : 'lc-bg-letter'}
-                style={`--lc-letter-delay: ${delay}s; --lc-letter-x: ${x}%; --lc-letter-duration: ${duration}s; --lc-letter-size: ${size}rem; --lc-letter-color: rgba(var(--lc-letter-base-rgb), ${opacity});`}
+                class:list={["lc-bg-bubble", `lc-bg-bubble--${variant}`]}
+                style={`--lc-bubble-x: ${x}%; --lc-bubble-y: ${y}%; --lc-bubble-size: ${size}rem; --lc-bubble-delay: ${delay}s; --lc-bubble-duration: ${duration}s;`}
+            ></span>
+        ))}
+    </div>
+    <div class="lc-bg-letters">
+        {items.map(({ letter, x, y, delay, duration, size, rotate }, index) => (
+            <span
+                class:list={["lc-bg-letter", { "lc-bg-letter-mobile-hide": index % 2 === 1 }]}
+                style={`--lc-letter-delay: ${delay}s; --lc-letter-x: ${x}%; --lc-letter-y: ${y}%; --lc-letter-duration: ${duration}s; --lc-letter-size: ${size}rem; --lc-letter-rotate: ${rotate}deg;`}
             >{letter}</span>
         ))}
     </div>
-    <div class="lc-bg-grid"></div>
+    <div class="lc-bg-stars" aria-hidden="true">
+        {stars.map(({ glyph, x, y, delay, duration, size, variant }) => (
+            <span
+                class:list={["lc-bg-star", `lc-bg-star--${variant}`, `lc-bg-star--${glyph}`]}
+                style={`--lc-star-x: ${x}%; --lc-star-y: ${y}%; --lc-star-delay: ${delay}s; --lc-star-duration: ${duration}s; --lc-star-size: ${size}rem;`}
+            ></span>
+        ))}
+    </div>
 </div>

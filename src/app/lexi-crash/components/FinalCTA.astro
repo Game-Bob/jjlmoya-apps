@@ -34,7 +34,7 @@ const { t, stores } = Astro.props;
                         <Icon name="mdi:google-play" class="lc-cta-btn-icon" />
                         <div class="lc-cta-btn-text">
                             <span class="lc-cta-btn-label">{t.downloadLabel} {t.downloadOnPlay}</span>
-                            <span class="lc-cta-btn-action">Download</span>
+                            <span class="lc-cta-btn-action">{t.downloadAction}</span>
                         </div>
                     </div>
                 </a>
@@ -51,7 +51,7 @@ const { t, stores } = Astro.props;
                         <Icon name="mdi:apple" class="lc-cta-btn-icon" />
                         <div class="lc-cta-btn-text">
                             <span class="lc-cta-btn-label">{t.downloadLabel} {t.downloadOnStore}</span>
-                            <span class="lc-cta-btn-action">Download</span>
+                            <span class="lc-cta-btn-action">{t.downloadAction}</span>
                         </div>
                     </div>
                 </a>
@@ -66,5 +66,8 @@ const { t, stores } = Astro.props;
             </div>
             <span class="lc-cta-rating-text">{t.ratingText}</span>
         </div>
+
+        <span class="lc-cta-sparkle lc-cta-sparkle-one" aria-hidden="true">&#x2726;</span>
+        <span class="lc-cta-sparkle lc-cta-sparkle-two" aria-hidden="true">&#x2727;</span>
     </div>
 </section>

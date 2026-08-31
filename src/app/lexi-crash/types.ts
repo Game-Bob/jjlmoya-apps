@@ -1,6 +1,7 @@
 export interface LexiCrashHero {
     badgeText: string;
     subtitle: string;
+    artNote?: string;
     downloadOnPlay: string;
     downloadOnStore: string;
     downloadLabel: string;
@@ -10,6 +11,7 @@ export interface LexiCrashGameMode {
     title: string;
     description: string;
     alt: string;
+    kicker?: string;
 }
 
 export interface LexiCrashGameModes {
@@ -59,7 +61,32 @@ export interface LexiCrashFinalCTA {
     downloadOnPlay: string;
     downloadOnStore: string;
     downloadLabel: string;
+    downloadAction: string;
     ratingText: string;
+}
+
+export interface LexiCrashCozyFeature {
+    title: string;
+    description: string;
+    alt: string;
+}
+
+export interface LexiCrashCozyFeatures {
+    eyebrow: string;
+    titleMain: string;
+    titleHighlight: string;
+    subtitle: string;
+    cards: [LexiCrashCozyFeature, LexiCrashCozyFeature, LexiCrashCozyFeature];
+}
+
+export interface LexiCrashStoryShowcase {
+    eyebrow: string;
+    titleMain: string;
+    titleHighlight: string;
+    subtitle: string;
+    ariaLabel: string;
+    bannerAlt: string;
+    pills: [string, string, string];
 }
 
 export interface LexiCrashLandingContent {
@@ -67,5 +94,7 @@ export interface LexiCrashLandingContent {
     gameModes: LexiCrashGameModes;
     socialProof: LexiCrashSocialProof;
     roadmap: LexiCrashRoadmap;
+    cozyFeatures: LexiCrashCozyFeatures;
+    storyShowcase: LexiCrashStoryShowcase;
     finalCta: LexiCrashFinalCTA;
 }

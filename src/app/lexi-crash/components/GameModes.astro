@@ -10,9 +10,9 @@ interface Props {
 const { t, appId } = Astro.props;
 
 const modes = [
-    { data: t.crash, screenshot: 'screenshot_2.webp', variant: 'cyan', icon: 'mdi:lightning-bolt' },
-    { data: t.relax, screenshot: 'screenshot_3.webp', variant: 'amber', icon: 'mdi:weather-sunny' },
-    { data: t.daily, screenshot: 'screenshot_1.webp', variant: 'orange', icon: 'mdi:calendar-star' },
+    { data: t.crash, artwork: '05-crash.png', variant: 'coral', icon: 'mdi:lightning-bolt' },
+    { data: t.relax, artwork: '07-relax.png', variant: 'lavender', icon: 'mdi:weather-sunny' },
+    { data: t.daily, artwork: '04-daily.png', variant: 'blue', icon: 'mdi:calendar-star' },
 ];
 ---
 
@@ -26,16 +26,16 @@ const modes = [
         </div>
 
         <div class="lc-modes-grid">
-            {modes.map(({ data, screenshot, variant, icon }) => (
-                <div class={`lc-mode-card lc-mode-card--${variant}`}>
+            {modes.map(({ data, artwork, variant, icon }) => (
+                <article class={`lc-mode-card lc-mode-card--${variant}`}>
                     <div class="lc-mode-img-wrapper">
                         <img
-                            src={`/assets/apps/${appId}/${screenshot}`}
+                            src={`/assets/apps/${appId}/arcade-master/${artwork}`}
                             alt={data.alt}
                             class="lc-mode-img"
                             loading="lazy"
                         />
-                        <div class="lc-mode-img-overlay"></div>
+                        <span class="lc-mode-kicker">{data.kicker}</span>
                         <div class="lc-mode-icon">
                             <Icon name={icon} class="lc-mode-icon-svg" />
                         </div>
@@ -44,7 +44,7 @@ const modes = [
                         <h3 class="lc-mode-name">{data.title}</h3>
                         <p class="lc-mode-desc">{data.description}</p>
                     </div>
-                </div>
+                </article>
             ))}
         </div>
     </div>

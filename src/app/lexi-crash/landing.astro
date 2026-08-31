@@ -7,7 +7,8 @@ import Background from './components/Background.astro';
 import Hero from './components/Hero.astro';
 import GameModes from './components/GameModes.astro';
 import SocialProof from './components/SocialProof.astro';
-import Roadmap from './components/Roadmap.astro';
+import CozyFeatures from './components/CozyFeatures.astro';
+import StoryShowcase from './components/StoryShowcase.astro';
 import FinalCTA from './components/FinalCTA.astro';
 
 interface Props {
@@ -47,7 +48,8 @@ const stores = {
     <Background />
     <Hero t={t.hero} {stores} />
     <GameModes t={t.gameModes} {appId} />
+    <CozyFeatures t={t.cozyFeatures} {appId} />
+    <StoryShowcase t={t.storyShowcase} />
     <SocialProof t={t.socialProof} {appId} />
-    <Roadmap t={t.roadmap} />
     <FinalCTA t={t.finalCta} {stores} />
 </div>

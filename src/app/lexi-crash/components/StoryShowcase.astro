@@ -1,0 +1,38 @@
+---
+import type { LexiCrashStoryShowcase } from '../types';
+
+interface Props {
+    t: LexiCrashStoryShowcase;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="lc-story" aria-labelledby="lc-story-title">
+    <div class="lc-story-inner">
+        <div class="lc-story-banner-wrap">
+            <img
+                src="/assets/apps/lexi-crash/arcade-master/08-banner.png"
+                alt={t.bannerAlt}
+                class="lc-story-banner"
+                loading="lazy"
+            />
+            <span class="lc-story-star lc-story-star--one" aria-hidden="true">&#x2726;</span>
+            <span class="lc-story-star lc-story-star--two" aria-hidden="true">&#x2727;</span>
+        </div>
+
+        <div class="lc-story-copy">
+            <span class="lc-eyebrow">{t.eyebrow}</span>
+            <h2 id="lc-story-title" class="lc-story-title">{t.titleMain}<br /><span>{t.titleHighlight}</span></h2>
+            <p class="lc-section-subtitle">{t.subtitle}</p>
+            <div class="lc-story-pills" aria-label={t.ariaLabel}>
+                {t.pills.map((pill) => <span>{pill}</span>)}
+            </div>
+        </div>
+
+        <div class="lc-story-posters" aria-hidden="true">
+            <img src="/assets/apps/lexi-crash/arcade-master/01-home.png" alt="" loading="lazy" />
+            <img src="/assets/apps/lexi-crash/arcade-master/06-story.png" alt="" loading="lazy" />
+        </div>
+    </div>
+</section>
