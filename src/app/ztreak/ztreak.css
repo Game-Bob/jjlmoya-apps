@@ -1,0 +1,128 @@
+.ztreak-landing {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: var(--space-3xl) var(--space-lg);
+  color: var(--text-main);
+}
+
+.ztreak-hero {
+  max-width: 48rem;
+  margin: 0 auto var(--space-3xl);
+  text-align: center;
+}
+
+.ztreak-hero img {
+  border-radius: var(--radius-xl);
+}
+.ztreak-brand {
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+.ztreak-hero h1 {
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  line-height: 1.08;
+}
+.ztreak-description {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+.ztreak-native-note {
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+.ztreak-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+}
+.ztreak-primary {
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--radius-lg);
+  background: var(--color-primary);
+  color: var(--text-main);
+  border: 1px solid var(--glass-border);
+  cursor: pointer;
+  font: inherit;
+}
+.ztreak-features {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+.ztreak-feature,
+.ztreak-privacy {
+  padding: var(--space-xl);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  background: var(--glass-bg);
+}
+.ztreak-feature p,
+.ztreak-privacy p {
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+.ztreak-privacy {
+  margin-top: var(--space-xl);
+}
+.ztreak-privacy summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+.ztreak-privacy section {
+  margin-block: var(--space-xl);
+}
+.ztreak-runtime {
+  margin-block: var(--space-xl);
+  scroll-margin-top: 6rem;
+}
+.ztreak-runtime[hidden] {
+  display: none;
+}
+.ztreak-runtime-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--glass-bg);
+}
+.ztreak-runtime-bar button {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--glass-bg);
+  color: var(--text-main);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  font: inherit;
+  cursor: pointer;
+}
+.ztreak-runtime iframe {
+  display: block;
+  width: 100%;
+  height: 85svh;
+  min-height: 28rem;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+}
+.ztreak-actions a,
+.ztreak-privacy a {
+  color: var(--text-main);
+  text-underline-offset: 0.2em;
+}
+.ztreak-landing button:focus-visible,
+.ztreak-landing a:focus-visible,
+.ztreak-landing summary:focus-visible {
+  outline: 2px solid var(--text-main);
+  outline-offset: 4px;
+}
+
+@media (width <= 40rem) {
+  .ztreak-features {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ztreak-runtime iframe {
+    min-height: 24rem;
+  }
+}

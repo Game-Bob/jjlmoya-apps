@@ -1,0 +1,28 @@
+{
+    "slug": "ztreak",
+    "title": "Ztreak: hábitos e objetivos",
+    "subtitle": "Os teus hábitos, ao teu ritmo",
+    "description": "Regista hábitos e objetivos diários, semanais ou mensais. Acompanha as tuas sequências, protege uma falha elegível e diverte-te com um jogo de torre opcional.",
+    "start": "Começar",
+    "close": "Fechar",
+    "privacy": "Privacidade e os teus dados",
+    "nativeNote": "O registo manual funciona no navegador. Os passos e a utilização digital exigem a aplicação móvel e as permissões do dispositivo.",
+    "features": [
+        {
+            "title": "Escolher a frequência",
+            "text": "Define objetivos diários ou quotas por semana, mês ou ano."
+        },
+        {
+            "title": "Escudo",
+            "text": "Precisas de uma sequência ativa. Tens apenas um escudo: dois ciclos falhados consecutivos quebram a sequência. Um registo pendente não é uma falha."
+        },
+        {
+            "title": "Torre · opcional",
+            "text": "De concluir objetivos a construir com cartas."
+        },
+        {
+            "title": "Dados guardados",
+            "text": "O Ztreak guarda objetivos, nomes, registos, datas, quantidades, rascunhos, preferências e progresso da Torre neste dispositivo. São usados para mostrar o histórico, calcular sequências e recuperar alterações. O acesso a uma conta é opcional. Não inclui publicidade nem análise de utilização."
+        }
+    ]
+}

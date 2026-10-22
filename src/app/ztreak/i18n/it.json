@@ -1,0 +1,28 @@
+{
+    "slug": "ztreak",
+    "title": "Ztreak: abitudini e obiettivi",
+    "subtitle": "Le tue abitudini, al tuo ritmo",
+    "description": "Registra abitudini e obiettivi giornalieri, settimanali o mensili. Segui le tue serie, proteggi un mancato completamento idoneo e divertiti con un gioco della torre facoltativo.",
+    "start": "Inizia",
+    "close": "Chiudi",
+    "privacy": "Privacy e i tuoi dati",
+    "nativeNote": "La registrazione manuale funziona nel browser. I passi e l’utilizzo digitale richiedono l’app mobile e le autorizzazioni del dispositivo.",
+    "features": [
+        {
+            "title": "Scegli la frequenza",
+            "text": "Imposta obiettivi giornalieri o quote per settimana, mese o anno."
+        },
+        {
+            "title": "Scudo",
+            "text": "Serve una serie attiva. Hai un solo scudo: due cicli consecutivi mancati interrompono la serie. Una registrazione in sospeso non è una mancanza."
+        },
+        {
+            "title": "Torre · facoltativa",
+            "text": "Dal completamento degli obiettivi alla costruzione con carte."
+        },
+        {
+            "title": "Dati salvati",
+            "text": "Ztreak salva obiettivi, nomi, registrazioni, date, quantità, bozze, preferenze e progressi della Torre su questo dispositivo. Servono a mostrare la cronologia, calcolare le serie e recuperare modifiche. L’accesso a un account è facoltativo. Non include pubblicità o analisi."
+        }
+    ]
+}

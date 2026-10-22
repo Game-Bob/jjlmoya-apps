@@ -1,0 +1,28 @@
+{
+    "slug": "ztreak",
+    "title": "Ztreak: nawyki i cele",
+    "subtitle": "Twoje nawyki, Twoje tempo",
+    "description": "Zapisuj codzienne, tygodniowe lub miesięczne nawyki i cele. Śledź serie, chroń kwalifikujące się niepowodzenie i odkryj opcjonalną grę w budowanie wieży.",
+    "start": "Zacznij",
+    "close": "Zamknij",
+    "privacy": "Prywatność i Twoje dane",
+    "nativeNote": "Ręczne zapisywanie działa w przeglądarce. Kroki i czas korzystania z aplikacji wymagają aplikacji mobilnej i uprawnień urządzenia.",
+    "features": [
+        {
+            "title": "Wybierz częstotliwość",
+            "text": "Ustaw cele codzienne lub limity na tydzień, miesiąc bądź rok."
+        },
+        {
+            "title": "Tarcza",
+            "text": "Potrzebujesz aktywnej serii. Masz tylko jedną tarczę: dwa niewykonane cykle z rzędu przerywają serię. Oczekujący wpis nie jest niewykonaniem."
+        },
+        {
+            "title": "Wieża · opcjonalnie",
+            "text": "Od realizacji celów do budowania z kart."
+        },
+        {
+            "title": "Przechowywane dane",
+            "text": "Ztreak przechowuje na tym urządzeniu cele, nazwy, wpisy, daty, ilości, szkice, preferencje i postęp Wieży. Służą do wyświetlania historii, obliczania serii i odzyskiwania zmian. Logowanie do konta jest opcjonalne. Nie ma reklam ani analityki."
+        }
+    ]
+}

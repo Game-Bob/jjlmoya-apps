@@ -1,0 +1,28 @@
+{
+    "slug": "ztreak",
+    "title": "Ztreak: alışkanlık takibi",
+    "subtitle": "Alışkanlıkların, kendi hızında",
+    "description": "Günlük, haftalık veya aylık alışkanlıklarını ve hedeflerini kaydet. Serilerini takip et, koşulları karşılayan bir başarısızlığı koru ve isteğe bağlı kule oyununun keyfini çıkar.",
+    "start": "Başlayın",
+    "close": "Kapat",
+    "privacy": "Gizlilik ve verileriniz",
+    "nativeNote": "Manuel kayıt tarayıcıda çalışır. Adımlar ve dijital kullanım için mobil uygulama ve cihaz izinleri gerekir.",
+    "features": [
+        {
+            "title": "Sıklığı seçin",
+            "text": "Günlük hedefler veya her hafta, ay ya da yıl için kotalar belirleyin."
+        },
+        {
+            "title": "Kalkan",
+            "text": "Etkin bir seri gerekir. Yalnızca bir kalkanınız var: üst üste iki kaçırılan döngü seriyi bozar. Bekleyen kayıt başarısızlık değildir."
+        },
+        {
+            "title": "Kule · isteğe bağlı",
+            "text": "Hedefleri tamamlamaktan kartlarla inşa etmeye."
+        },
+        {
+            "title": "Saklanan veriler",
+            "text": "Ztreak hedeflerinizi, adları, kayıtları, tarihleri, miktarları, taslakları, tercihleri ve Kule ilerlemesini bu cihazda saklar. Bunlar geçmişinizi göstermek, serileri hesaplamak ve değişiklikleri kurtarmak için kullanılır. Hesaba giriş isteğe bağlıdır. Reklam veya analiz içermez."
+        }
+    ]
+}

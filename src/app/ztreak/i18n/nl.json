@@ -1,0 +1,28 @@
+{
+    "slug": "ztreak",
+    "title": "Ztreak: gewoontes bijhouden",
+    "subtitle": "Jouw gewoontes, jouw tempo",
+    "description": "Houd dagelijkse, wekelijkse of maandelijkse gewoontes en doelen bij. Volg je reeksen, bescherm een gemiste periode die daarvoor in aanmerking komt en ontdek een optioneel torenspel.",
+    "start": "Aan de slag",
+    "close": "Sluiten",
+    "privacy": "Privacy en je gegevens",
+    "nativeNote": "Handmatig bijhouden werkt in je browser. Stappen en digitaal gebruik vereisen de mobiele app en apparaatmachtigingen.",
+    "features": [
+        {
+            "title": "Kies de frequentie",
+            "text": "Stel dagelijkse doelen in of quota voor elke week, maand of jaar."
+        },
+        {
+            "title": "Schild",
+            "text": "Je hebt een actieve reeks nodig. Je hebt maar één schild: twee opeenvolgende gemiste cycli breken de reeks. Een openstaande registratie is geen misser."
+        },
+        {
+            "title": "Toren · optioneel",
+            "text": "Van doelen voltooien naar bouwen met kaarten."
+        },
+        {
+            "title": "Opgeslagen gegevens",
+            "text": "Ztreak bewaart je doelen, namen, registraties, datums, hoeveelheden, concepten, voorkeuren en Torenvoortgang op dit apparaat. Ze worden gebruikt om je geschiedenis te tonen, reeksen te berekenen en wijzigingen te herstellen. Aanmelden bij een account is optioneel. Er zijn geen advertenties of analyses."
+        }
+    ]
+}

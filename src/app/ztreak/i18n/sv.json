@@ -1,0 +1,28 @@
+{
+    "slug": "ztreak",
+    "title": "Ztreak: vanor och mål",
+    "subtitle": "Dina vanor, i din takt",
+    "description": "Registrera dagliga, veckovisa eller månatliga vanor och mål. Följ dina sviter, skydda en miss som uppfyller villkoren och spela ett valfritt tornspel.",
+    "start": "Kom igång",
+    "close": "Stäng",
+    "privacy": "Integritet och dina data",
+    "nativeNote": "Manuell registrering fungerar i webbläsaren. Steg och digital användning kräver mobilappen och enhetsbehörigheter.",
+    "features": [
+        {
+            "title": "Välj frekvens",
+            "text": "Ställ in dagliga mål eller kvoter för varje vecka, månad eller år."
+        },
+        {
+            "title": "Sköld",
+            "text": "Du behöver en aktiv svit. Du har bara en sköld: två missade cykler i rad bryter sviten. En väntande registrering är ingen miss."
+        },
+        {
+            "title": "Torn · valfritt",
+            "text": "Från att slutföra mål till att bygga med kort."
+        },
+        {
+            "title": "Lagrade data",
+            "text": "Ztreak lagrar mål, namn, registreringar, datum, mängder, utkast, inställningar och Tornframsteg på den här enheten. De används för att visa historik, beräkna sviter och återställa ändringar. Kontoinloggning är valfri. Det finns inga annonser eller analyser."
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "slug": "ztreak",
+    "title": "Ztreak: pelacak kebiasaan",
+    "subtitle": "Kebiasaanmu, sesuai ritmemu",
+    "description": "Catat kebiasaan dan tujuan harian, mingguan, atau bulanan. Pantau rangkaianmu, lindungi satu kegagalan yang memenuhi syarat, dan nikmati permainan menara opsional.",
+    "start": "Mulai",
+    "close": "Tutup",
+    "privacy": "Privasi dan data Anda",
+    "nativeNote": "Pencatatan manual berfungsi di browser. Langkah dan penggunaan digital memerlukan aplikasi seluler serta izin perangkat.",
+    "features": [
+        {
+            "title": "Pilih frekuensi",
+            "text": "Tetapkan tujuan harian atau kuota untuk setiap minggu, bulan, atau tahun."
+        },
+        {
+            "title": "Pelindung",
+            "text": "Anda memerlukan rentetan aktif. Hanya ada satu pelindung: dua siklus gagal berturut-turut memutus rentetan. Catatan tertunda bukan kegagalan."
+        },
+        {
+            "title": "Menara · opsional",
+            "text": "Dari menyelesaikan tujuan hingga membangun dengan kartu."
+        },
+        {
+            "title": "Data tersimpan",
+            "text": "Ztreak menyimpan tujuan, nama, catatan, tanggal, jumlah, draf, preferensi, dan progres Menara di perangkat ini. Data digunakan untuk menampilkan riwayat, menghitung rentetan, dan memulihkan perubahan. Masuk ke akun bersifat opsional. Tidak ada iklan atau analitik."
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "slug": "ztreak",
+    "title": "Ztreak : suivi des habitudes",
+    "subtitle": "Vos habitudes, à votre rythme",
+    "description": "Suivez vos habitudes et objectifs quotidiens, hebdomadaires ou mensuels. Consultez vos séries, protégez un échec éligible et profitez d’un jeu de tour facultatif.",
+    "start": "Commencer",
+    "close": "Fermer",
+    "privacy": "Confidentialité et vos données",
+    "nativeNote": "Le suivi manuel fonctionne dans le navigateur. Les pas et le temps d’utilisation nécessitent l’application mobile et les autorisations de l’appareil.",
+    "features": [
+        {
+            "title": "Choisissez la fréquence",
+            "text": "Définissez des objectifs quotidiens ou des quotas pour chaque semaine, mois ou année."
+        },
+        {
+            "title": "Bouclier",
+            "text": "Une série active est nécessaire. Vous n’avez qu’un bouclier : deux cycles manqués de suite interrompent la série. Un enregistrement en attente n’est pas un échec."
+        },
+        {
+            "title": "Tour · facultative",
+            "text": "De la réussite des objectifs à la construction avec des cartes."
+        },
+        {
+            "title": "Données enregistrées",
+            "text": "Ztreak enregistre sur cet appareil vos objectifs, noms, entrées, dates, quantités, brouillons, préférences et progrès de la Tour. Ils servent à afficher votre historique, calculer les séries et récupérer les modifications. La connexion à un compte est facultative. Il n’y a ni publicité ni analyse d’usage."
+        }
+    ]
+}

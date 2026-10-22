@@ -1,0 +1,71 @@
+---
+import type { KnownLocale } from '../../types';
+import { privacyContent } from '@gamebob/ztreak/privacy';
+import { loadZtreakContent } from './content';
+import './ztreak.css';
+
+interface Props { locale: KnownLocale; }
+const { locale } = Astro.props;
+const content = await loadZtreakContent(locale);
+const privacy = privacyContent(locale);
+const runtime = '/assets/apps/ztreak/runtime/index.html?locale=' + locale;
+---
+<div class="ztreak-landing" data-ztreak-landing>
+    <header class="ztreak-hero">
+        <img src="/assets/apps/ztreak/icon.webp" alt="Ztreak" width="96" height="96" />
+        <p class="ztreak-brand">Ztreak</p>
+        <h1>{content.subtitle}</h1>
+        <p class="ztreak-description">{content.description}</p>
+        <div class="ztreak-actions">
+            <button class="ztreak-primary" type="button" data-ztreak-start aria-controls="ztreak-runtime">{content.start}</button>
+            <a href="#ztreak-privacy">{content.privacy}</a>
+        </div>
+        <p class="ztreak-native-note">{content.nativeNote}</p>
+    </header>
+    <section id="ztreak-runtime" class="ztreak-runtime" data-ztreak-runtime hidden>
+        <div class="ztreak-runtime-bar">
+            <strong>Ztreak</strong>
+            <button type="button" data-ztreak-close>{content.close}</button>
+        </div>
+        <iframe title={content.title + ' — ' + content.subtitle} data-src={runtime}></iframe>
+    </section>
+    <div class="ztreak-features">
+        {content.features.map(feature => (
+            <section class="ztreak-feature"><h2>{feature.title}</h2><p>{feature.text}</p></section>
+        ))}
+    </div>
+    <details id="ztreak-privacy" class="ztreak-privacy">
+        <summary>{privacy.title}</summary>
+        <p>{privacy.version}</p>
+        {privacy.sections.map(section => (<section><h2>{section.title}</h2><p>{section.text}</p></section>))}
+        <a href={'mailto:' + privacy.contact}>{privacy.contact}</a>
+    </details>
+</div>
+
+<script>
+    for (const landing of document.querySelectorAll<HTMLElement>('[data-ztreak-landing]')) {
+        const start = landing.querySelector<HTMLButtonElement>('[data-ztreak-start]');
+        const close = landing.querySelector<HTMLButtonElement>('[data-ztreak-close]');
+        const panel = landing.querySelector<HTMLElement>('[data-ztreak-runtime]');
+        const frame = landing.querySelector<HTMLIFrameElement>('iframe');
+        const initialPolicy = landing.querySelector<HTMLDetailsElement>('#ztreak-privacy');
+        if (location.hash === '#ztreak-privacy' && initialPolicy) initialPolicy.open = true;
+        start?.addEventListener('click', () => {
+            if (!panel || !frame || !frame.dataset.src) return;
+            if (panel.hidden) frame.src = frame.dataset.src;
+            panel.hidden = false;
+            panel.scrollIntoView({ block: 'start' });
+            frame.focus();
+        });
+        close?.addEventListener('click', () => {
+            if (!panel || !frame) return;
+            frame.src = 'about:blank';
+            panel.hidden = true;
+            start?.focus();
+        });
+        landing.querySelector('a[href="#ztreak-privacy"]')?.addEventListener('click', () => {
+            const policy = landing.querySelector<HTMLDetailsElement>('#ztreak-privacy');
+            if (policy) policy.open = true;
+        });
+    }
+</script>

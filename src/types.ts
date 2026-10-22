@@ -13,9 +13,16 @@ export interface AppCardContent {
     description: string;
 }
 
+export interface AppMedia {
+    hero?: string;
+    openGraphImage?: string;
+    screenshots?: string[];
+}
+
 export interface AppEntry {
     id: string;
     isGame: boolean;
+    media?: AppMedia;
     packageId?: string;
     shorts?: string[];
     stores: {

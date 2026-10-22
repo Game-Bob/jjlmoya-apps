@@ -1,6 +1,6 @@
+import { ZTREAK_APP } from './app/ztreak';
 import type { AppDefinition } from './types';
 import { fortuneCookieEntry } from './app/fortune-cookie/entry';
-import { lexiCrashEntry } from './app/lexi-crash/entry';
 import { pizzametricsEntry } from './app/pizzametrics/entry';
 import { vespEntry } from './app/vesp/entry';
 import { dayCheckEntry } from './app/day-check/entry';
@@ -9,6 +9,7 @@ import { fastTaskEntry } from './app/fast-task/entry';
 import { sauceLabEntry } from './app/sauce-lab/entry';
 
 export const ALL_APP_DEFINITIONS: AppDefinition[] = [
+    ZTREAK_APP,
     {
         entry: sauceLabEntry,
         LandingComponent: () => import('./app/sauce-lab/landing.astro'),
@@ -16,10 +17,6 @@ export const ALL_APP_DEFINITIONS: AppDefinition[] = [
     {
         entry: fortuneCookieEntry,
         LandingComponent: () => import('./app/fortune-cookie/landing.astro'),
-    },
-    {
-        entry: lexiCrashEntry,
-        LandingComponent: () => import('./app/lexi-crash/landing.astro'),
     },
     {
         entry: pizzametricsEntry,

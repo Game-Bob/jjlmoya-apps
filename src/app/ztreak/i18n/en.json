@@ -1,0 +1,28 @@
+{
+    "slug": "ztreak",
+    "title": "Ztreak: Habit Tracker",
+    "subtitle": "Build habits at your own pace",
+    "description": "Track daily, weekly or monthly habits and goals. Follow your streaks, protect an eligible miss and enjoy an optional tower game.",
+    "start": "Get started",
+    "close": "Close",
+    "privacy": "Privacy and your data",
+    "nativeNote": "Manual tracking works in your browser. Steps and digital usage require the mobile app and device permissions.",
+    "features": [
+        {
+            "title": "Choose the frequency",
+            "text": "Set daily goals or quotas for each week, month, or year."
+        },
+        {
+            "title": "Shield",
+            "text": "You need an active streak. You have only one shield: two consecutive missed cycles break the streak. A pending record is not a miss."
+        },
+        {
+            "title": "Tower · optional",
+            "text": "From completing goals to building with cards."
+        },
+        {
+            "title": "Stored data",
+            "text": "Ztreak stores your goals, names, entries, dates, quantities, drafts, preferences and Tower progress on this device. They are used to show your history, calculate streaks and recover changes. Account sign-in is optional. There is no advertising or analytics."
+        }
+    ]
+}

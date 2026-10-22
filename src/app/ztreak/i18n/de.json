@@ -1,0 +1,28 @@
+{
+    "slug": "ztreak",
+    "title": "Ztreak: Gewohnheiten verfolgen",
+    "subtitle": "Deine Gewohnheiten, dein Tempo",
+    "description": "Erfasse tägliche, wöchentliche oder monatliche Gewohnheiten und Ziele. Verfolge deine Serien, schütze einen berechtigten Fehlschlag und entdecke ein optionales Turmspiel.",
+    "start": "Los geht's",
+    "close": "Schließen",
+    "privacy": "Datenschutz und deine Daten",
+    "nativeNote": "Manuelle Einträge funktionieren im Browser. Schritte und digitale Nutzung erfordern die mobile App und Geräteberechtigungen.",
+    "features": [
+        {
+            "title": "Häufigkeit auswählen",
+            "text": "Lege tägliche Ziele oder Quoten pro Woche, Monat oder Jahr fest."
+        },
+        {
+            "title": "Schild",
+            "text": "Du brauchst eine aktive Serie. Du hast nur einen Schild: Zwei verpasste Zyklen in Folge brechen die Serie. Ein ausstehender Eintrag ist kein Ausfall."
+        },
+        {
+            "title": "Turm · optional",
+            "text": "Vom Erledigen der Ziele zum Bauen mit Karten."
+        },
+        {
+            "title": "Gespeicherte Daten",
+            "text": "Ztreak speichert Ziele, Namen, Einträge, Daten, Mengen, Entwürfe, Einstellungen und Turmfortschritt auf diesem Gerät. Sie dienen dazu, den Verlauf anzuzeigen, Serien zu berechnen und Änderungen wiederherzustellen. Die Kontoanmeldung ist freiwillig. Es gibt keine Werbung oder Analyse."
+        }
+    ]
+}

@@ -6,6 +6,7 @@ export type {
     LocaleLoader,
     LocaleMap,
     AppCardContent,
+    AppMedia,
     AppEntry,
     AppDefinition,
 } from './types';

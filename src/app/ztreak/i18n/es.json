@@ -1,0 +1,28 @@
+{
+    "slug": "ztreak",
+    "title": "Ztreak: hábitos y rachas",
+    "subtitle": "Tus hábitos, a tu ritmo",
+    "description": "Registra hábitos y objetivos diarios, semanales o mensuales. Sigue tus rachas, protege un fallo elegible y disfruta de un juego de torre opcional.",
+    "start": "Empezar",
+    "close": "Cerrar",
+    "privacy": "Privacidad y tus datos",
+    "nativeNote": "El registro manual funciona en el navegador. Los pasos y el uso digital necesitan la app móvil y los permisos del dispositivo.",
+    "features": [
+        {
+            "title": "Elige la frecuencia",
+            "text": "Configura objetivos diarios o cuotas por semana, mes o año."
+        },
+        {
+            "title": "Escudo",
+            "text": "Necesitas una racha activa. Solo tienes un escudo: dos ciclos fallados seguidos rompen la racha. Un registro pendiente no es un fallo."
+        },
+        {
+            "title": "Torre · opcional",
+            "text": "De cumplir objetivos a construir con naipes."
+        },
+        {
+            "title": "Datos guardados",
+            "text": "Ztreak guarda en este dispositivo tus objetivos, nombres, registros, fechas, cantidades, borradores, preferencias y progreso de la Torre. Se usan para mostrar tu historial, calcular rachas y recuperar cambios. El acceso a cuenta es opcional. No incluye publicidad ni analítica."
+        }
+    ]
+}
