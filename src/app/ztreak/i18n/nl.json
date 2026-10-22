@@ -24,5 +24,223 @@
             "title": "Opgeslagen gegevens",
             "text": "Ztreak bewaart je doelen, namen, registraties, datums, hoeveelheden, concepten, voorkeuren en Torenvoortgang op dit apparaat. Ze worden gebruikt om je geschiedenis te tonen, reeksen te berekenen en wijzigingen te herstellen. Aanmelden bij een account is optioneel. Er zijn geen advertenties of analyses."
         }
-    ]
+    ],
+    "combined": {
+        "eyebrow": "GECOMBINEERDE DOELEN",
+        "title": "Eén routine.",
+        "titleMiddle": "Vele manieren",
+        "titleAccent": "om haar te volbrengen.",
+        "description": "Sommige dagen zijn voor een wandeling, andere voor een goed boek. Bundel activiteiten in één doel en kies hoeveel je er wilt afronden. Volhouden mag ruimte laten om te kiezen.",
+        "stepGroup": "Breng je activiteiten samen.",
+        "stepChoose": "Kies hoeveel er meetellen.",
+        "stepComplete": "Doe het op jouw manier.",
+        "routine": "Tijd voor mezelf",
+        "example": "Een voorbeeldroutine",
+        "read": "10 pagina’s lezen",
+        "walk": "20 minuten wandelen",
+        "stretch": "5 minuten rekken",
+        "required": "Benodigde activiteiten",
+        "count": "{done} van {total} activiteiten",
+        "complete": "Doel behaald",
+        "inProgress": "Een stap dichterbij",
+        "hint": "Vink activiteiten aan en verander hoeveel je er nodig hebt. Dit voorbeeld slaat geen registraties op.",
+        "outOf": "van"
+    },
+    "storeButtons": {
+        "comingSoon": "Binnenkort",
+        "download": "Download via",
+        "label": "Ztreak op je telefoon"
+    },
+    "towerStory": {
+        "eyebrow": "EEN KAARTENHUIS. EEN BEETJE ZOALS HET LEVEN.",
+        "titleFirst": "Buiten de app",
+        "titleSecond": "groei jij.",
+        "titleThird": "Binnen de app",
+        "titleAccent": "je toren.",
+        "metaphor": "Een gewoonte begint met iets kleins. Dan komt er nog een bij, en nog een. Samen dragen ze het leven dat je wilt opbouwen. Daarom gebruiken we kaarten: als één steun wegvalt, kan het voelen alsof alles wankelt.",
+        "game": "In Ztreak wordt die metafoor een optioneel spel. De doelen die je kiest helpen je verder te bouwen: verdien grondstoffen, plaats kaarten en bepaal hoe je toren groeit. Elke kaart geeft je inzet een zichtbare vorm.",
+        "collapse": "Als de reeks van een deelnemend doel zonder schildbescherming breekt, stort de constructie in. Je geschiedenis, blijvende verbeteringen en wat je hebt geleerd neem je mee naar de volgende bouw.",
+        "quote": "Opnieuw bouwen hoort bij vooruitgaan.",
+        "optional": "Geniet van de toren of verberg het spel en richt je op je doelen. Jij kiest.",
+        "alt": "De optionele kaartenhuistoren in Ztreak"
+    },
+    "landingCopy": {
+        "tagline": "Vind je ritme.",
+        "footer": "Jouw tempo. Jouw manier.",
+        "hero": {
+            "eyebrow": "KLEINE STAPPEN. IETS HELEMAAL VAN JOU.",
+            "title": [
+                "Je hoeft niet",
+                "alles te veranderen.",
+                "Begin gewoon."
+            ],
+            "body": "Dat boek dat je wilt lezen. Iets meer bewegen. Weer tijd voor jezelf maken. Geef wat belangrijk is een plek en ontdek wat je kunt opbouwen, op jouw tempo.",
+            "cta": "Begin met iets kleins",
+            "discover": "Ontdek Ztreak",
+            "note": "Probeer het in je browser. Geen account nodig.",
+            "noteTop": "Een beetje vandaag.",
+            "noteBottom": "Een beetje meer jij.",
+            "sticker": "Ook vandaag telt.",
+            "stickerNote": "Zelfs als het niet perfect is.",
+            "alt": "Ztreak Vandaag-scherm met persoonlijke doelen"
+        },
+        "manifesto": {
+            "eyebrow": "MEER DAN WEER EEN LIJST.",
+            "title": [
+                "Maak ruimte",
+                "voor de persoon die je",
+                "wilt worden."
+            ],
+            "body": "Geen dag is hetzelfde. Je doelen hoeven dat ook niet te zijn. Ztreak helpt je een voornemen concreet te maken, activiteiten vast te leggen en terug te kijken op je weg.",
+            "values": [
+                "Jouw voornemen.",
+                "Jouw frequentie.",
+                "Jouw voortgang."
+            ]
+        },
+        "features": {
+            "eyebrow": "EEN PLAN DAT JE BEGRIJPT",
+            "title": [
+                "Er zijn vele manieren",
+                "om",
+                "vooruit te komen."
+            ],
+            "body": "Begin met wat je wilt doen. Ztreak past zich aan jouw manier van meten aan.",
+            "items": [
+                {
+                    "title": "Je leven past niet in een vakje.",
+                    "text": "Een ja of nee. Pagina’s, minuten of kilometers. Een minimum bereiken of een maximum respecteren. Bepaal wat belangrijk voor je is.",
+                    "tag": "Eigen doelen · Hoeveelheden · Minima en maxima"
+                },
+                {
+                    "title": "Volhouden kent vele ritmes.",
+                    "text": "Dagelijks of enkele dagen per week. Maandquota, jaarplannen en hoeveelheden per periode. Kies een frequentie die bij je leven past.",
+                    "tag": "Dagelijks · Wekelijks · Maandelijks · Jaarlijks"
+                },
+                {
+                    "title": "Sommige dingen werken samen beter.",
+                    "text": "Bundel activiteiten in een gecombineerd doel en kies hoeveel je wilt afronden. Je routine, met ruimte om te kiezen.",
+                    "tag": "Gecombineerde doelen · Instelbare voorwaarden"
+                },
+                {
+                    "title": "Minder vastleggen. Meer leven.",
+                    "text": "Koppel op je telefoon stappen of digitaal gebruik waar je apparaat dit ondersteunt. Jij kiest de toestemmingen. Handmatig vastleggen kan ook.",
+                    "tag": "Stappen · Digitaal gebruik · Handmatige registratie"
+                },
+                {
+                    "title": "Houd in beeld wat telt.",
+                    "text": "Stel herinneringen in en bekijk je doelen in widgets van de mobiele app. Een klein zetje om terug te komen bij wat je belangrijk vindt.",
+                    "tag": "Herinneringen · Widgets · Apparaatafhankelijk"
+                },
+                {
+                    "title": "Maak de app echt van jou.",
+                    "text": "Pictogrammen, lichte en donkere thema’s, taal en tijdzone. Pauzeer of archiveer doelen als plannen veranderen. Deel instellingen zodat iemand anders een eigen doel kan starten.",
+                    "tag": "Personalisatie · Pauzes · Doelinstellingen delen"
+                }
+            ]
+        },
+        "history": {
+            "eyebrow": "KIJK HOEVER JE AL BENT",
+            "title": [
+                "Soms zie je verandering",
+                "pas door",
+                "terug te kijken."
+            ],
+            "body": "Je geschiedenis bewaart elke registratie. Bekijk reeksen en hoeveelheden en corrigeer een datum als je een fout maakte. Je inzet verdient meer dan aan het eind van de dag verdwijnen.",
+            "caption": "Elke markering vertelt iets.",
+            "alt": "Geschiedenis van een Ztreak-doel met reeks en registraties",
+            "items": [
+                "Geschiedenis en ontwikkeling per doel.",
+                "Gedateerde registraties die je kunt corrigeren.",
+                "Instelbare metingen en gewichtsdoelen.",
+                "Een voortgangsoverzicht voor het geheel."
+            ]
+        },
+        "shield": {
+            "eyebrow": "HET LEVEN KOMT OOK TUSSENDOOR",
+            "title": [
+                "Eén misstap",
+                "vertelt niet",
+                "je hele verhaal."
+            ],
+            "body": "Bij een actieve reeks kan het schild een geschikte misser beschermen. Het wist die niet en maakt er geen succes van: het geeft ruimte om de draad weer op te pakken.",
+            "rule": "Eén schild. Twee gemiste periodes achter elkaar verbreken de reeks. Een openstaande registratie is geen misser.",
+            "aria": "Een beschermde misser tussen voltooide periodes",
+            "tagline": "Kom terug bij wat telt.",
+            "note": "Ook continuïteit verdient aandacht."
+        },
+        "progress": {
+            "eyebrow": "JOUW WEG BLIJFT VAN JOU",
+            "title": [
+                "Begin hier.",
+                "Neem het mee."
+            ],
+            "body": "Gebruik Ztreak zonder account en bewaar je voortgang op je apparaat. Synchronisatie tussen apparaten en cloudback-ups horen bij Premium.",
+            "alt": "Ztreak-voortgangsoverzicht",
+            "items": [
+                "Optioneel account met Google of Apple, afhankelijk van het platform.",
+                "Gegevens exporteren, importeren en herstellen.",
+                "Zonder advertenties of gebruiksanalyses.",
+                "15 talen. Lichte en donkere thema’s."
+            ]
+        },
+        "final": {
+            "eyebrow": "GEEN MAANDAG NODIG. OF EEN PERFECT PLAN.",
+            "title": [
+                "Je volgende stap",
+                "kan al",
+                "vandaag zijn."
+            ],
+            "body": [
+                "Kies iets waar je voor wilt zorgen.",
+                "Daar begint de rest."
+            ],
+            "cta": "Begin je eerste doel",
+            "note": "Handmatige registratie werkt op het web. Apparaatfuncties vereisen de mobiele app en bijbehorende toestemmingen."
+        }
+    },
+    "termsContent": {
+        "intro": "Deze voorwaarden beschrijven het gebruik van Ztreak, de optionele functies en het beheer van je account.",
+        "sections": [
+            {
+                "title": "Wat Ztreak biedt",
+                "text": "Ztreak van GameBob laat je persoonlijke doelen instellen, activiteiten vastleggen en je voortgang bekijken. De toren is een optioneel spel. Handmatige registraties en doelinstellingen zijn jouw verantwoordelijkheid; de app garandeert geen resultaten en vervangt geen professioneel advies."
+            },
+            {
+                "title": "Lokaal gebruik en optioneel account",
+                "text": "Je kunt activiteiten handmatig vastleggen zonder account. Lokale gegevens blijven op het apparaat en de weboorsprong waar je ze opslaat. Browseropslag wissen, de app verwijderen of van apparaat wisselen kan hun beschikbaarheid beïnvloeden. Bewaar een export als je een onafhankelijke kopie nodig hebt."
+            },
+            {
+                "title": "Apparaatfuncties",
+                "text": "Stappen, digitaal gebruik, herinneringen en widgets hangen af van het platform, de diensten en je toestemmingen. De webversie biedt niet alle ingebouwde mogelijkheden. Je kunt toestemmingen intrekken in de apparaatinstellingen."
+            },
+            {
+                "title": "Premium en abonnementen",
+                "text": "Aankopen verlopen via de winkels van Apple en Google, niet via deze website. Voor bevestiging toont de winkel de prijs, looptijd en toepasselijke verlengingsvoorwaarden. Beheer en beëindig abonnementen in de betreffende winkel. Je Ztreak-account verwijderen beëindigt geen abonnement."
+            },
+            {
+                "title": "Synchronisatie en herstel",
+                "text": "Synchronisatie vereist een account, geverifieerde Premium-toegang en uitdrukkelijke toestemming. Alleen aanmelden uploadt je geschiedenis niet. Raadpleeg het privacybeleid voor verwerkte gegevens, aanbieders, back-ups en verwijderingsopties."
+            },
+            {
+                "title": "Je registraties en appgebruik",
+                "text": "Gebruik Ztreak voor gegevens die je mag vastleggen en delen. Gedeelde doelinstellingen laten anderen hun eigen voortgang bijhouden; ze maken jouw registraties niet openbaar."
+            }
+        ],
+        "contactTitle": "Hulp",
+        "contactText": "Voor problemen, vragen over deze voorwaarden of verzoeken rond je account kun je schrijven naar"
+    },
+    "navigation": {
+        "openApp": "App openen",
+        "privacy": "Privacy",
+        "terms": "Gebruiksvoorwaarden"
+    },
+    "determinationStory": {
+        "eyebrow": "HET WOORD DAT ALLES BIJEENHOUDT",
+        "title": "Vastberadenheid.",
+        "lead": "Discipline kan je helpen een plan te volgen. Vastberadenheid verbindt je met de reden waarom je ervoor koos.",
+        "body": "Je gewoontes beginnen met een eigen keuze: zorgen voor iets dat belangrijk voor je is. Daarom is Vastberadenheid het sleutelwoord van Ztreak. Het is de wil om die reden terug te vinden, een haalbare stap te kiezen en door te bouwen als een dag tegenzit. Volhouden krijgt meer betekenis wanneer je weet waarvoor je wilt doorgaan.",
+        "quote": "Dit is belangrijk voor mij. Ik wil eraan blijven bouwen.",
+        "game": "In de app is Vastberadenheid ook de grondstof die je verdient door doelen te behalen."
+    }
 }

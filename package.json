@@ -1,6 +1,6 @@
 {
     "name": "@jjlmoya/apps",
-    "version": "0.20.0",
+    "version": "0.21.0",
     "type": "module",
     "main": "./src/index.ts",
     "types": "./src/index.ts",
@@ -28,6 +28,7 @@
         "check": "astro check",
         "type-check": "astro check",
         "test": "vitest run",
+        "test:i18n:ztreak": "node scripts/check-ztreak-translations.mjs",
         "preversion": "npm run lint && npm run test",
         "postversion": "git push && git push --tags",
         "patch": "npm version patch",

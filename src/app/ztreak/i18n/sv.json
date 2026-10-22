@@ -24,5 +24,223 @@
             "title": "Lagrade data",
             "text": "Ztreak lagrar mål, namn, registreringar, datum, mängder, utkast, inställningar och Tornframsteg på den här enheten. De används för att visa historik, beräkna sviter och återställa ändringar. Kontoinloggning är valfri. Det finns inga annonser eller analyser."
         }
-    ]
+    ],
+    "combined": {
+        "eyebrow": "KOMBINERADE MÅL",
+        "title": "En rutin.",
+        "titleMiddle": "Flera sätt",
+        "titleAccent": "att genomföra den.",
+        "description": "Vissa dagar passar en promenad, andra en bra bok. Samla flera aktiviteter i ett mål och välj hur många du vill slutföra. Att vara konsekvent kan också ge valfrihet.",
+        "stepGroup": "Samla dina aktiviteter.",
+        "stepChoose": "Välj hur många som räknas.",
+        "stepComplete": "Gör det på ditt sätt.",
+        "routine": "Tid för mig själv",
+        "example": "Exempel på en rutin",
+        "read": "Läsa 10 sidor",
+        "walk": "Promenera i 20 minuter",
+        "stretch": "Stretcha i 5 minuter",
+        "required": "Aktiviteter som krävs",
+        "count": "{done} av {total} aktiviteter",
+        "complete": "Målet uppnått",
+        "inProgress": "Ett steg närmare",
+        "hint": "Prova att markera aktiviteter och ändra hur många som krävs. Exemplet sparar inga registreringar.",
+        "outOf": "av"
+    },
+    "storeButtons": {
+        "comingSoon": "Kommer snart",
+        "download": "Hämta på",
+        "label": "Ztreak i din mobil"
+    },
+    "towerStory": {
+        "eyebrow": "ETT KORTHUS. LITE SOM LIVET.",
+        "titleFirst": "Utanför appen",
+        "titleSecond": "växer du.",
+        "titleThird": "Inuti",
+        "titleAccent": "ditt torn.",
+        "metaphor": "En vana börjar med något litet. Sedan kommer en till, och ännu en. Tillsammans bär de upp livet du vill bygga. Därför använder vi kort: när ett stöd ger vika kan det kännas som att allt vacklar.",
+        "game": "I Ztreak blir metaforen ett valfritt spel. Dina valda mål hjälper dig att bygga vidare: samla resurser, placera kort och bestäm hur tornet ska växa. Varje del ger din uthållighet en synlig form.",
+        "collapse": "Om sviten för ett deltagande mål bryts utan sköldens skydd rasar konstruktionen. Din historik, permanenta förbättringar och det du lärt dig finns kvar till nästa bygge.",
+        "quote": "Att bygga upp igen är också att gå framåt.",
+        "optional": "Njut av tornet eller dölj spelet och fokusera på dina mål. Du väljer.",
+        "alt": "Det valfria korthustornet i Ztreak"
+    },
+    "landingCopy": {
+        "tagline": "Hitta din rytm.",
+        "footer": "Din takt. Ditt sätt.",
+        "hero": {
+            "eyebrow": "SMÅ STEG. NÅGOT HELT EGET.",
+            "title": [
+                "Du behöver inte",
+                "ändra allt.",
+                "Bara börja."
+            ],
+            "body": "Boken du vill läsa. Röra dig lite mer. Hitta tid för dig själv igen. Ge plats åt det som betyder något och upptäck vad du kan bygga, i din egen takt.",
+            "cta": "Börja med något litet",
+            "discover": "Upptäck Ztreak",
+            "note": "Prova i webbläsaren. Utan konto.",
+            "noteTop": "Lite i dag.",
+            "noteBottom": "Lite mer du.",
+            "sticker": "I dag räknas också.",
+            "stickerNote": "Även när allt inte är perfekt.",
+            "alt": "Ztreaks I dag-vy med personliga mål"
+        },
+        "manifesto": {
+            "eyebrow": "MER ÄN ÄNNU EN LISTA.",
+            "title": [
+                "Ge plats",
+                "åt personen du",
+                "vill bli."
+            ],
+            "body": "Alla dagar är olika. Dina mål får också vara det. Ztreak hjälper dig att göra en avsikt konkret, registrera aktiviteter och se tillbaka på din väg.",
+            "values": [
+                "Ditt åtagande.",
+                "Din frekvens.",
+                "Dina framsteg."
+            ]
+        },
+        "features": {
+            "eyebrow": "EN PLAN SOM FÖRSTÅR DIG",
+            "title": [
+                "Det finns många sätt",
+                "att",
+                "komma framåt."
+            ],
+            "body": "Börja med det du vill göra. Ztreak anpassar sig till hur du vill mäta det.",
+            "items": [
+                {
+                    "title": "Ditt liv ryms inte i en kryssruta.",
+                    "text": "Ett ja eller nej. Sidor, minuter eller kilometer. Ett minimum att nå eller ett maximum att hålla sig under. Bestäm vad som räknas för dig.",
+                    "tag": "Egna mål · Mängder · Minimi- och maxvärden"
+                },
+                {
+                    "title": "Uthållighet har många rytmer.",
+                    "text": "Varje dag eller några dagar i veckan. Månadskvoter, årsplaner och mängder per period. Välj en frekvens som passar ditt liv.",
+                    "tag": "Dagligen · Veckovis · Månadsvis · Årligen"
+                },
+                {
+                    "title": "Vissa saker fungerar bättre ihop.",
+                    "text": "Samla aktiviteter i ett kombinerat mål och välj hur många du behöver slutföra. Din rutin, med utrymme att välja.",
+                    "tag": "Kombinerade mål · Inställbara villkor"
+                },
+                {
+                    "title": "Mindre registrering. Mer liv.",
+                    "text": "Anslut steg eller digital användning i mobilen där enheten stöder det. Du väljer behörigheterna. Du kan också registrera manuellt.",
+                    "tag": "Steg · Digital användning · Manuell registrering"
+                },
+                {
+                    "title": "Ha det viktiga i sikte.",
+                    "text": "Ställ in påminnelser och se dina mål i mobilappens widgetar. En liten knuff tillbaka till det du bryr dig om.",
+                    "tag": "Påminnelser · Widgetar · Beroende på enhet"
+                },
+                {
+                    "title": "Gör appen till din egen.",
+                    "text": "Ikoner, ljust och mörkt tema, språk och tidszon. Pausa eller arkivera mål när planerna ändras. Dela inställningarna så att någon annan kan börja med sitt eget.",
+                    "tag": "Anpassning · Pauser · Delade målinställningar"
+                }
+            ]
+        },
+        "history": {
+            "eyebrow": "SE HUR LÅNGT DU HAR KOMMIT",
+            "title": [
+                "Ibland syns förändring",
+                "först när du",
+                "ser tillbaka."
+            ],
+            "body": "Historiken sparar varje registrering. Se sviter och mängder och rätta ett datum om det blev fel. Det du gjort förtjänar att finnas kvar efter dagens slut.",
+            "caption": "Varje markering har en historia.",
+            "alt": "Ztreak-målhistorik med svit och registreringar",
+            "items": [
+                "Historik och utveckling per mål.",
+                "Daterade registreringar som du kan rätta.",
+                "Inställbara mätningar och viktmål.",
+                "En framstegsvy för helhetsbilden."
+            ]
+        },
+        "shield": {
+            "eyebrow": "LIVET HÄNDER OCKSÅ",
+            "title": [
+                "Ett snedsteg",
+                "berättar inte",
+                "hela din historia."
+            ],
+            "body": "Med en aktiv svit kan skölden skydda en tillåten miss. Den raderar inte missen eller gör den till en framgång: du får utrymme att ta vid igen.",
+            "rule": "En sköld. Två missade perioder i rad bryter sviten. En väntande registrering är ingen miss.",
+            "aria": "En skyddad miss mellan uppfyllda perioder",
+            "tagline": "Återvänd till det som betyder något.",
+            "note": "Kontinuitet behöver också omsorg."
+        },
+        "progress": {
+            "eyebrow": "DIN VÄG FÖRBLIR DIN",
+            "title": [
+                "Börja här.",
+                "Ta det med dig."
+            ],
+            "body": "Använd Ztreak utan konto och spara dina framsteg på enheten. Synkronisering mellan enheter och säkerhetskopior i molnet ingår i Premium.",
+            "alt": "Ztreaks framstegsvy",
+            "items": [
+                "Valfritt konto med Google eller Apple beroende på plattform.",
+                "Exportera, importera och återställa dina data.",
+                "Utan reklam eller användningsanalys.",
+                "15 språk. Ljust och mörkt tema."
+            ]
+        },
+        "final": {
+            "eyebrow": "DU BEHÖVER INGEN MÅNDAG. ELLER EN PERFEKT PLAN.",
+            "title": [
+                "Ditt nästa steg",
+                "kan vara",
+                "i dag."
+            ],
+            "body": [
+                "Välj något du vill ta hand om.",
+                "Resten börjar där."
+            ],
+            "cta": "Börja med ditt första mål",
+            "note": "Manuell registrering fungerar på webben. Enhetsfunktioner kräver mobilappen och dess behörigheter."
+        }
+    },
+    "termsContent": {
+        "intro": "Dessa villkor beskriver användningen av Ztreak, de valfria funktionerna och hanteringen av ditt konto.",
+        "sections": [
+            {
+                "title": "Vad Ztreak erbjuder",
+                "text": "Ztreak från GameBob låter dig skapa personliga mål, registrera aktiviteter och följa dina framsteg. Tornet är ett valfritt spel. Manuella registreringar och målinställningar ansvarar du för; appen garanterar inga resultat och ersätter inte professionell rådgivning."
+            },
+            {
+                "title": "Lokal användning och valfritt konto",
+                "text": "Du kan registrera aktiviteter manuellt utan konto. Lokala data finns kvar på enheten och det webbursprung där du sparar dem. Att rensa webbläsarlagring, avinstallera appen eller byta enhet kan påverka tillgängligheten. Behåll en export om du behöver en fristående kopia."
+            },
+            {
+                "title": "Enhetsfunktioner",
+                "text": "Steg, digital användning, påminnelser och widgetar beror på plattformen, dess tjänster och de behörigheter du ger. Webbversionen erbjuder inte alla inbyggda funktioner. Du kan återkalla behörigheter i enhetens inställningar."
+            },
+            {
+                "title": "Premium och prenumerationer",
+                "text": "Köp erbjuds via Apples och Googles butiker, inte via den här webbplatsen. Innan du bekräftar visas pris, längd och gällande förnyelsevillkor. Hantering och uppsägning görs i respektive butik. Att radera ditt Ztreak-konto avslutar inte en prenumeration."
+            },
+            {
+                "title": "Synkronisering och återställning",
+                "text": "Synkronisering kräver konto, verifierad Premium-åtkomst och uttryckligt samtycke. Att enbart logga in laddar inte upp din historik. Läs integritetspolicyn om behandlade data, leverantörer, säkerhetskopior och raderingsalternativ."
+            },
+            {
+                "title": "Dina registreringar och appanvändning",
+                "text": "Använd Ztreak för data som du har rätt att registrera och dela. Delade målkonfigurationer låter någon annan börja följa sin egen utveckling; dina registreringar blir inte offentliga."
+            }
+        ],
+        "contactTitle": "Hjälp",
+        "contactText": "Vid problem, frågor om dessa villkor eller önskemål som rör ditt konto, skriv till"
+    },
+    "navigation": {
+        "openApp": "Öppna appen",
+        "privacy": "Integritet",
+        "terms": "Användarvillkor"
+    },
+    "determinationStory": {
+        "eyebrow": "ORDET SOM HÅLLER IHOP ALLT",
+        "title": "Beslutsamhet.",
+        "lead": "Disciplin kan hjälpa dig att följa en plan. Beslutsamhet knyter dig till anledningen till att du valde den.",
+        "body": "Dina vanor börjar med ett eget beslut: att ta hand om något som betyder något för dig. Därför är Beslutsamhet nyckelordet i Ztreak. Det är viljan att återvända till ditt skäl, hitta ett möjligt nästa steg och fortsätta bygga när dagen går snett. Uthållighet blir mer meningsfull när du vet varför du vill fortsätta.",
+        "quote": "Det här betyder något för mig. Jag vill fortsätta bygga på det.",
+        "game": "I appen är Beslutsamhet också resursen du får genom att uppnå dina mål."
+    }
 }

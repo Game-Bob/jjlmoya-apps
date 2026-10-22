@@ -24,5 +24,223 @@
             "title": "Gespeicherte Daten",
             "text": "Ztreak speichert Ziele, Namen, Einträge, Daten, Mengen, Entwürfe, Einstellungen und Turmfortschritt auf diesem Gerät. Sie dienen dazu, den Verlauf anzuzeigen, Serien zu berechnen und Änderungen wiederherzustellen. Die Kontoanmeldung ist freiwillig. Es gibt keine Werbung oder Analyse."
         }
-    ]
+    ],
+    "combined": {
+        "eyebrow": "KOMBINIERTE ZIELE",
+        "title": "Eine Routine.",
+        "titleMiddle": "Viele Wege,",
+        "titleAccent": "sie zu erfüllen.",
+        "description": "Manche Tage laden zum Spazieren ein, andere zu einem guten Buch. Fasse mehrere Aktivitäten zu einem Ziel zusammen und bestimme, wie viele du erledigen möchtest. Dranbleiben darf dir Freiraum lassen.",
+        "stepGroup": "Verbinde deine Aktivitäten.",
+        "stepChoose": "Wähle, wie viele zählen.",
+        "stepComplete": "Bleib auf deine Weise dran.",
+        "routine": "Zeit für mich",
+        "example": "Beispiel einer Routine",
+        "read": "10 Seiten lesen",
+        "walk": "20 Minuten gehen",
+        "stretch": "5 Minuten dehnen",
+        "required": "Benötigte Aktivitäten",
+        "count": "{done} von {total} Aktivitäten",
+        "complete": "Ziel erreicht",
+        "inProgress": "Einen Schritt näher",
+        "hint": "Markiere Aktivitäten und ändere die benötigte Anzahl. Dieses Beispiel speichert keine Einträge.",
+        "outOf": "von"
+    },
+    "storeButtons": {
+        "comingSoon": "Bald verfügbar",
+        "download": "Laden im",
+        "label": "Ztreak auf deinem Smartphone"
+    },
+    "towerStory": {
+        "eyebrow": "EIN KARTENHAUS. EIN STÜCK LEBEN.",
+        "titleFirst": "Außerhalb der App",
+        "titleSecond": "wächst du.",
+        "titleThird": "In der App",
+        "titleAccent": "dein Turm.",
+        "metaphor": "Eine Gewohnheit beginnt mit etwas Kleinem. Dann kommt eine weitere dazu. Gemeinsam tragen sie das Leben, das du aufbauen möchtest. Deshalb sind es Karten: Gibt eine Stütze nach, fühlt es sich manchmal an, als würde alles wanken.",
+        "game": "In Ztreak wird diese Metapher zu einem optionalen Spiel. Deine ausgewählten Ziele helfen beim Weiterbauen: Sammle Ressourcen, platziere Karten und entscheide, wie dein Turm wächst. Jede Karte macht deine Beständigkeit sichtbar.",
+        "collapse": "Reißt die Serie eines teilnehmenden Ziels ohne Schildschutz ab, stürzt die Konstruktion ein. Dein Verlauf, dauerhafte Verbesserungen und das Gelernte bleiben dir für den nächsten Aufbau erhalten.",
+        "quote": "Wiederaufbauen gehört zum Weiterkommen.",
+        "optional": "Spiele mit dem Turm oder blende das Spiel aus und konzentriere dich auf deine Ziele. Du entscheidest.",
+        "alt": "Der optionale Kartenhausturm in Ztreak"
+    },
+    "landingCopy": {
+        "tagline": "Finde deinen Rhythmus.",
+        "footer": "Dein Tempo. Dein Weg.",
+        "hero": {
+            "eyebrow": "KLEINE SCHRITTE. ETWAS GANZ EIGENES.",
+            "title": [
+                "Du musst nicht",
+                "alles ändern.",
+                "Fang einfach an."
+            ],
+            "body": "Das Buch, das du lesen möchtest. Dich etwas mehr bewegen. Wieder Zeit für dich finden. Gib dem, was dir wichtig ist, einen Platz und entdecke, was du in deinem Tempo aufbauen kannst.",
+            "cta": "Fang mit etwas Kleinem an",
+            "discover": "Ztreak entdecken",
+            "note": "Im Browser ausprobieren. Ohne Konto.",
+            "noteTop": "Ein bisschen heute.",
+            "noteBottom": "Ein bisschen mehr du.",
+            "sticker": "Auch heute zählt.",
+            "stickerNote": "Selbst wenn es nicht perfekt ist.",
+            "alt": "Die Heute-Ansicht von Ztreak mit persönlichen Zielen"
+        },
+        "manifesto": {
+            "eyebrow": "MEHR ALS NOCH EINE LISTE.",
+            "title": [
+                "Schaffe Raum",
+                "für den Menschen, der du",
+                "sein möchtest."
+            ],
+            "body": "Kein Tag ist wie der andere. Deine Ziele müssen es auch nicht sein. Ztreak hilft dir, aus einer Absicht etwas Konkretes zu machen, Aktivitäten festzuhalten und auf deinen Weg zurückzublicken.",
+            "values": [
+                "Dein Vorhaben.",
+                "Dein Rhythmus.",
+                "Dein Fortschritt."
+            ]
+        },
+        "features": {
+            "eyebrow": "EIN PLAN, DER DICH VERSTEHT",
+            "title": [
+                "Es gibt viele Wege,",
+                "um",
+                "voranzukommen."
+            ],
+            "body": "Beginne mit dem, was du tun möchtest. Ztreak passt sich deiner Messweise an.",
+            "items": [
+                {
+                    "title": "Dein Leben passt in kein Kästchen.",
+                    "text": "Ein Ja oder Nein. Seiten, Minuten oder Kilometer. Ein Minimum erreichen oder ein Maximum einhalten. Bestimme, was dir wichtig ist.",
+                    "tag": "Freie Ziele · Mengen · Mindest- und Höchstwerte"
+                },
+                {
+                    "title": "Beständigkeit kennt viele Rhythmen.",
+                    "text": "Jeden Tag oder an einigen Tagen pro Woche. Monatliche Quoten, jährliche Vorhaben und Mengen je Zeitraum. Wähle, was zu deinem Leben passt.",
+                    "tag": "Täglich · Wöchentlich · Monatlich · Jährlich"
+                },
+                {
+                    "title": "Manches gelingt gemeinsam besser.",
+                    "text": "Fasse Aktivitäten zu einem kombinierten Ziel zusammen und bestimme, wie viele du erledigen möchtest. Deine Routine lässt dir Wahlfreiheit.",
+                    "tag": "Kombinierte Ziele · Einstellbare Bedingungen"
+                },
+                {
+                    "title": "Weniger eintragen. Mehr erleben.",
+                    "text": "Verbinde auf dem Smartphone Schritte oder digitale Nutzung, sofern unterstützt. Du wählst die Berechtigungen. Manuelle Einträge bleiben möglich.",
+                    "tag": "Schritte · Digitale Nutzung · Manuelle Einträge"
+                },
+                {
+                    "title": "Behalte Wichtiges im Blick.",
+                    "text": "Richte Erinnerungen ein und prüfe Ziele in den Widgets der mobilen App. Ein kleiner Anstoß für das, was dir wichtig ist.",
+                    "tag": "Erinnerungen · Widgets · Geräteabhängig"
+                },
+                {
+                    "title": "Mach sie wirklich zu deiner App.",
+                    "text": "Symbole, helle und dunkle Designs, Sprache und Zeitzone. Pausiere oder archiviere Ziele bei neuen Plänen. Teile ihre Einstellungen, damit andere eigene Ziele starten können.",
+                    "tag": "Personalisierung · Pausen · Zieleinstellungen teilen"
+                }
+            ]
+        },
+        "history": {
+            "eyebrow": "SIEH, WIE WEIT DU GEKOMMEN BIST",
+            "title": [
+                "Manchmal zeigt sich",
+                "Veränderung erst",
+                "beim Zurückblicken."
+            ],
+            "body": "Der Verlauf bewahrt jeden Eintrag. Prüfe Serien und Mengen und korrigiere ein Datum, wenn du dich vertippt hast. Dein Einsatz soll über das Tagesende hinaus sichtbar bleiben.",
+            "caption": "Jede Markierung erzählt etwas.",
+            "alt": "Ztreak-Zielverlauf mit Serie und Einträgen",
+            "items": [
+                "Verlauf und Entwicklung je Ziel.",
+                "Datierte Einträge zum Korrigieren.",
+                "Einstellbare Messwerte und Gewichtsziele.",
+                "Eine Fortschrittsansicht für das Gesamtbild."
+            ]
+        },
+        "shield": {
+            "eyebrow": "DAS LEBEN KOMMT DAZWISCHEN",
+            "title": [
+                "Ein Stolpern",
+                "erzählt nicht",
+                "deine ganze Geschichte."
+            ],
+            "body": "Bei einer aktiven Serie kann der Schild einen zulässigen Fehlschlag abfangen. Er löscht ihn nicht und macht daraus keinen Erfolg, gibt dir aber Raum, wieder anzuknüpfen.",
+            "rule": "Ein Schild. Zwei verfehlte Zeiträume hintereinander beenden die Serie. Ein ausstehender Eintrag ist kein Fehlschlag.",
+            "aria": "Ein geschützter Fehlschlag zwischen erfüllten Zeiträumen",
+            "tagline": "Kehre zu dem zurück, was zählt.",
+            "note": "Auch Kontinuität braucht Pflege."
+        },
+        "progress": {
+            "eyebrow": "DEIN WEG BLEIBT DEINER",
+            "title": [
+                "Beginne hier.",
+                "Nimm es mit."
+            ],
+            "body": "Nutze Ztreak ohne Konto und speichere Fortschritte auf deinem Gerät. Geräteübergreifende Synchronisierung und Cloud-Sicherungen gehören zu Premium.",
+            "alt": "Fortschrittsansicht von Ztreak",
+            "items": [
+                "Optionales Konto mit Google oder Apple je nach Plattform.",
+                "Daten exportieren, importieren und wiederherstellen.",
+                "Ohne Werbung oder Nutzungsanalyse.",
+                "15 Sprachen. Helles und dunkles Design."
+            ]
+        },
+        "final": {
+            "eyebrow": "DU BRAUCHST KEINEN MONTAG. UND KEINEN PERFEKTEN PLAN.",
+            "title": [
+                "Dein nächster Schritt",
+                "kann schon",
+                "heute sein."
+            ],
+            "body": [
+                "Wähle etwas, das du pflegen möchtest.",
+                "Alles Weitere beginnt dort."
+            ],
+            "cta": "Starte dein erstes Ziel",
+            "note": "Manuelle Einträge funktionieren im Web. Gerätefunktionen benötigen die mobile App und deren Berechtigungen."
+        }
+    },
+    "termsContent": {
+        "intro": "Diese Bedingungen beschreiben die Nutzung von Ztreak, die optionalen Funktionen und die Verwaltung deines Kontos.",
+        "sections": [
+            {
+                "title": "Was Ztreak bietet",
+                "text": "Ztreak von GameBob ermöglicht persönliche Ziele, Aktivitätseinträge und einen Überblick über deinen Fortschritt. Der Turm ist ein optionales Spiel. Manuelle Einträge und Zieleinstellungen liegen bei dir; die App garantiert keine Ergebnisse und ersetzt keine professionelle Beratung."
+            },
+            {
+                "title": "Lokale Nutzung und optionales Konto",
+                "text": "Du kannst Aktivitäten ohne Konto manuell eintragen. Lokale Daten bleiben auf dem Gerät und dem Web-Ursprung, auf dem du sie speicherst. Das Löschen des Browserspeichers, die Deinstallation oder ein Gerätewechsel können ihre Verfügbarkeit beeinträchtigen. Bewahre einen Export auf, wenn du eine unabhängige Kopie benötigst."
+            },
+            {
+                "title": "Gerätefunktionen",
+                "text": "Schritte, digitale Nutzung, Erinnerungen und Widgets hängen von der Plattform, ihren Diensten und deinen Berechtigungen ab. Die Webversion bietet nicht alle nativen Funktionen. Berechtigungen kannst du in den Geräteeinstellungen entziehen."
+            },
+            {
+                "title": "Premium und Abonnements",
+                "text": "Käufe erfolgen über die Stores von Apple und Google, nicht über diese Website. Vor der Bestätigung zeigt der Store Preis, Laufzeit und geltende Verlängerungsbedingungen. Verwaltung und Kündigung erfolgen im jeweiligen Store. Das Löschen deines Ztreak-Kontos kündigt kein Abonnement."
+            },
+            {
+                "title": "Synchronisierung und Wiederherstellung",
+                "text": "Die Synchronisierung erfordert ein Konto, bestätigten Premium-Zugang und eine ausdrückliche Einwilligung. Die Anmeldung allein lädt deinen Verlauf nicht hoch. Informationen zu verarbeiteten Daten, Anbietern, Sicherungen und Löschmöglichkeiten findest du in der Datenschutzerklärung."
+            },
+            {
+                "title": "Deine Einträge und die Nutzung der App",
+                "text": "Verwende Ztreak für Daten, die du aufzeichnen und teilen darfst. Geteilte Zielkonfigurationen ermöglichen anderen, eine eigene Erfassung zu starten; deine Einträge werden dadurch nicht öffentlich."
+            }
+        ],
+        "contactTitle": "Hilfe",
+        "contactText": "Bei Problemen, Fragen zu diesen Bedingungen oder Anliegen zu deinem Konto schreibe an"
+    },
+    "navigation": {
+        "openApp": "App öffnen",
+        "privacy": "Datenschutz",
+        "terms": "Nutzungsbedingungen"
+    },
+    "determinationStory": {
+        "eyebrow": "DAS WORT, DAS ALLES ZUSAMMENHÄLT",
+        "title": "Entschlossenheit.",
+        "lead": "Disziplin kann dir helfen, einen Plan einzuhalten. Entschlossenheit verbindet dich mit dem Grund, aus dem du ihn gewählt hast.",
+        "body": "Deine Gewohnheiten beginnen mit deiner Entscheidung, etwas zu pflegen, das dir wichtig ist. Deshalb ist Entschlossenheit das Schlüsselwort von Ztreak. Sie bedeutet, zu diesem Grund zurückzufinden, einen machbaren Schritt zu suchen und weiterzubauen, wenn ein Tag anders läuft. Beständigkeit ergibt mehr Sinn, wenn du weißt, wofür du weitermachen möchtest.",
+        "quote": "Das ist mir wichtig. Ich möchte daran weiterbauen.",
+        "game": "In der App ist Entschlossenheit auch die Ressource, die du durch erfüllte Ziele erhältst."
+    }
 }

@@ -1,71 +1,76 @@
 ---
 import type { KnownLocale } from '../../types';
-import { privacyContent } from '@gamebob/ztreak/privacy';
 import { loadZtreakContent } from './content';
-import './ztreak.css';
+import { ztreakPageUrl } from './routes';
+import styles from './ztreak.css?url';
+import FeatureGlyph from './components/FeatureGlyph.astro';
+import CombinedGoals from './components/CombinedGoals.astro';
+import StoreButtons from './components/StoreButtons.astro';
+import TowerStory from './components/TowerStory.astro';
+import DeterminationStory from './components/DeterminationStory.astro';
+import CheckMark from './components/CheckMark.astro';
+import ShieldMark from './components/ShieldMark.astro';
 
-interface Props { locale: KnownLocale; }
-const { locale } = Astro.props;
+interface Props { locale: KnownLocale; basePath?: string; }
+const { locale, basePath = Astro.url.pathname } = Astro.props;
 const content = await loadZtreakContent(locale);
-const privacy = privacyContent(locale);
-const runtime = '/assets/apps/ztreak/runtime/index.html?locale=' + locale;
+const l = content.landingCopy;
+const runtime = ztreakPageUrl(basePath, 'app');
+const sectionOrder = ['features', 'combined', 'history', 'shield', 'tower', 'progress', 'determination'] as const;
+const sectionNumber = (section: typeof sectionOrder[number]) => String(sectionOrder.indexOf(section) + 1).padStart(2, '0');
 ---
-<div class="ztreak-landing" data-ztreak-landing>
-    <header class="ztreak-hero">
-        <img src="/assets/apps/ztreak/icon.webp" alt="Ztreak" width="96" height="96" />
-        <p class="ztreak-brand">Ztreak</p>
-        <h1>{content.subtitle}</h1>
-        <p class="ztreak-description">{content.description}</p>
-        <div class="ztreak-actions">
-            <button class="ztreak-primary" type="button" data-ztreak-start aria-controls="ztreak-runtime">{content.start}</button>
-            <a href="#ztreak-privacy">{content.privacy}</a>
-        </div>
-        <p class="ztreak-native-note">{content.nativeNote}</p>
-    </header>
-    <section id="ztreak-runtime" class="ztreak-runtime" data-ztreak-runtime hidden>
-        <div class="ztreak-runtime-bar">
-            <strong>Ztreak</strong>
-            <button type="button" data-ztreak-close>{content.close}</button>
-        </div>
-        <iframe title={content.title + ' — ' + content.subtitle} data-src={runtime}></iframe>
-    </section>
-    <div class="ztreak-features">
-        {content.features.map(feature => (
-            <section class="ztreak-feature"><h2>{feature.title}</h2><p>{feature.text}</p></section>
-        ))}
-    </div>
-    <details id="ztreak-privacy" class="ztreak-privacy">
-        <summary>{privacy.title}</summary>
-        <p>{privacy.version}</p>
-        {privacy.sections.map(section => (<section><h2>{section.title}</h2><p>{section.text}</p></section>))}
-        <a href={'mailto:' + privacy.contact}>{privacy.contact}</a>
-    </details>
-</div>
 
-<script>
-    for (const landing of document.querySelectorAll<HTMLElement>('[data-ztreak-landing]')) {
-        const start = landing.querySelector<HTMLButtonElement>('[data-ztreak-start]');
-        const close = landing.querySelector<HTMLButtonElement>('[data-ztreak-close]');
-        const panel = landing.querySelector<HTMLElement>('[data-ztreak-runtime]');
-        const frame = landing.querySelector<HTMLIFrameElement>('iframe');
-        const initialPolicy = landing.querySelector<HTMLDetailsElement>('#ztreak-privacy');
-        if (location.hash === '#ztreak-privacy' && initialPolicy) initialPolicy.open = true;
-        start?.addEventListener('click', () => {
-            if (!panel || !frame || !frame.dataset.src) return;
-            if (panel.hidden) frame.src = frame.dataset.src;
-            panel.hidden = false;
-            panel.scrollIntoView({ block: 'start' });
-            frame.focus();
-        });
-        close?.addEventListener('click', () => {
-            if (!panel || !frame) return;
-            frame.src = 'about:blank';
-            panel.hidden = true;
-            start?.focus();
-        });
-        landing.querySelector('a[href="#ztreak-privacy"]')?.addEventListener('click', () => {
-            const policy = landing.querySelector<HTMLDetailsElement>('#ztreak-privacy');
-            if (policy) policy.open = true;
-        });
-    }
-</script>
+<link rel="stylesheet" href={styles} />
+<div class="zl" data-ztreak-landing>
+    <nav class="zl-nav" aria-label="Ztreak">
+        <a class="zl-logo" href="#ztreak-top"><img src="/assets/apps/ztreak/icon.webp" width="36" height="36" alt="" />Ztreak<span>{l.tagline}</span></a>
+        <a class="zl-nav-action" href={runtime}>{content.start}</a>
+    </nav>
+    <header class="zl-hero zl-wrap" id="ztreak-top">
+        <div class="zl-hero-copy">
+            <p class="zl-eyebrow"><span></span>{l.hero.eyebrow}</p>
+            <h1>{l.hero.title[0]}<br />{l.hero.title[1]}<br /><em>{l.hero.title[2]}</em></h1>
+            <p class="zl-lead">{l.hero.body}</p>
+            <div class="zl-actions"><a class="zl-button" href={runtime}>{l.hero.cta}</a><a class="zl-text-link" href="#ztreak-story">{l.hero.discover}</a></div>
+            <StoreButtons {locale} />
+            <p class="zl-caption">{l.hero.note}</p>
+        </div>
+        <div class="zl-hero-art">
+            <div class="zl-orbit" aria-hidden="true"></div>
+            <span class="zl-art-note zl-note-top">{l.hero.noteTop}</span>
+            <div class="zl-phone"><img src={`/assets/apps/ztreak/landing/${locale === 'es' ? 'es' : 'en'}/today.webp`} alt={l.hero.alt} width="430" height="932" fetchpriority="high" /></div>
+            <span class="zl-art-note zl-note-bottom">{l.hero.noteBottom}</span>
+            <div class="zl-sticker"><span aria-hidden="true"><CheckMark /></span><div>{l.hero.sticker}<small>{l.hero.stickerNote}</small></div></div>
+        </div>
+    </header>
+    <section class="zl-manifesto" id="ztreak-story">
+        <div class="zl-wrap"><p class="zl-eyebrow">{l.manifesto.eyebrow}</p><h2>{l.manifesto.title[0]}<br />{l.manifesto.title[1]} <em>{l.manifesto.title[2]}</em></h2><p>{l.manifesto.body}</p><div class="zl-values">{l.manifesto.values.map(value => <span>{value}</span>)}</div></div>
+    </section>
+    <section class="zl-wrap zl-chapter">
+        <div class="zl-chapter-heading"><p class="zl-eyebrow">{sectionNumber('features')} / {l.features.eyebrow}</p><h2>{l.features.title[0]}<br />{l.features.title[1]} <em>{l.features.title[2]}</em></h2><p>{l.features.body}</p></div>
+        <div class="zl-feature-grid">{l.features.items.map((feature, index) => <article class="zl-feature"><div class="zl-feature-top"><span class="zl-feature-glyph"><FeatureGlyph number={String(index + 1).padStart(2, '0')} /></span><span class="zl-number">{String(index + 1).padStart(2, '0')}</span></div><h3>{feature.title}</h3><p>{feature.text}</p><small>{feature.tag}</small></article>)}</div>
+    </section>
+    <CombinedGoals {locale} number={sectionNumber('combined')} />
+    <section class="zl-split zl-wrap zl-history">
+        <div class="zl-image-board"><div class="zl-phone zl-phone-light"><img src={`/assets/apps/ztreak/landing/${locale === 'es' ? 'es' : 'en'}/history.webp`} alt={l.history.alt} width="430" height="932" loading="lazy" /></div><span class="zl-board-label">{l.history.caption}</span></div>
+        <div class="zl-section-copy"><p class="zl-eyebrow">{sectionNumber('history')} / {l.history.eyebrow}</p><h2>{l.history.title[0]}<br />{l.history.title[1]}<br /><em>{l.history.title[2]}</em></h2><p>{l.history.body}</p><ul>{l.history.items.map(item => <li>{item}</li>)}</ul></div>
+    </section>
+    <section class="zl-shield">
+        <div class="zl-wrap zl-split">
+            <div class="zl-section-copy"><p class="zl-eyebrow">{sectionNumber('shield')} / {l.shield.eyebrow}</p><h2>{l.shield.title[0]}<br />{l.shield.title[1]}<br /><em>{l.shield.title[2]}</em></h2><p>{l.shield.body}</p><p class="zl-caption">{l.shield.rule}</p></div>
+            <div class="zl-shield-art" aria-label={l.shield.aria}><div class="zl-shield-symbol" aria-hidden="true"><ShieldMark large /></div><div class="zl-streak"><span><CheckMark /></span><span><CheckMark /></span><span><CheckMark /></span><span class="zl-protected"><ShieldMark /></span><span><CheckMark /></span></div><strong>{l.shield.tagline}</strong><p>{l.shield.note}</p></div>
+        </div>
+    </section>
+    <TowerStory {locale} number={sectionNumber('tower')} />
+    <section class="zl-progress">
+        <div class="zl-wrap zl-split">
+            <div class="zl-section-copy"><p class="zl-eyebrow">{sectionNumber('progress')} / {l.progress.eyebrow}</p><h2>{l.progress.title[0]}<br /><em>{l.progress.title[1]}</em></h2><p>{l.progress.body}</p><ul>{l.progress.items.map(item => <li>{item}</li>)}</ul></div>
+            <div class="zl-progress-image"><img src={`/assets/apps/ztreak/landing/${locale === 'es' ? 'es' : 'en'}/progress.webp`} alt={l.progress.alt} width="430" height="932" loading="lazy" /></div>
+        </div>
+    </section>
+    <DeterminationStory {locale} number={sectionNumber('determination')} />
+    <section class="zl-final zl-wrap">
+        <p class="zl-eyebrow">{l.final.eyebrow}</p><h2>{l.final.title[0]}<br />{l.final.title[1]} <em>{l.final.title[2]}</em></h2><p>{l.final.body[0]}<br />{l.final.body[1]}</p><a class="zl-button" href={runtime}>{l.final.cta}</a><StoreButtons {locale} /><p class="zl-caption">{l.final.note}</p>
+    </section>
+    <footer class="zl-footer zl-wrap"><span>Ztreak · GameBob</span><span>{l.footer}</span><a href={ztreakPageUrl(basePath, 'privacy')}>{content.privacy}</a><a href={ztreakPageUrl(basePath, 'terms')}>{content.navigation.terms}</a></footer>
+</div>

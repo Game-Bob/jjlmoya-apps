@@ -24,5 +24,223 @@
             "title": "Data tersimpan",
             "text": "Ztreak menyimpan tujuan, nama, catatan, tanggal, jumlah, draf, preferensi, dan progres Menara di perangkat ini. Data digunakan untuk menampilkan riwayat, menghitung rentetan, dan memulihkan perubahan. Masuk ke akun bersifat opsional. Tidak ada iklan atau analitik."
         }
-    ]
+    ],
+    "combined": {
+        "eyebrow": "TARGET GABUNGAN",
+        "title": "Satu rutinitas.",
+        "titleMiddle": "Banyak cara",
+        "titleAccent": "untuk menjalaninya.",
+        "description": "Ada hari untuk berjalan kaki, ada hari untuk menikmati buku. Gabungkan beberapa aktivitas dalam satu target dan tentukan berapa yang perlu diselesaikan. Konsisten juga bisa memberi ruang untuk memilih.",
+        "stepGroup": "Satukan aktivitasmu.",
+        "stepChoose": "Pilih jumlah yang dihitung.",
+        "stepComplete": "Jalani dengan caramu.",
+        "routine": "Waktu untuk diri sendiri",
+        "example": "Contoh rutinitas",
+        "read": "Membaca 10 halaman",
+        "walk": "Berjalan 20 menit",
+        "stretch": "Peregangan 5 menit",
+        "required": "Aktivitas yang diperlukan",
+        "count": "{done} dari {total} aktivitas",
+        "complete": "Target tercapai",
+        "inProgress": "Selangkah lebih dekat",
+        "hint": "Coba tandai aktivitas dan ubah jumlah yang diperlukan. Contoh ini tidak menyimpan catatan.",
+        "outOf": "dari"
+    },
+    "storeButtons": {
+        "comingSoon": "Segera hadir",
+        "download": "Unduh di",
+        "label": "Ztreak di ponselmu"
+    },
+    "towerStory": {
+        "eyebrow": "RUMAH KARTU. SEDIKIT TENTANG HIDUP.",
+        "titleFirst": "Di luar aplikasi,",
+        "titleSecond": "kamu bertumbuh.",
+        "titleThird": "Di dalamnya,",
+        "titleAccent": "menaramu.",
+        "metaphor": "Sebuah kebiasaan dimulai dari hal kecil. Lalu muncul kebiasaan lain, dan satu lagi. Bersama-sama, semuanya menopang hidup yang ingin kamu bangun. Itulah mengapa kami memakai kartu: ketika satu penopang gagal, rasanya seluruh bangunan ikut goyah.",
+        "game": "Di Ztreak, metafora itu menjadi permainan opsional. Target pilihanmu membantumu terus membangun: dapatkan sumber daya, letakkan kartu, dan tentukan perkembangan menaramu. Setiap bagian memberi bentuk pada konsistensimu.",
+        "collapse": "Jika rangkaian target yang ikut bermain terputus tanpa perlindungan perisai, bangunannya runtuh. Riwayat, peningkatan permanen, dan pelajaranmu tetap tersimpan untuk pembangunan berikutnya.",
+        "quote": "Membangun kembali juga bagian dari kemajuan.",
+        "optional": "Nikmati menara atau sembunyikan permainan dan fokus pada targetmu. Kamu yang memilih.",
+        "alt": "Menara kartu opsional di Ztreak"
+    },
+    "landingCopy": {
+        "tagline": "Temukan ritmemu.",
+        "footer": "Dengan ritmemu. Dengan caramu.",
+        "hero": {
+            "eyebrow": "LANGKAH KECIL. SESUATU MILIKMU.",
+            "title": [
+                "Tak perlu",
+                "mengubah segalanya.",
+                "Mulai saja."
+            ],
+            "body": "Buku yang ingin kamu baca. Bergerak sedikit lebih banyak. Meluangkan waktu untuk diri sendiri lagi. Beri tempat bagi hal yang penting dan temukan apa yang bisa kamu bangun dengan ritmemu.",
+            "cta": "Mulai dari hal kecil",
+            "discover": "Kenali Ztreak",
+            "note": "Coba di peramban. Tanpa membuat akun.",
+            "noteTop": "Sedikit hari ini.",
+            "noteBottom": "Semakin menjadi dirimu.",
+            "sticker": "Hari ini juga berarti.",
+            "stickerNote": "Meski belum sempurna.",
+            "alt": "Layar Hari Ini Ztreak dengan beberapa target pribadi"
+        },
+        "manifesto": {
+            "eyebrow": "LEBIH DARI SEKADAR DAFTAR.",
+            "title": [
+                "Beri ruang",
+                "untuk sosok yang",
+                "ingin kamu jadi."
+            ],
+            "body": "Setiap hari berbeda. Targetmu pun boleh berbeda. Ztreak membantumu mengubah niat menjadi sesuatu yang nyata, mencatat aktivitas, dan melihat kembali perjalananmu.",
+            "values": [
+                "Komitmenmu.",
+                "Frekuensimu.",
+                "Kemajuanmu."
+            ]
+        },
+        "features": {
+            "eyebrow": "RENCANA YANG MEMAHAMIMU",
+            "title": [
+                "Ada banyak cara",
+                "untuk",
+                "maju."
+            ],
+            "body": "Mulai dari hal yang ingin kamu lakukan. Ztreak menyesuaikan cara kamu mengukurnya.",
+            "items": [
+                {
+                    "title": "Hidupmu lebih dari kotak centang.",
+                    "text": "Ya atau tidak. Halaman, menit, atau kilometer. Minimum yang ingin dicapai atau maksimum yang dijaga. Tentukan apa yang berarti bagimu.",
+                    "tag": "Target bebas · Jumlah · Minimum dan maksimum"
+                },
+                {
+                    "title": "Konsisten punya banyak ritme.",
+                    "text": "Setiap hari atau beberapa hari seminggu. Kuota bulanan, komitmen tahunan, dan jumlah per periode. Pilih frekuensi yang sesuai dengan hidupmu.",
+                    "tag": "Harian · Mingguan · Bulanan · Tahunan"
+                },
+                {
+                    "title": "Ada hal yang lebih baik digabung.",
+                    "text": "Satukan aktivitas dalam target gabungan dan pilih berapa yang perlu diselesaikan. Rutinitasmu tetap memberi ruang untuk memilih.",
+                    "tag": "Target gabungan · Kondisi yang dapat diatur"
+                },
+                {
+                    "title": "Lebih sedikit mencatat. Lebih banyak hidup.",
+                    "text": "Di ponsel, hubungkan langkah atau penggunaan digital jika perangkat mendukungnya. Kamu memilih izin. Pencatatan manual juga tersedia.",
+                    "tag": "Langkah · Penggunaan digital · Catatan manual"
+                },
+                {
+                    "title": "Tetap ingat hal yang penting.",
+                    "text": "Atur pengingat dan periksa target melalui widget aplikasi seluler. Dorongan kecil untuk kembali pada hal yang kamu pedulikan.",
+                    "tag": "Pengingat · Widget · Sesuai perangkat"
+                },
+                {
+                    "title": "Jadikan benar-benar milikmu.",
+                    "text": "Ikon, tema terang dan gelap, bahasa, dan zona waktu. Jeda atau arsipkan target saat rencana berubah. Bagikan pengaturannya agar orang lain memulai target sendiri.",
+                    "tag": "Personalisasi · Jeda · Berbagi pengaturan target"
+                }
+            ]
+        },
+        "history": {
+            "eyebrow": "LIHAT SEJAUH APA KAMU MELANGKAH",
+            "title": [
+                "Kadang perubahan",
+                "baru terlihat saat",
+                "menengok ke belakang."
+            ],
+            "body": "Riwayat menyimpan setiap catatan. Periksa rangkaian dan jumlah, lalu perbaiki tanggal jika keliru. Usahamu layak tetap terlihat setelah hari berakhir.",
+            "caption": "Setiap tanda punya cerita.",
+            "alt": "Riwayat target Ztreak dengan rangkaian dan catatan",
+            "items": [
+                "Riwayat dan perkembangan per target.",
+                "Catatan bertanggal yang dapat diperbaiki.",
+                "Pengukuran dan target berat badan yang bisa diatur.",
+                "Tampilan kemajuan untuk melihat keseluruhan."
+            ]
+        },
+        "shield": {
+            "eyebrow": "HIDUP JUGA TERUS BERJALAN",
+            "title": [
+                "Satu sandungan",
+                "bukan seluruh",
+                "kisahmu."
+            ],
+            "body": "Saat rangkaian aktif, perisai dapat melindungi kegagalan yang memenuhi syarat. Kegagalan itu tidak dihapus atau diubah menjadi keberhasilan: kamu mendapat ruang untuk melanjutkan.",
+            "rule": "Satu perisai. Dua periode gagal berturut-turut memutus rangkaian. Catatan tertunda bukan kegagalan.",
+            "aria": "Kegagalan terlindungi di antara periode yang selesai",
+            "tagline": "Kembali ke hal yang penting.",
+            "note": "Keberlanjutan juga perlu dirawat."
+        },
+        "progress": {
+            "eyebrow": "PERJALANANMU TETAP MILIKMU",
+            "title": [
+                "Mulai di sini.",
+                "Bawa bersamamu."
+            ],
+            "body": "Gunakan Ztreak tanpa akun dan simpan kemajuan di perangkat. Sinkronisasi antarperangkat dan cadangan awan merupakan bagian dari Premium.",
+            "alt": "Tampilan Kemajuan Ztreak",
+            "items": [
+                "Akun opsional dengan Google atau Apple sesuai platform.",
+                "Ekspor, impor, dan pemulihan data.",
+                "Tanpa iklan atau analisis penggunaan.",
+                "15 bahasa. Tema terang dan gelap."
+            ]
+        },
+        "final": {
+            "eyebrow": "TAK PERLU MENUNGGU SENIN. ATAU RENCANA SEMPURNA.",
+            "title": [
+                "Langkah berikutnya",
+                "bisa dimulai",
+                "hari ini."
+            ],
+            "body": [
+                "Pilih satu hal yang ingin kamu rawat.",
+                "Semuanya bermula di sana."
+            ],
+            "cta": "Mulai target pertamamu",
+            "note": "Pencatatan manual tersedia di web. Fitur perangkat memerlukan aplikasi seluler dan izinnya."
+        }
+    },
+    "termsContent": {
+        "intro": "Ketentuan ini menjelaskan penggunaan Ztreak, fitur opsional, dan pengelolaan akunmu.",
+        "sections": [
+            {
+                "title": "Yang disediakan Ztreak",
+                "text": "Ztreak dari GameBob memungkinkanmu menetapkan target pribadi, mencatat aktivitas, dan melihat kemajuan. Menara adalah permainan opsional. Catatan manual dan pengaturan target menjadi tanggung jawabmu; aplikasi tidak menjamin hasil atau menggantikan saran profesional."
+            },
+            {
+                "title": "Penggunaan lokal dan akun opsional",
+                "text": "Kamu dapat mencatat aktivitas secara manual tanpa akun. Data lokal tetap berada pada perangkat dan asal web tempat kamu menyimpannya. Menghapus penyimpanan peramban, mencopot aplikasi, atau mengganti perangkat dapat memengaruhi ketersediaannya. Simpan ekspor jika kamu memerlukan salinan mandiri."
+            },
+            {
+                "title": "Fitur perangkat",
+                "text": "Langkah, penggunaan digital, pengingat, dan widget bergantung pada platform, layanannya, serta izin yang kamu berikan. Versi web tidak menyediakan seluruh kemampuan bawaan. Kamu dapat mencabut izin melalui pengaturan perangkat."
+            },
+            {
+                "title": "Premium dan langganan",
+                "text": "Pembelian tersedia melalui toko Apple dan Google, bukan situs ini. Sebelum konfirmasi, toko menampilkan harga, durasi, dan ketentuan perpanjangan yang berlaku. Pengelolaan dan pembatalan dilakukan di toko terkait. Menghapus akun Ztreak tidak membatalkan langganan."
+            },
+            {
+                "title": "Sinkronisasi dan pemulihan",
+                "text": "Sinkronisasi memerlukan akun, akses Premium terverifikasi, dan persetujuan eksplisit. Masuk saja tidak mengunggah riwayatmu. Lihat kebijakan privasi untuk data yang diproses, penyedia, cadangan, dan pilihan penghapusan."
+            },
+            {
+                "title": "Catatanmu dan penggunaan aplikasi",
+                "text": "Gunakan Ztreak untuk data yang berhak kamu catat dan bagikan. Konfigurasi target yang dibagikan memungkinkan orang lain memulai pelacakannya sendiri; catatanmu tidak menjadi publik."
+            }
+        ],
+        "contactTitle": "Bantuan",
+        "contactText": "Untuk masalah, pertanyaan mengenai ketentuan ini, atau permintaan terkait akun, tulis ke"
+    },
+    "navigation": {
+        "openApp": "Buka aplikasi",
+        "privacy": "Privasi",
+        "terms": "Syarat dan ketentuan"
+    },
+    "determinationStory": {
+        "eyebrow": "KATA YANG MENOPANG SEMUANYA",
+        "title": "Tekad.",
+        "lead": "Disiplin dapat membantumu mengikuti rencana. Tekad menghubungkanmu dengan alasan kamu memilihnya.",
+        "body": "Kebiasaanmu dimulai dari keputusan sendiri: merawat sesuatu yang berarti bagimu. Karena itu, Tekad adalah kata kunci Ztreak. Tekad berarti kembali pada alasanmu, menemukan langkah yang mungkin dilakukan, dan terus membangun saat hari berjalan buruk. Konsistensi lebih bermakna saat kamu tahu untuk apa kamu ingin melanjutkan.",
+        "quote": "Ini penting bagiku. Aku ingin terus membangunnya.",
+        "game": "Dalam aplikasi, Tekad juga merupakan sumber daya yang diperoleh dengan menyelesaikan target."
+    }
 }

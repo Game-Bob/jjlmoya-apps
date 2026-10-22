@@ -24,5 +24,223 @@
             "title": "Stored data",
             "text": "Ztreak stores your goals, names, entries, dates, quantities, drafts, preferences and Tower progress on this device. They are used to show your history, calculate streaks and recover changes. Account sign-in is optional. There is no advertising or analytics."
         }
-    ]
+    ],
+    "combined": {
+        "eyebrow": "COMBINED GOALS",
+        "title": "One routine.",
+        "titleMiddle": "Many ways",
+        "titleAccent": "to make it happen.",
+        "description": "Some days are for a walk, others for a good book. Bring several activities into one goal and choose how many to complete. Consistency can leave room for choice.",
+        "stepGroup": "Bring your activities together.",
+        "stepChoose": "Choose how many count.",
+        "stepComplete": "Follow through your way.",
+        "routine": "Time for myself",
+        "example": "An example routine",
+        "read": "Read 10 pages",
+        "walk": "Walk for 20 minutes",
+        "stretch": "Stretch for 5 minutes",
+        "required": "Activities required",
+        "count": "{done} of {total} activities",
+        "complete": "Goal completed",
+        "inProgress": "One step closer",
+        "hint": "Try checking activities and changing how many you need. This example does not save any records.",
+        "outOf": "of"
+    },
+    "storeButtons": {
+        "comingSoon": "Coming soon",
+        "download": "Download on",
+        "label": "Ztreak on your phone"
+    },
+    "towerStory": {
+        "eyebrow": "A HOUSE OF CARDS. A LITTLE LIKE LIFE.",
+        "titleFirst": "Outside the app,",
+        "titleSecond": "you grow.",
+        "titleThird": "Inside,",
+        "titleAccent": "your tower does.",
+        "metaphor": "A habit starts with something small. Then comes another, and another. Together they support the life you want to build. That is why we use cards: when one support gives way, it can feel as though everything is shaking.",
+        "game": "In Ztreak, that metaphor becomes an optional game. The goals you choose help you keep building: earn resources, place cards and decide how your tower grows. Each piece gives your consistency a visible shape.",
+        "collapse": "If the streak of a participating goal breaks without shield protection, the structure collapses. Your history, permanent upgrades and what you have learned stay with you for the next build.",
+        "quote": "Rebuilding is part of moving forward.",
+        "optional": "Enjoy the tower, or hide the game and focus on your goals. The choice is yours.",
+        "alt": "The optional house-of-cards tower inside Ztreak"
+    },
+    "landingCopy": {
+        "tagline": "Find your rhythm.",
+        "footer": "Your pace. Your way.",
+        "hero": {
+            "eyebrow": "SMALL STEPS. SOMETHING OF YOUR OWN.",
+            "title": [
+                "You don't have to",
+                "change everything.",
+                "Just begin."
+            ],
+            "body": "That book you want to read. Moving a little more. Making time for yourself again. Give what matters a place in your day and discover what you can build, at your own pace.",
+            "cta": "Start with something small",
+            "discover": "Discover Ztreak",
+            "note": "Try it in your browser. No account needed.",
+            "noteTop": "A little today.",
+            "noteBottom": "A little more you.",
+            "sticker": "Today counts too.",
+            "stickerNote": "Even when it isn't perfect.",
+            "alt": "Ztreak Today screen showing several personal goals"
+        },
+        "manifesto": {
+            "eyebrow": "MORE THAN ANOTHER LIST.",
+            "title": [
+                "Make room",
+                "for the person you",
+                "want to become."
+            ],
+            "body": "No two days are the same. Your goals don't have to be either. Ztreak helps you turn an intention into something concrete, record what you do and look back at the path you have taken.",
+            "values": [
+                "Your commitment.",
+                "Your frequency.",
+                "Your progress."
+            ]
+        },
+        "features": {
+            "eyebrow": "A PLAN THAT UNDERSTANDS YOU",
+            "title": [
+                "There are so many",
+                "ways to",
+                "move forward."
+            ],
+            "body": "Start with what you want to do. Ztreak adapts to how you want to measure it.",
+            "items": [
+                {
+                    "title": "Your life is more than a checkbox.",
+                    "text": "A yes or a no. Pages, minutes or kilometres. A minimum to reach or a maximum to respect. Define what matters to you.",
+                    "tag": "Custom goals · Quantities · Minimums and maximums"
+                },
+                {
+                    "title": "Consistency has many rhythms.",
+                    "text": "Every day or a few days a week. Monthly quotas, yearly commitments and quantities per period. Choose a frequency that fits your life.",
+                    "tag": "Daily · Weekly · Monthly · Yearly"
+                },
+                {
+                    "title": "Some things work better together.",
+                    "text": "Group activities into a combined goal and choose how many you need to complete. Your routine, with room for choice.",
+                    "tag": "Combined goals · Configurable conditions"
+                },
+                {
+                    "title": "Less logging. More living.",
+                    "text": "On mobile, connect steps or digital usage where your device supports it. You choose the permissions. You can also log activities manually.",
+                    "tag": "Steps · Digital usage · Manual logging"
+                },
+                {
+                    "title": "Keep what matters in sight.",
+                    "text": "Set reminders and check your goals in mobile app widgets. A small nudge to come back to what you care about.",
+                    "tag": "Reminders · Widgets · Device dependent"
+                },
+                {
+                    "title": "Make it yours. Really yours.",
+                    "text": "Icons, light and dark themes, language and time zone. Pause or archive a goal when plans change. Share its configuration so someone else can start their own.",
+                    "tag": "Personalisation · Pauses · Shared goal setups"
+                }
+            ]
+        },
+        "history": {
+            "eyebrow": "LOOK AT HOW FAR YOU HAVE COME",
+            "title": [
+                "Sometimes you see",
+                "the change by",
+                "looking back."
+            ],
+            "body": "Your history keeps every record. Check streaks, review quantities and correct a date if you made a mistake. What you have done deserves to last beyond the end of the day.",
+            "caption": "Every mark has a story.",
+            "alt": "A Ztreak goal history with its streak and records",
+            "items": [
+                "History and trends for each goal.",
+                "Dated records you can correct.",
+                "Configurable measurements and weight goals.",
+                "A progress view for the bigger picture."
+            ]
+        },
+        "shield": {
+            "eyebrow": "LIFE HAPPENS TOO",
+            "title": [
+                "One stumble",
+                "doesn't tell",
+                "your whole story."
+            ],
+            "body": "With an active streak, the shield can protect an eligible miss. It doesn't erase the miss or turn it into an achievement: it gives you room to pick up the thread.",
+            "rule": "One shield. Two consecutive missed periods break the streak. A pending record is not a miss.",
+            "aria": "A protected miss between completed periods",
+            "tagline": "Come back to what matters.",
+            "note": "Continuity deserves care too."
+        },
+        "progress": {
+            "eyebrow": "YOUR JOURNEY STAYS YOURS",
+            "title": [
+                "Start here.",
+                "Take it with you."
+            ],
+            "body": "Use Ztreak without an account and keep your progress on your device. If you want to connect devices, cloud sync and backups are part of Premium.",
+            "alt": "Ztreak Progress screen",
+            "items": [
+                "Optional Google or Apple sign-in, depending on platform.",
+                "Export, import and recover your data.",
+                "No ads or usage analytics.",
+                "15 languages. Light and dark themes."
+            ]
+        },
+        "final": {
+            "eyebrow": "YOU DON'T NEED A MONDAY. OR A PERFECT PLAN.",
+            "title": [
+                "Your next step",
+                "could be",
+                "today."
+            ],
+            "body": [
+                "Choose one thing you want to care for.",
+                "The rest begins there."
+            ],
+            "cta": "Start your first goal",
+            "note": "Manual logging works on the web. Device features require the mobile app and its permissions."
+        }
+    },
+    "termsContent": {
+        "intro": "These terms describe the use of Ztreak, its optional features and the management of your account.",
+        "sections": [
+            {
+                "title": "What Ztreak provides",
+                "text": "Ztreak, by GameBob, lets you define personal goals, log activities and review your progress. The tower is an optional game. Manual records and goal settings are your responsibility; the app does not guarantee results or replace professional advice."
+            },
+            {
+                "title": "Local use and optional account",
+                "text": "You can log activities manually without creating an account. Local data stays on the device and web origin where you save it. Clearing browser storage, uninstalling the app or changing devices may affect its availability. Keep an export if you need an independent copy."
+            },
+            {
+                "title": "Device features",
+                "text": "Steps, digital usage, reminders and widgets depend on the platform, its services and the permissions you grant. The web version does not provide every native capability. You can revoke permissions in your device settings."
+            },
+            {
+                "title": "Premium and subscriptions",
+                "text": "Purchases are offered through Apple and Google stores, not through this website. Before you confirm a purchase, the store displays the applicable price, duration and renewal terms. Manage and cancel subscriptions in the relevant store. Deleting your Ztreak account does not cancel a subscription."
+            },
+            {
+                "title": "Sync and recovery",
+                "text": "Sync requires an account, verified Premium access and explicit consent. Signing in alone does not upload your history. See the privacy policy for information about processed data, providers, backups and deletion options."
+            },
+            {
+                "title": "Your records and use of the app",
+                "text": "Use Ztreak for data you have the right to record and share. Shared goal configurations let another person start their own tracking; they do not make your records public."
+            }
+        ],
+        "contactTitle": "Help",
+        "contactText": "For issues, questions about these terms or requests concerning your account, write to"
+    },
+    "navigation": {
+        "openApp": "Open the app",
+        "privacy": "Privacy",
+        "terms": "Terms and conditions"
+    },
+    "determinationStory": {
+        "eyebrow": "THE WORD THAT HOLDS IT ALL TOGETHER",
+        "title": "Determination.",
+        "lead": "Discipline can help you follow a plan. Determination connects you to the reason you chose it.",
+        "body": "Your habits begin with a decision of your own: to care for something that matters to you. That is why Determination is the key word in Ztreak. It means returning to your reason, finding a possible next step and continuing to build when a day goes wrong. Consistency means more when you know what you want to keep going for.",
+        "quote": "This matters to me. I want to keep building it.",
+        "game": "In the app, Determination is also the resource you earn by completing your goals."
+    }
 }

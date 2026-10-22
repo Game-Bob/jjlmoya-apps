@@ -24,5 +24,223 @@
             "title": "Przechowywane dane",
             "text": "Ztreak przechowuje na tym urządzeniu cele, nazwy, wpisy, daty, ilości, szkice, preferencje i postęp Wieży. Służą do wyświetlania historii, obliczania serii i odzyskiwania zmian. Logowanie do konta jest opcjonalne. Nie ma reklam ani analityki."
         }
-    ]
+    ],
+    "combined": {
+        "eyebrow": "CELE ŁĄCZONE",
+        "title": "Jedna rutyna.",
+        "titleMiddle": "Wiele sposobów,",
+        "titleAccent": "by ją zrealizować.",
+        "description": "Jedne dni sprzyjają spacerom, inne dobrej książce. Połącz kilka aktywności w jeden cel i wybierz, ile chcesz ukończyć. Regularność może dawać swobodę wyboru.",
+        "stepGroup": "Połącz swoje aktywności.",
+        "stepChoose": "Wybierz, ile się liczy.",
+        "stepComplete": "Realizuj cel po swojemu.",
+        "routine": "Czas dla mnie",
+        "example": "Przykładowa rutyna",
+        "read": "Przeczytać 10 stron",
+        "walk": "Spacerować 20 minut",
+        "stretch": "Rozciągać się 5 minut",
+        "required": "Wymagane aktywności",
+        "count": "{done} z {total} aktywności",
+        "complete": "Cel osiągnięty",
+        "inProgress": "O krok bliżej",
+        "hint": "Zaznaczaj aktywności i zmieniaj wymaganą liczbę. Ten przykład nie zapisuje wpisów.",
+        "outOf": "z"
+    },
+    "storeButtons": {
+        "comingSoon": "Już wkrótce",
+        "download": "Pobierz z",
+        "label": "Ztreak na Twoim telefonie"
+    },
+    "towerStory": {
+        "eyebrow": "DOMEK Z KART. TROCHĘ JAK ŻYCIE.",
+        "titleFirst": "Poza aplikacją",
+        "titleSecond": "rozwijasz się Ty.",
+        "titleThird": "W aplikacji",
+        "titleAccent": "Twoja wieża.",
+        "metaphor": "Nawyk zaczyna się od czegoś małego. Potem dochodzi kolejny i jeszcze jeden. Razem podtrzymują życie, które chcesz zbudować. Dlatego używamy kart: gdy jeden punkt podparcia zawiedzie, czasem wydaje się, że wszystko się chwieje.",
+        "game": "W Ztreak ta metafora staje się opcjonalną grą. Wybrane cele pomagają budować dalej: zdobywasz zasoby, układasz karty i decydujesz, jak rośnie wieża. Każda karta nadaje Twojej wytrwałości widoczny kształt.",
+        "collapse": "Gdy seria celu uczestniczącego w grze przerwie się bez ochrony tarczy, konstrukcja się zawali. Historia, trwałe ulepszenia i zdobyta wiedza zostaną z Tobą przy kolejnym budowaniu.",
+        "quote": "Odbudowa też jest krokiem naprzód.",
+        "optional": "Ciesz się wieżą albo ukryj grę i skup się na celach. Ty wybierasz.",
+        "alt": "Opcjonalna wieża z kart w Ztreak"
+    },
+    "landingCopy": {
+        "tagline": "Znajdź swój rytm.",
+        "footer": "W swoim tempie. Po swojemu.",
+        "hero": {
+            "eyebrow": "MAŁE KROKI. COŚ WŁASNEGO.",
+            "title": [
+                "Nie musisz",
+                "zmieniać wszystkiego.",
+                "Po prostu zacznij."
+            ],
+            "body": "Książka, którą chcesz przeczytać. Trochę więcej ruchu. Znów czas dla siebie. Zrób miejsce na to, co ważne, i odkryj, co możesz zbudować we własnym tempie.",
+            "cta": "Zacznij od czegoś małego",
+            "discover": "Poznaj Ztreak",
+            "note": "Wypróbuj w przeglądarce. Bez zakładania konta.",
+            "noteTop": "Trochę dzisiaj.",
+            "noteBottom": "Trochę bardziej po swojemu.",
+            "sticker": "Dzisiaj też się liczy.",
+            "stickerNote": "Nawet jeśli nie jest idealnie.",
+            "alt": "Ekran Dzisiaj w Ztreak z osobistymi celami"
+        },
+        "manifesto": {
+            "eyebrow": "WIĘCEJ NIŻ KOLEJNA LISTA.",
+            "title": [
+                "Zrób miejsce",
+                "dla osoby, którą",
+                "chcesz się stać."
+            ],
+            "body": "Każdy dzień jest inny. Twoje cele też mogą takie być. Ztreak pomaga zamienić zamiar w konkret, zapisywać aktywności i spojrzeć na przebytą drogę.",
+            "values": [
+                "Twoje zobowiązanie.",
+                "Twoja częstotliwość.",
+                "Twoje postępy."
+            ]
+        },
+        "features": {
+            "eyebrow": "PLAN, KTÓRY CIĘ ROZUMIE",
+            "title": [
+                "Jest wiele sposobów,",
+                "by",
+                "iść naprzód."
+            ],
+            "body": "Zacznij od tego, co chcesz robić. Ztreak dopasuje się do sposobu mierzenia.",
+            "items": [
+                {
+                    "title": "Życie nie mieści się w jednej kratce.",
+                    "text": "Tak lub nie. Strony, minuty czy kilometry. Minimum do osiągnięcia albo maksimum, którego pilnujesz. Określ, co ma dla Ciebie znaczenie.",
+                    "tag": "Własne cele · Ilości · Minima i maksima"
+                },
+                {
+                    "title": "Regularność ma wiele rytmów.",
+                    "text": "Codziennie lub kilka dni w tygodniu. Miesięczne limity dni, roczne zobowiązania i ilości na okres. Wybierz częstotliwość pasującą do Twojego życia.",
+                    "tag": "Dziennie · Tygodniowo · Miesięcznie · Rocznie"
+                },
+                {
+                    "title": "Niektóre rzeczy lepiej działają razem.",
+                    "text": "Połącz aktywności w jeden cel i wybierz, ile trzeba ukończyć. Twoja rutyna zostawia miejsce na wybór.",
+                    "tag": "Cele łączone · Konfigurowalne warunki"
+                },
+                {
+                    "title": "Mniej wpisywania. Więcej życia.",
+                    "text": "Na telefonie połącz kroki lub użycie cyfrowe, jeśli urządzenie je obsługuje. Ty wybierasz uprawnienia. Wpisy ręczne też są dostępne.",
+                    "tag": "Kroki · Użycie cyfrowe · Ręczne wpisy"
+                },
+                {
+                    "title": "Pamiętaj o tym, co ważne.",
+                    "text": "Ustaw przypomnienia i sprawdzaj cele w widżetach aplikacji mobilnej. Mała zachęta do powrotu do swoich spraw.",
+                    "tag": "Przypomnienia · Widżety · Zależnie od urządzenia"
+                },
+                {
+                    "title": "Dopasuj aplikację do siebie.",
+                    "text": "Ikony, jasny i ciemny motyw, język i strefa czasowa. Wstrzymuj lub archiwizuj cele, gdy zmieniają się plany. Udostępnij ustawienia, aby ktoś zaczął własny cel.",
+                    "tag": "Personalizacja · Przerwy · Udostępnianie ustawień"
+                }
+            ]
+        },
+        "history": {
+            "eyebrow": "ZOBACZ, ILE JUŻ ZA TOBĄ",
+            "title": [
+                "Czasem zmianę",
+                "widać dopiero,",
+                "gdy spojrzysz wstecz."
+            ],
+            "body": "Historia zachowuje każdy wpis. Sprawdzaj serie i ilości oraz poprawiaj daty w razie pomyłki. To, co robisz, zasługuje na więcej niż zniknięcie z końcem dnia.",
+            "caption": "Każdy znak ma swoją historię.",
+            "alt": "Historia celu Ztreak z serią i wpisami",
+            "items": [
+                "Historia i rozwój każdego celu.",
+                "Wpisy z datami, które możesz poprawić.",
+                "Konfigurowalne pomiary i cele wagowe.",
+                "Widok postępów pokazujący całość."
+            ]
+        },
+        "shield": {
+            "eyebrow": "ŻYCIE TEŻ MA SWÓJ BIEG",
+            "title": [
+                "Jedno potknięcie",
+                "nie opisuje",
+                "całej Twojej historii."
+            ],
+            "body": "Przy aktywnej serii tarcza może ochronić kwalifikujące się niepowodzenie. Nie usuwa go ani nie zamienia w sukces: daje przestrzeń, by wrócić do rytmu.",
+            "rule": "Jedna tarcza. Dwa nieudane okresy z rzędu przerywają serię. Oczekujący wpis nie jest niepowodzeniem.",
+            "aria": "Chronione niepowodzenie pomiędzy ukończonymi okresami",
+            "tagline": "Wróć do tego, co ważne.",
+            "note": "O ciągłość też warto dbać."
+        },
+        "progress": {
+            "eyebrow": "TWOJA DROGA POZOSTAJE TWOJA",
+            "title": [
+                "Zacznij tutaj.",
+                "Zabierz ze sobą."
+            ],
+            "body": "Używaj Ztreak bez konta i zachowuj postępy na urządzeniu. Synchronizacja między urządzeniami i kopie w chmurze są częścią Premium.",
+            "alt": "Widok postępów w Ztreak",
+            "items": [
+                "Opcjonalne konto Google lub Apple zależnie od platformy.",
+                "Eksport, import i odzyskiwanie danych.",
+                "Bez reklam i analityki użycia.",
+                "15 języków. Jasny i ciemny motyw."
+            ]
+        },
+        "final": {
+            "eyebrow": "NIE POTRZEBUJESZ PONIEDZIAŁKU. ANI IDEALNEGO PLANU.",
+            "title": [
+                "Twój kolejny krok",
+                "może być",
+                "już dziś."
+            ],
+            "body": [
+                "Wybierz coś, o co chcesz zadbać.",
+                "Reszta zaczyna się właśnie tam."
+            ],
+            "cta": "Zacznij pierwszy cel",
+            "note": "Ręczne wpisy działają w przeglądarce. Funkcje urządzenia wymagają aplikacji mobilnej i uprawnień."
+        }
+    },
+    "termsContent": {
+        "intro": "Te warunki opisują korzystanie z Ztreak, funkcje opcjonalne i zarządzanie kontem.",
+        "sections": [
+            {
+                "title": "Co oferuje Ztreak",
+                "text": "Ztreak od GameBob pozwala określać osobiste cele, zapisywać aktywności i sprawdzać postępy. Wieża jest opcjonalną grą. Ręczne wpisy i ustawienia celów zależą od Ciebie; aplikacja nie gwarantuje wyników i nie zastępuje profesjonalnej porady."
+            },
+            {
+                "title": "Korzystanie lokalne i opcjonalne konto",
+                "text": "Możesz ręcznie zapisywać aktywności bez zakładania konta. Dane lokalne pozostają na urządzeniu i w źródle internetowym, w którym je zapisano. Wyczyszczenie pamięci przeglądarki, odinstalowanie aplikacji lub zmiana urządzenia mogą wpłynąć na ich dostępność. Zachowaj eksport, jeśli potrzebujesz niezależnej kopii."
+            },
+            {
+                "title": "Funkcje urządzenia",
+                "text": "Kroki, korzystanie z urządzenia, przypomnienia i widżety zależą od platformy, jej usług oraz przyznanych uprawnień. Wersja internetowa nie udostępnia wszystkich funkcji natywnych. Uprawnienia możesz cofnąć w ustawieniach urządzenia."
+            },
+            {
+                "title": "Premium i subskrypcje",
+                "text": "Zakupy są dostępne w sklepach Apple i Google, a nie na tej stronie. Przed potwierdzeniem sklep pokazuje cenę, okres i obowiązujące warunki odnowienia. Zarządzanie i anulowanie odbywa się w odpowiednim sklepie. Usunięcie konta Ztreak nie anuluje subskrypcji."
+            },
+            {
+                "title": "Synchronizacja i odzyskiwanie",
+                "text": "Synchronizacja wymaga konta, zweryfikowanego dostępu Premium i wyraźnej zgody. Samo zalogowanie nie przesyła historii. Polityka prywatności opisuje przetwarzane dane, dostawców, kopie zapasowe i możliwości usunięcia danych."
+            },
+            {
+                "title": "Twoje wpisy i korzystanie z aplikacji",
+                "text": "Używaj Ztreak do danych, które masz prawo zapisywać i udostępniać. Udostępnione konfiguracje celów pozwalają innej osobie rozpocząć własne śledzenie; nie upubliczniają Twoich wpisów."
+            }
+        ],
+        "contactTitle": "Pomoc",
+        "contactText": "W razie problemów, pytań o te warunki lub spraw dotyczących konta napisz na"
+    },
+    "navigation": {
+        "openApp": "Otwórz aplikację",
+        "privacy": "Prywatność",
+        "terms": "Warunki korzystania"
+    },
+    "determinationStory": {
+        "eyebrow": "SŁOWO, KTÓRE ŁĄCZY WSZYSTKO",
+        "title": "Determinacja.",
+        "lead": "Dyscyplina może pomóc Ci realizować plan. Determinacja łączy Cię z powodem, dla którego go wybrano.",
+        "body": "Twoje nawyki zaczynają się od własnej decyzji: zadbać o coś, co jest dla Ciebie ważne. Dlatego Determinacja to kluczowe słowo w Ztreak. To chęć powrotu do swojego powodu, znalezienia możliwego kroku i dalszego budowania, gdy dzień nie idzie po myśli. Wytrwałość ma większy sens, kiedy wiesz, po co chcesz iść dalej.",
+        "quote": "To jest dla mnie ważne. Chcę dalej to budować.",
+        "game": "W aplikacji Determinacja to także zasób zdobywany za realizację celów."
+    }
 }

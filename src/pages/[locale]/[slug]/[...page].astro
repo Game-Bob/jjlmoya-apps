@@ -1,0 +1,19 @@
+---
+import { ALL_APP_DEFINITIONS } from '../../../entries';
+import type { AppPageDefinition, KnownLocale } from '../../../types';
+import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
+export async function getStaticPaths() {
+    const paths = [];
+    for (const app of ALL_APP_DEFINITIONS) {
+        for (const [locale, loader] of Object.entries(app.entry.i18n)) {
+            const card = await loader();
+            for (const page of app.pages ?? []) paths.push({ params: { locale, slug: card.slug, page: page.path }, props: { locale, basePath: '/' + locale + '/' + card.slug, page } });
+        }
+    }
+    return paths;
+}
+interface Props { locale: KnownLocale; basePath: string; page: AppPageDefinition; }
+const { locale, basePath, page } = Astro.props;
+const { default: Page } = await page.Component() as { default: AstroComponentFactory };
+---
+<Page {locale} {basePath} />

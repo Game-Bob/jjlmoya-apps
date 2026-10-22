@@ -1,0 +1,62 @@
+---
+import type { KnownLocale } from '../../../types';
+import { ztreakPageUrl } from '../routes';
+import { loadZtreakContent } from '../content';
+interface Props { locale: KnownLocale; basePath: string; title: string; }
+const { locale, basePath, title } = Astro.props;
+const { navigation } = await loadZtreakContent(locale);
+---
+<!doctype html><html lang={locale}><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>{title} · Ztreak</title><link rel="icon" href="/assets/apps/ztreak/icon.webp" /></head><body><main><nav><a href={ztreakPageUrl(basePath)}>Ztreak</a><a href={ztreakPageUrl(basePath, 'app')}>{navigation.openApp}</a></nav><h1>{title}</h1><slot /><footer><a href={ztreakPageUrl(basePath, 'privacy')}>{navigation.privacy}</a><a href={ztreakPageUrl(basePath, 'terms')}>{navigation.terms}</a><a href="mailto:support@gamebob.dev">support@gamebob.dev</a></footer></main></body></html>
+<style>
+
+body {
+ --paper: #f5f4ec;
+ --ink: #132822;
+ --green: #205b43;
+ --line: #d7dfd3;
+
+ margin: 0;
+ background: var(--paper);
+ color: var(--ink);
+ font: 400 1rem/1.8 system-ui, sans-serif;
+ 
+}
+
+main {
+ max-width: 48rem;
+ margin: auto;
+ padding: 2rem 1.5rem 4rem;
+ 
+}
+
+nav, footer {
+ display: flex;
+ justify-content: space-between;
+ flex-wrap: wrap;
+ gap: 1rem;
+ font-size: .8rem;
+ 
+}
+
+h1 {
+ font-size: clamp(2rem, 6vw, 3.4rem);
+ line-height: 1.15;
+ letter-spacing: -.04em;
+ margin-block: 3rem 2rem;
+ 
+}
+
+a {
+ color: var(--green);
+ text-underline-offset: .25em;
+ 
+}
+
+footer {
+ margin-top: 3rem;
+ padding-top: 1.5rem;
+ border-top: 1px solid var(--line);
+ 
+}
+
+</style>

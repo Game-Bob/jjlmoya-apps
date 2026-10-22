@@ -1,0 +1,8 @@
+---
+import type { KnownLocale } from '../../../types';
+import { loadZtreakContent } from '../content';
+interface Props { locale: KnownLocale; number: string; }
+const { locale, number } = Astro.props;
+const { determinationStory: t } = await loadZtreakContent(locale);
+---
+<section class="zl-determination"><div class="zl-wrap"><p class="zl-eyebrow">{number} / {t.eyebrow}</p><h2>{t.title}</h2><p class="zl-determination-lead">{t.lead}</p><div class="zl-determination-body"><p>{t.body}</p><blockquote>{t.quote}</blockquote></div><p class="zl-determination-game">{t.game}</p></div></section>

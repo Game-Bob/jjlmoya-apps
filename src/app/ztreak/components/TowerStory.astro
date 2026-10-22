@@ -1,0 +1,8 @@
+---
+import type { KnownLocale } from '../../../types';
+import { loadZtreakContent } from '../content';
+interface Props { locale: KnownLocale; number: string; }
+const { locale, number } = Astro.props;
+const { towerStory: t } = await loadZtreakContent(locale);
+---
+<section class="zl-wrap zl-split zl-tower"><div class="zl-tower-story-art"><div class="zl-tower-image"><img src={`/assets/apps/ztreak/landing/${locale === 'es' ? 'es' : 'en'}/tower.webp`} alt={t.alt} width="430" height="932" loading="lazy" /></div><blockquote class="zl-tower-quote">{t.quote}</blockquote></div><div class="zl-section-copy"><p class="zl-eyebrow">{number} / {t.eyebrow}</p><h2>{t.titleFirst}<br />{t.titleSecond}<br />{t.titleThird} <em>{t.titleAccent}</em></h2><p>{t.metaphor}</p><p>{t.game}</p><p class="zl-tower-rule">{t.collapse}</p><p class="zl-caption">{t.optional}</p></div></section>

@@ -8,9 +8,10 @@ interface Props {
     currentLocale?: KnownLocale;
     localeUrls?: Partial<Record<KnownLocale, string>>;
     hasSidebar?: boolean;
+    fullBleed?: boolean;
 }
 
-const { title, currentLocale = "es", localeUrls = {}, hasSidebar = false } = Astro.props;
+const { title, currentLocale = "es", localeUrls = {}, hasSidebar = false, fullBleed = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -43,7 +44,7 @@ const { title, currentLocale = "es", localeUrls = {}, hasSidebar = false } = Ast
                     </aside>
                 )
             }
-            <main>
+            <main class:list={[{ "full-bleed": fullBleed }]}>
                 <slot />
             </main>
         </div>
@@ -80,7 +81,10 @@ const { title, currentLocale = "es", localeUrls = {}, hasSidebar = false } = Ast
 
     main {
         padding: 0 2rem;
+        min-width: 0;
     }
+
+    main.full-bleed { padding: 0; }
 
     .page-wrapper {
         display: flex;

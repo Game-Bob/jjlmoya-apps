@@ -1,0 +1,24 @@
+---
+import type { KnownLocale } from '../../../types';
+import LegalLayout from './LegalLayout.astro';
+import { loadZtreakContent } from '../content';
+interface Props { locale: KnownLocale; basePath: string; }
+const { locale, basePath } = Astro.props;
+const { navigation, termsContent } = await loadZtreakContent(locale);
+---
+<LegalLayout {locale} {basePath} title={navigation.terms}>
+<p>{termsContent.intro}</p>
+{termsContent.sections.map(section => <section><h2>{section.title}</h2><p>{section.text}</p></section>)}
+<section><h2>{termsContent.contactTitle}</h2><p>{termsContent.contactText} <a href="mailto:support@gamebob.dev">support@gamebob.dev</a></p></section>
+</LegalLayout>
+<style>
+section {
+ margin-top: 2rem;
+ 
+}
+ h2 {
+ font-size: 1.25rem;
+ line-height: 1.4;
+ 
+}
+</style>

@@ -58,7 +58,7 @@ const { def, locale, card, localeUrls, nav } = Astro.props;
 const { default: LandingComponent } = (await def.LandingComponent()) as { default: AstroComponentFactory };
 ---
 
-<PreviewLayout title={card.title} currentLocale={locale} localeUrls={localeUrls} hasSidebar={true}>
+<PreviewLayout title={card.title} currentLocale={locale} localeUrls={localeUrls} hasSidebar={def.entry.id !== "ztreak"} fullBleed={def.entry.id === "ztreak"}>
     <PreviewNavSidebar slot="sidebar" categoryTitle="Apps" apps={nav} />
     <LandingComponent locale={locale} />
 </PreviewLayout>

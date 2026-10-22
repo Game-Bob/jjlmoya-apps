@@ -32,8 +32,15 @@ export interface AppEntry {
     i18n: LocaleMap<AppCardContent>;
 }
 
+export interface AppPageDefinition {
+    id: string;
+    path: string;
+    Component: () => Promise<{ default: unknown }>;
+}
+
 export interface AppDefinition {
     entry: AppEntry;
     LandingComponent: () => Promise<{ default: unknown }>;
+    pages?: readonly AppPageDefinition[];
     ChangelogComponent?: () => Promise<{ default: unknown }>;
 }

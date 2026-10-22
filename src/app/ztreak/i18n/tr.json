@@ -24,5 +24,223 @@
             "title": "Saklanan veriler",
             "text": "Ztreak hedeflerinizi, adları, kayıtları, tarihleri, miktarları, taslakları, tercihleri ve Kule ilerlemesini bu cihazda saklar. Bunlar geçmişinizi göstermek, serileri hesaplamak ve değişiklikleri kurtarmak için kullanılır. Hesaba giriş isteğe bağlıdır. Reklam veya analiz içermez."
         }
-    ]
+    ],
+    "combined": {
+        "eyebrow": "BİRLEŞİK HEDEFLER",
+        "title": "Tek bir rutin.",
+        "titleMiddle": "Tamamlamak için",
+        "titleAccent": "birçok yol.",
+        "description": "Bazı günler yürüyüşe, bazı günler güzel bir kitaba uygundur. Birkaç etkinliği tek hedefte birleştir ve kaçını tamamlaman gerektiğini seç. İstikrarlı olmak, seçim özgürlüğüne de yer bırakabilir.",
+        "stepGroup": "Etkinliklerini bir araya getir.",
+        "stepChoose": "Kaçının sayılacağını seç.",
+        "stepComplete": "Kendi tarzında tamamla.",
+        "routine": "Kendime zaman",
+        "example": "Örnek bir rutin",
+        "read": "10 sayfa okumak",
+        "walk": "20 dakika yürümek",
+        "stretch": "5 dakika esnemek",
+        "required": "Gerekli etkinlik sayısı",
+        "count": "{total} etkinlikten {done} tanesi",
+        "complete": "Hedef tamamlandı",
+        "inProgress": "Bir adım daha yakın",
+        "hint": "Etkinlikleri işaretle ve gereken sayıyı değiştir. Bu örnek kayıt tutmaz.",
+        "outOf": "/"
+    },
+    "storeButtons": {
+        "comingSoon": "Çok yakında",
+        "download": "Şuradan indir:",
+        "label": "Ztreak telefonunda"
+    },
+    "towerStory": {
+        "eyebrow": "İSKAMBİLDEN BİR KULE. BİRAZ HAYAT GİBİ.",
+        "titleFirst": "Uygulamanın dışında",
+        "titleSecond": "sen gelişirsin.",
+        "titleThird": "İçeride ise",
+        "titleAccent": "kulen yükselir.",
+        "metaphor": "Bir alışkanlık küçük bir adımla başlar. Sonra bir başkası eklenir. Birlikte, kurmak istediğin hayatı taşırlar. Bu yüzden iskambil kartları kullanıyoruz: bir dayanak sarsıldığında bazen her şey sallanıyormuş gibi gelir.",
+        "game": "Ztreak bu benzetmeyi isteğe bağlı bir oyuna dönüştürür. Seçtiğin hedefler inşa etmeye devam etmeni sağlar: kaynak kazanır, kart yerleştirir ve kulenin nasıl büyüyeceğine karar verirsin. Her parça istikrarına bir şekil verir.",
+        "collapse": "Oyuna katılan bir hedefin serisi kalkan koruması olmadan bozulursa yapı yıkılır. Geçmişin, kalıcı geliştirmelerin ve öğrendiklerin bir sonraki inşada seninle kalır.",
+        "quote": "Yeniden inşa etmek de ilerlemektir.",
+        "optional": "Kulenin tadını çıkar ya da oyunu gizleyip hedeflerine odaklan. Seçim senin.",
+        "alt": "Ztreak içindeki isteğe bağlı iskambil kulesi"
+    },
+    "landingCopy": {
+        "tagline": "Kendi ritmini bul.",
+        "footer": "Kendi hızında. Kendi tarzında.",
+        "hero": {
+            "eyebrow": "KÜÇÜK ADIMLAR. SANA AİT BİR ŞEY.",
+            "title": [
+                "Her şeyi",
+                "değiştirmen gerekmez.",
+                "Yeter ki başla."
+            ],
+            "body": "Okumak istediğin kitap. Biraz daha hareket etmek. Kendine yeniden zaman ayırmak. Önem verdiğin şeylere yer aç ve kendi hızında neler kurabileceğini keşfet.",
+            "cta": "Küçük bir şeyle başla",
+            "discover": "Ztreak’i keşfet",
+            "note": "Tarayıcıda dene. Hesap oluşturmadan.",
+            "noteTop": "Bugün biraz.",
+            "noteBottom": "Biraz daha sen.",
+            "sticker": "Bugün de değerli.",
+            "stickerNote": "Kusursuz olmasa bile.",
+            "alt": "Kişisel hedefleri gösteren Ztreak Bugün ekranı"
+        },
+        "manifesto": {
+            "eyebrow": "SIRADAN BİR LİSTEDEN FAZLASI.",
+            "title": [
+                "Olmak istediğin",
+                "kişiye",
+                "yer aç."
+            ],
+            "body": "Her gün aynı değildir. Hedeflerin de aynı olmak zorunda değil. Ztreak niyetini somutlaştırmana, yaptıklarını kaydetmene ve katettiğin yola bakmana yardımcı olur.",
+            "values": [
+                "Senin kararın.",
+                "Senin sıklığın.",
+                "Senin ilerlemen."
+            ]
+        },
+        "features": {
+            "eyebrow": "SENİ ANLAYAN BİR PLAN",
+            "title": [
+                "İlerlemek için",
+                "birçok",
+                "yol var."
+            ],
+            "body": "Yapmak istediğin şeyle başla. Ztreak nasıl ölçmek istediğine uyum sağlar.",
+            "items": [
+                {
+                    "title": "Hayatın bir kutucuğa sığmaz.",
+                    "text": "Evet ya da hayır. Sayfa, dakika veya kilometre. Ulaşılacak bir minimum ya da aşılmayacak bir maksimum. Senin için önemli olanı belirle.",
+                    "tag": "Serbest hedefler · Miktarlar · Alt ve üst sınırlar"
+                },
+                {
+                    "title": "İstikrarın birçok ritmi var.",
+                    "text": "Her gün veya haftanın birkaç günü. Aylık kotalar, yıllık kararlar ve dönemlik miktarlar. Hayatına uygun sıklığı seç.",
+                    "tag": "Günlük · Haftalık · Aylık · Yıllık"
+                },
+                {
+                    "title": "Bazı şeyler birlikte daha iyi işler.",
+                    "text": "Etkinlikleri birleşik hedefte topla ve kaçını tamamlaman gerektiğini seç. Rutininde seçime yer kalsın.",
+                    "tag": "Birleşik hedefler · Ayarlanabilir koşullar"
+                },
+                {
+                    "title": "Daha az kayıt. Daha çok hayat.",
+                    "text": "Cihazın destekliyorsa telefonda adımları veya dijital kullanımı bağla. İzinleri sen seçersin. Elle kayıt da tutabilirsin.",
+                    "tag": "Adımlar · Dijital kullanım · Elle kayıt"
+                },
+                {
+                    "title": "Önem verdiğin şey gözünün önünde olsun.",
+                    "text": "Hatırlatıcılar ayarla ve mobil uygulama widget’larından hedeflerine bak. Sana ait olana dönmek için küçük bir destek.",
+                    "tag": "Hatırlatıcılar · Widget’lar · Cihaza bağlı"
+                },
+                {
+                    "title": "Tam anlamıyla sana ait olsun.",
+                    "text": "Simgeler, açık ve koyu temalar, dil ve saat dilimi. Planlar değişince hedefi duraklat veya arşivle. Ayarları paylaş, başkası kendi hedefini başlatsın.",
+                    "tag": "Kişiselleştirme · Molalar · Hedef ayarlarını paylaşma"
+                }
+            ]
+        },
+        "history": {
+            "eyebrow": "NE KADAR YOL ALDIĞINA BAK",
+            "title": [
+                "Bazen değişimi",
+                "görmek için",
+                "geriye bakarsın."
+            ],
+            "body": "Geçmiş her kaydı saklar. Serileri ve miktarları gözden geçir, yanlış tarihi düzelt. Emeğin gün bittiğinde kaybolmaktan daha fazlasını hak ediyor.",
+            "caption": "Her işaretin bir hikâyesi var.",
+            "alt": "Seri ve kayıtları gösteren Ztreak hedef geçmişi",
+            "items": [
+                "Hedef başına geçmiş ve gelişim.",
+                "Düzeltebileceğin tarihli kayıtlar.",
+                "Ayarlanabilir ölçümler ve kilo hedefleri.",
+                "Bütünü görmek için ilerleme görünümü."
+            ]
+        },
+        "shield": {
+            "eyebrow": "HAYAT DA DEVAM EDİYOR",
+            "title": [
+                "Bir tökezleme",
+                "bütün hikâyeni",
+                "anlatmaz."
+            ],
+            "body": "Aktif bir seride kalkan uygun bir başarısızlığı koruyabilir. Kaydı silmez veya başarıya dönüştürmez: yeniden devam etmek için alan tanır.",
+            "rule": "Tek kalkan. Art arda iki başarısız dönem seriyi bozar. Bekleyen kayıt başarısızlık değildir.",
+            "aria": "Tamamlanan dönemler arasında korunan bir başarısızlık",
+            "tagline": "Önem verdiğin şeye dön.",
+            "note": "Süreklilik de özen ister."
+        },
+        "progress": {
+            "eyebrow": "YOLCULUĞUN SANA AİT KALIR",
+            "title": [
+                "Burada başla.",
+                "Yanında götür."
+            ],
+            "body": "Ztreak’i hesap olmadan kullan, ilerlemeni cihazında sakla. Cihazlar arası eşitleme ve bulut yedekleri Premium kapsamındadır.",
+            "alt": "Ztreak ilerleme görünümü",
+            "items": [
+                "Platforma göre isteğe bağlı Google veya Apple hesabı.",
+                "Verilerini dışa aktarma, içe aktarma ve kurtarma.",
+                "Reklam ve kullanım analizi yok.",
+                "15 dil. Açık ve koyu temalar."
+            ]
+        },
+        "final": {
+            "eyebrow": "PAZARTESİYİ BEKLEMENE GEREK YOK. KUSURSUZ BİR PLANI DA.",
+            "title": [
+                "Sonraki adımın",
+                "pekâlâ",
+                "bugün olabilir."
+            ],
+            "body": [
+                "Özen göstermek istediğin bir şey seç.",
+                "Gerisi oradan başlar."
+            ],
+            "cta": "İlk hedefini başlat",
+            "note": "Elle kayıt web’de kullanılabilir. Cihaz özellikleri için mobil uygulama ve izinler gerekir."
+        }
+    },
+    "termsContent": {
+        "intro": "Bu koşullar Ztreak’in kullanımını, isteğe bağlı özelliklerini ve hesap yönetimini açıklar.",
+        "sections": [
+            {
+                "title": "Ztreak ne sunar?",
+                "text": "GameBob’un Ztreak uygulaması kişisel hedefler belirlemene, etkinlik kaydetmene ve ilerlemeni görmene olanak tanır. Kule isteğe bağlı bir oyundur. Elle girilen kayıtlar ve hedef ayarları senin sorumluluğundadır; uygulama sonuç garantisi vermez ve uzman görüşünün yerini almaz."
+            },
+            {
+                "title": "Yerel kullanım ve isteğe bağlı hesap",
+                "text": "Hesap oluşturmadan elle kayıt tutabilirsin. Yerel veriler, kaydettiğin cihazda ve web kaynağında kalır. Tarayıcı depolamasını temizlemek, uygulamayı kaldırmak veya cihaz değiştirmek verilere erişimi etkileyebilir. Bağımsız bir kopya gerekiyorsa dışa aktarılmış bir dosya sakla."
+            },
+            {
+                "title": "Cihaz özellikleri",
+                "text": "Adımlar, dijital kullanım, hatırlatıcılar ve widget’lar platforma, hizmetlerine ve verdiğin izinlere bağlıdır. Web sürümü tüm yerel yetenekleri sunmaz. İzinleri cihaz ayarlarından geri alabilirsin."
+            },
+            {
+                "title": "Premium ve abonelikler",
+                "text": "Satın almalar bu siteden değil, Apple ve Google mağazalarından sunulur. Onaydan önce mağaza geçerli fiyatı, süreyi ve yenileme koşullarını gösterir. Yönetim ve iptal ilgili mağazadan yapılır. Ztreak hesabını silmek aboneliği iptal etmez."
+            },
+            {
+                "title": "Eşitleme ve kurtarma",
+                "text": "Eşitleme için hesap, doğrulanmış Premium erişimi ve açık rıza gerekir. Yalnızca giriş yapmak geçmişini yüklemez. İşlenen veriler, sağlayıcılar, yedekler ve silme seçenekleri için gizlilik politikasına bak."
+            },
+            {
+                "title": "Kayıtların ve uygulamanın kullanımı",
+                "text": "Ztreak’i kaydetme ve paylaşma hakkına sahip olduğun veriler için kullan. Paylaşılan hedef ayarları başkasının kendi takibini başlatmasını sağlar; kayıtlarını herkese açık hale getirmez."
+            }
+        ],
+        "contactTitle": "Yardım",
+        "contactText": "Sorunlar, bu koşullarla ilgili sorular veya hesabına ilişkin talepler için şu adrese yaz"
+    },
+    "navigation": {
+        "openApp": "Uygulamayı aç",
+        "privacy": "Gizlilik",
+        "terms": "Kullanım koşulları"
+    },
+    "determinationStory": {
+        "eyebrow": "HER ŞEYİ BİR ARADA TUTAN KELİME",
+        "title": "Kararlılık.",
+        "lead": "Disiplin bir planı uygulamana yardımcı olabilir. Kararlılık ise seni o planı seçme nedenine bağlar.",
+        "body": "Alışkanlıkların kendi kararınla başlar: önem verdiğin bir şeye özen göstermek. Bu yüzden Ztreak’in anahtar kelimesi Kararlılık. O nedene geri dönme, atılabilecek bir adım bulma ve gün ters gittiğinde inşa etmeyi sürdürme isteğidir. Neden devam etmek istediğini bildiğinde istikrar daha anlamlı olur.",
+        "quote": "Bu benim için önemli. İnşa etmeye devam etmek istiyorum.",
+        "game": "Uygulamada Kararlılık, hedeflerini tamamlayarak kazandığın kaynağın da adıdır."
+    }
 }

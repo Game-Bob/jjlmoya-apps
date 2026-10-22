@@ -24,5 +24,223 @@
             "title": "Données enregistrées",
             "text": "Ztreak enregistre sur cet appareil vos objectifs, noms, entrées, dates, quantités, brouillons, préférences et progrès de la Tour. Ils servent à afficher votre historique, calculer les séries et récupérer les modifications. La connexion à un compte est facultative. Il n’y a ni publicité ni analyse d’usage."
         }
-    ]
+    ],
+    "combined": {
+        "eyebrow": "OBJECTIFS COMBINÉS",
+        "title": "Une routine.",
+        "titleMiddle": "Plusieurs façons",
+        "titleAccent": "de la réussir.",
+        "description": "Certains jours invitent à marcher, d’autres à ouvrir un livre. Réunis plusieurs activités dans un objectif et choisis combien en accomplir. La régularité peut aussi laisser le choix.",
+        "stepGroup": "Rassemble tes activités.",
+        "stepChoose": "Choisis combien comptent.",
+        "stepComplete": "Avance à ta façon.",
+        "routine": "Du temps pour moi",
+        "example": "Exemple de routine",
+        "read": "Lire 10 pages",
+        "walk": "Marcher 20 minutes",
+        "stretch": "S’étirer 5 minutes",
+        "required": "Activités nécessaires",
+        "count": "{done} activités sur {total}",
+        "complete": "Objectif atteint",
+        "inProgress": "Un pas de plus",
+        "hint": "Essaie de cocher des activités et de modifier le nombre nécessaire. Cet exemple n’enregistre rien.",
+        "outOf": "sur"
+    },
+    "storeButtons": {
+        "comingSoon": "Bientôt disponible",
+        "download": "Télécharger sur",
+        "label": "Ztreak sur ton téléphone"
+    },
+    "towerStory": {
+        "eyebrow": "UN CHÂTEAU DE CARTES. UN PEU COMME LA VIE.",
+        "titleFirst": "Hors de l’application,",
+        "titleSecond": "tu avances.",
+        "titleThird": "À l’intérieur,",
+        "titleAccent": "ta tour grandit.",
+        "metaphor": "Une habitude commence par un petit geste. Puis une autre arrive, et encore une. Ensemble, elles soutiennent la vie que tu veux construire. Voilà pourquoi ce sont des cartes : quand un appui cède, on a parfois l’impression que tout vacille.",
+        "game": "Dans Ztreak, cette métaphore devient un jeu facultatif. Les objectifs choisis te permettent de construire : gagne des ressources, pose des cartes et décide comment faire grandir ta tour. Chaque pièce donne forme à ta régularité.",
+        "collapse": "Si la série d’un objectif participant se rompt sans la protection du bouclier, la structure s’effondre. Ton historique, tes améliorations permanentes et tes apprentissages restent avec toi pour la prochaine construction.",
+        "quote": "Reconstruire, c’est aussi avancer.",
+        "optional": "Profite de la tour, ou masque le jeu pour te concentrer sur tes objectifs. À toi de choisir.",
+        "alt": "La tour de cartes facultative dans Ztreak"
+    },
+    "landingCopy": {
+        "tagline": "Trouve ton rythme.",
+        "footer": "À ton rythme. À ta façon.",
+        "hero": {
+            "eyebrow": "DE PETITS PAS. QUELQUE CHOSE BIEN À TOI.",
+            "title": [
+                "Pas besoin de",
+                "tout changer.",
+                "Commence simplement."
+            ],
+            "body": "Ce livre que tu veux lire. Bouger un peu plus. Retrouver du temps pour toi. Fais une place à ce qui compte et découvre ce que tu peux construire, à ton rythme.",
+            "cta": "Commence par une petite chose",
+            "discover": "Découvre Ztreak",
+            "note": "Essaie dans ton navigateur. Sans créer de compte.",
+            "noteTop": "Un peu aujourd’hui.",
+            "noteBottom": "Un peu plus toi.",
+            "sticker": "Aujourd’hui compte aussi.",
+            "stickerNote": "Même quand tout n’est pas parfait.",
+            "alt": "Écran Aujourd’hui de Ztreak avec plusieurs objectifs personnels"
+        },
+        "manifesto": {
+            "eyebrow": "BIEN PLUS QU’UNE LISTE.",
+            "title": [
+                "Faire une place",
+                "à la personne que tu",
+                "veux devenir."
+            ],
+            "body": "Les journées ne se ressemblent pas. Tes objectifs non plus. Ztreak t’aide à transformer une intention en quelque chose de concret, à noter tes activités et à regarder le chemin parcouru.",
+            "values": [
+                "Ton engagement.",
+                "Ta fréquence.",
+                "Tes progrès."
+            ]
+        },
+        "features": {
+            "eyebrow": "UN PLAN QUI TE COMPREND",
+            "title": [
+                "Il y a mille façons",
+                "de",
+                "progresser."
+            ],
+            "body": "Pars de ce que tu veux faire. Ztreak s’adapte à ta façon de le mesurer.",
+            "items": [
+                {
+                    "title": "Ta vie ne tient pas dans une case.",
+                    "text": "Un oui ou un non. Des pages, des minutes ou des kilomètres. Un minimum à atteindre ou un maximum à respecter. Définis ce qui compte pour toi.",
+                    "tag": "Objectifs libres · Quantités · Minimums et maximums"
+                },
+                {
+                    "title": "La régularité a plusieurs rythmes.",
+                    "text": "Chaque jour ou quelques jours par semaine. Quotas mensuels, engagements annuels et quantités par période. Choisis une fréquence adaptée à ta vie.",
+                    "tag": "Quotidien · Hebdomadaire · Mensuel · Annuel"
+                },
+                {
+                    "title": "Certaines choses vont mieux ensemble.",
+                    "text": "Réunis des activités dans un objectif combiné et choisis combien en accomplir. Ta routine, avec la liberté de choisir.",
+                    "tag": "Objectifs combinés · Conditions configurables"
+                },
+                {
+                    "title": "Moins de saisie. Plus de vie.",
+                    "text": "Sur mobile, connecte les pas ou l’usage numérique si ton appareil le permet. Tu choisis les autorisations. La saisie manuelle reste possible.",
+                    "tag": "Pas · Usage numérique · Saisie manuelle"
+                },
+                {
+                    "title": "Garde l’essentiel en vue.",
+                    "text": "Prépare des rappels et consulte tes objectifs dans les widgets de l’application mobile. Un petit élan pour revenir à ce qui te tient à cœur.",
+                    "tag": "Rappels · Widgets · Selon l’appareil"
+                },
+                {
+                    "title": "Une application vraiment à toi.",
+                    "text": "Icônes, thèmes clair et sombre, langue et fuseau horaire. Mets un objectif en pause ou archive-le si tes plans changent. Partage sa configuration pour qu’une autre personne crée le sien.",
+                    "tag": "Personnalisation · Pauses · Partage d’objectifs"
+                }
+            ]
+        },
+        "history": {
+            "eyebrow": "REGARDE LE CHEMIN PARCOURU",
+            "title": [
+                "Parfois le changement",
+                "se révèle",
+                "en regardant derrière."
+            ],
+            "body": "L’historique conserve chaque saisie. Consulte tes séries, vérifie les quantités et corrige une date en cas d’erreur. Ce que tu as fait mérite de rester après la fin de la journée.",
+            "caption": "Chaque marque raconte une histoire.",
+            "alt": "Historique d’un objectif Ztreak avec sa série et ses saisies",
+            "items": [
+                "Historique et évolution par objectif.",
+                "Saisies datées que tu peux corriger.",
+                "Mesures et objectifs de poids configurables.",
+                "Une vue des progrès pour prendre du recul."
+            ]
+        },
+        "shield": {
+            "eyebrow": "LA VIE SUIT AUSSI SON COURS",
+            "title": [
+                "Un faux pas",
+                "ne raconte pas",
+                "toute ton histoire."
+            ],
+            "body": "Avec une série active, le bouclier peut protéger un échec admissible. Il ne l’efface pas et ne le transforme pas en réussite : il te laisse une marge pour reprendre le fil.",
+            "rule": "Un seul bouclier. Deux périodes manquées de suite rompent la série. Une saisie en attente n’est pas un échec.",
+            "aria": "Un échec protégé entre des périodes réussies",
+            "tagline": "Reviens à ce qui compte.",
+            "note": "La continuité mérite aussi de l’attention."
+        },
+        "progress": {
+            "eyebrow": "TON PARCOURS RESTE LE TIEN",
+            "title": [
+                "Commence ici.",
+                "Continue avec toi."
+            ],
+            "body": "Utilise Ztreak sans compte et garde tes progrès sur ton appareil. La synchronisation entre appareils et les sauvegardes cloud font partie de Premium.",
+            "alt": "Vue des progrès de Ztreak",
+            "items": [
+                "Compte facultatif avec Google ou Apple selon la plateforme.",
+                "Exportation, importation et récupération des données.",
+                "Sans publicité ni analyse d’utilisation.",
+                "15 langues. Thèmes clair et sombre."
+            ]
+        },
+        "final": {
+            "eyebrow": "PAS BESOIN D’UN LUNDI. NI D’UN PLAN PARFAIT.",
+            "title": [
+                "Ton prochain pas",
+                "peut être",
+                "aujourd’hui."
+            ],
+            "body": [
+                "Choisis une chose dont tu veux prendre soin.",
+                "La suite commence là."
+            ],
+            "cta": "Crée ton premier objectif",
+            "note": "La saisie manuelle fonctionne sur le web. Les fonctions de l’appareil nécessitent l’application mobile et ses autorisations."
+        }
+    },
+    "termsContent": {
+        "intro": "Ces conditions décrivent l’utilisation de Ztreak, ses fonctions facultatives et la gestion de ton compte.",
+        "sections": [
+            {
+                "title": "Ce que propose Ztreak",
+                "text": "Ztreak, par GameBob, permet de définir des objectifs personnels, d’enregistrer des activités et de consulter ses progrès. La tour est un jeu facultatif. Les saisies manuelles et le paramétrage des objectifs dépendent de toi ; l’application ne garantit aucun résultat et ne remplace pas un conseil professionnel."
+            },
+            {
+                "title": "Utilisation locale et compte facultatif",
+                "text": "Tu peux enregistrer tes activités manuellement sans créer de compte. Les données locales restent sur l’appareil et l’origine web où tu les enregistres. Effacer le stockage du navigateur, désinstaller l’application ou changer d’appareil peut affecter leur disponibilité. Conserve une exportation si tu souhaites une copie indépendante."
+            },
+            {
+                "title": "Fonctions de l’appareil",
+                "text": "Les pas, l’usage numérique, les rappels et les widgets dépendent de la plateforme, de ses services et des autorisations accordées. La version web ne propose pas toutes les capacités natives. Tu peux retirer les autorisations dans les réglages de l’appareil."
+            },
+            {
+                "title": "Premium et abonnements",
+                "text": "Les achats sont proposés dans les boutiques Apple et Google, pas sur ce site. Avant de confirmer un achat, la boutique affiche le prix, la durée et les conditions de renouvellement applicables. La gestion et la résiliation se font dans la boutique concernée. Supprimer ton compte Ztreak ne résilie pas un abonnement."
+            },
+            {
+                "title": "Synchronisation et récupération",
+                "text": "La synchronisation nécessite un compte, un accès Premium vérifié et un consentement explicite. Se connecter n’envoie pas automatiquement ton historique. Consulte la politique de confidentialité pour connaître les données traitées, les prestataires, les sauvegardes et les possibilités de suppression."
+            },
+            {
+                "title": "Tes données et l’utilisation de l’application",
+                "text": "Utilise Ztreak pour des données que tu as le droit d’enregistrer et de partager. Les configurations d’objectifs partagées permettent à une autre personne de démarrer son propre suivi ; elles ne rendent pas tes données publiques."
+            }
+        ],
+        "contactTitle": "Aide",
+        "contactText": "Pour signaler un problème, poser une question sur ces conditions ou adresser une demande concernant ton compte, écris à"
+    },
+    "navigation": {
+        "openApp": "Ouvrir l’application",
+        "privacy": "Confidentialité",
+        "terms": "Conditions d’utilisation"
+    },
+    "determinationStory": {
+        "eyebrow": "LE MOT QUI SOUTIENT TOUT",
+        "title": "Détermination.",
+        "lead": "La discipline peut t’aider à suivre un plan. La détermination te relie à la raison pour laquelle tu l’as choisi.",
+        "body": "Tes habitudes commencent par une décision personnelle : prendre soin de ce qui compte pour toi. C’est pourquoi Détermination est le mot clé de Ztreak. C’est la volonté de retrouver cette raison, de trouver un pas possible et de continuer à construire quand la journée déraille. La régularité a plus de sens quand tu sais pourquoi tu veux continuer.",
+        "quote": "Cela compte pour moi. Je veux continuer à le construire.",
+        "game": "Dans l’application, la Détermination est aussi la ressource gagnée en accomplissant tes objectifs."
+    }
 }
