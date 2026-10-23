@@ -63,8 +63,8 @@ const hasAppStore = !!stores.appStore;
         <section class="sl-final-cta">
             <div class="sl-container">
                 <div class="sl-cta-card">
-                    <h2 class="sl-cta-title">Ready to master the <span class="sl-text-accent">Saucier</span>?</h2>
-                    <p class="sl-cta-text">Join thousands of chefs using SauceLab to craft the perfect heritage.</p>
+                    <h2 class="sl-cta-title">{t.hero.title}</h2>
+                    <p class="sl-cta-text">{t.hero.subtitle}</p>
                     <div class="sl-hero-actions">
                         <div class:list={["sl-btn-wrapper", { 'disabled': !hasAppStore }]}>
                             <a href={hasAppStore ? stores.appStore : 'javascript:void(0)'} class="sl-btn sl-btn-primary">

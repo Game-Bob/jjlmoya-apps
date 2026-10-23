@@ -47,7 +47,7 @@ const cardLoader = fortuneCookieEntry.i18n[locale] ?? fortuneCookieEntry.i18n.en
 const card = await cardLoader!();
 ---
 
-<div class="landing">
+<div class="fc-landing">
     <Hero t={t.hero} {stores} {appId} appTitle={card.title} />
     <Challenge t={t.challenge} {appId} />
     <Streak t={t.streak} {appId} />
