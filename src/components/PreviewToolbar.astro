@@ -9,9 +9,26 @@ interface Props {
 const { currentLocale, localeUrls = {} } = Astro.props;
 
 const otherLocales = Object.entries(localeUrls).filter(([l]) => l !== currentLocale) as [KnownLocale, string][];
+const toolbarLabels: Record<KnownLocale, { controls: string; toggle: string }> = {
+    de: { controls: 'Sprach- und Themensteuerung', toggle: 'Farbschema ändern' },
+    en: { controls: 'Language and theme controls', toggle: 'Toggle theme' },
+    es: { controls: 'Controles de idioma y tema', toggle: 'Cambiar tema' },
+    fr: { controls: 'Commandes de langue et de thème', toggle: 'Changer de thème' },
+    id: { controls: 'Kontrol bahasa dan tema', toggle: 'Ubah tema' },
+    it: { controls: 'Controlli lingua e tema', toggle: 'Cambia tema' },
+    ja: { controls: '言語とテーマの設定', toggle: 'テーマを切り替え' },
+    ko: { controls: '언어 및 테마 설정', toggle: '테마 전환' },
+    nl: { controls: 'Taal- en thema-instellingen', toggle: 'Thema wijzigen' },
+    pl: { controls: 'Ustawienia języka i motywu', toggle: 'Zmień motyw' },
+    pt: { controls: 'Controles de idioma e tema', toggle: 'Alternar tema' },
+    ru: { controls: 'Настройки языка и темы', toggle: 'Сменить тему' },
+    sv: { controls: 'Språk- och temainställningar', toggle: 'Byt tema' },
+    tr: { controls: 'Dil ve tema kontrolleri', toggle: 'Temayı değiştir' },
+    zh: { controls: '语言和主题控制', toggle: '切换主题' },
+};
 ---
 
-<nav class="preview-toolbar">
+<nav class="preview-toolbar" aria-label={toolbarLabels[currentLocale].controls}>
     {
         otherLocales.length > 0 && (
             <div class="locale-group">
@@ -25,7 +42,13 @@ const otherLocales = Object.entries(localeUrls).filter(([l]) => l !== currentLoc
         )
     }
 
-    <button id="theme-toggle" class="btn-theme" aria-label="Toggle theme" title="Toggle theme">
+    <button
+        id="theme-toggle"
+        class="btn-theme"
+        aria-label={toolbarLabels[currentLocale].toggle}
+        aria-pressed="false"
+        title={toolbarLabels[currentLocale].toggle}
+    >
         <span class="theme-icon"></span>
     </button>
 </nav>
@@ -39,14 +62,20 @@ const otherLocales = Object.entries(localeUrls).filter(([l]) => l !== currentLoc
             document.documentElement.classList.remove("theme-light", "theme-dark");
             document.documentElement.classList.add(theme);
             localStorage.setItem("theme", theme);
+            btn.setAttribute("aria-pressed", String(theme === "theme-light"));
         };
 
-        btn.addEventListener("click", () => {
+        btn.setAttribute(
+            "aria-pressed",
+            String(document.documentElement.classList.contains("theme-light")),
+        );
+
+        btn.onclick = () => {
             const next = document.documentElement.classList.contains("theme-dark")
                 ? "theme-light"
                 : "theme-dark";
             applyTheme(next);
-        });
+        };
     }
 
     initToolbar();
@@ -104,6 +133,12 @@ const otherLocales = Object.entries(localeUrls).filter(([l]) => l !== currentLoc
         color: var(--accent);
     }
 
+    .btn-locale:focus-visible,
+    .btn-theme:focus-visible {
+        outline: 2px solid var(--text-main);
+        outline-offset: 2px;
+    }
+
     .btn-theme {
         background: transparent;
         border: none;
@@ -135,5 +170,35 @@ const otherLocales = Object.entries(localeUrls).filter(([l]) => l !== currentLoc
     :global(.theme-dark) .theme-icon {
         background: #94a3b8;
         box-shadow: inset -4px -2px 0 #1e293b;
+    }
+
+    @media (max-width: 768px) {
+        .preview-toolbar {
+            inset: max(0.5rem, env(safe-area-inset-top)) max(0.5rem, env(safe-area-inset-right)) auto
+                max(0.5rem, env(safe-area-inset-left));
+            gap: 0.25rem;
+            max-width: none;
+            padding: 0.3rem;
+        }
+
+        .locale-group {
+            flex: 1 1 auto;
+            min-width: 0;
+            overflow: auto hidden;
+            overscroll-behavior-x: contain;
+            scrollbar-color: var(--text-muted) transparent;
+            scrollbar-width: thin;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .locale-current,
+        .btn-locale {
+            flex: 0 0 auto;
+        }
+
+        .btn-theme {
+            flex: 0 0 2.5rem;
+            min-height: 2.5rem;
+        }
     }
 </style>
