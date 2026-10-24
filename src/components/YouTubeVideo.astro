@@ -25,23 +25,10 @@ const { videoId, title, poster } = Astro.props;
 </figure>
 
 <script>
+    import { isYouTubeFramePolicyViolation } from '../utils/youtube-csp';
+
     document.addEventListener('securitypolicyviolation', (event) => {
-        const isFrameDirective = ['frame-src', 'child-src', 'default-src'].includes(event.effectiveDirective);
-        if (!isFrameDirective) return;
-
-        let blockedHost = '';
-        try {
-            blockedHost = new URL(event.blockedURI).hostname;
-        } catch {
-            return;
-        }
-
-        const isYouTubeHost =
-            blockedHost === 'youtube.com' ||
-            blockedHost.endsWith('.youtube.com') ||
-            blockedHost === 'youtube-nocookie.com' ||
-            blockedHost.endsWith('.youtube-nocookie.com');
-        if (!isYouTubeHost) return;
+        if (!isYouTubeFramePolicyViolation(event)) return;
 
         document.querySelectorAll<HTMLElement>('[data-youtube-video].is-playing').forEach((frame) => {
             frame.querySelector('.yt-video-player')?.remove();
