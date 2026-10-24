@@ -77,6 +77,24 @@ function parseColor(value: string): CssColor {
     : parseFunctionalColor(value);
 }
 
+function gradientStopColors(
+  value: string,
+  css: string,
+  selectors: readonly string[],
+): CssColor[] {
+  const stops = [
+    ...value.matchAll(/var\(--[\w-]+\)|#[\da-f]{6}|#[\da-f]{3}|rgba?\([^)]+\)/gi),
+  ].map((match) => match[0]);
+
+  if (stops.length < 2) throw new Error(`Unsupported gradient: ${value}`);
+  return stops.map((stop) => {
+    const reference = stop.match(/^var\((--[\w-]+)\)$/)?.[1];
+    return reference
+      ? resolveColor(css, selectors, reference)
+      : parseColor(stop);
+  });
+}
+
 function resolveColor(
   css: string,
   selectors: readonly string[],
@@ -398,6 +416,130 @@ describe("landing style isolation", () => {
     expect(css).toMatch(
       /\.dc-card-time-label-accent\s*\{[^}]*opacity:\s*1\s*;/,
     );
+  });
+
+  it("keeps Day Check’s footer text readable on its themed gradient", () => {
+    const css = readFileSync(
+      new URL("day-check/day-check.css", appsRoot),
+      "utf8",
+    );
+    const themes = [
+      { selectors: [".dc-landing"] },
+      { selectors: [".dark .dc-landing"] },
+    ] as const;
+
+    for (const { selectors } of themes) {
+      const surfaces = gradientStopColors(
+        declarations(css, selectors, "--dc-footer-card-bg"),
+        css,
+        selectors,
+      );
+
+      for (const token of ["--dc-text", "--dc-text-ultralight", "--dc-purple"]) {
+        const foreground = resolveColor(css, selectors, token);
+        surfaces.forEach((surface, index) => {
+          expect(
+            contrastRatio(foreground, surface),
+            `${token} on Day Check footer gradient stop ${index + 1}`,
+          ).toBeGreaterThanOrEqual(4.5);
+        });
+      }
+
+      for (const token of ["--dc-purple", "--dc-teal"]) {
+        const foreground = resolveColor(css, selectors, token);
+        surfaces.forEach((surface, index) => {
+          expect(
+            contrastRatio(foreground, surface),
+            `${token} gradient heading on Day Check footer stop ${index + 1}`,
+          ).toBeGreaterThanOrEqual(3);
+        });
+      }
+
+      const primaryButtonBackground = resolveColor(
+        css,
+        selectors,
+        "--dc-purple-button",
+      );
+      const primaryButtonText = resolveColor(css, selectors, "--dc-on-purple");
+      expect(
+        contrastRatio(primaryButtonText, primaryButtonBackground),
+        "Day Check primary footer button",
+      ).toBeGreaterThanOrEqual(4.5);
+
+      expect(
+        contrastRatio(
+          resolveColor(css, selectors, "--dc-bg"),
+          resolveColor(css, selectors, "--dc-text"),
+        ),
+        "Day Check secondary footer button",
+      ).toBeGreaterThanOrEqual(4.5);
+    }
+  });
+
+  it("keeps clipped hero gradients readable in both themes", () => {
+    const headings = [
+      {
+        app: "fast-task",
+        stylePath: "fast-task/fast-task.css",
+        themes: [
+          {
+            selectors: [".ft-landing"],
+            headingSelectors: [".ft-hero-title-gradient"],
+            surfaceToken: "--ft-bg",
+            gradientProperty: "background",
+          },
+          {
+            selectors: [".dark .ft-landing"],
+            headingSelectors: [".dark .ft-landing .ft-hero-title-gradient"],
+            surfaceToken: "--ft-bg",
+            gradientProperty: "background",
+          },
+        ],
+      },
+      {
+        app: "fortune-cookie",
+        stylePath: "fortune-cookie/fortune-cookie.css",
+        themes: [
+          {
+            selectors: [".fc-landing"],
+            headingSelectors: [".fc-landing"],
+            surfaceToken: "--fc-bg-main",
+            gradientProperty: "--fc-hero-title-gradient",
+          },
+          {
+            selectors: [".dark .fc-landing"],
+            headingSelectors: [".dark .fc-landing"],
+            surfaceToken: "--fc-bg-main",
+            gradientProperty: "--fc-hero-title-gradient",
+          },
+        ],
+      },
+    ] as const;
+
+    for (const { app, stylePath, themes } of headings) {
+      const css = readFileSync(new URL(stylePath, appsRoot), "utf8");
+
+      for (const {
+        selectors,
+        headingSelectors,
+        surfaceToken,
+        gradientProperty,
+      } of themes) {
+        const surface = resolveColor(css, selectors, surfaceToken);
+        const headingColors = gradientStopColors(
+          declarations(css, headingSelectors, gradientProperty),
+          css,
+          selectors,
+        );
+
+        headingColors.forEach((foreground, index) => {
+          expect(
+            contrastRatio(foreground, surface),
+            `${app} gradient stop ${index + 1} on ${surfaceToken}`,
+          ).toBeGreaterThanOrEqual(3);
+        });
+      }
+    }
   });
 
   it("keeps VESP cards and translated headings within narrow screens", () => {
