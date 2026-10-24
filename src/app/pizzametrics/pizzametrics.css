@@ -62,7 +62,7 @@
 
 .pm-landing ::selection {
     background-color: var(--pm-red);
-    color: var(--pm-text-on-dark);
+    color: var(--pm-btn-text);
 }
 
 /* ─── Hero ─── */

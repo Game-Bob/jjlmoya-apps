@@ -199,10 +199,13 @@ const contrastPalettes = [
     lightSurfaces: ["--dc-bg", "--dc-bg-card-dark", "--dc-bg-footer"],
     darkSurfaces: ["--dc-bg", "--dc-bg-card-dark", "--dc-bg-footer"],
     text: [
+      "--dc-text",
       "--dc-text-muted",
       "--dc-text-faint",
       "--dc-text-ultralight",
       "--dc-purple",
+      "--dc-title-italic",
+      "--dc-cta-placeholder",
     ],
   },
   {
@@ -221,7 +224,16 @@ const contrastPalettes = [
       "--ft-bg-section",
       "--ft-code-bg",
     ],
-    text: ["--ft-text-muted", "--ft-text-faint", "--ft-text-dim", "--ft-green"],
+    text: [
+      "--ft-text",
+      "--ft-text-muted",
+      "--ft-text-faint",
+      "--ft-text-dim",
+      "--ft-code-text",
+      "--ft-code-muted",
+      "--ft-code-faint",
+      "--ft-green",
+    ],
   },
   {
     app: "fortune-cookie",
@@ -239,7 +251,12 @@ const contrastPalettes = [
       "--fc-bg-card",
       "--fc-bg-card-hover",
     ],
-    text: ["--fc-text-dim", "--fc-text-accent"],
+    text: [
+      "--fc-text-primary",
+      "--fc-text-muted",
+      "--fc-text-dim",
+      "--fc-text-accent",
+    ],
   },
   {
     app: "pizzametrics",
@@ -247,7 +264,13 @@ const contrastPalettes = [
     darkSelectors: [".dark .pm-landing"],
     lightSurfaces: ["--pm-bg", "--pm-bg-surface", "--pm-bg-card"],
     darkSurfaces: ["--pm-bg", "--pm-bg-surface", "--pm-bg-card"],
-    text: ["--pm-text-muted", "--pm-text-faint", "--pm-red"],
+    text: [
+      "--pm-text",
+      "--pm-text-muted",
+      "--pm-text-faint",
+      "--pm-text-quote",
+      "--pm-red",
+    ],
   },
   {
     app: "vesp",
@@ -256,6 +279,7 @@ const contrastPalettes = [
     lightSurfaces: ["--vesp-bg", "--vesp-bg-black", "--vesp-bg-surface"],
     darkSurfaces: ["--vesp-bg", "--vesp-bg-black"],
     text: [
+      "--vesp-text",
       "--vesp-text-muted",
       "--vesp-text-faint",
       "--vesp-text-ultralight",
@@ -312,6 +336,222 @@ describe("landing style isolation", () => {
       }
     },
   );
+
+  it("keeps selected and interactive text at WCAG AA contrast in both themes", () => {
+    const pairs = [
+      {
+        app: "day-check",
+        stylePath: "day-check/day-check.css",
+        themes: [
+          {
+            selectors: [".dc-landing"],
+            foreground: "--dc-on-purple",
+            background: "--dc-purple-button",
+          },
+          {
+            selectors: [".dark .dc-landing"],
+            foreground: "--dc-on-purple",
+            background: "--dc-purple-button",
+          },
+        ],
+      },
+      {
+        app: "fast-task",
+        stylePath: "fast-task/fast-task.css",
+        themes: [
+          {
+            selectors: [".ft-landing"],
+            foreground: "--ft-on-green",
+            background: "--ft-green",
+          },
+          {
+            selectors: [".dark .ft-landing"],
+            foreground: "--ft-on-green",
+            background: "--ft-green",
+          },
+        ],
+      },
+      {
+        app: "pizzametrics",
+        stylePath: "pizzametrics/pizzametrics.css",
+        themes: [
+          {
+            selectors: [".pm-landing"],
+            foreground: "--pm-btn-text",
+            background: "--pm-btn-bg",
+          },
+          {
+            selectors: [".dark .pm-landing"],
+            foreground: "--pm-btn-text",
+            background: "--pm-btn-bg",
+          },
+        ],
+      },
+      {
+        app: "sauce-lab",
+        stylePath: "sauce-lab/sauce-lab.css",
+        themes: [
+          {
+            selectors: [".theme-light .sl-landing", ".sl-landing"],
+            foreground: "--sl-accent-contrast",
+            background: "--sl-accent",
+          },
+          {
+            selectors: [".dark .sl-landing", ".sl-landing"],
+            foreground: "--sl-accent-contrast",
+            background: "--sl-accent",
+          },
+        ],
+      },
+      {
+        app: "vesp",
+        stylePath: "vesp/vesp.css",
+        themes: [
+          {
+            selectors: [".vesp-landing"],
+            foreground: "--vesp-bg",
+            background: "--vesp-gold",
+          },
+          {
+            selectors: [".dark .vesp-landing"],
+            foreground: "--vesp-bg",
+            background: "--vesp-gold",
+          },
+        ],
+      },
+      {
+        app: "ztreak",
+        stylePath: "ztreak/ztreak.css",
+        themes: [
+          {
+            selectors: [".zl"],
+            foreground: "--zl-white",
+            background: "--zl-green",
+          },
+          {
+            selectors: [".zl"],
+            foreground: "--zl-paper",
+            background: "--zl-dark",
+          },
+          {
+            selectors: [".zl"],
+            foreground: "--zl-lime",
+            background: "--zl-dark",
+          },
+          {
+            selectors: [".zl"],
+            foreground: "--zl-shield",
+            background: "--zl-shield-soft",
+          },
+          {
+            selectors: [".zl"],
+            foreground: "--zl-green",
+            background: "--zl-paper",
+          },
+        ],
+      },
+    ] as const;
+
+    for (const { app, stylePath, themes } of pairs) {
+      const css = readFileSync(new URL(stylePath, appsRoot), "utf8");
+
+      for (const { selectors, foreground, background } of themes) {
+        expect(
+          contrastRatio(
+            resolveColor(css, selectors, foreground),
+            resolveColor(css, selectors, background),
+          ),
+          `${app}: ${foreground} on ${background}`,
+        ).toBeGreaterThanOrEqual(4.5);
+      }
+    }
+  });
+
+  it("keeps landing text selection at WCAG AA contrast in both themes", () => {
+    const selections = [
+      {
+        app: "day-check",
+        stylePath: "day-check/day-check.css",
+        ruleSelector: ".dc-landing ::selection",
+        backgroundProperty: "background-color",
+        themes: [
+          { selectors: [".dc-landing"] },
+          { selectors: [".dark .dc-landing"] },
+        ],
+      },
+      {
+        app: "fast-task",
+        stylePath: "fast-task/fast-task.css",
+        ruleSelector: ".ft-landing ::selection",
+        backgroundProperty: "background-color",
+        themes: [
+          { selectors: [".ft-landing"] },
+          { selectors: [".dark .ft-landing"] },
+        ],
+      },
+      {
+        app: "fortune-cookie",
+        stylePath: "fortune-cookie/fortune-cookie.css",
+        ruleSelector: ".fc-landing ::selection",
+        backgroundProperty: "background",
+        themes: [
+          { selectors: [".fc-landing"] },
+          { selectors: [".dark .fc-landing", ".fc-landing"] },
+        ],
+      },
+      {
+        app: "pizzametrics",
+        stylePath: "pizzametrics/pizzametrics.css",
+        ruleSelector: ".pm-landing ::selection",
+        backgroundProperty: "background-color",
+        themes: [
+          { selectors: [".pm-landing"] },
+          { selectors: [".dark .pm-landing"] },
+        ],
+      },
+      {
+        app: "vesp",
+        stylePath: "vesp/vesp.css",
+        ruleSelector: ".vesp-landing ::selection",
+        backgroundProperty: "background-color",
+        themes: [
+          { selectors: [".vesp-landing"] },
+          { selectors: [".dark .vesp-landing"] },
+        ],
+      },
+    ] as const;
+
+    for (const {
+      app,
+      stylePath,
+      ruleSelector,
+      backgroundProperty,
+      themes,
+    } of selections) {
+      const css = readFileSync(new URL(stylePath, appsRoot), "utf8");
+      const foregroundReference = declarations(css, [ruleSelector], "color")
+        .match(/^var\((--[\w-]+)\)$/)?.[1];
+      const backgroundReference = declarations(
+        css,
+        [ruleSelector],
+        backgroundProperty,
+      ).match(/^var\((--[\w-]+)\)$/)?.[1];
+
+      if (!foregroundReference || !backgroundReference) {
+        throw new Error(`${app} selection colors must use theme tokens`);
+      }
+
+      for (const { selectors } of themes) {
+        expect(
+          contrastRatio(
+            resolveColor(css, selectors, foregroundReference),
+            resolveColor(css, selectors, backgroundReference),
+          ),
+          `${app} selection in ${selectors[0]}`,
+        ).toBeGreaterThanOrEqual(4.5);
+      }
+    }
+  });
 
   it("does not use Fortune Cookie’s decorative gold as text or fade headings", () => {
     const css = readFileSync(
@@ -470,6 +710,21 @@ describe("landing style isolation", () => {
 
     expect(css).toMatch(
       /\.dc-card-time-label-accent\s*\{[^}]*opacity:\s*1\s*;/,
+    );
+  });
+
+  it("keeps Day Check’s CTA app name from automatic hyphenation", () => {
+    const css = readFileSync(
+      new URL("day-check/day-check.css", appsRoot),
+      "utf8",
+    );
+
+    expect(declarations(css, [".dc-cta-title"], "overflow-wrap")).toBe(
+      "break-word",
+    );
+    expect(declarations(css, [".dc-cta-title"], "hyphens")).toBe("manual");
+    expect(css).toMatch(
+      /@media\s*\(max-width:\s*767px\)\s*\{[\s\S]*?\.dc-cta-title\s*\{[^}]*overflow-wrap:\s*break-word;[^}]*hyphens:\s*manual;/,
     );
   });
 

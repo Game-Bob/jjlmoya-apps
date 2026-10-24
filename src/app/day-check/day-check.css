@@ -92,8 +92,8 @@
    ============================================= */
 
 .dc-landing ::selection {
-    background-color: var(--dc-purple);
-    color: var(--dc-text);
+    background-color: var(--dc-purple-button);
+    color: var(--dc-on-purple);
 }
 
 /* =============================================
@@ -503,6 +503,8 @@
     font-style: italic;
     margin-bottom: 2.5rem;
     line-height: 1;
+    overflow-wrap: break-word;
+    hyphens: manual;
 }
 
 @media (max-width: 767px) {
@@ -932,6 +934,15 @@
         min-width: 0;
         font-size: clamp(1.5rem, 7.5vw, 2rem);
         line-height: 1.05;
+    }
+
+    .dc-cta-title {
+        overflow-wrap: break-word;
+        hyphens: manual;
+    }
+
+    .dc-benefits-title,
+    .dc-footer-title {
         overflow-wrap: anywhere;
         hyphens: auto;
     }
