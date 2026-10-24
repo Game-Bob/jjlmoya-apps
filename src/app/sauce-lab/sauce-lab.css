@@ -257,6 +257,8 @@
     text-transform: uppercase;
     letter-spacing: -0.05em;
     margin-bottom: 2rem;
+    overflow-wrap: anywhere;
+    hyphens: auto;
 }
 
 .sl-philosophy-text {
@@ -415,13 +417,15 @@
 }
 
 .sl-hierarchy-name {
-    font-size: 2.25rem;
+    font-size: clamp(1.5rem, 2vw, 2rem);
     font-weight: 900;
     text-transform: uppercase;
     margin-bottom: 0.5rem;
     position: relative;
     z-index: 1;
     line-height: 0.9;
+    letter-spacing: -0.035em;
+    overflow-wrap: anywhere;
 }
 
 .sl-hierarchy-base {

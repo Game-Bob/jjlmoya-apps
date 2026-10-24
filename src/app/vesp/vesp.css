@@ -396,12 +396,14 @@
 }
 
 .vesp-benefits-title {
-    font-size: clamp(3rem, 8vw, 6rem);
+    font-size: clamp(3rem, 7vw, 5rem);
     color: var(--vesp-text);
     font-style: italic;
     margin-bottom: 2.5rem;
     line-height: 1;
     text-transform: uppercase;
+    overflow-wrap: anywhere;
+    hyphens: auto;
 }
 
 .vesp-benefits-title-highlight {
@@ -586,12 +588,14 @@
 }
 
 .vesp-footer-title {
-    font-size: clamp(3rem, 10vw, 6rem);
+    font-size: clamp(3rem, 8vw, 5rem);
     color: var(--vesp-text);
     text-transform: uppercase;
     margin-bottom: 3rem;
     font-style: italic;
     line-height: 1;
+    overflow-wrap: anywhere;
+    hyphens: auto;
 }
 
 .vesp-footer-title-highlight {

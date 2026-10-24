@@ -428,7 +428,7 @@
 }
 
 .dc-card-label {
-    font-size: clamp(1.25rem, 4vw, 1.875rem);
+    font-size: clamp(1.125rem, 2vw, 1.75rem);
     font-weight: 900;
     line-height: 1.1;
     letter-spacing: -0.05em;
@@ -438,6 +438,8 @@
     max-width: 180px;
     text-align: left;
     transition: color 0.3s ease;
+    overflow-wrap: anywhere;
+    hyphens: auto;
 }
 
 @media (min-width: 640px) {
