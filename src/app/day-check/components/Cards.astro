@@ -119,6 +119,8 @@ const cardOffsets: { months?: string; weeks?: string }[] = [
 </section>
 
 <script>
+    import { formatDayCheckDate } from '../date-format';
+
     function computeDate(el: Element): Date {
         const now = new Date();
         const offsetMonths = el.getAttribute('data-offset-months');
@@ -150,11 +152,8 @@ const cardOffsets: { months?: string; weeks?: string }[] = [
 
         document.querySelectorAll('[data-date-display]').forEach((el) => {
             const date = computeDate(el);
-            (el as HTMLElement).innerText = date.toLocaleDateString('es-ES', {
-                month: 'short',
-                day: '2-digit',
-                year: 'numeric',
-            });
+            const locale = document.documentElement.lang || 'en';
+            (el as HTMLElement).innerText = formatDayCheckDate(date, locale);
         });
     }
 
