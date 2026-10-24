@@ -937,6 +937,43 @@
     }
 }
 
+@media (max-width: 360px) {
+    .dc-cards-inner,
+    .dc-card,
+    .dc-card-body,
+    .dc-benefits-grid,
+    .dc-benefit-card,
+    .dc-benefit-card > * {
+        min-width: 0;
+    }
+
+    .dc-card-label {
+        width: 100%;
+        max-width: 100%;
+        font-size: clamp(0.875rem, 4.5vw, 1rem);
+        line-height: 1.1;
+        overflow-wrap: anywhere;
+        hyphens: auto;
+    }
+
+    .dc-benefits-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .dc-benefit-card {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 1.25rem;
+    }
+
+    .dc-benefit-title,
+    .dc-benefit-text {
+        min-width: 0;
+        overflow-wrap: anywhere;
+        hyphens: auto;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     /* stylelint-disable declaration-no-important -- Motion preferences must override component animations. */
     .dc-landing *,

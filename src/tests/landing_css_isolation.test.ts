@@ -399,6 +399,34 @@ describe("landing style isolation", () => {
     }
   });
 
+  it("wraps the longest translated headings inside 320px layouts", () => {
+    const dayCheck = readFileSync(
+      new URL("day-check/day-check.css", appsRoot),
+      "utf8",
+    );
+    const fortuneCookie = readFileSync(
+      new URL("fortune-cookie/fortune-cookie.css", appsRoot),
+      "utf8",
+    );
+    const pizzaMetrics = readFileSync(
+      new URL("pizzametrics/pizzametrics.css", appsRoot),
+      "utf8",
+    );
+
+    expect(dayCheck).toMatch(
+      /@media\s*\(max-width:\s*360px\)[\s\S]*?\.dc-benefits-grid\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*1fr\)/,
+    );
+    expect(dayCheck).toMatch(
+      /\.dc-benefit-title,\s*\.dc-benefit-text\s*\{[^}]*overflow-wrap:\s*anywhere\s*;/,
+    );
+    expect(fortuneCookie).toMatch(
+      /@media\s*\(max-width:\s*360px\)[\s\S]*?\.fc-landing \.hero \.tagline,[\s\S]*?\.fc-landing \.hero \.description\s*\{[^}]*overflow-wrap:\s*anywhere\s*;/,
+    );
+    expect(pizzaMetrics).toMatch(
+      /@media\s*\(max-width:\s*360px\)[\s\S]*?\.pm-gallery-title,[\s\S]*?\.pm-shorts-title\s*\{[^}]*hyphens:\s*auto\s*;/,
+    );
+  });
+
   it("uses the selected locale for Sauce Lab’s closing copy", () => {
     const page = readFileSync(
       new URL("sauce-lab/landing.astro", appsRoot),

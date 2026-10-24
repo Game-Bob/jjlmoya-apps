@@ -1072,6 +1072,27 @@
     }
 }
 
+@media (max-width: 360px) {
+    .pm-gallery-title,
+    .pm-shorts-title {
+        width: 100%;
+        min-width: 0;
+        font-size: clamp(1.375rem, 7vw, 1.875rem);
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        overflow-wrap: anywhere;
+        hyphens: auto;
+    }
+
+    .pm-hero-tagline {
+        width: 100%;
+        max-width: 100%;
+        letter-spacing: 0.12em;
+        overflow-wrap: anywhere;
+        hyphens: auto;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     /* stylelint-disable declaration-no-important -- Motion preferences must override component animations. */
     .pm-landing *,
