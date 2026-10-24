@@ -24,6 +24,7 @@ export const landingContent: PizzametricsLandingContent = {
         tagline: 'Concebida para entusiastas da técnica',
     },
     showCase: {
+        videoTitle: 'Ver demonstração do Pizzametrics',
         feature1: {
             title: 'Ajuste por Clima',
             description: 'Calcule a quantidade exata de fermento conforme o frio ou o calor.',

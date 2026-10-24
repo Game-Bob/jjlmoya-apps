@@ -24,6 +24,7 @@ export const landingContent: PizzametricsLandingContent = {
         tagline: 'Teknik meraklıları için tasarlandı',
     },
     showCase: {
+        videoTitle: 'Pizzametrics uygulama demosunu izle',
         feature1: {
             title: 'İklim Ayarı',
             description: 'Havanın sıcak veya soğuk olmasına göre tam maya miktarını hesaplayın.',

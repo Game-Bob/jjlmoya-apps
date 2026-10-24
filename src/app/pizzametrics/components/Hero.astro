@@ -56,5 +56,30 @@ const { t, stores, appId } = Astro.props;
             <p class="pm-hero-tagline">{t.tagline}</p>
         </div>
 
+        <figure class="pm-hero-visual" aria-label={t.tagline}>
+            <div class="pm-hero-photo-frame">
+                <img
+                    src={`/assets/apps/${appId}/hero.webp`}
+                    alt=""
+                    class="pm-hero-photo"
+                    width="300"
+                    height="533"
+                    fetchpriority="high"
+                />
+            </div>
+            <div class="pm-hero-photo-glow" aria-hidden="true"></div>
+            <div class="pm-hero-mini-screen" aria-hidden="true">
+                <img
+                    src={`/assets/apps/${appId}/screenshot_real.webp`}
+                    alt=""
+                    width="390"
+                    height="844"
+                    loading="lazy"
+                    decoding="async"
+                />
+            </div>
+            <span class="pm-hero-orbit pm-hero-orbit-one" aria-hidden="true"></span>
+            <span class="pm-hero-orbit pm-hero-orbit-two" aria-hidden="true"></span>
+        </figure>
     </div>
 </header>

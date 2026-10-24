@@ -24,6 +24,7 @@ export const landingContent: PizzametricsLandingContent = {
         tagline: 'Разработано для ценителей техники',
     },
     showCase: {
+        videoTitle: 'Смотреть демо Pizzametrics',
         feature1: {
             title: 'Адаптация к климату',
             description: 'Рассчитывайте точное количество дрожжей в зависимости от жары или холода.',

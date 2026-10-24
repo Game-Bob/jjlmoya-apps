@@ -51,9 +51,9 @@ const { t } = Astro.props;
         private observer: IntersectionObserver;
         private frameId: number | null = null;
 
-        constructor() {
-            this.timer = document.getElementById('ft-sim-timer');
-            this.steps = document.querySelectorAll('.ft-sim-step');
+        constructor(section: HTMLElement) {
+            this.timer = section.querySelector('.ft-sim-timer');
+            this.steps = section.querySelectorAll('.ft-sim-step');
             this.observer = new IntersectionObserver(
                 (entries) => {
                     entries.forEach((entry) => {
@@ -66,8 +66,12 @@ const { t } = Astro.props;
                 },
                 { threshold: 0.3 },
             );
-            const section = document.getElementById('ft-simulation');
-            if (section) this.observer.observe(section);
+            this.observer.observe(section);
+        }
+
+        destroy() {
+            this.stop();
+            this.observer.disconnect();
         }
 
         private start() {
@@ -128,7 +132,17 @@ const { t } = Astro.props;
         }
     }
 
-    const init = () => new FtSimulation();
+    let activeSection: HTMLElement | null = null;
+    let activeSimulation: FtSimulation | null = null;
+
+    const init = () => {
+        const section = document.getElementById('ft-simulation');
+        if (section === activeSection) return;
+
+        activeSimulation?.destroy();
+        activeSection = section;
+        activeSimulation = section ? new FtSimulation(section) : null;
+    };
 
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
@@ -136,7 +150,5 @@ const { t } = Astro.props;
         init();
     }
 
-    document.addEventListener('astro:page-load', () => {
-        if (document.getElementById('ft-simulation')) init();
-    });
+    document.addEventListener('astro:page-load', init);
 </script>

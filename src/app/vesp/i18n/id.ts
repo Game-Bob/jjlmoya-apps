@@ -20,7 +20,7 @@ export const landingContent: VespLandingContent = {
     },
     techSpecs: {
         label: 'Mixology Presisi',
-        conceptMain: 'TEKNIK DARI,',
+        conceptMain: 'TEKNIK &',
         conceptHighlight: 'KUALITAS.',
         description:
             'Kalkulator keseimbangan koktail profesional, ABV, Brix, dan resep klasik.',

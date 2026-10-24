@@ -20,7 +20,7 @@ export const landingContent: VespLandingContent = {
     },
     techSpecs: {
         label: 'Precyzyjna Miksologia',
-        conceptMain: 'TECHNIKA,',
+        conceptMain: 'TECHNIKA I',
         conceptHighlight: 'JAKOŚĆ.',
         description:
             'Profesjonalny kalkulator balansu, ABV, Brix oraz klasycznych przepisów miksologicznych.',

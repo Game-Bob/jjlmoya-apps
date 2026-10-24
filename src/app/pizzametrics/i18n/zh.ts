@@ -24,6 +24,7 @@ export const landingContent: PizzametricsLandingContent = {
         tagline: '为技术发烧友设计',
     },
     showCase: {
+        videoTitle: '观看 Pizzametrics 应用演示',
         feature1: {
             title: '气候调整',
             description: '根据天气的冷热计算精确的酵母用量。',

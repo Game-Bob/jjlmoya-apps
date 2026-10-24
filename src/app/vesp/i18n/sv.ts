@@ -20,7 +20,7 @@ export const landingContent: VespLandingContent = {
     },
     techSpecs: {
         label: 'Precisions-mixologi',
-        conceptMain: 'TEKNIK AV,',
+        conceptMain: 'TEKNIK &',
         conceptHighlight: 'KVALITET.',
         description:
             'Professionell kalkylator för balans, ABV, Brix och klassiska cocktailrecept.',

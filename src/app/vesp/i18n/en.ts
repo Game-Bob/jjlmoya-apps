@@ -20,7 +20,7 @@ export const landingContent: VespLandingContent = {
     },
     techSpecs: {
         label: 'Precision Mixology',
-        conceptMain: 'TECHNIQUE OF,',
+        conceptMain: 'TECHNIQUE &',
         conceptHighlight: 'QUALITY.',
         description:
             'Professional cocktail balance, ABV, Brix calculator and classic recipes.',

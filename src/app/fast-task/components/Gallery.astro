@@ -19,8 +19,10 @@ const screenshots = ['2.webp', '3.webp', '4.webp'];
                 <div class="ft-gallery-item">
                     <img
                         src={`/assets/apps/${appId}/${img}`}
+                        width="1290"
+                        height="2796"
                         alt={`Screenshot ${i + 1}`}
-                        class="ft-gallery-img"
+                        class="ft-gallery-img" loading="lazy" decoding="async"
                     />
                 </div>
             ))}
@@ -35,8 +37,10 @@ const screenshots = ['2.webp', '3.webp', '4.webp'];
             <div class="ft-feature-graphic-box">
                 <img
                     src={`/assets/apps/${appId}/feature-graphic.webp`}
+                    width="2048"
+                    height="1000"
                     alt="Fast Task Feature"
-                    class="ft-feature-graphic-img"
+                    class="ft-feature-graphic-img" loading="lazy" decoding="async"
                 />
             </div>
         </div>

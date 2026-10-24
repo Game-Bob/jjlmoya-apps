@@ -21,9 +21,11 @@ const { t, images } = Astro.props;
                     <div class={`pm-gallery-item${index === 1 ? ' pm-gallery-item-offset' : ''}`}>
                         <img
                             src={img}
+                            width="390"
+                            height="844"
                             alt={`${t.imageAlt} ${index + 1}`}
                             class="pm-gallery-img"
-                            loading="lazy"
+                            loading="lazy" decoding="async"
                         />
                         <div class="pm-gallery-overlay">
                             <p class="pm-gallery-alt">{t.imageAlt}</p>

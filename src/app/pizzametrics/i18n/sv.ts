@@ -24,6 +24,7 @@ export const landingContent: PizzametricsLandingContent = {
         tagline: 'Designad för teknikentusiaster',
     },
     showCase: {
+        videoTitle: 'Se Pizzametrics appdemo',
         feature1: {
             title: 'Klimatjustering',
             description: 'Beräkna exakt mängd jäst baserat på om det är varmt eller kallt.',

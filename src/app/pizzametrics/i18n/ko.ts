@@ -24,6 +24,7 @@ export const landingContent: PizzametricsLandingContent = {
         tagline: '기술적 애호가를 위해 설계됨',
     },
     showCase: {
+        videoTitle: 'Pizzametrics 앱 데모 보기',
         feature1: {
             title: '기후 맞춤 조정',
             description: '춥거나 더운 날씨에 맞춰 정확한 이스트 양을 계산합니다.',

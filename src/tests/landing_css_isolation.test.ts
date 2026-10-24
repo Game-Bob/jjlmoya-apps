@@ -21,7 +21,11 @@ function declarations(
 ): string {
   const rules = css.matchAll(/([^{}]+)\{([^{}]*)\}/g);
 
-  for (const [, rawSelectors, body] of rules) {
+  for (const match of rules) {
+    const rawSelectors = match[1];
+    const body = match[2];
+    if (rawSelectors === undefined || body === undefined) continue;
+
     const candidates = rawSelectors
       .replace(/\/\*[\s\S]*?\*\//g, "")
       .split(",")
@@ -38,25 +42,39 @@ function declarations(
   throw new Error(`Missing ${property} in ${selectors.join(", ")}`);
 }
 
-function parseColor(value: string): CssColor {
+function parseHexColor(value: string): CssColor {
   const hex = value.match(/^#([\da-f]{3}|[\da-f]{6})$/i)?.[1];
+  if (!hex) throw new Error(`Unsupported color: ${value}`);
 
-  if (hex) {
-    const normalized =
-      hex.length === 3 ? [...hex].map((digit) => digit + digit).join("") : hex;
-    return [
-      Number.parseInt(normalized.slice(0, 2), 16),
-      Number.parseInt(normalized.slice(2, 4), 16),
-      Number.parseInt(normalized.slice(4, 6), 16),
-      1,
-    ];
-  }
+  const normalized =
+    hex.length === 3 ? [...hex].map((digit) => digit + digit).join("") : hex;
+  return [
+    Number.parseInt(normalized.slice(0, 2), 16),
+    Number.parseInt(normalized.slice(2, 4), 16),
+    Number.parseInt(normalized.slice(4, 6), 16),
+    1,
+  ];
+}
 
+function parseFunctionalColor(value: string): CssColor {
   const channels = value.match(/^rgba?\(([^)]+)\)$/)?.[1];
   if (!channels) throw new Error(`Unsupported color: ${value}`);
 
-  const [red, green, blue, alpha = 1] = channels.split(",").map(Number);
+  const values = channels.split(",").map(Number);
+  const red = values[0] ?? Number.NaN;
+  const green = values[1] ?? Number.NaN;
+  const blue = values[2] ?? Number.NaN;
+  const alpha = values[3] ?? 1;
+  if (![red, green, blue, alpha].every(Number.isFinite)) {
+    throw new Error(`Unsupported color channels: ${value}`);
+  }
   return [red, green, blue, alpha];
+}
+
+function parseColor(value: string): CssColor {
+  return value.startsWith("#")
+    ? parseHexColor(value)
+    : parseFunctionalColor(value);
 }
 
 function resolveColor(
@@ -84,14 +102,14 @@ function composite(foreground: CssColor, background: CssColor): CssColor {
 }
 
 function luminance(color: CssColor): number {
-  const [red, green, blue] = color
-    .map((channel) => channel / 255)
-    .slice(0, 3)
-    .map((channel) =>
-      channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4,
-    );
+  const linear = (channel: number) => {
+    const normalized = channel / 255;
+    return normalized <= 0.04045
+      ? normalized / 12.92
+      : ((normalized + 0.055) / 1.055) ** 2.4;
+  };
 
-  return 0.2126 * red + 0.7152 * green + 0.0722 * blue;
+  return 0.2126 * linear(color[0]) + 0.7152 * linear(color[1]) + 0.0722 * linear(color[2]);
 }
 
 function contrastRatio(foreground: CssColor, background: CssColor): number {
@@ -103,6 +121,28 @@ function contrastRatio(foreground: CssColor, background: CssColor): number {
     (Math.max(foregroundLuminance, backgroundLuminance) + 0.05) /
     (Math.min(foregroundLuminance, backgroundLuminance) + 0.05)
   );
+}
+
+function expectReadablePalette(
+  css: string,
+  selectors: readonly string[],
+  surfaces: readonly string[],
+  textTokens: readonly string[],
+): void {
+  const backgrounds = surfaces.map((surface) =>
+    resolveColor(css, selectors, surface),
+  );
+
+  for (const textToken of textTokens) {
+    const foreground = resolveColor(css, selectors, textToken);
+    backgrounds.forEach((background, index) => {
+      const surface = surfaces[index] ?? `surface ${index}`;
+      expect(
+        contrastRatio(foreground, background),
+        `${textToken} on ${surface}`,
+      ).toBeGreaterThanOrEqual(4.5);
+    });
+  }
 }
 
 const contrastPalettes = [
@@ -216,23 +256,13 @@ describe("landing style isolation", () => {
         "utf8",
       );
 
-      for (const [selectors, surfaces] of [
-        [palette.lightSelectors, palette.lightSurfaces],
-        [palette.darkSelectors, palette.darkSurfaces],
-      ]) {
-        const backgrounds = surfaces.map((surface) =>
-          resolveColor(css, selectors, surface),
-        );
+      const themes: { selectors: readonly string[]; surfaces: readonly string[] }[] = [
+        { selectors: palette.lightSelectors, surfaces: palette.lightSurfaces },
+        { selectors: palette.darkSelectors, surfaces: palette.darkSurfaces },
+      ];
 
-        for (const textToken of palette.text) {
-          const foreground = resolveColor(css, selectors, textToken);
-          for (const [index, background] of backgrounds.entries()) {
-            expect(
-              contrastRatio(foreground, background),
-              `${textToken} on ${surfaces[index]}`,
-            ).toBeGreaterThanOrEqual(4.5);
-          }
-        }
+      for (const { selectors, surfaces } of themes) {
+        expectReadablePalette(css, selectors, surfaces, palette.text);
       }
     },
   );
@@ -310,28 +340,26 @@ describe("landing style isolation", () => {
       new URL("day-check/day-check.css", appsRoot),
       "utf8",
     );
-    const accents = [
-      "--dc-card-accent-1",
-      "--dc-card-accent-2",
-      "--dc-card-accent-3",
-    ];
     const lightSelector = [".dc-landing"];
-    const lightBackgrounds = ["#b2dfdb", "#f8bbd0", "#bbdefb"];
     const darkSelector = [".dark .dc-landing"];
-    const darkBackgrounds = ["#0a1412", "#1a0a1a", "#0a0f1a"];
+    const cardPalettes = [
+      { accent: "--dc-card-accent-1", light: "#b2dfdb", dark: "#0a1412" },
+      { accent: "--dc-card-accent-2", light: "#f8bbd0", dark: "#1a0a1a" },
+      { accent: "--dc-card-accent-3", light: "#bbdefb", dark: "#0a0f1a" },
+    ];
 
-    accents.forEach((accent, index) => {
+    cardPalettes.forEach(({ accent, light, dark }) => {
       expect(
         contrastRatio(
           resolveColor(css, lightSelector, accent),
-          parseColor(lightBackgrounds[index]),
+          parseColor(light),
         ),
         `${accent} on its light card`,
       ).toBeGreaterThanOrEqual(4.5);
       expect(
         contrastRatio(
           resolveColor(css, darkSelector, accent),
-          parseColor(darkBackgrounds[index]),
+          parseColor(dark),
         ),
         `${accent} on its dark card`,
       ).toBeGreaterThanOrEqual(4.5);
@@ -340,6 +368,35 @@ describe("landing style isolation", () => {
     expect(css).toMatch(
       /\.dc-card-time-label-accent\s*\{[^}]*opacity:\s*1\s*;/,
     );
+  });
+
+  it("keeps VESP cards and translated headings within narrow screens", () => {
+    const css = readFileSync(new URL("vesp/vesp.css", appsRoot), "utf8");
+
+    expect(css).toMatch(
+      /\.vesp-benefits-grid\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*1fr\)/,
+    );
+    expect(css).toMatch(
+      /\.vesp-benefit-card\s*\{[^}]*min-width:\s*0\s*;/,
+    );
+    expect(css).toMatch(
+      /@media\s*\(max-width:\s*480px\)\s*\{[\s\S]*?\.vesp-techspecs-inner\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*1fr\)/,
+    );
+    expect(css).toMatch(
+      /\.vesp-benefits-title\s*\{[^}]*overflow-wrap:\s*anywhere\s*;/,
+    );
+
+    for (const locale of [
+      "de", "en", "es", "fr", "id", "it", "ja", "ko", "nl", "pl", "pt", "ru", "sv", "tr", "zh",
+    ]) {
+      const content = readFileSync(
+        new URL(`vesp/i18n/${locale}.ts`, appsRoot),
+        "utf8",
+      );
+      expect(content, `${locale} VESP heading`).not.toMatch(
+        /conceptMain:\s*['"][^'"]*[,，]['"]/
+      );
+    }
   });
 
   it("uses the selected locale for Sauce Lab’s closing copy", () => {

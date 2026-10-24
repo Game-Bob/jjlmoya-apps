@@ -20,7 +20,7 @@ export const landingContent: VespLandingContent = {
     },
     techSpecs: {
         label: '정밀 믹솔로지',
-        conceptMain: '기술에 의한,',
+        conceptMain: '기술과',
         conceptHighlight: '품질.',
         description:
             '전문적인 칵테일 밸런스, ABV, Brix 계산기 및 클래식 레시피.',

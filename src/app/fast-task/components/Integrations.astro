@@ -25,7 +25,7 @@ const integrations = [
                     <img
                         src={`/assets/apps/${appId}/integrations/${item.file}`}
                         alt={item.name}
-                        class="ft-integration-logo"
+                        class="ft-integration-logo" loading="lazy" decoding="async"
                     />
                     <span class="ft-integration-name">
                         {item.active ? item.name : t.comingSoon}

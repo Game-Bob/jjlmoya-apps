@@ -24,6 +24,7 @@ export const landingContent: PizzametricsLandingContent = {
         tagline: 'Entwickelt für Technikbegeisterte',
     },
     showCase: {
+        videoTitle: 'Pizzametrics-Demo ansehen',
         feature1: {
             title: 'Klimaanpassung',
             description: 'Berechne die exakte Hefemenge je nach Umgebungstemperatur.',

@@ -91,17 +91,21 @@ const cardOffsets: { months?: string; weeks?: string }[] = [
                 {t.ctaTitle}<br />
                 <span class="dc-cta-title-highlight">{t.ctaHighlight}</span>
             </h3>
-            <div class="dc-cta-numbers">
+            <div class="dc-cta-numbers" data-cta-timer role="timer" aria-label={t.ctaTitle}>
                 <div class="dc-cta-unit">
-                    <span class="dc-cta-value">0</span>
+                    <span class="dc-cta-value" data-cta-days>00</span>
                     <span class="dc-cta-label">{t.daysLabel}</span>
                 </div>
                 <div class="dc-cta-unit">
-                    <span class="dc-cta-value">0</span>
+                    <span class="dc-cta-value" data-cta-hours>00</span>
                     <span class="dc-cta-label">{t.hoursLabel}</span>
                 </div>
                 <div class="dc-cta-unit">
-                    <span class="dc-cta-value-accent">0</span>
+                    <span class="dc-cta-value" data-cta-minutes>00</span>
+                    <span class="dc-cta-label">{t.minsLabel}</span>
+                </div>
+                <div class="dc-cta-unit">
+                    <span class="dc-cta-value-accent" data-cta-seconds>00</span>
                     <span class="dc-cta-label">{t.segsLabel}</span>
                 </div>
             </div>
@@ -154,6 +158,25 @@ const cardOffsets: { months?: string; weeks?: string }[] = [
         });
     }
 
+    const ctaStartedAt = Date.now();
+
+    function updateCtaTimer() {
+        const elapsedSeconds = Math.floor((Date.now() - ctaStartedAt) / 1000);
+        const values = {
+            days: Math.floor(elapsedSeconds / 86400),
+            hours: Math.floor((elapsedSeconds % 86400) / 3600),
+            minutes: Math.floor((elapsedSeconds % 3600) / 60),
+            seconds: elapsedSeconds % 60,
+        };
+
+        Object.entries(values).forEach(([unit, value]) => {
+            const node = document.querySelector(`[data-cta-${unit}]`);
+            if (node) node.textContent = value.toString().padStart(2, '0');
+        });
+    }
+
     setInterval(updateCounters, 1000);
     updateCounters();
+    updateCtaTimer();
+    setInterval(updateCtaTimer, 1000);
 </script>

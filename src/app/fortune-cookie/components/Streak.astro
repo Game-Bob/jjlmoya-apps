@@ -44,7 +44,7 @@ const imgMap: { [key: number]: string } = { 2: 'cookie-moon.webp', 5: 'cookie-cr
                         return (
                             <div class:list={['calendar-cell', { filled, today: i === 10 }]}>
                                 {filled && i !== 10 && (
-                                    <img src={`/assets/apps/${appId}/${img}`} alt="cookie" class="cell-img" />
+                                    <img src={`/assets/apps/${appId}/${img}`} alt="cookie" class="cell-img" loading="lazy" decoding="async" />
                                 )}
                                 {i === 10 && (
                                     <div class="today-indicator">

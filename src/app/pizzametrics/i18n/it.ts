@@ -24,6 +24,7 @@ export const landingContent: PizzametricsLandingContent = {
         tagline: 'Progettata per gli appassionati di tecnica',
     },
     showCase: {
+        videoTitle: 'Guarda la demo di Pizzametrics',
         feature1: {
             title: 'Regolazione Climatica',
             description: 'Calcola l\'esatta quantità di lievito in base al caldo o al freddo.',

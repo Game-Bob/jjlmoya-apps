@@ -20,7 +20,7 @@ export const landingContent: VespLandingContent = {
     },
     techSpecs: {
         label: '精密ミクソロジー',
-        conceptMain: '技術による、',
+        conceptMain: '技術と',
         conceptHighlight: '品質。',
         description:
             'プロフェッショナルなカクテルバランス、ABV、Brix計算機とクラシックレシピ。',

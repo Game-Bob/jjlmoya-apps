@@ -20,7 +20,7 @@ export const landingContent: VespLandingContent = {
     },
     techSpecs: {
         label: 'Precisie-Mixology',
-        conceptMain: 'TECHNIEK VAN,',
+        conceptMain: 'TECHNIEK &',
         conceptHighlight: 'KWALITEIT.',
         description:
             'Professionele calculator voor balans, ABV, Brix en klassieke cocktailrecepten.',

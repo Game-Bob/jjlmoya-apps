@@ -1,5 +1,6 @@
 ---
 import type { FortuneCookieShorts } from '../types';
+import YouTubeVideo from '../../../components/YouTubeVideo.astro';
 
 interface Props {
     t: FortuneCookieShorts;
@@ -19,17 +20,14 @@ const { t, shorts } = Astro.props;
                 </div>
 
                 <div class="shorts-grid">
-                    {shorts.map((videoId) => (
+                    {shorts.map((videoId, index) => (
                         <div class="video-slot">
-                            <iframe
-                                width="100%"
-                                height="100%"
-                                src={`https://www.youtube.com/embed/${videoId}?autoplay=0&loop=1&playlist=${videoId}`}
-                                title="YouTube short"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin"
-                                allowfullscreen
-                                class="video-iframe"
+                            <YouTubeVideo
+                                videoId={videoId}
+                                title={`${t.title} ${index + 1}`}
+                                poster={index === 0
+                                    ? '/assets/apps/fortune-cookie/hero_mystic.webp'
+                                    : '/assets/apps/fortune-cookie/screenshot_1.webp'}
                             />
                         </div>
                     ))}

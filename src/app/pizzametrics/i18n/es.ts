@@ -24,6 +24,7 @@ export const landingContent: PizzametricsLandingContent = {
         tagline: 'Diseñada para entusiastas de la técnica',
     },
     showCase: {
+        videoTitle: 'Ver demostración de Pizzametrics',
         feature1: {
             title: 'Ajuste por Clima',
             description: 'Calcula la levadura exacta según si hace frío o calor.',

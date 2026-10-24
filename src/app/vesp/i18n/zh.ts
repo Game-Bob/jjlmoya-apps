@@ -20,7 +20,7 @@ export const landingContent: VespLandingContent = {
     },
     techSpecs: {
         label: '精密调酒学',
-        conceptMain: '技术成就，',
+        conceptMain: '技术与',
         conceptHighlight: '品质。',
         description:
             '专业鸡尾酒平衡计算器，支持 ABV、Brix 及经典调酒配方。',

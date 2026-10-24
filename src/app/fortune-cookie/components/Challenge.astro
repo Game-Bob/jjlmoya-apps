@@ -16,19 +16,19 @@ const { t, appId } = Astro.props;
         <div class="cookies-grid">
             <div class="cookie-slot locked">
                 <div class="cookie-overlay"></div>
-                <img src={`/assets/apps/${appId}/cookie-crystal.webp`} alt={t.crystalLabel} class="cookie-img grayscale" />
+                <img src={`/assets/apps/${appId}/cookie-crystal.webp`} alt={t.crystalLabel} class="cookie-img grayscale" loading="lazy" decoding="async" />
                 <div class="cookie-label">{t.crystalLabel}</div>
             </div>
 
             <div class="cookie-slot featured">
                 <div class="cookie-featured-glow"></div>
-                <img src={`/assets/apps/${appId}/cookie-closed.webp`} alt={t.standardLabel} class="cookie-img float" />
+                <img src={`/assets/apps/${appId}/cookie-closed.webp`} alt={t.standardLabel} class="cookie-img float" loading="lazy" decoding="async" />
                 <div class="cookie-label-featured">{t.standardLabel}</div>
             </div>
 
             <div class="cookie-slot locked">
                 <div class="cookie-overlay"></div>
-                <img src={`/assets/apps/${appId}/cookie-moon.webp`} alt={t.lunarLabel} class="cookie-img sepia" />
+                <img src={`/assets/apps/${appId}/cookie-moon.webp`} alt={t.lunarLabel} class="cookie-img sepia" loading="lazy" decoding="async" />
                 <div class="cookie-label">{t.lunarLabel}</div>
             </div>
         </div>

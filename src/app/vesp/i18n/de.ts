@@ -20,7 +20,7 @@ export const landingContent: VespLandingContent = {
     },
     techSpecs: {
         label: 'Präzisions-Mixologie',
-        conceptMain: 'TECHNIK DER,',
+        conceptMain: 'TECHNIK &',
         conceptHighlight: 'QUALITÄT.',
         description:
             'Professioneller Rechner für Balance, Alkoholgehalt (ABV), Brix und klassische Cocktailrezepte.',

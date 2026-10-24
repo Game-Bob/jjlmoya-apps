@@ -24,6 +24,7 @@ export const landingContent: PizzametricsLandingContent = {
         tagline: 'Designed for technical enthusiasts',
     },
     showCase: {
+        videoTitle: 'Watch the Pizzametrics app demo',
         feature1: {
             title: 'Climate Adjustment',
             description: 'Calculate exact yeast amounts based on whether it\'s hot or cold.',

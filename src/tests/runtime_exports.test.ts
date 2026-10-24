@@ -7,8 +7,9 @@ const runtimeModules = import.meta.glob('../app/*/index.ts', { eager: true });
 
 function directoryFromPath(path: string): string {
     const match = path.match(/\.\.\/app\/([^/]+)\/(?:landing\.astro|index\.ts)$/);
-    if (!match) throw new Error(`Unexpected app module path: ${path}`);
-    return match[1];
+    const directory = match?.[1];
+    if (!directory) throw new Error(`Unexpected app module path: ${path}`);
+    return directory;
 }
 
 function isAppDefinition(value: unknown): value is AppDefinition {
@@ -29,7 +30,9 @@ describe('isolated app runtime exports', () => {
         for (const [path, moduleExports] of Object.entries(runtimeModules)) {
             const definitions = Object.values(moduleExports as Record<string, unknown>).filter(isAppDefinition);
             expect(definitions, `${path} must export exactly one AppDefinition`).toHaveLength(1);
-            expect(definitions[0].entry.id).toBe(directoryFromPath(path));
+            const definition = definitions[0];
+            if (!definition) throw new Error(`Missing AppDefinition for ${path}`);
+            expect(definition.entry.id).toBe(directoryFromPath(path));
         }
     });
 

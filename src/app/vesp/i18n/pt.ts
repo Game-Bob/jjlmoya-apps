@@ -20,7 +20,7 @@ export const landingContent: VespLandingContent = {
     },
     techSpecs: {
         label: 'Mixologia de Precisão',
-        conceptMain: 'TÉCNICA DE,',
+        conceptMain: 'TÉCNICA E',
         conceptHighlight: 'QUALIDADE.',
         description:
             'Calculadora de equilíbrio, ABV, Brix e receitas clássicas de mixologia profissional.',

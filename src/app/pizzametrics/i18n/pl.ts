@@ -24,6 +24,7 @@ export const landingContent: PizzametricsLandingContent = {
         tagline: 'Zaprojektowany dla pasjonatów techniki',
     },
     showCase: {
+        videoTitle: 'Obejrzyj prezentację Pizzametrics',
         feature1: {
             title: 'Dostosowanie Klimatyczne',
             description: 'Oblicz dokładną ilość drożdży w zależności od temperatury otoczenia.',

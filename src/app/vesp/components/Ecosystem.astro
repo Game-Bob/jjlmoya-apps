@@ -20,8 +20,10 @@ const { t, appId } = Astro.props;
             <div class="vesp-ecosystem-item">
                 <img
                     src={`/assets/apps/${appId}/${s}`}
+                    width="1242"
+                    height="2688"
                     class="vesp-ecosystem-img"
-                    alt="VESP Context"
+                    alt="VESP Context" loading="lazy" decoding="async"
                 />
             </div>
         ))}

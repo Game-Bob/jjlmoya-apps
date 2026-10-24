@@ -24,6 +24,7 @@ export const landingContent: PizzametricsLandingContent = {
         tagline: '技術を追求する愛好家のための設計',
     },
     showCase: {
+        videoTitle: 'Pizzametricsアプリのデモを見る',
         feature1: {
             title: '気候に合わせた調整',
             description: '気温の寒暖に合わせて、正確なイーストの量を計算します。',

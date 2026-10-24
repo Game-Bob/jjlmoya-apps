@@ -24,6 +24,7 @@ export const landingContent: PizzametricsLandingContent = {
         tagline: 'Ontworpen voor technische enthousiastelingen',
     },
     showCase: {
+        videoTitle: 'Bekijk de Pizzametrics-demo',
         feature1: {
             title: 'Klimaataanpassing',
             description: 'Bereken de exacte hoeveelheid gist op basis van de omgevingstemperatuur.',

@@ -31,7 +31,7 @@ const screenshots = [
                         <img 
                             src={`/assets/apps/${appId}/screenshots/${s}.webp`} 
                             alt={`Screenshot ${s}`}
-                            class="sl-screenshot"
+                            class="sl-screenshot" loading="lazy" decoding="async"
                         />
                     </div>
                 ))}

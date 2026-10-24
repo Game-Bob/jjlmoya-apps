@@ -1,5 +1,6 @@
 ---
 import type { DayCheckVideos } from '../types';
+import YouTubeVideo from '../../../components/YouTubeVideo.astro';
 
 interface Props {
     t: DayCheckVideos;
@@ -16,12 +17,10 @@ const { t, shortIds } = Astro.props;
             <div class="dc-videos-grid">
                 {shortIds.map((id) => (
                     <div class="dc-video-item">
-                        <iframe
-                            src={`https://www.youtube.com/embed/${id}?rel=0&modestbranding=1&controls=1`}
-                            title="Day Check Video"
-                            class="dc-video-iframe"
-                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
+                        <YouTubeVideo
+                            videoId={id}
+                            title={t.title}
+                            poster="/assets/apps/day-check/hero.webp"
                         />
                     </div>
                 ))}

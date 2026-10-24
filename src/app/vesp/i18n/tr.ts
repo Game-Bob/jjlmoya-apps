@@ -20,7 +20,7 @@ export const landingContent: VespLandingContent = {
     },
     techSpecs: {
         label: 'Hassas Miksoloji',
-        conceptMain: 'TEKNİK VE,',
+        conceptMain: 'TEKNİK VE',
         conceptHighlight: 'KALİTE.',
         description:
             'Profesyonel kokteyl denge, ABV, Brix hesaplayıcı ve klasik tarifler.',

@@ -1,5 +1,6 @@
 ---
 import type { PizzametricsShorts } from '../types';
+import YouTubeVideo from '../../../components/YouTubeVideo.astro';
 
 interface Props {
     t: PizzametricsShorts;
@@ -7,6 +8,13 @@ interface Props {
 }
 
 const { t, shortIds } = Astro.props;
+const posters = [
+    '/assets/apps/pizzametrics/screenshot_real.webp',
+    '/assets/apps/pizzametrics/dashboard.webp',
+    '/assets/apps/pizzametrics/calculator.webp',
+    '/assets/apps/pizzametrics/pantry.webp',
+    '/assets/apps/pizzametrics/screenshot-6-list-history.webp',
+];
 ---
 
 <section class="pm-shorts">
@@ -21,14 +29,12 @@ const { t, shortIds } = Astro.props;
 
         <div class="pm-shorts-grid">
             {
-                shortIds.map((id) => (
+                shortIds.map((id, index) => (
                     <div class="pm-short-item">
-                        <iframe
-                            src={`https://www.youtube.com/embed/${id}?rel=0&modestbranding=1&autohide=1&controls=1`}
-                            title="Pizzametrics Short"
-                            class="pm-short-iframe"
-                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
+                        <YouTubeVideo
+                            videoId={id}
+                            title={`${t.titleMain} ${index + 1}`}
+                            poster={posters[index % posters.length] ?? '/assets/apps/pizzametrics/dashboard.webp'}
                         />
                     </div>
                 ))

@@ -17,6 +17,7 @@ export interface PizzametricsShowCaseFeature {
 }
 
 export interface PizzametricsShowCase {
+    videoTitle: string;
     feature1: PizzametricsShowCaseFeature;
     feature2: PizzametricsShowCaseFeature;
     feature3: PizzametricsShowCaseFeature;

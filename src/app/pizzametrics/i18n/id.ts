@@ -24,6 +24,7 @@ export const landingContent: PizzametricsLandingContent = {
         tagline: 'Dirancang untuk penggemar teknis',
     },
     showCase: {
+        videoTitle: 'Tonton demo aplikasi Pizzametrics',
         feature1: {
             title: 'Penyesuaian Iklim',
             description: 'Hitung jumlah ragi yang tepat berdasarkan cuaca panas atau dingin.',

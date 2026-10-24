@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import type { PizzametricsShowCase } from '../types';
+import YouTubeVideo from '../../../components/YouTubeVideo.astro';
 
 interface Props {
     t: PizzametricsShowCase;
@@ -15,12 +16,11 @@ const { t, youtubeId } = Astro.props;
         <div class="pm-showcase-phone">
             <div class="pm-showcase-glow"></div>
             <div class="pm-showcase-frame">
-                <iframe
-                    src={`https://www.youtube.com/embed/${youtubeId}?rel=0&modestbranding=1&autohide=1&controls=1`}
-                    title="Pizzametrics en Acción"
-                    class="pm-showcase-iframe"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+                <YouTubeVideo
+                    videoId={youtubeId}
+                    title={t.videoTitle}
+                    poster="/assets/apps/pizzametrics/dashboard.webp"
+                />
             </div>
         </div>
 
