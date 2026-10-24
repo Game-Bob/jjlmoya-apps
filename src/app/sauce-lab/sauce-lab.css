@@ -678,6 +678,42 @@
 }
 
 @media (max-width: 767px) {
+    .sl-container {
+        padding-inline: 0;
+    }
+
+    .sl-hero-title {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        font-size: clamp(2rem, 9vw, 3.25rem);
+        line-height: 1.05;
+        letter-spacing: -0.04em;
+        overflow-wrap: anywhere;
+        hyphens: auto;
+    }
+
+    .sl-benefits-grid,
+    .sl-hierarchy-grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    }
+
+    .sl-benefit-card,
+    .sl-hierarchy-card {
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 0;
+        padding: clamp(1rem, 5vw, 1.5rem);
+    }
+
+    .sl-benefit-text {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+
     .sl-section-title {
         width: 100%;
         min-width: 0;
@@ -707,6 +743,9 @@
     }
 
     .sl-hierarchy-name {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
         font-size: clamp(1.75rem, 7vw, 2.0625rem);
         letter-spacing: -0.035em;
         overflow-wrap: anywhere;

@@ -1040,6 +1040,31 @@
 }
 
 @media (max-width: 640px) {
+    .pm-pantry-grid > *,
+    .pm-pantry-text {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .pm-pantry-title {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        font-size: clamp(1.5rem, 7vw, 2.5rem);
+        line-height: 1.05;
+        letter-spacing: -0.04em;
+        overflow-wrap: anywhere;
+        hyphens: auto;
+    }
+
+    .pm-pantry-desc {
+        max-width: 100%;
+        font-size: clamp(1rem, 5vw, 1.25rem);
+        line-height: 1.55;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+
     .pm-empathy-title {
         width: 100%;
         min-width: 0;

@@ -676,6 +676,53 @@
 }
 
 @media (max-width: 480px) {
+    .vesp-hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding-inline: 1rem;
+    }
+
+    .vesp-hero-body,
+    .vesp-hero-body > *,
+    .vesp-hero-visual,
+    .vesp-hero-phone {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .vesp-hero-body,
+    .vesp-hero-visual,
+    .vesp-hero-phone {
+        width: 100%;
+    }
+
+    .vesp-hero-title {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        font-size: clamp(3rem, 16vw, 5rem);
+        overflow-wrap: anywhere;
+        hyphens: auto;
+    }
+
+    .vesp-hero-subtitle,
+    .vesp-hero-philosophy,
+    .vesp-hero-price-label {
+        min-width: 0;
+        max-width: 100%;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+
+    .vesp-hero-subtitle,
+    .vesp-hero-price-label {
+        letter-spacing: 0.12em;
+    }
+
+    .vesp-hero-price {
+        min-width: 0;
+        font-size: clamp(2rem, 12vw, 3rem);
+    }
+
     .vesp-techspecs-inner {
         grid-template-columns: minmax(0, 1fr);
     }

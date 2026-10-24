@@ -734,7 +734,8 @@
 }
 
 .dc-video-item {
-    min-width: 280px;
+    width: min(100%, 280px);
+    min-width: min(100%, 280px);
     border-radius: 1.5rem;
     overflow: hidden;
     border: 1px solid var(--dc-border-faint);
@@ -1001,4 +1002,23 @@
         transform: none;
     }
     /* stylelint-enable declaration-no-important */
+}
+
+@media (min-width: 768px) {
+    .dc-video-item {
+        width: auto;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 360px) {
+    .dc-hero-title {
+        width: 100%;
+        min-width: 0;
+        font-size: clamp(1.875rem, 9vw, 4rem);
+        line-height: 0.95;
+        letter-spacing: -0.06em;
+        overflow-wrap: anywhere;
+        hyphens: auto;
+    }
 }
