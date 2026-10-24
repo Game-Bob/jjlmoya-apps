@@ -95,6 +95,34 @@ function gradientStopColors(
   });
 }
 
+function sampleGradient(
+  stops: readonly CssColor[],
+  stepsPerSegment = 32,
+): CssColor[] {
+  if (stops.length < 2) return [...stops];
+
+  const samples: CssColor[] = [];
+  for (let index = 0; index < stops.length - 1; index += 1) {
+    const start = stops[index];
+    const end = stops[index + 1];
+    if (!start || !end) continue;
+
+    for (let step = 0; step <= stepsPerSegment; step += 1) {
+      const progress = step / stepsPerSegment;
+      const interpolate = (from: number, to: number) =>
+        from + (to - from) * progress;
+      samples.push([
+        interpolate(start[0], end[0]),
+        interpolate(start[1], end[1]),
+        interpolate(start[2], end[2]),
+        interpolate(start[3], end[3]),
+      ]);
+    }
+  }
+
+  return samples;
+}
+
 function resolveColor(
   css: string,
   selectors: readonly string[],
@@ -429,31 +457,39 @@ describe("landing style isolation", () => {
     ] as const;
 
     for (const { selectors } of themes) {
-      const surfaces = gradientStopColors(
-        declarations(css, selectors, "--dc-footer-card-bg"),
-        css,
-        selectors,
+      const surfaces = sampleGradient(
+        gradientStopColors(
+          declarations(css, selectors, "--dc-footer-card-bg"),
+          css,
+          selectors,
+        ),
+      );
+      const headingColors = sampleGradient(
+        gradientStopColors(
+          declarations(css, [".dc-footer-title-highlight"], "background"),
+          css,
+          selectors,
+        ),
       );
 
       for (const token of ["--dc-text", "--dc-text-ultralight", "--dc-purple"]) {
         const foreground = resolveColor(css, selectors, token);
-        surfaces.forEach((surface, index) => {
+        surfaces.forEach((surface, surfaceIndex) => {
           expect(
             contrastRatio(foreground, surface),
-            `${token} on Day Check footer gradient stop ${index + 1}`,
+            `${token} on Day Check footer gradient sample ${surfaceIndex + 1}`,
           ).toBeGreaterThanOrEqual(4.5);
         });
       }
 
-      for (const token of ["--dc-purple", "--dc-teal"]) {
-        const foreground = resolveColor(css, selectors, token);
-        surfaces.forEach((surface, index) => {
+      headingColors.forEach((foreground, headingIndex) => {
+        surfaces.forEach((surface, surfaceIndex) => {
           expect(
             contrastRatio(foreground, surface),
-            `${token} gradient heading on Day Check footer stop ${index + 1}`,
+            `Day Check heading gradient sample ${headingIndex + 1} on footer sample ${surfaceIndex + 1}`,
           ).toBeGreaterThanOrEqual(3);
         });
-      }
+      });
 
       const primaryButtonBackground = resolveColor(
         css,
@@ -526,10 +562,12 @@ describe("landing style isolation", () => {
         gradientProperty,
       } of themes) {
         const surface = resolveColor(css, selectors, surfaceToken);
-        const headingColors = gradientStopColors(
-          declarations(css, headingSelectors, gradientProperty),
-          css,
-          selectors,
+        const headingColors = sampleGradient(
+          gradientStopColors(
+            declarations(css, headingSelectors, gradientProperty),
+            css,
+            selectors,
+          ),
         );
 
         headingColors.forEach((foreground, index) => {
