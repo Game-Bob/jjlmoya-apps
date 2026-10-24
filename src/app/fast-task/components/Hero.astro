@@ -15,33 +15,48 @@ const price = new Intl.NumberFormat(locale, { style: 'currency', currency: 'EUR'
 
 <section class="ft-hero">
     <div class="ft-hero-inner">
-        <div class="ft-hero-icon-wrap">
-            <div class="ft-hero-icon-glow"></div>
-            <img src={`/assets/apps/${appId}/icon.webp`} alt={t.title} class="ft-hero-icon" />
+        <div class="ft-hero-copy">
+            <div class="ft-hero-icon-wrap">
+                <div class="ft-hero-icon-glow"></div>
+                <img src={`/assets/apps/${appId}/icon.webp`} alt={t.title} class="ft-hero-icon" />
+            </div>
+
+            <h1 class="ft-hero-title">
+                <span class="ft-hero-title-gradient">{t.title}</span>
+            </h1>
+
+            <p class="ft-hero-subtitle">{t.subtitle}</p>
+
+            <div class="ft-hero-price">{price}</div>
+            <div class="ft-hero-price-label">{t.priceLabel}</div>
+
+            <div class="ft-hero-buttons">
+                {stores.appStore && (
+                    <a href={stores.appStore} target="_blank" rel="noopener noreferrer" class="ft-btn-store">
+                        <Icon name="mdi:apple" class="ft-btn-store-icon" />
+                        <span class="ft-btn-store-label">App Store</span>
+                    </a>
+                )}
+                {stores.googlePlay && (
+                    <a href={stores.googlePlay} target="_blank" rel="noopener noreferrer" class="ft-btn-store">
+                        <Icon name="mdi:google-play" class="ft-btn-store-icon" />
+                        <span class="ft-btn-store-label">Google Play</span>
+                    </a>
+                )}
+            </div>
         </div>
 
-        <h1 class="ft-hero-title">
-            <span class="ft-hero-title-gradient">{t.title}</span>
-        </h1>
-
-        <p class="ft-hero-subtitle">{t.subtitle}</p>
-
-        <div class="ft-hero-price">{price}</div>
-        <div class="ft-hero-price-label">{t.priceLabel}</div>
-
-        <div class="ft-hero-buttons">
-            {stores.appStore && (
-                <a href={stores.appStore} target="_blank" rel="noopener noreferrer" class="ft-btn-store">
-                    <Icon name="mdi:apple" class="ft-btn-store-icon" />
-                    <span class="ft-btn-store-label">App Store</span>
-                </a>
-            )}
-            {stores.googlePlay && (
-                <a href={stores.googlePlay} target="_blank" rel="noopener noreferrer" class="ft-btn-store">
-                    <Icon name="mdi:google-play" class="ft-btn-store-icon" />
-                    <span class="ft-btn-store-label">Google Play</span>
-                </a>
-            )}
+        <div class="ft-hero-visual" aria-hidden="true">
+            <div class="ft-hero-visual-glow"></div>
+            <img
+                src={`/assets/apps/${appId}/2.webp`}
+                width="1290"
+                height="2796"
+                alt=""
+                class="ft-hero-preview-img"
+                fetchpriority="high"
+                decoding="async"
+            />
         </div>
     </div>
 </section>

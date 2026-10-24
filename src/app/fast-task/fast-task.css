@@ -181,7 +181,15 @@
 .ft-hero-inner {
     max-width: 80rem;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.ft-hero-copy {
     display: flex;
+    min-width: 0;
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -189,7 +197,7 @@
 
 .ft-hero-icon-wrap {
     position: relative;
-    margin-bottom: 4rem;
+    margin-bottom: 2.5rem;
 }
 
 .ft-hero-icon-glow {
@@ -259,7 +267,7 @@
     letter-spacing: -0.025em;
     color: var(--ft-text-muted);
     max-width: 42rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     text-transform: uppercase;
 }
 
@@ -278,14 +286,77 @@
     letter-spacing: 0.3em;
     color: var(--ft-text-faint);
     font-weight: 700;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .ft-hero-buttons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
+}
+
+.ft-hero-visual {
+    position: relative;
+    isolation: isolate;
+    width: min(100%, 18rem);
+    margin: 0 auto;
+}
+
+.ft-hero-visual-glow {
+    position: absolute;
+    z-index: -1;
+    inset: 12% 8%;
+    background: radial-gradient(ellipse, var(--ft-green-glow), transparent 70%);
+    filter: blur(2rem);
+}
+
+.ft-hero-preview-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: min(75svh, 48rem);
+    object-fit: contain;
+    border-radius: 1.75rem;
+    filter: drop-shadow(0 1.5rem 2.5rem #0008);
+    animation: ft-preview-drift 8s ease-in-out infinite;
+}
+
+@keyframes ft-preview-drift {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0.5deg);
+    }
+
+    50% {
+        transform: translateY(-0.45rem) rotate(-0.5deg);
+    }
+}
+
+@media (min-width: 1024px) {
+    .ft-hero-inner {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: clamp(3rem, 6vw, 6rem);
+    }
+
+    .ft-hero-copy {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .ft-hero-title {
+        font-size: clamp(3rem, 6vw, 5.5rem);
+    }
+
+    .ft-hero-buttons {
+        justify-content: flex-start;
+    }
+
+    .ft-hero-visual {
+        width: min(100%, 28rem);
+        justify-self: center;
+        margin: 0;
+    }
 }
 
 /* =============================================
