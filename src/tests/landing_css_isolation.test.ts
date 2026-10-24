@@ -34,7 +34,7 @@ function declarations(
     if (!selectors.some((selector) => candidates.includes(selector))) continue;
 
     const value = body
-      .match(new RegExp(`${property}:\\s*([^;]+);`))?.[1]
+      .match(new RegExp(`(?:^|;)\\s*${property}:\\s*([^;]+);`))?.[1]
       ?.trim();
     if (value) return value;
   }
@@ -275,6 +275,36 @@ describe("landing style isolation", () => {
 
     expect(css).not.toMatch(/color:\s*var\(--fc-gold\)/);
     expect(css).toMatch(/\.challenge \.title\s*\{[^}]*opacity:\s*1\s*;/);
+  });
+
+  it("keeps shared preview navigation labels readable in both themes", () => {
+    const toolbar = readFileSync(
+      new URL("../components/PreviewToolbar.astro", import.meta.url),
+      "utf8",
+    );
+    const sidebar = readFileSync(
+      new URL("../components/PreviewNavSidebar.astro", import.meta.url),
+      "utf8",
+    );
+
+    expect(declarations(toolbar, [".btn-locale:hover"], "color")).toBe(
+      "var(--text-main)",
+    );
+    expect(declarations(sidebar, [".app-link.active"], "color")).toBe(
+      "var(--text-base, #f1f5f9)",
+    );
+
+    const themeTextAndSurfaces = [
+      { text: "#0f172a", surface: "#ffffff" },
+      { text: "#f8fafc", surface: "#0f172a" },
+    ];
+
+    for (const { text, surface } of themeTextAndSurfaces) {
+      expect(
+        contrastRatio(parseColor(text), parseColor(surface)),
+        `${text} on ${surface}`,
+      ).toBeGreaterThanOrEqual(4.5);
+    }
   });
 
   it("keeps PizzaMetrics copy readable on its contrasting dark sections", () => {
