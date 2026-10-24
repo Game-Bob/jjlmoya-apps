@@ -353,6 +353,33 @@ describe("landing style isolation", () => {
     }
   });
 
+  it("scopes Ztreak standalone page styles to their own document shells", () => {
+    const ztreakApp = readFileSync(
+      new URL("ztreak/pages/App.astro", appsRoot),
+      "utf8",
+    );
+    const ztreakLegal = readFileSync(
+      new URL("ztreak/pages/LegalLayout.astro", appsRoot),
+      "utf8",
+    );
+
+    expect(ztreakApp).toContain('class="ztreak-app-shell"');
+    expect(ztreakApp).toMatch(
+      /html\.ztreak-app-shell,\s*body\.ztreak-app-shell\s*\{/,
+    );
+    expect(ztreakApp).toMatch(/body\.ztreak-app-shell\s*\{/);
+    expect(ztreakLegal).toContain('class="ztreak-legal-shell"');
+    expect(ztreakLegal).toMatch(/body\.ztreak-legal-shell\s*\{/);
+
+    for (const source of [ztreakApp, ztreakLegal]) {
+      const styleBlocks = [...source.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/g)];
+      expect(styleBlocks.length).toBeGreaterThan(0);
+      for (const [, css] of styleBlocks) {
+        expect(css).not.toMatch(/(?:^|})\s*(?:html|body)\s*(?:,|\{)/m);
+      }
+    }
+  });
+
   it("keeps PizzaMetrics copy readable on its contrasting dark sections", () => {
     const css = readFileSync(
       new URL("pizzametrics/pizzametrics.css", appsRoot),

@@ -9,18 +9,19 @@ const landing = ztreakPageUrl(basePath);
 const source = '/assets/apps/ztreak/runtime/index.html?locale=' + locale;
 ---
 <!doctype html>
-<html lang={locale}><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="robots" content="noindex,follow" /><title>Ztreak</title><link rel="icon" href="/assets/apps/ztreak/icon.webp" /></head>
-<body><nav aria-label="Ztreak"><a href={landing}>Ztreak</a><a href={ztreakPageUrl(basePath, 'privacy')}>{navigation.privacy}</a></nav><main><iframe src={source} title="Ztreak" allow="clipboard-write" /></main></body></html>
+<html lang={locale} class="ztreak-app-shell"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="robots" content="noindex,follow" /><title>Ztreak</title><link rel="icon" href="/assets/apps/ztreak/icon.webp" /></head>
+<body class="ztreak-app-shell"><nav aria-label="Ztreak"><a href={landing}>Ztreak</a><a href={ztreakPageUrl(basePath, 'privacy')}>{navigation.privacy}</a></nav><main><iframe src={source} title="Ztreak" allow="clipboard-write" /></main></body></html>
 <style>
 
-html, body {
+html.ztreak-app-shell,
+body.ztreak-app-shell {
  margin: 0;
  width: 100%;
  height: 100%;
  
 }
 
-body {
+body.ztreak-app-shell {
  --ink: #d9f2e7;
  --bg: #101e2b;
 
