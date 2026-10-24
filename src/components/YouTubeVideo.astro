@@ -25,6 +25,31 @@ const { videoId, title, poster } = Astro.props;
 </figure>
 
 <script>
+    document.addEventListener('securitypolicyviolation', (event) => {
+        const isFrameDirective = ['frame-src', 'child-src', 'default-src'].includes(event.effectiveDirective);
+        if (!isFrameDirective) return;
+
+        let blockedHost = '';
+        try {
+            blockedHost = new URL(event.blockedURI).hostname;
+        } catch {
+            return;
+        }
+
+        const isYouTubeHost =
+            blockedHost === 'youtube.com' ||
+            blockedHost.endsWith('.youtube.com') ||
+            blockedHost === 'youtube-nocookie.com' ||
+            blockedHost.endsWith('.youtube-nocookie.com');
+        if (!isYouTubeHost) return;
+
+        document.querySelectorAll<HTMLElement>('[data-youtube-video].is-playing').forEach((frame) => {
+            frame.querySelector('.yt-video-player')?.remove();
+            frame.classList.remove('is-playing');
+            frame.classList.add('is-blocked');
+        });
+    });
+
     document.querySelectorAll<HTMLElement>('[data-youtube-video]').forEach((frame) => {
         const button = frame.querySelector<HTMLButtonElement>('.yt-video-play');
         button?.addEventListener('click', () => {
@@ -39,8 +64,8 @@ const { videoId, title, poster } = Astro.props;
             player.allowFullscreen = true;
             player.loading = 'eager';
             player.referrerPolicy = 'strict-origin-when-cross-origin';
-            frame.append(player);
             frame.classList.add('is-playing');
+            frame.append(player);
             button.remove();
         });
     });
@@ -149,6 +174,12 @@ const { videoId, title, poster } = Astro.props;
 .yt-video-external:hover {
         background: #08090af0;
     }
+
+.yt-video.is-blocked .yt-video-external {
+    background: #08090af5;
+    border-color: #ffffff80;
+    box-shadow: 0 0 0 2px #ffffff24, 0 0.75rem 2rem #0005;
+}
 
 .yt-video-player {
         position: absolute;
