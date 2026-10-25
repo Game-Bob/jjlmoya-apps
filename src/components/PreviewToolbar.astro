@@ -54,21 +54,37 @@ const toolbarLabels: Record<KnownLocale, { controls: string; toggle: string }> =
 </nav>
 
 <script>
+    const normalizeTheme = (theme: string) => {
+        const aliases: Record<string, string> = {
+            light: "theme-light",
+            dark: "theme-dark",
+            system: "theme-system",
+        };
+        const normalized = aliases[theme] || theme;
+        return ["theme-light", "theme-dark", "theme-system"].includes(normalized)
+            ? normalized
+            : "theme-system";
+    };
+
+    const applyTheme = (theme: string, persist = true) => {
+        const selected = normalizeTheme(theme);
+        const isDark = selected === "theme-dark" || (
+            selected === "theme-system" && window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+        const root = document.documentElement;
+        root.classList.remove("theme-light", "theme-dark", "theme-system", "dark");
+        root.classList.add(selected, isDark ? "theme-dark" : "theme-light");
+        root.classList.toggle("dark", isDark);
+        if (persist) localStorage.setItem("theme", selected);
+
+        document.getElementById("theme-toggle")?.setAttribute("aria-pressed", String(!isDark));
+    };
+
     function initToolbar() {
         const btn = document.getElementById("theme-toggle");
         if (!btn) return;
 
-        const applyTheme = (theme: string) => {
-            document.documentElement.classList.remove("theme-light", "theme-dark");
-            document.documentElement.classList.add(theme);
-            localStorage.setItem("theme", theme);
-            btn.setAttribute("aria-pressed", String(theme === "theme-light"));
-        };
-
-        btn.setAttribute(
-            "aria-pressed",
-            String(document.documentElement.classList.contains("theme-light")),
-        );
+        applyTheme(localStorage.getItem("theme") || "theme-system", false);
 
         btn.onclick = () => {
             const next = document.documentElement.classList.contains("theme-dark")
@@ -80,6 +96,12 @@ const toolbarLabels: Record<KnownLocale, { controls: string; toggle: string }> =
 
     initToolbar();
     document.addEventListener("astro:after-swap", initToolbar);
+
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+        if (normalizeTheme(localStorage.getItem("theme") || "theme-system") === "theme-system") {
+            applyTheme("theme-system", false);
+        }
+    });
 </script>
 
 <style>

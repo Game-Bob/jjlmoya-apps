@@ -28,8 +28,19 @@ const { title, currentLocale = "es", localeUrls = {}, hasSidebar = false, fullBl
         <title>{title} · preview</title>
         <script is:inline>
             (function () {
-                const saved = localStorage.getItem("theme") || "theme-dark";
-                document.documentElement.classList.add(saved);
+                const aliases = { light: "theme-light", dark: "theme-dark", system: "theme-system" };
+                const stored = localStorage.getItem("theme") || "theme-system";
+                const preference = aliases[stored] || stored;
+                const selected = ["theme-light", "theme-dark", "theme-system"].includes(preference)
+                    ? preference
+                    : "theme-system";
+                const isDark = selected === "theme-dark" || (
+                    selected === "theme-system" && window.matchMedia("(prefers-color-scheme: dark)").matches
+                );
+                const root = document.documentElement;
+                root.classList.remove("theme-light", "theme-dark", "theme-system", "dark");
+                root.classList.add(selected, isDark ? "theme-dark" : "theme-light");
+                root.classList.toggle("dark", isDark);
             })();
         </script>
         <slot name="head" />

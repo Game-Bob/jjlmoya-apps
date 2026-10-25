@@ -14,6 +14,25 @@ const landingStyles = [
 
 type CssColor = [number, number, number, number];
 
+function splitSelectorList(selectors: string): string[] {
+  const parts: string[] = [];
+  let depth = 0;
+  let start = 0;
+
+  for (let index = 0; index < selectors.length; index += 1) {
+    const character = selectors[index];
+    if (character === "(") depth += 1;
+    if (character === ")") depth -= 1;
+    if (character === "," && depth === 0) {
+      parts.push(selectors.slice(start, index).trim());
+      start = index + 1;
+    }
+  }
+
+  parts.push(selectors.slice(start).trim());
+  return parts;
+}
+
 function declarations(
   css: string,
   selectors: readonly string[],
@@ -23,13 +42,13 @@ function declarations(
 
   for (const match of rules) {
     const rawSelectors = match[1];
-    const body = match[2];
-    if (rawSelectors === undefined || body === undefined) continue;
+    const rawBody = match[2];
+    if (rawSelectors === undefined || rawBody === undefined) continue;
+    const body = rawBody.replace(/\/\*[\s\S]*?\*\//g, "");
 
-    const candidates = rawSelectors
-      .replace(/\/\*[\s\S]*?\*\//g, "")
-      .split(",")
-      .map((selector) => selector.trim());
+    const candidates = splitSelectorList(
+      rawSelectors.replace(/\/\*[\s\S]*?\*\//g, ""),
+    );
 
     if (!selectors.some((selector) => candidates.includes(selector))) continue;
 
@@ -294,9 +313,34 @@ const contrastPalettes = [
     darkSurfaces: ["--sl-bg", "--sl-surface", "--sl-surface-muted"],
     text: ["--sl-text", "--sl-text-muted", "--sl-accent"],
   },
+  {
+    app: "ztreak",
+    lightSelectors: [".zl"],
+    darkSelectors: [".dark .zl"],
+    lightSurfaces: ["--zl-paper", "--zl-white", "--zl-soft", "--zl-card-bg"],
+    darkSurfaces: ["--zl-paper", "--zl-white", "--zl-soft", "--zl-card-bg"],
+    text: ["--zl-ink", "--zl-muted", "--zl-green"],
+  },
 ] as const;
 
 describe("landing style isolation", () => {
+  for (const [app] of landingStyles) {
+    it(`${app} defines every custom property it uses`, () => {
+      const css = readFileSync(new URL(`${app}/${app}.css`, appsRoot), "utf8");
+      const definitions = new Set(
+        [...css.matchAll(/(--[\w-]+)\s*:/g)].map((match) => match[1]),
+      );
+      const references = new Set(
+        [...css.matchAll(/var\(\s*(--[\w-]+)/g)].map((match) => match[1]),
+      );
+      const undefinedProperties = [...references].filter(
+        (property) => !definitions.has(property),
+      );
+
+      expect(undefinedProperties).toEqual([]);
+    });
+  }
+
   for (const [app, rootClass] of landingStyles) {
     it(`${app} keeps theme tokens and layout inside its own landing`, () => {
       const css = readFileSync(new URL(`${app}/${app}.css`, appsRoot), "utf8");
@@ -317,6 +361,51 @@ describe("landing style isolation", () => {
       );
     });
   }
+
+  it("gives SauceLab a complete light palette before theme boot runs", () => {
+    const css = readFileSync(
+      new URL("sauce-lab/sauce-lab.css", appsRoot),
+      "utf8",
+    );
+
+    expectReadablePalette(
+      css,
+      [".sl-landing"],
+      ["--sl-bg", "--sl-surface", "--sl-surface-muted"],
+      ["--sl-text", "--sl-text-muted", "--sl-accent"],
+    );
+    expect(
+      contrastRatio(
+        resolveColor(css, [".sl-landing"], "--sl-accent-contrast"),
+        resolveColor(css, [".sl-landing"], "--sl-accent"),
+      ),
+    ).toBeGreaterThanOrEqual(4.5);
+  });
+
+  it("resolves SauceLab’s system theme from the operating system preference", () => {
+    const css = readFileSync(
+      new URL("sauce-lab/sauce-lab.css", appsRoot),
+      "utf8",
+    );
+    const systemDarkSelector =
+      ":root:not(.theme-light, .theme-dark) .sl-landing";
+
+    expect(css).toMatch(
+      /@media\s*\(prefers-color-scheme:\s*dark\)[\s\S]*?:root:not\(\.theme-light,\s*\.theme-dark\)\s+\.sl-landing\s*\{/,
+    );
+    expectReadablePalette(
+      css,
+      [systemDarkSelector],
+      ["--sl-bg", "--sl-surface", "--sl-surface-muted"],
+      ["--sl-text", "--sl-text-muted", "--sl-accent"],
+    );
+    expect(
+      contrastRatio(
+        resolveColor(css, [systemDarkSelector], "--sl-accent-contrast"),
+        resolveColor(css, [systemDarkSelector], "--sl-accent"),
+      ),
+    ).toBeGreaterThanOrEqual(4.5);
+  });
 
   it.each(contrastPalettes)(
     "$app keeps readable text in light and automatic dark mode",
@@ -425,28 +514,63 @@ describe("landing style isolation", () => {
         themes: [
           {
             selectors: [".zl"],
-            foreground: "--zl-white",
-            background: "--zl-green",
+            foreground: "--zl-action-ink",
+            background: "--zl-action-green",
+          },
+          {
+            selectors: [".dark .zl"],
+            foreground: "--zl-action-ink",
+            background: "--zl-action-green",
           },
           {
             selectors: [".zl"],
-            foreground: "--zl-paper",
+            foreground: "--zl-on-dark",
             background: "--zl-dark",
           },
           {
-            selectors: [".zl"],
+            selectors: [".dark .zl"],
+            foreground: "--zl-on-dark",
+            background: "--zl-dark",
+          },
+          {
+            selectors: [".dark .zl"],
+            foreground: "--zl-green",
+            background: "--zl-paper",
+          },
+          {
+            selectors: [".dark .zl"],
             foreground: "--zl-lime",
             background: "--zl-dark",
           },
           {
             selectors: [".zl"],
+            foreground: "--zl-green",
+            background: "--zl-paper",
+          },
+          {
+            selectors: [".dark .zl"],
             foreground: "--zl-shield",
             background: "--zl-shield-soft",
           },
           {
             selectors: [".zl"],
             foreground: "--zl-green",
-            background: "--zl-paper",
+            background: "--zl-lime",
+          },
+          {
+            selectors: [".dark .zl"],
+            foreground: "--zl-dark",
+            background: "--zl-lime",
+          },
+          {
+            selectors: [".dark .zl"],
+            foreground: "--zl-muted-on-dark",
+            background: "--zl-shield-soft",
+          },
+          {
+            selectors: [".dark .zl"],
+            foreground: "--zl-on-dark",
+            background: "--zl-shield-soft",
           },
         ],
       },
@@ -591,6 +715,23 @@ describe("landing style isolation", () => {
         `${text} on ${surface}`,
       ).toBeGreaterThanOrEqual(4.5);
     }
+  });
+
+  it("keeps landing previews on the operating system theme until overridden", () => {
+    const layout = readFileSync(
+      new URL("../layouts/PreviewLayout.astro", import.meta.url),
+      "utf8",
+    );
+    const toolbar = readFileSync(
+      new URL("../components/PreviewToolbar.astro", import.meta.url),
+      "utf8",
+    );
+
+    expect(layout).toContain('localStorage.getItem("theme") || "theme-system"');
+    expect(layout).toContain('window.matchMedia("(prefers-color-scheme: dark)")');
+    expect(layout).toContain('root.classList.add(selected, isDark ? "theme-dark" : "theme-light")');
+    expect(toolbar).toContain('applyTheme("theme-system", false)');
+    expect(toolbar).toContain('addEventListener("change"');
   });
 
   it("scopes Ztreak standalone page styles to their own document shells", () => {
