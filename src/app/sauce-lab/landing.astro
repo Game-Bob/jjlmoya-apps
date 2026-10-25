@@ -1,6 +1,5 @@
 ---
 import type { KnownLocale } from '../../types';
-import { Icon } from 'astro-icon/components';
 import { sauceLabEntry } from './entry';
 import { localizedAppStoreUrl } from '../../app-store';
 import './sauce-lab.css';
@@ -11,6 +10,7 @@ import Hierarchy from './components/Hierarchy.astro';
 import Chemistry from './components/Chemistry.astro';
 import Atlas from './components/Atlas.astro';
 import Fix from './components/Fix.astro';
+import StoreButton from './components/StoreButton.astro';
 
 interface Props {
     locale: KnownLocale;
@@ -44,8 +44,6 @@ const stores = {
     ...(baseStores.appStore ? { appStore: localizedAppStoreUrl(baseStores.appStore, locale) } : {}),
 };
 
-const hasGooglePlay = !!stores.googlePlay;
-const hasAppStore = !!stores.appStore;
 ---
 
 <div class="sl-landing">
@@ -66,21 +64,8 @@ const hasAppStore = !!stores.appStore;
                     <h2 class="sl-cta-title">{t.hero.title}</h2>
                     <p class="sl-cta-text">{t.hero.subtitle}</p>
                     <div class="sl-hero-actions">
-                        <div class:list={["sl-btn-wrapper", { 'disabled': !hasAppStore }]}>
-                            <a href={hasAppStore ? stores.appStore : 'javascript:void(0)'} class="sl-btn sl-btn-primary">
-                                <Icon name="mdi:apple" class="sl-btn-icon" />
-                                <span>App Store</span>
-                            </a>
-                            {!hasAppStore && <span class="sl-btn-status">{t.hero.comingSoon}</span>}
-                        </div>
-
-                        <div class:list={["sl-btn-wrapper", { 'disabled': !hasGooglePlay }]}>
-                            <a href={hasGooglePlay ? stores.googlePlay : 'javascript:void(0)'} class="sl-btn sl-btn-secondary">
-                                <Icon name="mdi:google-play" class="sl-btn-icon" />
-                                <span>Google Play</span>
-                            </a>
-                            {!hasGooglePlay && <span class="sl-btn-status">{t.hero.comingSoon}</span>}
-                        </div>
+                    <StoreButton url={stores.appStore} label="App Store" comingSoon={t.hero.comingSoon} icon="mdi:apple" primary />
+                    <StoreButton url={stores.googlePlay} label="Google Play" comingSoon={t.hero.comingSoon} icon="mdi:google-play" />
                     </div>
                 </div>
             </div>

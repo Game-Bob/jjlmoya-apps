@@ -1,6 +1,6 @@
 ---
-import { Icon } from 'astro-icon/components';
 import type { SauceLabHero } from '../types';
+import StoreButton from './StoreButton.astro';
 
 interface Props {
     t: SauceLabHero;
@@ -13,8 +13,6 @@ interface Props {
 
 const { t, appId, stores } = Astro.props;
 
-const hasGooglePlay = !!stores.googlePlay;
-const hasAppStore = !!stores.appStore;
 ---
 
 <section class="sl-hero">
@@ -41,21 +39,8 @@ const hasAppStore = !!stores.appStore;
         </div>
 
         <div class="sl-hero-actions">
-            <div class:list={["sl-btn-wrapper", { 'disabled': !hasAppStore }]}>
-                <a href={hasAppStore ? stores.appStore : 'javascript:void(0)'} class="sl-btn sl-btn-primary">
-                    <Icon name="mdi:apple" class="sl-btn-icon" />
-                    <span>App Store</span>
-                </a>
-                {!hasAppStore && <span class="sl-btn-status">{t.comingSoon}</span>}
-            </div>
-
-            <div class:list={["sl-btn-wrapper", { 'disabled': !hasGooglePlay }]}>
-                <a href={hasGooglePlay ? stores.googlePlay : 'javascript:void(0)'} class="sl-btn sl-btn-secondary">
-                    <Icon name="mdi:google-play" class="sl-btn-icon" />
-                    <span>Google Play</span>
-                </a>
-                {!hasGooglePlay && <span class="sl-btn-status">{t.comingSoon}</span>}
-            </div>
+            <StoreButton url={stores.appStore} label="App Store" comingSoon={t.comingSoon} icon="mdi:apple" primary />
+            <StoreButton url={stores.googlePlay} label="Google Play" comingSoon={t.comingSoon} icon="mdi:google-play" />
         </div>
         
         <div class="sl-hero-scroll">

@@ -1,0 +1,29 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+    url?: string;
+    label: string;
+    comingSoon: string;
+    icon: string;
+    primary?: boolean;
+}
+
+const { url, label, comingSoon, icon, primary = false } = Astro.props;
+const buttonClass = primary ? 'sl-btn sl-btn-primary' : 'sl-btn sl-btn-secondary';
+---
+
+<div class:list={['sl-btn-wrapper', { disabled: !url }]}>
+    {url ? (
+        <a href={url} class={buttonClass}>
+            <Icon name={icon} class="sl-btn-icon" aria-hidden="true" />
+            <span>{label}</span>
+        </a>
+    ) : (
+        <span class={buttonClass}>
+            <Icon name={icon} class="sl-btn-icon" aria-hidden="true" />
+            <span>{label}</span>
+        </span>
+    )}
+    {!url && <span class="sl-btn-status">{comingSoon}</span>}
+</div>
