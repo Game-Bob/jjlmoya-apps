@@ -6,6 +6,8 @@ export const ztreakEntry: AppEntry = {
     isGame: false,
     packageId: 'com.gamebob.ztreak',
     media: { hero: '/assets/apps/ztreak/hero.webp' },
-    stores: {},
+    stores: {
+        googlePlay: 'https://play.google.com/store/apps/details?id=com.gamebob.ztreak&hl=es_419',
+    },
     i18n: contentLoaders,
 };

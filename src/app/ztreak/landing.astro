@@ -2,6 +2,7 @@
 import type { KnownLocale } from '../../types';
 import { loadZtreakContent } from './content';
 import { ztreakPageUrl } from './routes';
+import { ztreakEntry } from './entry';
 import styles from './ztreak.css?url';
 import FeatureGlyph from './components/FeatureGlyph.astro';
 import CombinedGoals from './components/CombinedGoals.astro';
@@ -15,7 +16,7 @@ interface Props { locale: KnownLocale; basePath?: string; }
 const { locale, basePath = Astro.url.pathname } = Astro.props;
 const content = await loadZtreakContent(locale);
 const l = content.landingCopy;
-const runtime = ztreakPageUrl(basePath, 'app');
+const downloadUrl = ztreakEntry.stores.googlePlay ?? ztreakPageUrl(basePath, 'app');
 const sectionOrder = ['features', 'combined', 'history', 'shield', 'tower', 'progress', 'determination'] as const;
 const sectionNumber = (section: typeof sectionOrder[number]) => String(sectionOrder.indexOf(section) + 1).padStart(2, '0');
 ---
@@ -24,14 +25,14 @@ const sectionNumber = (section: typeof sectionOrder[number]) => String(sectionOr
 <div class="zl" data-ztreak-landing>
     <nav class="zl-nav" aria-label="Ztreak">
         <a class="zl-logo" href="#ztreak-top"><img src="/assets/apps/ztreak/icon.webp" width="36" height="36" alt="" />Ztreak<span>{l.tagline}</span></a>
-        <a class="zl-nav-action" href={runtime}>{content.start}</a>
+        <a class="zl-nav-action" href={downloadUrl}>{content.start}</a>
     </nav>
     <header class="zl-hero zl-wrap" id="ztreak-top">
         <div class="zl-hero-copy">
             <p class="zl-eyebrow"><span></span>{l.hero.eyebrow}</p>
             <h1>{l.hero.title[0]}<br />{l.hero.title[1]}<br /><em>{l.hero.title[2]}</em></h1>
             <p class="zl-lead">{l.hero.body}</p>
-            <div class="zl-actions"><a class="zl-button" href={runtime}>{l.hero.cta}</a><a class="zl-text-link" href="#ztreak-story">{l.hero.discover}</a></div>
+            <div class="zl-actions"><a class="zl-button" href={downloadUrl}>{l.hero.cta}</a><a class="zl-text-link" href="#ztreak-story">{l.hero.discover}</a></div>
             <StoreButtons {locale} />
             <p class="zl-caption">{l.hero.note}</p>
         </div>
@@ -70,7 +71,7 @@ const sectionNumber = (section: typeof sectionOrder[number]) => String(sectionOr
     </section>
     <DeterminationStory {locale} number={sectionNumber('determination')} />
     <section class="zl-final zl-wrap">
-        <p class="zl-eyebrow">{l.final.eyebrow}</p><h2>{l.final.title[0]}<br />{l.final.title[1]} <em>{l.final.title[2]}</em></h2><p>{l.final.body[0]}<br />{l.final.body[1]}</p><a class="zl-button" href={runtime}>{l.final.cta}</a><StoreButtons {locale} /><p class="zl-caption">{l.final.note}</p>
+        <p class="zl-eyebrow">{l.final.eyebrow}</p><h2>{l.final.title[0]}<br />{l.final.title[1]} <em>{l.final.title[2]}</em></h2><p>{l.final.body[0]}<br />{l.final.body[1]}</p><a class="zl-button" href={downloadUrl}>{l.final.cta}</a><StoreButtons {locale} /><p class="zl-caption">{l.final.note}</p>
     </section>
     <footer class="zl-footer zl-wrap"><span>Ztreak · GameBob</span><span>{l.footer}</span><a href={ztreakPageUrl(basePath, 'privacy')}>{content.privacy}</a><a href={ztreakPageUrl(basePath, 'terms')}>{content.navigation.terms}</a></footer>
 </div>
