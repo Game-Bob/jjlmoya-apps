@@ -1,8 +1,15 @@
 import { describe, expect, it } from 'vitest';
-import { ztreakPageUrl } from '../app/ztreak/routes';
+import { localizedZtreakGooglePlayUrl, ztreakPageUrl } from '../app/ztreak/routes';
 import { ZTREAK_APP } from '../app/ztreak';
 
 describe('Ztreak section navigation', () => {
+    it.each([['es', 'es_419'], ['en', 'en'], ['fr', 'fr'], ['zh', 'zh']])('localizes the Google Play hl parameter for %s', (locale, language) => {
+        const url = new URL(localizedZtreakGooglePlayUrl(locale) ?? '');
+        expect(url.origin + url.pathname).toBe('https://play.google.com/store/apps/details');
+        expect(url.searchParams.get('id')).toBe('com.gamebob.ztreak');
+        expect(url.searchParams.get('hl')).toBe(language);
+        expect([...url.searchParams.keys()]).toEqual(['id', 'hl']);
+    });
     it.each(['/es/ztreak', '/es/ztreak/'])('builds stable child links from %s', base => {
         expect(ztreakPageUrl(base, 'app')).toBe('/es/ztreak/app/');
         expect(ztreakPageUrl(base, 'privacy')).toBe('/es/ztreak/privacy/');

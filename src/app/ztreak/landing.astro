@@ -1,8 +1,7 @@
 ---
 import type { KnownLocale } from '../../types';
 import { loadZtreakContent } from './content';
-import { ztreakPageUrl } from './routes';
-import { ztreakEntry } from './entry';
+import { localizedZtreakGooglePlayUrl, ztreakPageUrl } from './routes';
 import styles from './ztreak.css?url';
 import FeatureGlyph from './components/FeatureGlyph.astro';
 import CombinedGoals from './components/CombinedGoals.astro';
@@ -16,7 +15,7 @@ interface Props { locale: KnownLocale; basePath?: string; }
 const { locale, basePath = Astro.url.pathname } = Astro.props;
 const content = await loadZtreakContent(locale);
 const l = content.landingCopy;
-const downloadUrl = ztreakEntry.stores.googlePlay ?? ztreakPageUrl(basePath, 'app');
+const downloadUrl = localizedZtreakGooglePlayUrl(locale) ?? ztreakPageUrl(basePath, 'app');
 const sectionOrder = ['features', 'combined', 'history', 'shield', 'tower', 'progress', 'determination'] as const;
 const sectionNumber = (section: typeof sectionOrder[number]) => String(sectionOrder.indexOf(section) + 1).padStart(2, '0');
 ---

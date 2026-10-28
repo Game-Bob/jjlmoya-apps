@@ -4,12 +4,13 @@ import type { KnownLocale } from '../../../types';
 import { loadZtreakContent } from '../content';
 import { ztreakEntry } from '../entry';
 import { localizedAppStoreUrl } from '../../../app-store';
+import { localizedZtreakGooglePlayUrl } from '../routes';
 interface Props { locale: KnownLocale; }
 const { locale } = Astro.props;
 const { storeButtons: t } = await loadZtreakContent(locale);
 const stores = [
     { name: 'App Store', icon: 'mdi:apple', url: ztreakEntry.stores.appStore ? localizedAppStoreUrl(ztreakEntry.stores.appStore, locale) : undefined },
-    { name: 'Google Play', icon: 'mdi:google-play', url: ztreakEntry.stores.googlePlay },
+    { name: 'Google Play', icon: 'mdi:google-play', url: localizedZtreakGooglePlayUrl(locale) },
 ];
 ---
 <div class="zl-stores" role="group" aria-label={t.label}>
