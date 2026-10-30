@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { localizedZtreakGooglePlayUrl, ztreakPageUrl } from '../app/ztreak/routes';
+import { localizedZtreakGooglePlayUrl, ztreakPageUrl, ztreakWebAppUrl } from '../app/ztreak/routes';
 import { ZTREAK_APP } from '../app/ztreak';
 
 describe('Ztreak section navigation', () => {
@@ -18,6 +18,13 @@ describe('Ztreak section navigation', () => {
     });
     it('supports future nested feature pages', () => {
         expect(ztreakPageUrl('/es/ztreak', 'features/shield')).toBe('/es/ztreak/features/shield/');
+    });
+    it('opens the standalone web app for the current site language', () => {
+        expect(ztreakWebAppUrl('es', 'www.jjlmoya.es')).toBe('https://www.jjlmoya.es/apps/ztreak/app/');
+        expect(ztreakWebAppUrl('en', 'www.gamebob.dev')).toBe('https://www.gamebob.dev/apps/ztreak/app/');
+        expect(ztreakWebAppUrl('fr', 'www.gamebob.dev')).toBe('https://www.gamebob.dev/fr/apps/ztreak/app/');
+        expect(ztreakWebAppUrl('ja', 'www.jjlmoya.es')).toBe('https://www.gamebob.dev/ja/apps/ztreak/app/');
+        expect(ztreakWebAppUrl('es', 'www.gamebob.dev')).toBe('https://www.gamebob.dev/es/apps/ztreak/app/');
     });
     it.each(['https://example.com', '//example.com', '/es/ztreak?x=1', '/es/ztreak#app'])('rejects invalid base %s', base => {
         expect(() => ztreakPageUrl(base, 'app')).toThrow();

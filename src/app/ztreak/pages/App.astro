@@ -1,63 +1,14 @@
 ---
 import type { KnownLocale } from '../../../types';
-import { ztreakPageUrl } from '../routes';
+import { ztreakPageUrl, ztreakWebAppUrl } from '../routes';
 import { loadZtreakContent } from '../content';
 interface Props { locale: KnownLocale; basePath: string; }
 const { locale, basePath } = Astro.props;
 const { navigation } = await loadZtreakContent(locale);
 const landing = ztreakPageUrl(basePath);
-const source = '/assets/apps/ztreak/runtime/index.html?locale=' + locale;
+const privacy = ztreakPageUrl(basePath, 'privacy');
+const webAppUrl = ztreakWebAppUrl(locale, Astro.site?.hostname ?? Astro.url.hostname);
 ---
 <!doctype html>
-<html lang={locale} class="ztreak-app-shell"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="robots" content="noindex,follow" /><title>Ztreak</title><link rel="icon" href="/assets/apps/ztreak/icon.webp" /></head>
-<body class="ztreak-app-shell"><nav aria-label="Ztreak"><a href={landing}>Ztreak</a><a href={ztreakPageUrl(basePath, 'privacy')}>{navigation.privacy}</a></nav><main><iframe src={source} title="Ztreak" allow="clipboard-write" /></main></body></html>
-<style>
-
-html.ztreak-app-shell,
-body.ztreak-app-shell {
- margin: 0;
- width: 100%;
- height: 100%;
- 
-}
-
-body.ztreak-app-shell {
- --ink: #d9f2e7;
- --bg: #101e2b;
-
- background: var(--bg);
- color: var(--ink);
- font: 500 .75rem/1.4 system-ui, sans-serif;
- display: flex;
- flex-direction: column;
- 
-}
-
-nav {
- display: flex;
- justify-content: space-between;
- padding: .6rem 1rem;
- 
-}
-
-a {
- color: inherit;
- text-decoration: none;
- 
-}
-
-main {
- flex: 1;
- min-height: 0;
- 
-}
-
-iframe {
- display: block;
- width: 100%;
- height: 100%;
- border: 0;
- 
-}
-
-</style>
+<html lang={locale}><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="robots" content="noindex,follow" /><meta http-equiv="refresh" content={`0;url=${webAppUrl}`} /><link rel="canonical" href={webAppUrl} /><title>Ztreak</title></head>
+<body><main><a href={webAppUrl}>{navigation.openApp}</a><a href={privacy}>{navigation.privacy}</a><a href={landing}>Ztreak</a></main></body></html>

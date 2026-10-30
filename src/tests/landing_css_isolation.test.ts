@@ -734,7 +734,7 @@ describe("landing style isolation", () => {
     expect(toolbar).toContain('addEventListener("change"');
   });
 
-  it("scopes Ztreak standalone page styles to their own document shells", () => {
+  it("routes the legacy Ztreak app page to the standalone web MFE", () => {
     const ztreakApp = readFileSync(
       new URL("ztreak/pages/App.astro", appsRoot),
       "utf8",
@@ -744,20 +744,16 @@ describe("landing style isolation", () => {
       "utf8",
     );
 
-    expect(ztreakApp).toContain('class="ztreak-app-shell"');
-    expect(ztreakApp).toMatch(
-      /html\.ztreak-app-shell,\s*body\.ztreak-app-shell\s*\{/,
-    );
-    expect(ztreakApp).toMatch(/body\.ztreak-app-shell\s*\{/);
+    expect(ztreakApp).toContain('ztreakWebAppUrl(locale');
+    expect(ztreakApp).toContain('http-equiv="refresh"');
+    expect(ztreakApp).not.toContain('<iframe');
     expect(ztreakLegal).toContain('class="ztreak-legal-shell"');
     expect(ztreakLegal).toMatch(/body\.ztreak-legal-shell\s*\{/);
 
-    for (const source of [ztreakApp, ztreakLegal]) {
-      const styleBlocks = [...source.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/g)];
-      expect(styleBlocks.length).toBeGreaterThan(0);
-      for (const [, css] of styleBlocks) {
-        expect(css).not.toMatch(/(?:^|})\s*(?:html|body)\s*(?:,|\{)/m);
-      }
+    const styleBlocks = [...ztreakLegal.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/g)];
+    expect(styleBlocks.length).toBeGreaterThan(0);
+    for (const [, css] of styleBlocks) {
+      expect(css).not.toMatch(/(?:^|})\s*(?:html|body)\s*(?:,|\{)/m);
     }
   });
 
