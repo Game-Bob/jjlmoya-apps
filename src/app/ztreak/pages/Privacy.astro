@@ -1,10 +1,10 @@
 ---
 import type { KnownLocale } from '../../../types';
-import { privacyContent } from '@gamebob/ztreak/privacy';
+import privacyTranslations from '../privacy.json';
 import LegalLayout from './LegalLayout.astro';
 interface Props { locale: KnownLocale; basePath: string; }
 const { locale, basePath } = Astro.props;
-const content = privacyContent(locale);
+const content = privacyTranslations[locale];
 ---
 <LegalLayout {locale} {basePath} title={content.title}><p>{content.version}</p>{content.sections.map(section => <section><h2>{section.title}</h2><p>{section.text}</p></section>)}</LegalLayout>
 <style>

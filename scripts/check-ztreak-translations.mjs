@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 
 const locales = ['es', 'en', 'fr', 'de', 'it', 'pt', 'nl', 'sv', 'pl', 'id', 'tr', 'ru', 'ja', 'ko', 'zh'];
 const directory = new URL('../src/app/ztreak/i18n/', import.meta.url);
+const privacy = JSON.parse(readFileSync(new URL('../src/app/ztreak/privacy.json', import.meta.url), 'utf8'));
 const identicalTerms = new Map([
     ['it:navigation.privacy', 'Privacy'],
     ['nl:navigation.privacy', 'Privacy'],
@@ -19,6 +20,17 @@ function placeholders(value) {
 }
 
 const documents = Object.fromEntries(locales.map(locale => [locale, JSON.parse(readFileSync(new URL(`${locale}.json`, directory), 'utf8'))]));
+assert.deepEqual(Object.keys(privacy).sort(), [...locales].sort(), 'privacy policy locale coverage');
+for (const locale of locales) {
+    const policy = privacy[locale];
+    assert.ok(policy.title.trim(), `${locale}: privacy title`);
+    assert.ok(policy.version.trim(), `${locale}: privacy version`);
+    assert.equal(policy.sections.length, privacy.en.sections.length, `${locale}: privacy sections`);
+    for (const section of policy.sections) {
+        assert.ok(section.title.trim(), `${locale}: privacy section title`);
+        assert.ok(section.text.trim(), `${locale}: privacy section text`);
+    }
+}
 const reference = strings(documents.en);
 const referenceKeys = Object.keys(reference).sort();
 

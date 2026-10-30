@@ -1,0 +1,527 @@
+{
+  "es": {
+    "title": "Privacidad y tus datos",
+    "version": "Información de la versión actual · 20 de octubre de 2026",
+    "contact": "support@gamebob.dev",
+    "sections": [
+      {
+        "title": "Datos guardados",
+        "text": "Ztreak guarda en este dispositivo tus objetivos, nombres, registros, fechas, cantidades, borradores, preferencias y progreso de la Torre. Se usan para mostrar tu historial, calcular rachas y recuperar cambios. El acceso a cuenta es opcional. No incluye publicidad ni analítica."
+      },
+      {
+        "title": "Cuenta, sincronización y compras",
+        "text": "Iniciar sesión no activa la sincronización. Con tu consentimiento explícito y acceso Premium verificado, se envían objetivos, registros (que pueden incluir salud o uso digital) y progreso de la Torre a Google Firebase para sincronizar y recuperar tu partida. No es cifrado de extremo a extremo: administradores autorizados pueden acceder al contenido remoto. Retirar el consentimiento detiene nuevas subidas, pero no borra las copias existentes. La baja de cuenta elimina el progreso remoto y conserva una marca mínima para bloquear subidas antiguas; no cancela suscripciones de tienda. Apple o Google procesan el pago; RevenueCat procesa el identificador de tu cuenta Ztreak y datos de compras para verificar Premium, sin recibir objetivos ni registros."
+      },
+      {
+        "title": "Permisos opcionales",
+        "text": "Si conectas pasos, Ztreak lee los pasos y el histórico autorizado de Health Connect en Android o Salud en iOS para registrar tus objetivos. Si activas un objetivo de uso digital, consulta el tiempo de las apps seleccionadas mediante el acceso de uso de Android o las capacidades disponibles de iOS. No modifica los datos originales de Salud. Puedes retirar los permisos desde los ajustes del sistema; los registros ya guardados permanecen hasta que los borres."
+      },
+      {
+        "title": "Recordatorios y widget",
+        "text": "Los recordatorios usan las notificaciones del dispositivo. El widget comparte con la extensión del sistema el objetivo elegido y su progreso; puede mostrar información en la pantalla de inicio. Puedes desactivar el recordatorio y quitar el objetivo del widget desde Ajustes."
+      },
+      {
+        "title": "Exportaciones y copias",
+        "text": "Exportar JSON genera una copia con objetivos, registros, preferencias y progreso. Puede contener información sensible, como pasos, peso o uso digital. Tú decides dónde guardarla o con quién compartirla. Ztreak no controla las copias externas ni los proveedores elegidos. El sistema operativo también puede gestionar copias o transferencias de datos según tu configuración; no se ha certificado todavía su restauración. En iOS, el almacenamiento interno del progreso y del widget se excluye de las copias automáticas del sistema porque puede contener datos de salud. No dependas de iCloud para recuperar esta partida: conserva una exportación si necesitas una copia. En Android, las copias del sistema dependen de tus ajustes y requieren cifrado; su restauración aún debe comprobarse."
+      },
+      {
+        "title": "Borrado",
+        "text": "Borrar datos elimina los objetivos, registros, borradores y progreso de la Torre de la app, y vacía la selección del widget. Conserva preferencias como idioma, apariencia y recordatorio. Desactiva el recordatorio en Ajustes si no quieres recibirlo. También elimina las copias temporales de exportación dentro de la app. No borra los datos originales de Salud ni los archivos guardados o compartidos fuera de la app. Gestiona esas copias en el lugar donde las guardaste."
+      },
+      {
+        "title": "Enlaces externos",
+        "text": "Al usar el acceso opcional a cuenta, Firebase Authentication de Google procesa tu correo y las credenciales necesarias para autenticarte, verificar el correo y recuperar el acceso. Esta función no sube tu historial. Los enlaces externos y las tiendas tienen sus propias condiciones de privacidad. Al continuar con Google o Apple, el proveedor comparte con Firebase el identificador y los datos de perfil autorizados, como nombre, correo o foto. No solicitamos acceso a tus contactos, archivos o datos de Salud para iniciar sesión."
+      }
+    ]
+  },
+  "en": {
+    "title": "Privacy and your data",
+    "version": "Current version information · 20 October 2026",
+    "contact": "support@gamebob.dev",
+    "sections": [
+      {
+        "title": "Stored data",
+        "text": "Ztreak stores your goals, names, entries, dates, quantities, drafts, preferences and Tower progress on this device. They are used to show your history, calculate streaks and recover changes. Account sign-in is optional. There is no advertising or analytics."
+      },
+      {
+        "title": "Account, sync and purchases",
+        "text": "Signing in does not enable sync. With your explicit consent and verified Premium access, goals, entries (which may include health or digital usage) and Tower progress are sent to Google Firebase to sync and recover your progress. This is not end-to-end encryption: authorized administrators can access remote content. Withdrawing consent stops new uploads but does not delete existing copies. Deleting your account removes remote progress and keeps a minimal marker to block old uploads; it does not cancel store subscriptions. Apple or Google processes payment; RevenueCat processes your Ztreak account identifier and purchase data to verify Premium, without receiving goals or entries."
+      },
+      {
+        "title": "Optional permissions",
+        "text": "If you connect steps, Ztreak reads steps and authorized history from Health Connect on Android or Health on iOS to record your goals. If you enable a digital usage goal, it checks time spent in selected apps through Android usage access or the available iOS capabilities. It does not modify original Health data. You can revoke permissions in system settings; saved entries remain until you delete them."
+      },
+      {
+        "title": "Reminders and widget",
+        "text": "Reminders use device notifications. The widget shares the selected goal and its progress with the system extension; it may display information on your home screen. You can disable the reminder and remove the widget goal in Settings."
+      },
+      {
+        "title": "Exports and backups",
+        "text": "Export JSON creates a copy containing goals, entries, preferences and progress. It may contain sensitive information such as steps, weight or digital usage. You choose where to save it or who to share it with. Ztreak does not control external copies or your chosen providers. The operating system may also manage backups or data transfers according to your settings; restoration has not yet been certified. On iOS, internal progress and widget storage is excluded from automatic system backups because it may contain health data. Do not rely on iCloud to recover this progress: keep an export if you need a copy. On Android, system backups depend on your settings and require encryption; restoration still needs verification."
+      },
+      {
+        "title": "Deletion",
+        "text": "Delete data removes goals, entries, drafts and Tower progress from the app, and clears the widget selection. Preferences such as language, appearance and reminder remain. Disable the reminder in Settings if you no longer want it. It also removes temporary export copies inside the app. It does not delete original Health data or files saved or shared outside the app. Manage those copies where you saved them."
+      },
+      {
+        "title": "External links",
+        "text": "When you use optional account sign-in, Google Firebase Authentication processes your email and the credentials needed to sign in, verify your email and recover access. This feature does not upload your history. External websites and stores have their own privacy terms. When you continue with Google or Apple, the provider shares your identifier and authorized profile data, such as name, email or photo, with Firebase. We do not request access to contacts, files or Health data to sign in."
+      }
+    ]
+  },
+  "fr": {
+    "title": "Confidentialité et vos données",
+    "version": "Informations sur la version actuelle · 20 octobre 2026",
+    "contact": "support@gamebob.dev",
+    "sections": [
+      {
+        "title": "Données enregistrées",
+        "text": "Ztreak enregistre sur cet appareil vos objectifs, noms, entrées, dates, quantités, brouillons, préférences et progrès de la Tour. Ils servent à afficher votre historique, calculer les séries et récupérer les modifications. La connexion à un compte est facultative. Il n’y a ni publicité ni analyse d’usage."
+      },
+      {
+        "title": "Compte, synchronisation et achats",
+        "text": "La connexion n’active pas la synchronisation. Avec votre consentement explicite et un accès Premium vérifié, les objectifs, les entrées (pouvant inclure des données de santé ou d’usage numérique) et la progression de la Tour sont envoyés à Google Firebase pour synchroniser et restaurer votre progression. Le chiffrement n’est pas de bout en bout : les administrateurs autorisés peuvent accéder au contenu distant. Retirer le consentement arrête les nouveaux envois sans effacer les copies existantes. Supprimer le compte efface la progression distante et conserve une marque minimale bloquant les anciens envois, sans résilier les abonnements des boutiques. Apple ou Google traite le paiement ; RevenueCat traite l’identifiant du compte Ztreak et les données d’achat pour vérifier Premium, sans recevoir les objectifs ni les entrées."
+      },
+      {
+        "title": "Permissions facultatives",
+        "text": "Si vous connectez les pas, Ztreak lit les pas et l’historique autorisé dans Health Connect sur Android ou Santé sur iOS pour enregistrer vos objectifs. Si vous activez un objectif d’usage numérique, l’app consulte le temps passé dans les applications sélectionnées via l’accès à l’usage Android ou les capacités iOS disponibles. Elle ne modifie pas les données originales de Santé. Vous pouvez retirer les permissions dans les réglages du système ; les entrées enregistrées restent jusqu’à leur suppression."
+      },
+      {
+        "title": "Rappels et widget",
+        "text": "Les rappels utilisent les notifications de l’appareil. Le widget partage l’objectif sélectionné et ses progrès avec l’extension du système ; des informations peuvent être affichées sur votre écran d’accueil. Vous pouvez désactiver le rappel et retirer l’objectif du widget dans Réglages."
+      },
+      {
+        "title": "Exportations et sauvegardes",
+        "text": "Exporter en JSON crée une copie des objectifs, entrées, préférences et progrès. Elle peut contenir des informations sensibles comme les pas, le poids ou l’usage numérique. Vous choisissez où l’enregistrer et avec qui la partager. Ztreak ne contrôle ni les copies externes ni les fournisseurs que vous choisissez. Le système peut aussi gérer des sauvegardes ou transferts selon vos réglages ; leur restauration n’a pas encore été certifiée. Sur iOS, le stockage interne de la progression et du widget est exclu des sauvegardes automatiques du système, car il peut contenir des données de santé. Ne compte pas sur iCloud pour récupérer cette progression : conserve une exportation si tu as besoin d’une copie. Sur Android, les sauvegardes système dépendent de tes réglages et nécessitent le chiffrement ; la restauration reste à vérifier."
+      },
+      {
+        "title": "Suppression",
+        "text": "Effacer les données supprime les objectifs, entrées, brouillons et progrès de la Tour dans l’app, et vide la sélection du widget. Les préférences comme la langue, l’apparence et le rappel restent. Désactivez le rappel dans Réglages si vous n’en voulez plus. Les copies temporaires d’exportation dans l’app sont aussi supprimées. Cela ne supprime ni les données originales de Santé ni les fichiers enregistrés ou partagés en dehors de l’app. Gérez ces copies là où vous les avez enregistrées."
+      },
+      {
+        "title": "Liens externes",
+        "text": "Lors de la connexion facultative, Firebase Authentication de Google traite votre adresse e-mail et les identifiants nécessaires à la connexion, à la vérification de l’adresse et à la récupération de l’accès. Cette fonction ne transfère pas votre historique. Les sites externes et les boutiques ont leurs propres règles de confidentialité. Avec Google ou Apple, le fournisseur partage avec Firebase votre identifiant et les données de profil autorisées, comme le nom, l’adresse e-mail ou la photo. Aucun accès aux contacts, fichiers ou données de Santé n’est demandé pour la connexion."
+      }
+    ]
+  },
+  "de": {
+    "title": "Datenschutz und deine Daten",
+    "version": "Informationen zur aktuellen Version · 20. Oktober 2026",
+    "contact": "support@gamebob.dev",
+    "sections": [
+      {
+        "title": "Gespeicherte Daten",
+        "text": "Ztreak speichert Ziele, Namen, Einträge, Daten, Mengen, Entwürfe, Einstellungen und Turmfortschritt auf diesem Gerät. Sie dienen dazu, den Verlauf anzuzeigen, Serien zu berechnen und Änderungen wiederherzustellen. Die Kontoanmeldung ist freiwillig. Es gibt keine Werbung oder Analyse."
+      },
+      {
+        "title": "Konto, Synchronisierung und Käufe",
+        "text": "Die Anmeldung aktiviert keine Synchronisierung. Mit deiner ausdrücklichen Einwilligung und geprüftem Premium-Zugang werden Ziele, Einträge (auch Gesundheits- oder Nutzungsdaten) und Turmfortschritt an Google Firebase gesendet, um deinen Fortschritt zu synchronisieren und wiederherzustellen. Es gibt keine Ende-zu-Ende-Verschlüsselung: Berechtigte Administratoren können auf entfernte Inhalte zugreifen. Ein Widerruf stoppt neue Uploads, löscht aber keine vorhandenen Kopien. Die Kontolöschung entfernt den entfernten Fortschritt und behält eine minimale Sperrmarkierung für alte Uploads; Store-Abonnements werden nicht gekündigt. Apple oder Google wickelt die Zahlung ab; RevenueCat verarbeitet deine Ztreak-Konto-ID und Kaufdaten zur Premium-Prüfung, ohne Ziele oder Einträge zu erhalten."
+      },
+      {
+        "title": "Optionale Berechtigungen",
+        "text": "Wenn du Schritte verbindest, liest Ztreak Schritte und freigegebenen Verlauf aus Health Connect unter Android oder Health unter iOS, um deine Ziele einzutragen. Aktivierst du ein Ziel zur digitalen Nutzung, prüft die App Nutzungszeit ausgewählter Apps über den Android-Nutzungszugriff oder verfügbare iOS-Funktionen. Ursprüngliche Gesundheitsdaten werden nicht verändert. Berechtigungen kannst du in den Systemeinstellungen widerrufen; gespeicherte Einträge bleiben bis zur Löschung erhalten."
+      },
+      {
+        "title": "Erinnerungen und Widget",
+        "text": "Erinnerungen verwenden Gerätebenachrichtigungen. Das Widget teilt das ausgewählte Ziel und seinen Fortschritt mit der Systemerweiterung und kann Informationen auf dem Startbildschirm anzeigen. Du kannst die Erinnerung deaktivieren und das Widget-Ziel in den Einstellungen entfernen."
+      },
+      {
+        "title": "Exporte und Sicherungen",
+        "text": "JSON exportieren erstellt eine Kopie mit Zielen, Einträgen, Einstellungen und Fortschritt. Sie kann sensible Informationen wie Schritte, Gewicht oder digitale Nutzung enthalten. Du entscheidest, wo du sie speicherst und mit wem du sie teilst. Ztreak kontrolliert externe Kopien und gewählte Anbieter nicht. Das Betriebssystem kann gemäß deinen Einstellungen Sicherungen und Datenübertragungen verwalten; deren Wiederherstellung ist noch nicht zertifiziert. Unter iOS sind der interne Fortschritt und die Widget-Daten von automatischen Systemsicherungen ausgeschlossen, da sie Gesundheitsdaten enthalten können. Verlasse dich zur Wiederherstellung nicht auf iCloud: Bewahre bei Bedarf einen Export auf. Unter Android hängen Systemsicherungen von deinen Einstellungen ab und erfordern Verschlüsselung; die Wiederherstellung muss noch geprüft werden."
+      },
+      {
+        "title": "Löschung",
+        "text": "Daten löschen entfernt Ziele, Einträge, Entwürfe und Turmfortschritt aus der App und löscht die Widget-Auswahl. Einstellungen wie Sprache, Darstellung und Erinnerung bleiben erhalten. Deaktiviere die Erinnerung in den Einstellungen, wenn du sie nicht mehr möchtest. Temporäre Exportkopien in der App werden ebenfalls entfernt. Ursprüngliche Gesundheitsdaten und außerhalb der App gespeicherte oder geteilte Dateien werden nicht gelöscht. Verwalte diese Kopien am Speicherort."
+      },
+      {
+        "title": "Externe Links",
+        "text": "Bei der freiwilligen Kontoanmeldung verarbeitet Google Firebase Authentication deine E-Mail-Adresse und die für Anmeldung, E-Mail-Bestätigung und Wiederherstellung nötigen Zugangsdaten. Diese Funktion lädt deinen Verlauf nicht hoch. Externe Websites und Stores haben eigene Datenschutzbedingungen. Bei Google oder Apple teilt der Anbieter deine Kennung und freigegebene Profildaten wie Name, E-Mail oder Foto mit Firebase. Für die Anmeldung wird kein Zugriff auf Kontakte, Dateien oder Gesundheitsdaten angefordert."
+      }
+    ]
+  },
+  "it": {
+    "title": "Privacy e i tuoi dati",
+    "version": "Informazioni sulla versione attuale · 20 ottobre 2026",
+    "contact": "support@gamebob.dev",
+    "sections": [
+      {
+        "title": "Dati salvati",
+        "text": "Ztreak salva obiettivi, nomi, registrazioni, date, quantità, bozze, preferenze e progressi della Torre su questo dispositivo. Servono a mostrare la cronologia, calcolare le serie e recuperare modifiche. L’accesso a un account è facoltativo. Non include pubblicità o analisi."
+      },
+      {
+        "title": "Account, sincronizzazione e acquisti",
+        "text": "Accedere non attiva la sincronizzazione. Con il tuo consenso esplicito e un accesso Premium verificato, obiettivi, registrazioni (anche relative a salute o uso digitale) e progressi della Torre vengono inviati a Google Firebase per sincronizzare e recuperare i progressi. Non è crittografia end-to-end: gli amministratori autorizzati possono accedere ai contenuti remoti. Revocare il consenso interrompe i nuovi invii, senza eliminare le copie esistenti. Eliminare l’account rimuove i progressi remoti e conserva un indicatore minimo per bloccare i vecchi invii; non annulla gli abbonamenti dello store. Apple o Google gestisce il pagamento; RevenueCat elabora l’identificativo dell’account Ztreak e i dati di acquisto per verificare Premium, senza ricevere obiettivi o registrazioni."
+      },
+      {
+        "title": "Permessi facoltativi",
+        "text": "Se colleghi i passi, Ztreak legge passi e cronologia autorizzata da Health Connect su Android o Salute su iOS per registrare gli obiettivi. Se attivi un obiettivo di uso digitale, controlla il tempo nelle app selezionate tramite l'accesso all'utilizzo di Android o le capacità disponibili su iOS. Non modifica i dati originali di Salute. Puoi revocare i permessi nelle impostazioni di sistema; le registrazioni restano finché non le elimini."
+      },
+      {
+        "title": "Promemoria e widget",
+        "text": "I promemoria usano le notifiche del dispositivo. Il widget condivide l'obiettivo selezionato e i progressi con l'estensione di sistema; può mostrare informazioni sulla schermata iniziale. Puoi disattivare il promemoria e rimuovere l'obiettivo del widget nelle Impostazioni."
+      },
+      {
+        "title": "Esportazioni e backup",
+        "text": "Esporta JSON crea una copia con obiettivi, registrazioni, preferenze e progressi. Può contenere informazioni sensibili come passi, peso o uso digitale. Decidi tu dove salvarla o con chi condividerla. Ztreak non controlla le copie esterne o i fornitori scelti. Anche il sistema operativo può gestire backup o trasferimenti secondo le tue impostazioni; il ripristino non è ancora certificato. Su iOS, i dati interni dei progressi e del widget sono esclusi dai backup automatici del sistema perché possono contenere dati sanitari. Non affidarti a iCloud per recuperare questi progressi: conserva un’esportazione se ti serve una copia. Su Android, i backup di sistema dipendono dalle impostazioni e richiedono la crittografia; il ripristino deve ancora essere verificato."
+      },
+      {
+        "title": "Eliminazione",
+        "text": "Elimina dati rimuove obiettivi, registrazioni, bozze e progressi della Torre dall'app e cancella la selezione del widget. Preferenze come lingua, aspetto e promemoria restano. Disattiva il promemoria nelle Impostazioni se non lo vuoi più. Rimuove anche le copie temporanee di esportazione nell'app. Non elimina i dati originali di Salute o i file salvati o condivisi fuori dall'app. Gestisci queste copie dove le hai salvate."
+      },
+      {
+        "title": "Link esterni",
+        "text": "Con l’accesso facoltativo, Firebase Authentication di Google elabora l’indirizzo email e le credenziali necessarie per accedere, verificare l’email e recuperare l’accesso. Questa funzione non carica la cronologia. I siti esterni e gli store hanno proprie condizioni sulla privacy. Con Google o Apple, il fornitore condivide con Firebase l’identificativo e i dati del profilo autorizzati, come nome, email o foto. Per accedere non chiediamo accesso a contatti, file o dati di Salute."
+      }
+    ]
+  },
+  "pt": {
+    "title": "Privacidade e os teus dados",
+    "version": "Informações da versão atual · 20 de outubro de 2026",
+    "contact": "support@gamebob.dev",
+    "sections": [
+      {
+        "title": "Dados guardados",
+        "text": "O Ztreak guarda objetivos, nomes, registos, datas, quantidades, rascunhos, preferências e progresso da Torre neste dispositivo. São usados para mostrar o histórico, calcular sequências e recuperar alterações. O acesso a uma conta é opcional. Não inclui publicidade nem análise de utilização."
+      },
+      {
+        "title": "Conta, sincronização e compras",
+        "text": "Entrar na conta não ativa a sincronização. Com o teu consentimento explícito e acesso Premium verificado, os objetivos, registos (que podem incluir saúde ou uso digital) e progresso da Torre são enviados para o Google Firebase para sincronizar e recuperar a partida. Não há cifragem de ponta a ponta: administradores autorizados podem aceder ao conteúdo remoto. Retirar o consentimento interrompe novos envios, mas não apaga cópias existentes. Eliminar a conta remove o progresso remoto e conserva uma marca mínima para bloquear envios antigos; não cancela subscrições da loja. A Apple ou a Google processa o pagamento; o RevenueCat processa o identificador da conta Ztreak e os dados de compras para verificar o Premium, sem receber objetivos ou registos."
+      },
+      {
+        "title": "Permissões opcionais",
+        "text": "Se ligares os passos, o Ztreak lê os passos e o histórico autorizado do Health Connect no Android ou da Saúde no iOS para registar os objetivos. Se ativares um objetivo de utilização digital, consulta o tempo nas apps selecionadas através do acesso à utilização do Android ou das capacidades disponíveis do iOS. Não altera os dados originais de Saúde. Podes revogar permissões nas definições do sistema; os registos guardados mantêm-se até os apagares."
+      },
+      {
+        "title": "Lembretes e widget",
+        "text": "Os lembretes usam notificações do dispositivo. O widget partilha o objetivo selecionado e o progresso com a extensão do sistema; pode apresentar informação no ecrã inicial. Podes desativar o lembrete e remover o objetivo do widget nas Definições."
+      },
+      {
+        "title": "Exportações e cópias",
+        "text": "Exportar JSON cria uma cópia com objetivos, registos, preferências e progresso. Pode conter informação sensível como passos, peso ou utilização digital. Tu escolhes onde guardar ou com quem partilhar. O Ztreak não controla cópias externas nem os fornecedores escolhidos. O sistema operativo também pode gerir cópias ou transferências conforme as tuas definições; o restauro ainda não foi certificado. No iOS, o armazenamento interno do progresso e do widget é excluído das cópias automáticas do sistema porque pode conter dados de saúde. Não dependas do iCloud para recuperar este progresso: guarda uma exportação se precisares de uma cópia. No Android, as cópias do sistema dependem das tuas definições e exigem encriptação; o restauro ainda precisa de ser verificado."
+      },
+      {
+        "title": "Eliminação",
+        "text": "Apagar dados remove objetivos, registos, rascunhos e progresso da Torre da app e limpa a seleção do widget. Preferências como idioma, aparência e lembrete mantêm-se. Desativa o lembrete nas Definições se já não o quiseres. Também remove cópias temporárias de exportação dentro da app. Não apaga dados originais de Saúde nem ficheiros guardados ou partilhados fora da app. Gere essas cópias onde as guardaste."
+      },
+      {
+        "title": "Ligações externas",
+        "text": "Ao usar o acesso opcional à conta, o Firebase Authentication da Google processa o teu email e as credenciais necessárias para entrar, verificar o email e recuperar o acesso. Esta função não envia o teu histórico. Os sites externos e as lojas têm as suas próprias condições de privacidade. Ao continuar com a Google ou a Apple, o fornecedor partilha com o Firebase o identificador e os dados de perfil autorizados, como nome, email ou fotografia. Não pedimos acesso a contactos, ficheiros ou dados de Saúde para entrar."
+      }
+    ]
+  },
+  "nl": {
+    "title": "Privacy en je gegevens",
+    "version": "Informatie over de huidige versie · 20 oktober 2026",
+    "contact": "support@gamebob.dev",
+    "sections": [
+      {
+        "title": "Opgeslagen gegevens",
+        "text": "Ztreak bewaart je doelen, namen, registraties, datums, hoeveelheden, concepten, voorkeuren en Torenvoortgang op dit apparaat. Ze worden gebruikt om je geschiedenis te tonen, reeksen te berekenen en wijzigingen te herstellen. Aanmelden bij een account is optioneel. Er zijn geen advertenties of analyses."
+      },
+      {
+        "title": "Account, synchronisatie en aankopen",
+        "text": "Aanmelden schakelt synchronisatie niet in. Met je uitdrukkelijke toestemming en geverifieerde Premium-toegang worden doelen, registraties (mogelijk met gezondheids- of gebruiksgegevens) en Torenvoortgang naar Google Firebase gestuurd om je voortgang te synchroniseren en te herstellen. Er is geen end-to-endversleuteling: bevoegde beheerders kunnen externe inhoud inzien. Toestemming intrekken stopt nieuwe uploads, maar verwijdert bestaande kopieën niet. Je account verwijderen wist externe voortgang en bewaart een minimale markering om oude uploads te blokkeren; winkelabonnementen worden niet opgezegd. Apple of Google verwerkt betalingen; RevenueCat verwerkt je Ztreak-account-ID en aankoopgegevens om Premium te controleren, zonder doelen of registraties te ontvangen."
+      },
+      {
+        "title": "Optionele machtigingen",
+        "text": "Als je stappen koppelt, leest Ztreak stappen en toegestane geschiedenis uit Health Connect op Android of Gezondheid op iOS om je doelen te registreren. Een doel voor digitaal gebruik leest de tijd in geselecteerde apps via Android-gebruikstoegang of beschikbare iOS-mogelijkheden. Originele Gezondheid-gegevens worden niet gewijzigd. Je kunt machtigingen in de systeeminstellingen intrekken; opgeslagen registraties blijven tot je ze verwijdert."
+      },
+      {
+        "title": "Herinneringen en widget",
+        "text": "Herinneringen gebruiken apparaatmeldingen. De widget deelt het geselecteerde doel en zijn voortgang met de systeemuitbreiding; informatie kan op je startscherm verschijnen. Je kunt de herinnering uitschakelen en het widgetdoel verwijderen in Instellingen."
+      },
+      {
+        "title": "Exporten en reservekopieën",
+        "text": "JSON exporteren maakt een kopie met doelen, registraties, voorkeuren en voortgang. Die kan gevoelige informatie bevatten, zoals stappen, gewicht of digitaal gebruik. Jij kiest waar je die opslaat of met wie je die deelt. Ztreak beheert externe kopieën en gekozen aanbieders niet. Het besturingssysteem kan volgens je instellingen ook reservekopieën of gegevensoverdracht beheren; herstel is nog niet gecertificeerd. Op iOS worden de interne voortgangs- en widgetgegevens uitgesloten van automatische systeemback-ups, omdat ze gezondheidsgegevens kunnen bevatten. Vertrouw niet op iCloud om deze voortgang te herstellen: bewaar zo nodig een export. Op Android hangen systeemback-ups af van je instellingen en is versleuteling vereist; het herstel moet nog worden gecontroleerd."
+      },
+      {
+        "title": "Verwijderen",
+        "text": "Gegevens verwijderen wist doelen, registraties, concepten en Torenvoortgang uit de app en verwijdert de widgetselectie. Voorkeuren zoals taal, uiterlijk en herinnering blijven behouden. Schakel de herinnering in Instellingen uit als je die niet meer wilt. Ook tijdelijke exportkopieën in de app worden verwijderd. Originele Gezondheid-gegevens en bestanden die buiten de app zijn opgeslagen of gedeeld, blijven behouden. Beheer die kopieën waar je ze hebt opgeslagen."
+      },
+      {
+        "title": "Externe links",
+        "text": "Bij optioneel aanmelden verwerkt Google Firebase Authentication je e-mailadres en de inloggegevens die nodig zijn voor aanmelden, e-mailverificatie en herstel van toegang. Deze functie uploadt je geschiedenis niet. Externe websites en winkels hebben hun eigen privacyvoorwaarden. Bij Google of Apple deelt de aanbieder je identificatie en toegestane profielgegevens, zoals naam, e-mail of foto, met Firebase. Aanmelden vraagt geen toegang tot contacten, bestanden of Gezondheidsgegevens."
+      }
+    ]
+  },
+  "sv": {
+    "title": "Integritet och dina data",
+    "version": "Information om aktuell version · 20 oktober 2026",
+    "contact": "support@gamebob.dev",
+    "sections": [
+      {
+        "title": "Lagrade data",
+        "text": "Ztreak lagrar mål, namn, registreringar, datum, mängder, utkast, inställningar och Tornframsteg på den här enheten. De används för att visa historik, beräkna sviter och återställa ändringar. Kontoinloggning är valfri. Det finns inga annonser eller analyser."
+      },
+      {
+        "title": "Konto, synkronisering och köp",
+        "text": "Inloggning aktiverar inte synkronisering. Med ditt uttryckliga samtycke och verifierad Premium-åtkomst skickas mål, registreringar (som kan omfatta hälsa eller digital användning) och Tornframsteg till Google Firebase för synkronisering och återställning. Krypteringen är inte från ände till ände: behöriga administratörer kan läsa fjärrinnehållet. Återkallat samtycke stoppar nya uppladdningar men raderar inte befintliga kopior. Kontoborttagning raderar fjärrframsteg och behåller en minimal markering för att blockera gamla uppladdningar; butiksprenumerationer avslutas inte. Apple eller Google hanterar betalningen; RevenueCat behandlar ditt Ztreak-konto-ID och köpdata för att verifiera Premium, utan att få mål eller registreringar."
+      },
+      {
+        "title": "Valfria behörigheter",
+        "text": "Om du ansluter steg läser Ztreak steg och godkänd historik från Health Connect på Android eller Hälsa på iOS för att registrera mål. Ett mål för digital användning hämtar tid i valda appar via Androids användningsåtkomst eller tillgängliga iOS-funktioner. Ursprungliga Hälsodata ändras inte. Du kan återkalla behörigheter i systeminställningarna; sparade registreringar finns kvar tills du raderar dem."
+      },
+      {
+        "title": "Påminnelser och widget",
+        "text": "Påminnelser använder enhetens aviseringar. Widgeten delar det valda målet och dess framsteg med systemtillägget; information kan visas på hemskärmen. Du kan stänga av påminnelsen och ta bort widgetmålet i Inställningar."
+      },
+      {
+        "title": "Exporter och säkerhetskopior",
+        "text": "Exportera JSON skapar en kopia med mål, registreringar, inställningar och framsteg. Den kan innehålla känslig information som steg, vikt eller digital användning. Du väljer var du sparar den eller vem du delar den med. Ztreak kontrollerar inte externa kopior eller dina valda leverantörer. Operativsystemet kan också hantera säkerhetskopior eller dataöverföringar enligt dina inställningar; återställning har ännu inte certifierats. På iOS undantas den interna lagringen av framsteg och widgetdata från automatiska systemsäkerhetskopior eftersom den kan innehålla hälsodata. Förlita dig inte på iCloud för att återställa dessa framsteg: spara en export om du behöver en kopia. På Android beror systemets säkerhetskopior på dina inställningar och kräver kryptering; återställningen behöver fortfarande verifieras."
+      },
+      {
+        "title": "Radering",
+        "text": "Radera data tar bort mål, registreringar, utkast och Tornframsteg från appen och rensar widgetvalet. Inställningar som språk, utseende och påminnelse behålls. Stäng av påminnelsen i Inställningar om du inte vill ha den längre. Tillfälliga exportkopior i appen tas också bort. Ursprungliga Hälsodata och filer som sparats eller delats utanför appen raderas inte. Hantera dessa kopior där du sparade dem."
+      },
+      {
+        "title": "Externa länkar",
+        "text": "Vid valfri kontoinloggning behandlar Google Firebase Authentication din e-postadress och de uppgifter som behövs för inloggning, e-postverifiering och återställning av åtkomst. Funktionen laddar inte upp din historik. Externa webbplatser och butiker har egna integritetsvillkor. Med Google eller Apple delar leverantören ditt ID och godkända profiluppgifter, som namn, e-post eller foto, med Firebase. Inloggning kräver inte åtkomst till kontakter, filer eller Hälsodata."
+      }
+    ]
+  },
+  "pl": {
+    "title": "Prywatność i Twoje dane",
+    "version": "Informacje o obecnej wersji · 20 października 2026",
+    "contact": "support@gamebob.dev",
+    "sections": [
+      {
+        "title": "Przechowywane dane",
+        "text": "Ztreak przechowuje na tym urządzeniu cele, nazwy, wpisy, daty, ilości, szkice, preferencje i postęp Wieży. Służą do wyświetlania historii, obliczania serii i odzyskiwania zmian. Logowanie do konta jest opcjonalne. Nie ma reklam ani analityki."
+      },
+      {
+        "title": "Konto, synchronizacja i zakupy",
+        "text": "Logowanie nie włącza synchronizacji. Za wyraźną zgodą i po weryfikacji dostępu Premium cele, wpisy (mogące obejmować zdrowie lub korzystanie z urządzenia) i postęp Wieży są wysyłane do Google Firebase w celu synchronizacji i odzyskania postępów. Nie jest to szyfrowanie od końca do końca: uprawnieni administratorzy mogą odczytać zdalną zawartość. Wycofanie zgody zatrzymuje nowe wysyłki, ale nie usuwa istniejących kopii. Usunięcie konta usuwa zdalne postępy i zachowuje minimalny znacznik blokujący stare wysyłki; nie anuluje subskrypcji sklepu. Apple lub Google obsługuje płatność; RevenueCat przetwarza identyfikator konta Ztreak i dane zakupów do weryfikacji Premium, bez otrzymywania celów ani wpisów."
+      },
+      {
+        "title": "Opcjonalne uprawnienia",
+        "text": "Jeśli połączysz kroki, Ztreak odczytuje kroki i dozwoloną historię z Health Connect na Androidzie lub Zdrowia na iOS, aby zapisywać cele. Cel korzystania z urządzenia sprawdza czas w wybranych aplikacjach przez dostęp do użytkowania Androida lub dostępne możliwości iOS. Nie modyfikuje oryginalnych danych Zdrowia. Uprawnienia możesz cofnąć w ustawieniach systemu; zapisane wpisy pozostają do ich usunięcia."
+      },
+      {
+        "title": "Przypomnienia i widżet",
+        "text": "Przypomnienia używają powiadomień urządzenia. Widżet przekazuje wybrany cel i jego postęp rozszerzeniu systemowemu; może wyświetlać informacje na ekranie głównym. Przypomnienie możesz wyłączyć, a cel widżetu usunąć w Ustawieniach."
+      },
+      {
+        "title": "Eksporty i kopie zapasowe",
+        "text": "Eksport JSON tworzy kopię zawierającą cele, wpisy, preferencje i postęp. Może zawierać wrażliwe informacje, takie jak kroki, masa ciała lub korzystanie z urządzenia. Wybierasz miejsce zapisu i osoby, którym ją udostępnisz. Ztreak nie kontroluje kopii zewnętrznych ani wybranych dostawców. System operacyjny może też zarządzać kopiami lub transferami danych zgodnie z ustawieniami; przywracanie nie zostało jeszcze certyfikowane. W iOS wewnętrzne dane postępów i widżetu są wyłączone z automatycznych kopii systemowych, ponieważ mogą zawierać dane zdrowotne. Nie polegaj na iCloud przy odzyskiwaniu postępów: zachowaj eksport, jeśli potrzebujesz kopii. W Androidzie kopie systemowe zależą od ustawień i wymagają szyfrowania; przywracanie nadal wymaga weryfikacji."
+      },
+      {
+        "title": "Usuwanie",
+        "text": "Usuń dane usuwa z aplikacji cele, wpisy, szkice i postęp Wieży oraz czyści wybór widżetu. Preferencje, takie jak język, wygląd i przypomnienie, pozostają. Wyłącz przypomnienie w Ustawieniach, jeśli już go nie chcesz. Usuwane są też tymczasowe kopie eksportu wewnątrz aplikacji. Oryginalne dane Zdrowia i pliki zapisane lub udostępnione poza aplikacją nie są usuwane. Zarządzaj tymi kopiami tam, gdzie je zapisano."
+      },
+      {
+        "title": "Linki zewnętrzne",
+        "text": "Przy opcjonalnym logowaniu Firebase Authentication firmy Google przetwarza adres e-mail i dane uwierzytelniające potrzebne do logowania, weryfikacji adresu i odzyskania dostępu. Ta funkcja nie przesyła historii. Zewnętrzne witryny i sklepy mają własne zasady prywatności. Przy logowaniu przez Google lub Apple dostawca udostępnia Firebase identyfikator i dozwolone dane profilu, takie jak imię, e-mail lub zdjęcie. Logowanie nie wymaga dostępu do kontaktów, plików ani danych Zdrowia."
+      }
+    ]
+  },
+  "id": {
+    "title": "Privasi dan data Anda",
+    "version": "Informasi versi saat ini · 20 Oktober 2026",
+    "contact": "support@gamebob.dev",
+    "sections": [
+      {
+        "title": "Data tersimpan",
+        "text": "Ztreak menyimpan tujuan, nama, catatan, tanggal, jumlah, draf, preferensi, dan progres Menara di perangkat ini. Data digunakan untuk menampilkan riwayat, menghitung rentetan, dan memulihkan perubahan. Masuk ke akun bersifat opsional. Tidak ada iklan atau analitik."
+      },
+      {
+        "title": "Akun, sinkronisasi, dan pembelian",
+        "text": "Masuk tidak mengaktifkan sinkronisasi. Dengan persetujuan eksplisit dan akses Premium yang terverifikasi, tujuan, catatan (yang dapat mencakup kesehatan atau penggunaan digital), dan progres Menara dikirim ke Google Firebase untuk sinkronisasi dan pemulihan. Ini bukan enkripsi ujung ke ujung: administrator berwenang dapat mengakses konten jarak jauh. Menarik persetujuan menghentikan unggahan baru tanpa menghapus salinan yang ada. Menghapus akun menghapus progres jarak jauh dan menyimpan penanda minimal untuk memblokir unggahan lama; langganan toko tidak dibatalkan. Apple atau Google memproses pembayaran; RevenueCat memproses ID akun Ztreak dan data pembelian untuk memverifikasi Premium, tanpa menerima tujuan atau catatan."
+      },
+      {
+        "title": "Izin opsional",
+        "text": "Jika menghubungkan langkah, Ztreak membaca langkah dan riwayat yang diizinkan dari Health Connect di Android atau Kesehatan di iOS untuk mencatat tujuan Anda. Jika mengaktifkan tujuan penggunaan digital, aplikasi memeriksa waktu dalam aplikasi terpilih melalui akses penggunaan Android atau kemampuan iOS yang tersedia. Data Kesehatan asli tidak diubah. Anda dapat mencabut izin di pengaturan sistem; catatan tersimpan tetap ada hingga dihapus."
+      },
+      {
+        "title": "Pengingat dan widget",
+        "text": "Pengingat menggunakan notifikasi perangkat. Widget membagikan tujuan terpilih dan progresnya dengan ekstensi sistem; informasi mungkin tampil di layar utama. Anda dapat menonaktifkan pengingat dan menghapus tujuan widget di Pengaturan."
+      },
+      {
+        "title": "Ekspor dan cadangan",
+        "text": "Ekspor JSON membuat salinan berisi tujuan, catatan, preferensi, dan progres. Salinan mungkin berisi informasi sensitif seperti langkah, berat badan, atau penggunaan digital. Anda memilih tempat menyimpan atau orang yang menerimanya. Ztreak tidak mengendalikan salinan eksternal atau penyedia pilihan Anda. Sistem operasi juga dapat mengelola cadangan atau transfer data sesuai pengaturan Anda; pemulihan belum disertifikasi. Di iOS, penyimpanan internal progres dan widget tidak disertakan dalam pencadangan sistem otomatis karena dapat berisi data kesehatan. Jangan mengandalkan iCloud untuk memulihkan progres ini: simpan hasil ekspor jika memerlukan salinan. Di Android, pencadangan sistem bergantung pada pengaturanmu dan memerlukan enkripsi; pemulihannya masih perlu diverifikasi."
+      },
+      {
+        "title": "Penghapusan",
+        "text": "Hapus data menghapus tujuan, catatan, draf, dan progres Menara dari aplikasi, serta mengosongkan pilihan widget. Preferensi seperti bahasa, tampilan, dan pengingat tetap tersimpan. Nonaktifkan pengingat di Pengaturan jika tidak menginginkannya lagi. Salinan ekspor sementara di dalam aplikasi juga dihapus. Data Kesehatan asli atau berkas yang disimpan atau dibagikan di luar aplikasi tidak dihapus. Kelola salinan tersebut di tempat Anda menyimpannya."
+      },
+      {
+        "title": "Tautan eksternal",
+        "text": "Saat memakai login akun opsional, Firebase Authentication dari Google memproses email dan kredensial yang diperlukan untuk masuk, memverifikasi email, dan memulihkan akses. Fitur ini tidak mengunggah riwayat Anda. Situs eksternal dan toko memiliki ketentuan privasi sendiri. Saat melanjutkan dengan Google atau Apple, penyedia membagikan pengenal dan data profil yang diizinkan, seperti nama, email, atau foto, ke Firebase. Login tidak meminta akses ke kontak, berkas, atau data Kesehatan."
+      }
+    ]
+  },
+  "tr": {
+    "title": "Gizlilik ve verileriniz",
+    "version": "Mevcut sürüm bilgileri · 20 Ekim 2026",
+    "contact": "support@gamebob.dev",
+    "sections": [
+      {
+        "title": "Saklanan veriler",
+        "text": "Ztreak hedeflerinizi, adları, kayıtları, tarihleri, miktarları, taslakları, tercihleri ve Kule ilerlemesini bu cihazda saklar. Bunlar geçmişinizi göstermek, serileri hesaplamak ve değişiklikleri kurtarmak için kullanılır. Hesaba giriş isteğe bağlıdır. Reklam veya analiz içermez."
+      },
+      {
+        "title": "Hesap, eşitleme ve satın alımlar",
+        "text": "Giriş yapmak eşitlemeyi etkinleştirmez. Açık onayınız ve doğrulanmış Premium erişiminizle hedefler, kayıtlar (sağlık veya dijital kullanım içerebilir) ve Kule ilerlemesi, eşitleme ve kurtarma için Google Firebase’e gönderilir. Uçtan uca şifreleme yoktur: yetkili yöneticiler uzak içeriğe erişebilir. Onayı geri çekmek yeni yüklemeleri durdurur ancak mevcut kopyaları silmez. Hesabı silmek uzak ilerlemeyi siler ve eski yüklemeleri engelleyen asgari bir işaret tutar; mağaza aboneliklerini iptal etmez. Ödemeyi Apple veya Google işler; RevenueCat, Premium’u doğrulamak için Ztreak hesap kimliğini ve satın alma verilerini işler, hedefleri veya kayıtları almaz."
+      },
+      {
+        "title": "İsteğe bağlı izinler",
+        "text": "Adımları bağlarsanız Ztreak hedeflerinizi kaydetmek için Android’de Health Connect veya iOS’ta Sağlık’tan adımları ve izin verilen geçmişi okur. Dijital kullanım hedefini etkinleştirirseniz seçilen uygulamalarda geçirilen süreyi Android kullanım erişimi veya mevcut iOS yetenekleriyle kontrol eder. Özgün Sağlık verilerini değiştirmez. Sistem ayarlarında izinleri geri alabilirsiniz; kayıtlar siz silene kadar kalır."
+      },
+      {
+        "title": "Hatırlatıcılar ve araç takımı",
+        "text": "Hatırlatıcılar cihaz bildirimlerini kullanır. Araç takımı seçilen hedefi ve ilerlemesini sistem uzantısıyla paylaşır; ana ekranınızda bilgi gösterebilir. Hatırlatıcıyı kapatabilir ve araç takımı hedefini Ayarlar’dan kaldırabilirsiniz."
+      },
+      {
+        "title": "Dışa aktarma ve yedekler",
+        "text": "JSON dışa aktarma hedefleri, kayıtları, tercihleri ve ilerlemeyi içeren bir kopya oluşturur. Adımlar, kilo veya dijital kullanım gibi hassas bilgiler içerebilir. Nereye kaydedeceğinizi veya kiminle paylaşacağınızı siz seçersiniz. Ztreak harici kopyaları veya seçtiğiniz sağlayıcıları kontrol etmez. İşletim sistemi de ayarlarınıza göre yedekleri veya veri aktarımlarını yönetebilir; geri yükleme henüz onaylanmamıştır. iOS’ta ilerleme ve widget için kullanılan dahili depolama, sağlık verileri içerebileceğinden otomatik sistem yedeklerinden hariç tutulur. Bu ilerlemeyi kurtarmak için iCloud’a güvenme: bir kopya gerekiyorsa dışa aktardığın dosyayı sakla. Android’de sistem yedekleri ayarlarına bağlıdır ve şifreleme gerektirir; geri yüklemenin hâlâ doğrulanması gerekir."
+      },
+      {
+        "title": "Silme",
+        "text": "Verileri sil, hedefleri, kayıtları, taslakları ve Kule ilerlemesini uygulamadan kaldırır ve araç takımı seçimini temizler. Dil, görünüm ve hatırlatıcı gibi tercihler korunur. Artık istemiyorsanız hatırlatıcıyı Ayarlar’dan kapatın. Uygulama içindeki geçici dışa aktarma kopyaları da kaldırılır. Özgün Sağlık verileri veya uygulama dışında kaydedilen ya da paylaşılan dosyalar silinmez. Bu kopyaları kaydettiğiniz yerde yönetin."
+      },
+      {
+        "title": "Harici bağlantılar",
+        "text": "İsteğe bağlı hesap girişinde Google Firebase Authentication, giriş yapmak, e-postayı doğrulamak ve erişimi kurtarmak için e-posta adresinizi ve gerekli kimlik bilgilerini işler. Bu özellik geçmişinizi yüklemez. Harici siteler ve mağazalar kendi gizlilik koşullarına sahiptir. Google veya Apple ile devam ettiğinizde sağlayıcı, kimliğinizi ve izin verilen ad, e-posta veya fotoğraf gibi profil verilerini Firebase ile paylaşır. Giriş için kişilere, dosyalara veya Sağlık verilerine erişim istemiyoruz."
+      }
+    ]
+  },
+  "ru": {
+    "title": "Конфиденциальность и ваши данные",
+    "version": "Информация о текущей версии · 20 октября 2026",
+    "contact": "support@gamebob.dev",
+    "sections": [
+      {
+        "title": "Хранимые данные",
+        "text": "Ztreak хранит на этом устройстве цели, названия, записи, даты, количества, черновики, настройки и прогресс Башни. Они нужны для истории, расчёта серий и восстановления изменений. Вход в аккаунт необязателен. Рекламы и аналитики нет."
+      },
+      {
+        "title": "Аккаунт, синхронизация и покупки",
+        "text": "Вход не включает синхронизацию. С вашего явного согласия и при подтверждённом доступе Premium цели, записи (в том числе о здоровье или использовании приложений) и прогресс Башни передаются в Google Firebase для синхронизации и восстановления. Сквозного шифрования нет: уполномоченные администраторы могут читать удалённые данные. Отзыв согласия останавливает новые загрузки, но не удаляет существующие копии. Удаление аккаунта стирает удалённый прогресс и сохраняет минимальную отметку для блокировки старых загрузок; подписки магазина не отменяются. Apple или Google обрабатывает платёж; RevenueCat обрабатывает идентификатор аккаунта Ztreak и данные покупок для проверки Premium, не получая цели или записи."
+      },
+      {
+        "title": "Необязательные разрешения",
+        "text": "Если подключить шаги, Ztreak читает шаги и разрешённую историю из Health Connect на Android или «Здоровья» на iOS для записи целей. При включении цифрового использования проверяется время в выбранных приложениях через доступ Android или доступные возможности iOS. Исходные данные «Здоровья» не меняются. Разрешения можно отозвать в системных настройках; сохранённые записи останутся до удаления."
+      },
+      {
+        "title": "Напоминания и виджет",
+        "text": "Напоминания используют уведомления устройства. Виджет передаёт выбранную цель и прогресс системному расширению; информация может отображаться на главном экране. Вы можете отключить напоминание и убрать цель виджета в Настройках."
+      },
+      {
+        "title": "Экспорт и резервные копии",
+        "text": "Экспорт JSON создаёт копию целей, записей, настроек и прогресса. Она может содержать чувствительную информацию: шаги, вес или цифровое использование. Вы выбираете место сохранения и получателей. Ztreak не управляет внешними копиями и выбранными вами поставщиками. Операционная система также может управлять резервными копиями и переносом данных согласно вашим настройкам; восстановление пока не сертифицировано. В iOS внутренние данные прогресса и виджета исключены из автоматических резервных копий системы, поскольку могут содержать сведения о здоровье. Не полагайтесь на iCloud для восстановления этого прогресса: при необходимости сохраните экспортированный файл. В Android системные копии зависят от настроек и требуют шифрования; восстановление ещё необходимо проверить."
+      },
+      {
+        "title": "Удаление",
+        "text": "Удаление данных убирает цели, записи, черновики и прогресс Башни из приложения и очищает выбор виджета. Язык, оформление и напоминание сохраняются. Отключите напоминание в Настройках, если оно больше не нужно. Временные экспортированные копии внутри приложения также удаляются. Исходные данные «Здоровья» и файлы, сохранённые или отправленные вне приложения, не удаляются. Управляйте этими копиями там, где они сохранены."
+      },
+      {
+        "title": "Внешние ссылки",
+        "text": "При необязательном входе Firebase Authentication от Google обрабатывает почту и данные для входа, подтверждения почты и восстановления доступа. Эта функция не загружает вашу историю. У внешних сайтов и магазинов свои условия конфиденциальности. При входе через Google или Apple поставщик передаёт Firebase идентификатор и разрешённые данные профиля, например имя, почту или фото. Для входа не запрашивается доступ к контактам, файлам или данным Здоровья."
+      }
+    ]
+  },
+  "ja": {
+    "title": "プライバシーとデータ",
+    "version": "現行バージョンの情報 · 2026年10月20日",
+    "contact": "support@gamebob.dev",
+    "sections": [
+      {
+        "title": "保存されるデータ",
+        "text": "Ztreakは目標、名前、記録、日付、数量、下書き、設定、塔の進捗をこの端末に保存します。履歴の表示、継続記録の計算、変更の復旧に使います。アカウントへのログインは任意です。広告やアクセス解析はありません。"
+      },
+      {
+        "title": "アカウント・同期・購入",
+        "text": "ログインだけでは同期は有効になりません。明示的な同意と確認済みのPremiumアクセスがある場合、目標、記録（健康やアプリ利用の情報を含む場合があります）、塔の進捗が同期と復元のためにGoogle Firebaseへ送信されます。エンドツーエンド暗号化ではなく、権限を持つ管理者はリモートの内容にアクセスできます。同意を撤回すると新しいアップロードは停止しますが、既存のコピーは削除されません。アカウントを削除するとリモートの進捗は削除され、古いアップロードを防ぐ最小限の印が残ります。ストアの定期購入は解約されません。支払いはAppleまたはGoogleが処理します。RevenueCatはPremium確認のためZtreakのアカウントIDと購入情報を処理しますが、目標や記録は受け取りません。"
+      },
+      {
+        "title": "任意の権限",
+        "text": "歩数を連携すると、ZtreakはAndroidのHealth ConnectまたはiOSのヘルスケアから、歩数と許可された履歴を読み取り、目標に記録します。デジタル利用の目標を有効にすると、Androidの利用状況へのアクセスまたはiOSの利用可能な機能で、選択したアプリの利用時間を確認します。元のヘルスデータは変更しません。システム設定で権限を取り消せます。保存済みの記録は、自分で削除するまで残ります。"
+      },
+      {
+        "title": "リマインダーとウィジェット",
+        "text": "リマインダーは端末の通知を使います。ウィジェットは選択した目標と進捗をシステム拡張と共有し、ホーム画面に情報を表示する場合があります。設定でリマインダーを無効にし、ウィジェットの目標を解除できます。"
+      },
+      {
+        "title": "出力とバックアップ",
+        "text": "JSONの出力では、目標、記録、設定、進捗を含むコピーを作成します。歩数、体重、デジタル利用などの機密性の高い情報を含む場合があります。保存先と共有相手は自分で選べます。Ztreakは外部のコピーや選択したサービスを管理しません。OSも設定に応じてバックアップやデータ移行を管理する場合があります。復元はまだ認証されていません。 iOSでは、健康データが含まれる可能性があるため、進捗とウィジェットの内部ストレージはシステムの自動バックアップから除外されます。進捗の復元をiCloudに頼らず、コピーが必要な場合はエクスポートしたファイルを保管してください。Androidのシステムバックアップは設定によって異なり、暗号化が必要です。復元については引き続き検証が必要です。"
+      },
+      {
+        "title": "削除",
+        "text": "データの削除では、アプリ内の目標、記録、下書き、塔の進捗を削除し、ウィジェットの目標選択を解除します。言語、外観、リマインダーなどの設定は残ります。リマインダーが不要なら設定で無効にしてください。アプリ内の一時的な出力コピーも削除します。元のヘルスデータや、アプリ外で保存・共有したファイルは削除しません。それらは保存先で管理してください。"
+      },
+      {
+        "title": "外部リンク",
+        "text": "任意のアカウントログインを使うと、GoogleのFirebase Authenticationがメールアドレスと、ログイン・メール確認・アクセス復旧に必要な認証情報を処理します。この機能で履歴がアップロードされることはありません。外部サイトやストアには独自のプライバシー条件があります。 GoogleまたはAppleで続けると、提供元は識別子と、名前・メール・写真など許可されたプロフィール情報をFirebaseと共有します。ログインのために連絡先、ファイル、ヘルスケアのデータへのアクセスは求めません。"
+      }
+    ]
+  },
+  "ko": {
+    "title": "개인정보 및 데이터",
+    "version": "현재 버전 정보 · 2026년 10월 20일",
+    "contact": "support@gamebob.dev",
+    "sections": [
+      {
+        "title": "저장되는 데이터",
+        "text": "Ztreak은 목표, 이름, 기록, 날짜, 수량, 초안, 설정, 탑 진행 상황을 이 기기에 저장해요. 이 정보는 기록 표시, 연속 기록 계산, 변경 복구에 사용해요. 계정 로그인은 선택 사항이에요. 광고나 분석 기능은 없어요."
+      },
+      {
+        "title": "계정, 동기화 및 구매",
+        "text": "로그인만으로 동기화가 활성화되지는 않아요. 명시적으로 동의하고 Premium 접근 권한이 확인되면 목표, 기록(건강 또는 디지털 사용 정보가 포함될 수 있어요), 탑 진행 상황을 동기화하고 복구하기 위해 Google Firebase로 보내요. 종단 간 암호화가 아니므로 권한이 있는 관리자는 원격 콘텐츠에 접근할 수 있어요. 동의를 철회하면 새 업로드는 중단되지만 기존 사본은 삭제되지 않아요. 계정을 삭제하면 원격 진행 상황을 삭제하고 이전 업로드를 차단하는 최소한의 표시를 남겨요. 스토어 구독은 취소되지 않아요. 결제는 Apple 또는 Google이 처리하고, RevenueCat은 Premium 확인을 위해 Ztreak 계정 ID와 구매 데이터를 처리해요. 목표나 기록은 받지 않아요."
+      },
+      {
+        "title": "선택 권한",
+        "text": "걸음 수를 연결하면 Ztreak이 Android의 Health Connect 또는 iOS 건강 앱에서 걸음 수와 허용된 기록을 읽어 목표에 기록해요. 디지털 사용 목표를 켜면 Android 사용 정보 접근 또는 사용 가능한 iOS 기능으로 선택한 앱의 사용 시간을 확인해요. 원본 건강 데이터는 수정하지 않아요. 시스템 설정에서 권한을 철회할 수 있으며 저장된 기록은 직접 삭제할 때까지 유지돼요."
+      },
+      {
+        "title": "알림 및 위젯",
+        "text": "알림은 기기 알림을 사용해요. 위젯은 선택한 목표와 진행 상황을 시스템 확장 기능과 공유하며 홈 화면에 정보를 표시할 수 있어요. 설정에서 알림을 끄고 위젯 목표를 해제할 수 있어요."
+      },
+      {
+        "title": "내보내기 및 백업",
+        "text": "JSON 내보내기는 목표, 기록, 설정, 진행 상황이 담긴 사본을 만들어요. 걸음 수, 체중, 디지털 사용 같은 민감한 정보가 포함될 수 있어요. 저장 위치와 공유 대상은 직접 선택해요. Ztreak은 외부 사본이나 선택한 제공업체를 관리하지 않아요. 운영체제도 설정에 따라 백업이나 데이터 이전을 관리할 수 있으며, 복원은 아직 검증되지 않았어요. iOS에서는 건강 데이터가 포함될 수 있으므로 진행 상황과 위젯의 내부 저장소가 시스템 자동 백업에서 제외됩니다. 이 진행 상황을 복원할 때 iCloud에 의존하지 말고, 사본이 필요하면 내보낸 파일을 보관하세요. Android의 시스템 백업은 설정에 따라 달라지며 암호화가 필요합니다. 복원은 아직 검증이 필요합니다."
+      },
+      {
+        "title": "삭제",
+        "text": "데이터 삭제는 앱의 목표, 기록, 초안, 탑 진행 상황을 삭제하고 위젯 선택을 해제해요. 언어, 화면 모양, 알림 같은 설정은 유지돼요. 알림이 필요 없다면 설정에서 끄세요. 앱 내부의 임시 내보내기 사본도 삭제해요. 원본 건강 데이터나 앱 밖에서 저장하거나 공유한 파일은 삭제하지 않아요. 해당 사본은 저장한 곳에서 관리하세요."
+      },
+      {
+        "title": "외부 링크",
+        "text": "선택 사항인 계정 로그인을 사용하면 Google Firebase Authentication이 로그인, 이메일 확인, 접근 복구에 필요한 이메일 주소와 인증 정보를 처리해요. 이 기능은 기록을 업로드하지 않아요. 외부 사이트와 스토어에는 각각의 개인정보 처리 조건이 적용돼요. Google 또는 Apple로 계속하면 제공업체가 식별자와 이름, 이메일, 사진 등 허용된 프로필 정보를 Firebase와 공유해요. 로그인에 연락처, 파일 또는 건강 데이터 접근 권한을 요청하지 않아요."
+      }
+    ]
+  },
+  "zh": {
+    "title": "隐私与数据",
+    "version": "当前版本信息 · 2026 年 10 月 20 日",
+    "contact": "support@gamebob.dev",
+    "sections": [
+      {
+        "title": "保存的数据",
+        "text": "Ztreak 在此设备保存目标、名称、记录、日期、数量、草稿、偏好设置及塔的进度，用于显示历史、计算连续记录和恢复修改。账号登录是可选的。不包含广告或分析功能。"
+      },
+      {
+        "title": "账号、同步与购买",
+        "text": "登录不会自动启用同步。获得您的明确同意且验证Premium权限后，目标、记录（可能包含健康或应用使用信息）及塔的进度会发送至Google Firebase，用于同步和恢复进度。这不是端到端加密，获授权的管理员可以访问远程内容。撤回同意会停止新的上传，但不会删除已有副本。删除账号会移除远程进度，并保留防止旧设备上传所需的最小标记；不会取消商店订阅。Apple或Google处理付款，RevenueCat处理Ztreak账号标识符和购买数据以验证Premium，不会接收目标或记录。"
+      },
+      {
+        "title": "可选权限",
+        "text": "连接步数后，Ztreak 会从 Android 的 Health Connect 或 iOS 的健康应用读取步数及获授权的历史数据，以记录目标。启用数字使用目标后，会通过 Android 使用情况访问权限或可用的 iOS 功能查询所选应用的使用时间。不会修改原始健康数据。你可以在系统设置中撤销权限；已保存记录会保留，直到你删除它们。"
+      },
+      {
+        "title": "提醒与小组件",
+        "text": "提醒使用设备通知。小组件会与系统扩展共享所选目标及其进度，可能在主屏幕显示这些信息。你可以在设置中关闭提醒并移除小组件目标。"
+      },
+      {
+        "title": "导出与备份",
+        "text": "导出 JSON 会创建包含目标、记录、偏好设置和进度的副本，其中可能含有步数、体重或数字使用情况等敏感信息。保存位置和分享对象由你选择。Ztreak 不控制外部副本或你选择的服务商。操作系统也可能根据设置管理备份或数据转移；恢复尚未通过认证。 在 iOS 上，进度和小组件的内部存储可能包含健康数据，因此不会纳入系统自动备份。请勿依赖 iCloud 恢复这些进度；如需副本，请保留导出的文件。在 Android 上，系统备份取决于你的设置，并且需要加密；恢复功能仍有待验证。"
+      },
+      {
+        "title": "删除",
+        "text": "删除数据会移除应用中的目标、记录、草稿和塔进度，并清除小组件的目标选择。语言、外观和提醒等偏好设置会保留。不再需要提醒时，请在设置中关闭。应用内的临时导出副本也会删除。原始健康数据及在应用外保存或分享的文件不会删除，请在其保存位置管理。"
+      },
+      {
+        "title": "外部链接",
+        "text": "使用可选的账号登录时，Google Firebase Authentication 会处理邮箱地址及登录、邮箱验证和恢复访问所需的凭据。此功能不会上传您的历史记录。外部网站和商店有各自的隐私条款。 使用Google或Apple继续时，提供方会与Firebase共享账号标识符及获授权的个人资料，例如姓名、邮箱或照片。登录不会请求访问联系人、文件或健康数据。"
+      }
+    ]
+  }
+}

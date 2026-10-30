@@ -1,4 +1,3 @@
-import { copyZtreakRuntime } from './copy-ztreak-runtime.mjs';
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, cpSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -39,4 +38,4 @@ if (existsSync(assetsSource)) {
     console.log('[@jjlmoya/apps] copied assets/apps');
 }
 
-copyZtreakRuntime(projectRoot);
+\n

@@ -19,12 +19,24 @@ describe('Ztreak section navigation', () => {
     it('supports future nested feature pages', () => {
         expect(ztreakPageUrl('/es/ztreak', 'features/shield')).toBe('/es/ztreak/features/shield/');
     });
-    it('opens the standalone web app for the current site language', () => {
-        expect(ztreakWebAppUrl('es', 'www.jjlmoya.es')).toBe('https://www.jjlmoya.es/apps/ztreak/app/');
-        expect(ztreakWebAppUrl('en', 'www.gamebob.dev')).toBe('https://www.gamebob.dev/apps/ztreak/app/');
-        expect(ztreakWebAppUrl('fr', 'www.gamebob.dev')).toBe('https://www.gamebob.dev/fr/apps/ztreak/app/');
-        expect(ztreakWebAppUrl('ja', 'www.jjlmoya.es')).toBe('https://www.gamebob.dev/ja/apps/ztreak/app/');
-        expect(ztreakWebAppUrl('es', 'www.gamebob.dev')).toBe('https://www.gamebob.dev/es/apps/ztreak/app/');
+    it.each([
+        ['es', 'www.jjlmoya.es', 'https://www.jjlmoya.es/apps/web/ztreak/'],
+        ['en', 'www.gamebob.dev', 'https://www.gamebob.dev/apps/web/ztreak/'],
+        ['fr', 'www.gamebob.dev', 'https://www.gamebob.dev/fr/apps/web/ztreak/'],
+        ['de', 'www.gamebob.dev', 'https://www.gamebob.dev/de/apps/web/ztreak/'],
+        ['it', 'www.gamebob.dev', 'https://www.gamebob.dev/it/apps/web/ztreak/'],
+        ['pt', 'www.gamebob.dev', 'https://www.gamebob.dev/pt/apps/web/ztreak/'],
+        ['nl', 'www.gamebob.dev', 'https://www.gamebob.dev/nl/apps/web/ztreak/'],
+        ['sv', 'www.gamebob.dev', 'https://www.gamebob.dev/sv/apps/web/ztreak/'],
+        ['pl', 'www.gamebob.dev', 'https://www.gamebob.dev/pl/apps/web/ztreak/'],
+        ['id', 'www.gamebob.dev', 'https://www.gamebob.dev/id/apps/web/ztreak/'],
+        ['tr', 'www.gamebob.dev', 'https://www.gamebob.dev/tr/apps/web/ztreak/'],
+        ['ru', 'www.gamebob.dev', 'https://www.gamebob.dev/ru/apps/web/ztreak/'],
+        ['ja', 'www.jjlmoya.es', 'https://www.gamebob.dev/ja/apps/web/ztreak/'],
+        ['ko', 'www.gamebob.dev', 'https://www.gamebob.dev/ko/apps/web/ztreak/'],
+        ['zh', 'www.gamebob.dev', 'https://www.gamebob.dev/zh/apps/web/ztreak/'],
+    ] as const)('routes the %s landing CTA to its standalone MFE', (locale, host, expected) => {
+        expect(ztreakWebAppUrl(locale, host)).toBe(expected);
     });
     it.each(['https://example.com', '//example.com', '/es/ztreak?x=1', '/es/ztreak#app'])('rejects invalid base %s', base => {
         expect(() => ztreakPageUrl(base, 'app')).toThrow();
@@ -33,7 +45,7 @@ describe('Ztreak section navigation', () => {
         expect(() => ztreakPageUrl('/es/ztreak', page)).toThrow();
     });
     it('declares the complete section with unique paths and page loaders', async () => {
-        expect(ZTREAK_APP.pages?.map(page => page.id)).toEqual(['app', 'privacy', 'terms']);
+        expect(ZTREAK_APP.pages?.map(page => page.id)).toEqual(['privacy', 'terms']);
         const pages = ZTREAK_APP.pages ?? [];
         expect(new Set(pages.map(page => page.path)).size).toBe(pages.length);
         for (const page of pages) expect((await page.Component()).default).toBeDefined();

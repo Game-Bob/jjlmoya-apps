@@ -21,5 +21,5 @@ export function ztreakWebAppUrl(locale: KnownLocale, siteHost: string): string {
     const spanishSite = (host === 'jjlmoya.es' || host === 'www.jjlmoya.es') && locale === 'es';
     const targetHost = spanishSite ? 'www.jjlmoya.es' : 'www.gamebob.dev';
     const languagePath = locale === 'en' || spanishSite ? '' : locale + '/';
-    return `https://${targetHost}/${languagePath}apps/ztreak/app/`;
+    return `https://${targetHost}/${languagePath}apps/web/ztreak/`;
 }

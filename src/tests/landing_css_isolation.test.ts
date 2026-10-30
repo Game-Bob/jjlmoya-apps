@@ -734,19 +734,27 @@ describe("landing style isolation", () => {
     expect(toolbar).toContain('addEventListener("change"');
   });
 
-  it("routes the legacy Ztreak app page to the standalone web MFE", () => {
-    const ztreakApp = readFileSync(
-      new URL("ztreak/pages/App.astro", appsRoot),
+  it("keeps the legacy Ztreak app runtime out of the landing package", () => {
+    const ztreakDefinition = readFileSync(
+      new URL("ztreak/index.ts", appsRoot),
       "utf8",
     );
     const ztreakLegal = readFileSync(
       new URL("ztreak/pages/LegalLayout.astro", appsRoot),
       "utf8",
     );
+    const packageManifest = readFileSync(
+      new URL("../../package.json", import.meta.url),
+      "utf8",
+    );
+    const postinstall = readFileSync(
+      new URL("../../scripts/postinstall.mjs", import.meta.url),
+      "utf8",
+    );
 
-    expect(ztreakApp).toContain('ztreakWebAppUrl(locale');
-    expect(ztreakApp).toContain('http-equiv="refresh"');
-    expect(ztreakApp).not.toContain('<iframe');
+    expect(ztreakDefinition).not.toContain("path: 'app'");
+    expect(packageManifest).not.toContain("@gamebob/ztreak");
+    expect(postinstall).not.toContain("copy-ztreak-runtime");
     expect(ztreakLegal).toContain('class="ztreak-legal-shell"');
     expect(ztreakLegal).toMatch(/body\.ztreak-legal-shell\s*\{/);
 
