@@ -38,4 +38,3 @@ if (existsSync(assetsSource)) {
     console.log('[@jjlmoya/apps] copied assets/apps');
 }
 
-\n
